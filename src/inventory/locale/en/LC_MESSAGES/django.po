@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-25 16:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: inventory/templates/header.html:21
+msgid "inventory"
+msgstr "Inventory"
+
+#: inventory/templates/header.html:22
+msgid "language"
+msgstr "slovak"
+
+#: inventory/templates/index.html:8
+#: inventory/templates/inventory/product_list.html:5
+msgid "product_managment"
+msgstr "Managment of product"
+
+#: inventory/templates/index.html:9
+msgid "group_managment"
+msgstr "Managment of group"
+
+#: inventory/templates/inventory/product_list.html:9
+msgid "code"
+msgstr ""
+
+#: inventory/templates/inventory/product_list.html:10
+msgid "name"
+msgstr ""
+
+#: inventory/templates/inventory/product_list.html:11
+msgid "price"
+msgstr ""
+
+#: inventory/templates/inventory/product_list.html:12
+msgid "is_new"
+msgstr ""
+
+#: inventory/templates/inventory/product_list.html:12
+msgid "is_wine"
+msgstr ""

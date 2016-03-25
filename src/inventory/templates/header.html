@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load i18n %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventura produktov">
+    <meta name="author" content="TP-SOFT s.r.o.">
+
+    <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <title>{% trans "title_inventory" %}</title>
+</head>
+
+<body>
+<div class="container">
+<h1>{% trans "inventory" %}</h1>
+<a href="{% url 'language' %}">{% trans "language" %}</a>

@@ -1,0 +1,55 @@
+{% include "header.html" %}
+{% load i18n %}
+{% load inventory_extras %}
+
+<fieldset>
+    <legend>{% trans "product_managment" %} [ {{ object_list.count }} ]</legend>
+    <div><a href="create">{% trans "create_product" %}</a></div>
+
+    <div class="row">
+       <div class="col-md-1">{% trans "active" %}</div>
+       <div class="col-md-1">{% trans "code" %}</div>
+       <div class="col-md-4">{% trans "name" %}</div>
+       <div class="col-md-1">{% trans "price" %} {% trans "size" %}</div>
+       <div class="col-md-1">{% trans "is_wine" %}</div>
+       <div class="col-md-1">{% trans "is_new" %}</div>
+       <div class="col-md-3"></div>
+    </div>
+
+    {% for product in object_list %}
+    <div class="row">
+       <div class="col-md-1">
+           {% if product.active %}
+               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+               <a href="remove/{{ product.id }}">{% trans "remove" %}</a>
+           {% else %}
+               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+               <a href="add/{{ product.id }}">{% trans "add" %}</a>
+           {% endif %}
+       </div>
+       <div class="col-md-1">{{ product.code }}</div>
+       <div class="col-md-4">{{ product.name }}</div>
+       <div class="col-md-1">{{ product.price }} {{ product.size }}</div>
+       <div class="col-md-1">
+           {% if product.is_wine %}
+               <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+           {% endif %}
+       </div>
+       <div class="col-md-1">
+           {% if product.is_new %}
+                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+           {% endif %}
+       </div>
+
+       <div class="col-md-3">
+           <a href="edit/{{ product.id }}">{% trans "edit" %}</a> |
+           <a href="delete/{{ product.id }}">{% trans "delete" %}</a>
+       </div>
+    </div>
+    {% endfor %}
+
+</fieldset>
+
+<a href="/inventory/">{% trans "back_to_menu" %}</a>
+
+{% include "footer.html" %}

@@ -1,0 +1,18 @@
+{% include "header.html" %}
+{% load i18n %}
+
+<fieldset>
+    <legend>{% trans "group_managment" %} [ {{ object_list.count }} ]</legend>
+    <div><a href="create">{% trans "create_group" %}</a></div>
+    <div>
+       <ul>
+        {% for group in object_list %}
+           <li>{{ group.name }} | <a href="edit/{{ group.id }}">{% trans "edit" %}</a> | <a href="delete/{{ group.id }}">{% trans "delete" %}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</fieldset>
+
+<a href="/inventory/">{% trans "back_to_menu" %}</a>
+
+{% include "footer.html" %}
