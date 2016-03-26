@@ -1,13 +1,63 @@
 {% block menu %}
 {% load i18n %}
 
-<fieldset>
-    <legend>Menu</legend>
-    <div>
-       <ul>
-            <li> <a href="{% url 'list_products' %}"> {% trans "product_managment" %} </a></li>
-            <li> <a href="{% url 'list_groups' %}"> {% trans "group_managment" %} </a></li>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+       <h3 class="navbar-text"><span class="label label-success">{% trans "inventory" %}</span></h3>
+
+        <ul class="nav navbar-nav collapse navbar-collapse">
+
+           <li class="dropdown">
+            <a id="m-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+               href="#">{% trans "product_managment" %}<span class="caret"></span></a>
+               <ul class="dropdown-menu" aria-labelledby="m-product">
+                   <li><a href="{% url 'list_products' %}">{% trans "product_list" %}</a></li>
+                   <li><a href="{% url 'create_product' %}">{% trans "create_product" %}</a>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="{% url 'import_products' %}">{% trans "import_product" %}</a>
+               </ul>
+           </li>
+
        </ul>
+
+
+        <ul class="nav navbar-nav collapse navbar-collapse">
+
+           <li class="dropdown">
+            <a id="g-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+               href="#">{% trans "group_managment" %}<span class="caret"></span></a>
+               <ul class="dropdown-menu" aria-labelledby="g-product">
+                   <li><a href="{% url 'list_groups' %}">{% trans "group_list" %}</a></li>
+                   <li><a href="{% url 'create_group' %}">{% trans "create_group" %}</a>
+               </ul>
+           </li>
+
+       </ul>
+
+       <ul class="nav navbar-nav collapse navbar-collapse">
+
+           <li class="dropdown">
+            <a id="e-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+               href="#">{% trans "event_managment" %}<span class="caret"></span></a>
+               <ul class="dropdown-menu" aria-labelledby="e-product">
+                   <li><a href="">{% trans "event_list" %}</a></li>
+                   <li><a href="">{% trans "create_event" %}</a>
+               </ul>
+           </li>
+
+       </ul>
+
+       <ul class="nav navbar-nav">
+            <li><a class="navbar-band" href="">{% trans "order_list" %}</a></li>
+       </ul>
+
     </div>
-</fieldset>
+
+    <ul class="nav navbar-nav navbar-right">
+       <li><a class="navbar-band navbar-right" href="{% url 'language' %}">{% trans "language" %}</a></li>
+    </ul>
+  </div>
+</nav>
 {% endblock %}

@@ -1,25 +1,34 @@
 # coding=utf-8
 from django.core.urlresolvers import reverse_lazy
-from django.forms import formset_factory
-from django.forms.models import inlineformset_factory
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
-from inventory.forms import ProductForm, GroupForm, WineForm
-from inventory.models import Product, Group, Wine
+from inventory.forms import ProductForm, WineForm
+from inventory.models import Product, Wine
 from sync.service import sync_products_from_file
-from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView, View, DetailView
+from vanilla import DeleteView, ListView, TemplateView, View, DetailView
 from winelist.settings import BASE_DIR
 
 
-# index page
+# Views for products management
 
 class IndexView(TemplateView):
-	template_name = "index.html"
+	template_name = 'index.html'
+
+	def get(self, request, *args, **kwargs):
+		return super(IndexView, self).get(request, args, kwargs)
+
+
+# import products from xml
+
+class ImportView(TemplateView):
+	template_name = 'inventory/product_import.html'
 
 	def get(self, request, *args, **kwargs):
 		# synchronization all products from xml file
-		sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
-		return super(IndexView, self).get(request, args, kwargs)
+		import_count = sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
+		context = self.get_context_data()
+		context['import_count'] = import_count
+		return self.render_to_response(context)
 
 
 # change language en/sk
@@ -32,34 +41,13 @@ class LangChangeView(TemplateView):
 		return redirect('index')
 
 
-# products managment views
-
-# class ManageProduct(CreateView):
-# 	model = Wine
-# 	form_class = WineForm
-# 	template_name = 'inventory/manage_product_form.html'
-# 	success_url = reverse_lazy('list_products')
-#
-# 	def get(self, request, *args, **kwargs):
-# 		# self.object = self.get_object()
-# 		# form = self.get_form(instance=self.object)
-# 		return super(ManageProduct, self).get(request, args, kwargs)
-#
-# 	def post(self, request, *args, **kwargs):
-# 		form = WineForm(request.POST)
-# 		if form.is_valid():
-# 			form.save()
-# 			return self.form_valid(form)
-# 		return self.form_invalid(form)
-
-
 class ListProducts(ListView):
 	model = Product
 	queryset = Product.objects.all()
 
 
 class DetailProduct(TemplateView):
-	template_name = "inventory/product_detail.html"
+	template_name = 'inventory/product_detail.html'
 
 	def get(self, request, *args, **kwargs):
 		context = self.get_context_data()
@@ -81,7 +69,7 @@ class DetailProduct(TemplateView):
 
 class CreateProduct(View):
 
-	template_name = "inventory/product_create.html"
+	template_name = 'inventory/product_create.html'
 
 	def get(self, request, *args, **kwargs):
 		print("get")
@@ -105,7 +93,7 @@ class CreateProduct(View):
 
 class EditProduct(View):
 
-	template_name = "inventory/product_create.html"
+	template_name = 'inventory/product_create.html'
 
 	def get(self, request, *args, **kwargs):
 		print("get")

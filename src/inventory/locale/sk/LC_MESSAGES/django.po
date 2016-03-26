@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-25 16:54+0100\n"
+"POT-Creation-Date: 2016-03-26 12:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,127 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: inventory/templates/header.html:21
-msgid "inventory"
+#: inventory/templates/header.html:24
+#, fuzzy
+#| msgid "inventory"
+msgid "title_inventory"
 msgstr "Inventár"
 
-#: inventory/templates/header.html:22
-msgid "language"
-msgstr "anglicky"
+#: inventory/templates/inventory/group_confirm_delete.html:6
+msgid "confirm_delete_group"
+msgstr "Naozaj si prajete vymazať skupinu?"
 
-#: inventory/templates/index.html:8
-#: inventory/templates/inventory/product_list.html:5
-msgid "product_managment"
-msgstr "Správa produktov"
-
-#: inventory/templates/index.html:9
+#: inventory/templates/inventory/group_list.html:7
+#: inventory/templates/menu.html:30
 msgid "group_managment"
 msgstr "Správa skupín"
 
+#: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/product_list.html:50
+msgid "edit"
+msgstr "editovať"
+
+#: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/product_list.html:51
+msgid "delete"
+msgstr "vymazať"
+
+#: inventory/templates/inventory/product_confirm_delete.html:6
+msgid "confirm_delete_product"
+msgstr "Naozaj si prajete vymazať produkt?"
+
+#: inventory/templates/inventory/product_create.html:34
+#: inventory/templates/inventory/product_form.html:20
+msgid "save"
+msgstr "uložiť"
+
+#: inventory/templates/inventory/product_detail.html:54
+#: inventory/templates/inventory/product_form.html:23
+msgid "back"
+msgstr "späť"
+
+#: inventory/templates/inventory/product_import.html:7
+#: inventory/templates/menu.html:19
+msgid "import_product"
+msgstr "Importovať produkty"
+
 #: inventory/templates/inventory/product_list.html:9
+#: inventory/templates/menu.html:14
+msgid "product_managment"
+msgstr "Správa produktov"
+
+#: inventory/templates/inventory/product_list.html:14
+msgid "active"
+msgstr "aktívna na karte"
+
+#: inventory/templates/inventory/product_list.html:15
 msgid "code"
-msgstr ""
+msgstr "Kód"
 
-#: inventory/templates/inventory/product_list.html:10
+#: inventory/templates/inventory/product_list.html:16
 msgid "name"
-msgstr ""
+msgstr "Názov"
 
-#: inventory/templates/inventory/product_list.html:11
+#: inventory/templates/inventory/product_list.html:17
 msgid "price"
-msgstr ""
+msgstr "Cena"
 
-#: inventory/templates/inventory/product_list.html:12
-msgid "is_new"
-msgstr ""
+#: inventory/templates/inventory/product_list.html:18
+msgid "size"
+msgstr "Objem/množstvo"
 
-#: inventory/templates/inventory/product_list.html:12
+#: inventory/templates/inventory/product_list.html:19
 msgid "is_wine"
-msgstr ""
+msgstr "Víno"
+
+#: inventory/templates/inventory/product_list.html:19
+msgid "is_new"
+msgstr "Nové"
+
+#: inventory/templates/inventory/product_list.html:29
+msgid "remove"
+msgstr "odobrať"
+
+#: inventory/templates/inventory/product_list.html:32
+msgid "add"
+msgstr "pridať"
+
+#: inventory/templates/menu.html:8
+msgid "inventory"
+msgstr "Inventár"
+
+#: inventory/templates/menu.html:16
+msgid "product_list"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/menu.html:17
+msgid "create_product"
+msgstr "Vytvoriť nový produkt"
+
+#: inventory/templates/menu.html:32
+msgid "group_list"
+msgstr "Zoznam skupín"
+
+#: inventory/templates/menu.html:33
+msgid "create_group"
+msgstr "Vytvoriť novú skupinu"
+
+#: inventory/templates/menu.html:43
+msgid "event_managment"
+msgstr "Správa akcií"
+
+#: inventory/templates/menu.html:45
+msgid "event_list"
+msgstr "Zoznam akcií"
+
+#: inventory/templates/menu.html:46
+msgid "create_event"
+msgstr "Vytvoriť novú akciu"
+
+#: inventory/templates/menu.html:53
+msgid "order_list"
+msgstr "Správa objednávok"
+
+#: inventory/templates/menu.html:59
+msgid "language"
+msgstr "en"

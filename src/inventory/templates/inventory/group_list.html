@@ -5,7 +5,6 @@
 
 <fieldset>
     <legend>{% trans "group_managment" %} [ {{ object_list.count }} ]</legend>
-    <div><a href="create">{% trans "create_group" %}</a></div>
     <div>
        <ul>
         {% for group in object_list %}
@@ -14,7 +13,5 @@
         </ul>
     </div>
 </fieldset>
-
-<a href="/inventory/">{% trans "back_to_menu" %}</a>
 
 {% endblock %}

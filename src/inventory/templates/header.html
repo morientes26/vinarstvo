@@ -13,16 +13,15 @@
     <link rel="stylesheet" type="text/css" href="{% static "datatables/css/jquery.dataTables.css" %}">
 
     <script src="{% static "jquery/jquery.min.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
     <script type="text/javascript" charset="utf8" src="{% static "datatables/js/jquery.dataTables.js" %}"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             $('#products').DataTable();
+            $('.dropdown-toggle').dropdown();
         } );
     </script>
     <title>{% trans "title_inventory" %}</title>
 </head>
 
 <body>
-<div class="container">
-<h1>{% trans "inventory" %}</h1>
-<a href="{% url 'language' %}">{% trans "language" %}</a>

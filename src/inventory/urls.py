@@ -16,6 +16,7 @@ urlpatterns = [
 	url(r'^product/add/(?P<pk>\d+)/$', AddProduct.as_view(), name='add_product'),
 	url(r'^product/remove/(?P<pk>\d+)/$', RemoveProduct.as_view(), name='remove_product'),
 	url(r'^product/delete/(?P<pk>\d+)/$', DeleteProduct.as_view(), name='delete_product'),
+	url(r'^product/import/$', ImportView.as_view(), name='import_products'),
 
 	# group page for managing groups
 	url(r'^group/$', ListGroups.as_view(), name='list_groups'),

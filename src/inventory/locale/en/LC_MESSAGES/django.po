@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-25 16:54+0100\n"
+"POT-Creation-Date: 2016-03-26 12:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +17,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: inventory/templates/header.html:21
+#: inventory/templates/header.html:24
+#, fuzzy
+#| msgid "inventory"
+msgid "title_inventory"
+msgstr "Inventory"
+
+#: inventory/templates/inventory/group_confirm_delete.html:6
+msgid "confirm_delete_group"
+msgstr "Are you sure to delete group?"
+
+#: inventory/templates/inventory/group_list.html:7
+#: inventory/templates/menu.html:30
+msgid "group_managment"
+msgstr "Group management"
+
+#: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/product_list.html:50
+msgid "edit"
+msgstr "edit"
+
+#: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/product_list.html:51
+msgid "delete"
+msgstr "delete"
+
+#: inventory/templates/inventory/product_confirm_delete.html:6
+msgid "confirm_delete_product"
+msgstr "Are you sure to delete product?"
+
+#: inventory/templates/inventory/product_create.html:34
+#: inventory/templates/inventory/product_form.html:20
+msgid "save"
+msgstr "save"
+
+#: inventory/templates/inventory/product_detail.html:54
+#: inventory/templates/inventory/product_form.html:23
+msgid "back"
+msgstr "back"
+
+#: inventory/templates/inventory/product_import.html:7
+#: inventory/templates/menu.html:19
+msgid "import_product"
+msgstr "Import products"
+
+#: inventory/templates/inventory/product_list.html:9
+#: inventory/templates/menu.html:14
+msgid "product_managment"
+msgstr "Product management"
+
+#: inventory/templates/inventory/product_list.html:14
+msgid "active"
+msgstr "active"
+
+#: inventory/templates/inventory/product_list.html:15
+msgid "code"
+msgstr "Code"
+
+#: inventory/templates/inventory/product_list.html:16
+msgid "name"
+msgstr "Name"
+
+#: inventory/templates/inventory/product_list.html:17
+msgid "price"
+msgstr "Price"
+
+#: inventory/templates/inventory/product_list.html:18
+msgid "size"
+msgstr "Size/amount"
+
+#: inventory/templates/inventory/product_list.html:19
+msgid "is_wine"
+msgstr "Wine"
+
+#: inventory/templates/inventory/product_list.html:19
+msgid "is_new"
+msgstr "New"
+
+#: inventory/templates/inventory/product_list.html:29
+msgid "remove"
+msgstr "remove"
+
+#: inventory/templates/inventory/product_list.html:32
+msgid "add"
+msgstr "add"
+
+#: inventory/templates/menu.html:8
 msgid "inventory"
 msgstr "Inventory"
 
-#: inventory/templates/header.html:22
+#: inventory/templates/menu.html:16
+msgid "product_list"
+msgstr "Products list"
+
+#: inventory/templates/menu.html:17
+msgid "create_product"
+msgstr "Create new product"
+
+#: inventory/templates/menu.html:32
+msgid "group_list"
+msgstr "Groups list"
+
+#: inventory/templates/menu.html:33
+msgid "create_group"
+msgstr "Create new group"
+
+#: inventory/templates/menu.html:43
+msgid "event_managment"
+msgstr "Product management"
+
+#: inventory/templates/menu.html:45
+msgid "event_list"
+msgstr "Orders management"
+
+#: inventory/templates/menu.html:46
+msgid "create_event"
+msgstr "Create new product"
+
+#: inventory/templates/menu.html:53
+msgid "order_list"
+msgstr "Orders management"
+
+#: inventory/templates/menu.html:59
 msgid "language"
-msgstr "slovak"
-
-#: inventory/templates/index.html:8
-#: inventory/templates/inventory/product_list.html:5
-msgid "product_managment"
-msgstr "Managment of product"
-
-#: inventory/templates/index.html:9
-msgid "group_managment"
-msgstr "Managment of group"
-
-#: inventory/templates/inventory/product_list.html:9
-msgid "code"
-msgstr ""
-
-#: inventory/templates/inventory/product_list.html:10
-msgid "name"
-msgstr ""
-
-#: inventory/templates/inventory/product_list.html:11
-msgid "price"
-msgstr ""
-
-#: inventory/templates/inventory/product_list.html:12
-msgid "is_new"
-msgstr ""
-
-#: inventory/templates/inventory/product_list.html:12
-msgid "is_wine"
-msgstr ""
+msgstr "sk"

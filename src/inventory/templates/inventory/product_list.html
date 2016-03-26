@@ -4,9 +4,10 @@
 {% load i18n %}
 {% load inventory_extras %}
 
+
 <fieldset>
-    <legend>{% trans "product_managment" %} [ {{ object_list.count }} ]</legend>
-    <div><a href="create">{% trans "create_product" %}</a></div>
+    <legend>{% trans "product_managment" %} <small>[ {{ object_list.count }} ]</small></legend>
+
     <table id="products" class="display">
     <thead>
         <tr>
@@ -54,8 +55,6 @@
     </tbody>
     </table>
 </fieldset>
-
-<a href="/inventory/">{% trans "back_to_menu" %}</a>
 
 <script type="text/javascript">
 	$('#products')

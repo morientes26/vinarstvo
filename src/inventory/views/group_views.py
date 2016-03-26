@@ -5,7 +5,8 @@ from inventory.models import Group
 from vanilla import CreateView, DeleteView, ListView, UpdateView
 
 
-# groups managment views
+# Views for groups management
+
 class ListGroups(ListView):
 	model = Group
 	queryset = Group.objects.all()

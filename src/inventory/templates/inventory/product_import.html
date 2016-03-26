@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+
+<div>
+    {% trans "import_product" %}
+    {{ import_count }}
+</div>
+
+{% endblock %}

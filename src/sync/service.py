@@ -12,6 +12,7 @@ def sync_products_from_file(input_file):
 		print('cannot open file', input_file)
 
 	else:
+		counter = 0
 		data = ProductDeserializer.parse(blob)
 		if data:
 			for row in data:
@@ -19,7 +20,10 @@ def sync_products_from_file(input_file):
 				if serializer.is_valid():
 					serializer.validated_data
 					serializer.save()
+					counter += 1
 					print('save product', row)
 
 				else:
 					print('not valid parsing data', row)
+
+		return counter
