@@ -1,14 +1,1 @@
-superuser:
-morientes
-q1w2e3r4
-
-../env/bin/python manage.py runserver
-../env/bin/python manage.py migration
-
-../env/bin/python manage.py makemigrations inventory
-../env/bin/python manage.py migrate inventory
-
-../env/bin/python manage.py makemessages -l sk
-../env/bin/python manage.py compilemessages -l sk
-
-../env/bin/python manage.py test
+winecart 0.0.1
