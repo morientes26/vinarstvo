@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "index.html" %}
+
+{% block content %}
 {% load i18n %}
 
 <fieldset>
@@ -15,4 +17,4 @@
 
 <a href="/inventory/">{% trans "back_to_menu" %}</a>
 
-{% include "footer.html" %}
+{% endblock %}

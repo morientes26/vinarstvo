@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "index.html" %}
+
+{% block content %}
 
 <form method="post" action="">
     {% csrf_token %}
@@ -13,4 +15,4 @@
 
 <a href="/inventory/">menu</a>
 
-{% include "footer.html" %}
+{% endblock %}

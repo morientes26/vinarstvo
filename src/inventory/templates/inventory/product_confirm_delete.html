@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "index.html" %}
+
+{% block content %}
 {% load i18n %}
 
 {% trans "confirm_delete_product" %}
@@ -10,4 +12,4 @@
     <input type="button" onclick="location.href='/inventory/product/'" value="nie">
 </form>
 
-{% include "footer.html" %}
+{% endblock %}

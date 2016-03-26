@@ -105,7 +105,7 @@ class Wine(models.Model):
     WINE_COLOR = (('RED', 'červené'), ('WHITE', 'biele'), ('ROSE', 'ružové'))
     color = models.CharField(max_length=5, choices=WINE_COLOR, blank=True, help_text="farba vína")
 
-    year = models.IntegerField(help_text="ročník", blank=True)
+    year = models.IntegerField(null=True, help_text="ročník", blank=True)
 
     WINE_ATTRIBUTE = [('SV', 'Stolové víno'), ('AV', 'Akostné víno'), ('KV', 'Kabinetné víno'),
                       ('NZ', 'Neskorý zber'), ('VH', 'Výber z hrozna'), ('BV', 'Bobuľový výber'),

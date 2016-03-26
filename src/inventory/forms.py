@@ -8,7 +8,7 @@ class ProductForm(ModelForm):
 
 	class Meta:
 		model = Product
-		fields = ['code', 'origin_name', 'price', 'active', 'name', 'description', 'size', 'group']
+		fields = ['code', 'origin_name', 'price', 'active', 'name', 'description', 'is_wine', 'size', 'group']
 
 	#FIXME: not working - cannot change value before save
 	#def save(self, commit=False):
@@ -24,6 +24,7 @@ class WineForm(ModelForm):
 	class Meta:
 		model = Wine
 		fields = "__all__"
+		exclude = ('product',)
 
 
 class GroupForm(ModelForm):

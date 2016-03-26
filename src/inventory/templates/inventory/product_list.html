@@ -1,24 +1,28 @@
-{% include "header.html" %}
+{% extends "index.html" %}
+
+{% block content %}
 {% load i18n %}
 {% load inventory_extras %}
 
 <fieldset>
     <legend>{% trans "product_managment" %} [ {{ object_list.count }} ]</legend>
     <div><a href="create">{% trans "create_product" %}</a></div>
-
-    <div class="row">
-       <div class="col-md-1">{% trans "active" %}</div>
-       <div class="col-md-1">{% trans "code" %}</div>
-       <div class="col-md-4">{% trans "name" %}</div>
-       <div class="col-md-1">{% trans "price" %} {% trans "size" %}</div>
-       <div class="col-md-1">{% trans "is_wine" %}</div>
-       <div class="col-md-1">{% trans "is_new" %}</div>
-       <div class="col-md-3"></div>
-    </div>
-
+    <table id="products" class="display">
+    <thead>
+        <tr>
+            <th>{% trans "active" %}</th>
+            <th>{% trans "code" %}</th>
+            <th>{% trans "name" %}</th>
+            <th>{% trans "price" %}</th>
+            <th> {% trans "size" %}</th>
+            <th>{% trans "is_wine" %}{% trans "is_new" %}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
     {% for product in object_list %}
-    <div class="row">
-       <div class="col-md-1">
+    <tr>
+       <td>
            {% if product.active %}
                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                <a href="remove/{{ product.id }}">{% trans "remove" %}</a>
@@ -26,30 +30,36 @@
                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                <a href="add/{{ product.id }}">{% trans "add" %}</a>
            {% endif %}
-       </div>
-       <div class="col-md-1">{{ product.code }}</div>
-       <div class="col-md-4">{{ product.name }}</div>
-       <div class="col-md-1">{{ product.price }} {{ product.size }}</div>
-       <div class="col-md-1">
+       </td>
+       <td><a href="detail/{{ product.id }}">{{ product.code }}</a></td>
+       <td>{{ product.name }}</td>
+       <td>{{ product.price }}</td>
+       <td>{{ product.size }}</td>
+       <td>
            {% if product.is_wine %}
                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
            {% endif %}
-       </div>
-       <div class="col-md-1">
+
            {% if product.is_new %}
                 <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
            {% endif %}
-       </div>
+       </td>
 
-       <div class="col-md-3">
+       <td>
            <a href="edit/{{ product.id }}">{% trans "edit" %}</a> |
            <a href="delete/{{ product.id }}">{% trans "delete" %}</a>
-       </div>
-    </div>
+       </td>
+    </tr>
     {% endfor %}
-
+    </tbody>
+    </table>
 </fieldset>
 
 <a href="/inventory/">{% trans "back_to_menu" %}</a>
 
-{% include "footer.html" %}
+<script type="text/javascript">
+	$('#products')
+		.removeClass( 'display' )
+		.addClass('table table-striped cell-border table-border compact hover row-border');
+</script>
+{% endblock %}

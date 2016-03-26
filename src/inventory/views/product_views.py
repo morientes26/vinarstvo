@@ -1,5 +1,7 @@
 # coding=utf-8
 from django.core.urlresolvers import reverse_lazy
+from django.forms import formset_factory
+from django.forms.models import inlineformset_factory
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
 from inventory.forms import ProductForm, GroupForm, WineForm
@@ -77,20 +79,72 @@ class DetailProduct(TemplateView):
 		return render(request, self.template_name, context={'wine': wine, 'product': product})
 
 
-class CreateProduct(CreateView):
-	model = Product
-	form_class = ProductForm
-	success_url = reverse_lazy('list_products')
+class CreateProduct(View):
+
+	template_name = "inventory/product_create.html"
+
+	def get(self, request, *args, **kwargs):
+		print("get")
+		product_form = ProductForm()
+		wine_form = WineForm()
+		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
+
+	def post(self, request, *args, **kwargs):
+		print("post")
+		product_form = ProductForm(request.POST)
+		wine_form = WineForm(request.POST)
+		if all([product_form.is_valid(), wine_form.is_valid()]):
+			print("all valid")
+			product = product_form.save()
+			if product.is_wine:
+				wine = wine_form.save(commit=False)
+				wine.product = product
+				wine.save()
+		return redirect('list_products')
 
 
-class EditProduct(UpdateView):
-	model = Product
-	form_class = ProductForm
-	success_url = reverse_lazy('list_products')
+class EditProduct(View):
 
-	def form_valid(self, form):
-		print(form)
-		return super(EditProduct, self).form_valid(form)
+	template_name = "inventory/product_create.html"
+
+	def get(self, request, *args, **kwargs):
+		print("get")
+		wine_form = WineForm()
+		product = get_object_or_404(Product, pk=kwargs['pk'])
+		product_form = ProductForm(instance=product)
+		if product.is_wine:
+			wine = Wine.objects.get(product=product)
+			print(wine)
+			if wine:
+				wine_form = WineForm(instance=wine)
+		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
+
+	def post(self, request, *args, **kwargs):
+		product = get_object_or_404(Product, pk=kwargs['pk'])
+		product_form = ProductForm(data=request.POST, instance=product)
+		wine_form = WineForm(data=request.POST)
+		if product.is_wine:
+			wine = Wine.objects.get(product=product)
+			wine_form = WineForm(data=request.POST, instance=wine)
+
+		if product_form.is_valid():
+			print("valid")
+			pcd = product_form.cleaned_data
+			if pcd['is_wine']:
+				if wine_form.is_valid():
+					product = product_form.save()
+					wine = wine_form.save(commit=False)
+					wine.product = product
+					wine.save()
+					print("save product and wine")
+
+			else:
+				product_form.save()
+				print("save product")
+
+		for p in product_form.errors:
+			print(p)
+		return redirect('list_products')
 
 
 class AddProduct(TemplateView):

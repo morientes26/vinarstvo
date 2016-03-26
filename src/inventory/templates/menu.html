@@ -1,0 +1,13 @@
+{% block menu %}
+{% load i18n %}
+
+<fieldset>
+    <legend>Menu</legend>
+    <div>
+       <ul>
+            <li> <a href="{% url 'list_products' %}"> {% trans "product_managment" %} </a></li>
+            <li> <a href="{% url 'list_groups' %}"> {% trans "group_managment" %} </a></li>
+       </ul>
+    </div>
+</fieldset>
+{% endblock %}

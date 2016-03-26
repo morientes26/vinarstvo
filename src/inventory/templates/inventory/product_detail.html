@@ -1,4 +1,6 @@
-{% include "header.html" %}
+{% extends "index.html" %}
+
+{% block content %}
 {% load i18n %}
 
 <div class="row">
@@ -51,4 +53,4 @@
 
 <a href="{% url 'list_products' %}">{% trans "back" %}</a>
 
-{% include "footer.html" %}
+{% endblock %}
