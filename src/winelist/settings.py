@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 	'inventory',
 	'sync',
 	'rest_framework',
+	'djangobower',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -130,9 +131,19 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# init bower component
+STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',]
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'inventory/components')
+BOWER_INSTALLED_APPS = [
+	'jquery',
+	'bootstrap',
+	'datatables.net',
+	'datatables.net-dt',
+]
+
+# rest framework setting
 REST_FRAMEWORK = dict(DEFAULT_PERMISSION_CLASSES=[
 	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 ], DEFAULT_PARSER_CLASSES=(

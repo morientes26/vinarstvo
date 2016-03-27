@@ -9,12 +9,14 @@
     <meta name="description" content="Inventura produktov">
     <meta name="author" content="TP SOFT, s.r.o.">
 
-    <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "datatables/css/jquery.dataTables.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'datatables.net-dt/css/jquery.dataTables.min.css' %}">
 
-    <script src="{% static "jquery/jquery.min.js" %}"></script>
-    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-    <script type="text/javascript" charset="utf8" src="{% static "datatables/js/jquery.dataTables.js" %}"></script>
+    <script type="text/javascript" charset="utf8" src="{% static 'jquery/dist/jquery.js' %}"></script>
+    <script type="text/javascript" charset="utf8" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" charset="utf8" src="{% static 'datatables.net/js/jquery.dataTables.js' %}"></script>
+
+    <!-- initial javascript components -->
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             $('#products').DataTable();
