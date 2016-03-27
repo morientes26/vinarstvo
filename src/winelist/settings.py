@@ -152,7 +152,7 @@ NOSE_ARGS = [
 	'--with-coverage',
 	'--cover-package=inventory,sync',
 	'--cover-html',
-	'--verbosity=3',
+	'--verbosity=1',
 	'--cover-inclusive',
 ]
 

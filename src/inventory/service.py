@@ -19,6 +19,6 @@ def get_new_products():
 
 
 def get_all_products_in_cart():
-	products = Product.objects.all(active=True)
+	products = Product.objects.filter(active=True)
 	logging.info('get_all_products_in_cart - fetching %s data', products.count())
 	return products
