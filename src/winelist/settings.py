@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 	'sync',
 	'rest_framework',
 	'djangobower',
+	'django_nose',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -141,6 +142,18 @@ BOWER_INSTALLED_APPS = [
 	'bootstrap',
 	'datatables.net',
 	'datatables.net-dt',
+]
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+	'--with-coverage',
+	'--cover-package=inventory,sync',
+	'--cover-html',
+	'--verbosity=3',
+	'--cover-inclusive',
 ]
 
 # rest framework setting

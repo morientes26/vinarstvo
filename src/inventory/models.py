@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
-from django.core.urlresolvers import reverse
 from polymorphic.models import PolymorphicModel
 
 
@@ -13,9 +12,6 @@ class Photo(models.Model):
     """
     title = models.CharField(max_length=120, blank=True, help_text="titulok fotky")
     blob = models.BinaryField(blank=True)
-
-    def __str__(self):
-        return self.title
 
     def __unicode__(self):
         return self.title
@@ -45,9 +41,6 @@ class Product(models.Model):
     photos = models.ManyToManyField(Photo, help_text="fotky produktu")
 
     # Functions
-    def __str__(self):
-        return self.code + " - " + self.origin_name + " - new: " + str(self.is_new) + " " + self.name
-
     def __unicode__(self):
         return self.code + " - " + self.origin_name + " - new: " + str(self.is_new) + " " + self.name
 
@@ -57,9 +50,6 @@ class Group(models.Model):
     Group of product (vine, snack, drink...)
     """
     name = models.CharField(max_length=120, blank=False, help_text="názov skupiny")
-
-    def __str__(self):
-        return self.name
 
     def __unicode__(self):
         return self.name
@@ -72,9 +62,6 @@ class Award(models.Model):
     name = models.CharField(max_length=20, unique=True, help_text="názov")
     photo = models.ForeignKey('Photo', blank=True, help_text="malá fotka medaily/ocenenia")
 
-    def __str__(self):
-        return self.name
-
     def __unicode__(self):
         return self.name
 
@@ -85,9 +72,6 @@ class Specification(PolymorphicModel):
     """
     code = models.CharField(max_length=20, help_text="kod typu produktu")
     name = models.CharField(max_length=120, help_text="nazov typu produktu")
-
-    def __str__(self):
-        return self.code + " - " + self.name
 
     def __unicode__(self):
         return self.code + " - " + self.name
@@ -123,9 +107,6 @@ class Wine(models.Model):
     acidity = models.CharField(max_length=20, blank=True, help_text="celkové kyseliny")
     awards = models.ManyToManyField(Award, blank=True, help_text="medaily/ocenenia")
 
-    def __str__(self):
-        return "product_id: " + str(self.product.id) + " " + self.color + " " + str(self.year) + " " + self.locality
-
     def __unicode__(self):
         return "product_id: " + str(self.product.id) + " " + self.color + " " + str(self.year) + " " + self.locality
 
@@ -139,9 +120,6 @@ class Event(models.Model):
     date_to = models.DateTimeField(blank=True, null=True, help_text="datum a cas konca akcie")
     products = models.ManyToManyField(Product, blank=True, help_text="vyber produktov na ochutnavke/akcii")
 
-    def __str__(self):
-        return self.name + " " + str(self.date_from) + " " + str(self.date_to) + " " + str(self.products.__sizeof__())
-
     def __unicode__(self):
         return self.name + " " + str(self.date_from) + " " + str(self.date_to) + " " + str(self.products.__sizeof__())
 
@@ -152,9 +130,6 @@ class Item(models.Model):
     """
     product = models.ForeignKey('Product', blank=False, help_text="vybrany produkt")
     amount = models.IntegerField(blank=False, default=0, help_text="mnozstvo")
-
-    def __str__(self):
-        return self.product.name + " " + str(self.amount)
 
     def __unicode__(self):
         return self.product.name + " " + str(self.amount)
@@ -168,9 +143,6 @@ class Order(models.Model):
     event = models.ForeignKey('Event', blank=True, help_text="akcia / ochutnavka")
     items = models.ManyToManyField(Item, blank=True, help_text="vybrane produkty na akcii / ochutnavke")
     done = models.BooleanField(default=False, blank=False, help_text="vybavena objednavka")
-
-    def __str__(self):
-        return self.customer_name + " " + self.event.name + " " + str(self.items.__sizeof__())
 
     def __unicode__(self):
         return self.customer_name + " " + self.event.name + " " + str(self.items.__sizeof__())

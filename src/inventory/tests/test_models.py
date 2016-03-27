@@ -59,7 +59,7 @@ class ProductManageTestCase(TestCase):
     def test_add_awards(self):
         """ Add awards to product """
 
-        blob = inventory.utils.file_to_blob("test.data")
+        blob = inventory.utils.file_to_blob(self.TEST_FILE)
         photo = Photo.objects.create(title="fotka", blob=blob)
         award = Award.objects.create(name="Udelenie ceny c.1", photo=photo)
         self.wine.awards.add(award)
