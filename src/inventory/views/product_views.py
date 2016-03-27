@@ -59,7 +59,6 @@ class DetailProduct(TemplateView):
 				if wine:
 					context['wine'] = wine
 
-			context['product2'] = product
 		except Product.DoesNotExist:
 			print("Product not found")
 			raise

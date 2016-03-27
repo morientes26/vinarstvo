@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+import os
+
 from django.test import TestCase
 from inventory.models import Product, Wine, Order, Item, Event, Award, Photo, Group
 import inventory.utils
+from winelist.settings import BASE_DIR
 
 
 class ProductManageTestCase(TestCase):
@@ -10,6 +13,7 @@ class ProductManageTestCase(TestCase):
     product2 = None
     wine = None
     wine2 = None
+    TEST_FILE = BASE_DIR + "/inventory/static/test-data/test.cache"
 
     def setUp(self):
         group = Group.objects.create(name="Skupina tekutiny")
@@ -22,9 +26,14 @@ class ProductManageTestCase(TestCase):
                                                price=2.34, is_wine=True)
         self.wine2 = Wine.objects.create(product=self.product2, year=2015, attribute="DY",
                                          acidity="3.23 ph", locality="Velky Krtis")
+        self.create_test_file()
+
+    def tearDown(self):
+        self.delete_test_file()
 
     def test_product_has_specification_wine(self):
         """ Find product and specification data """
+
         wine = Wine.objects.get(product=self.product)
         self.assertEqual(self.product.origin_name, "Karpatska perla")
         self.assertEqual(self.product.group.name, "Skupina tekutiny")
@@ -34,6 +43,7 @@ class ProductManageTestCase(TestCase):
 
     def test_order_products(self):
         """ Ordering products """
+
         event = Event.objects.create(name="Ochutnavka c.1")
         product_1 = Product.objects.get(code="0123")
         product_2 = Product.objects.get(code="4567")
@@ -49,10 +59,19 @@ class ProductManageTestCase(TestCase):
     def test_add_awards(self):
         """ Add awards to product """
 
-        blob = inventory.utils.file_to_blob("/tmp/punk3.png")
+        blob = inventory.utils.file_to_blob("test.data")
         photo = Photo.objects.create(title="fotka", blob=blob)
         award = Award.objects.create(name="Udelenie ceny c.1", photo=photo)
         self.wine.awards.add(award)
         self.wine.save()
         winetest = Wine.objects.get(pk=self.wine.id)
         self.assertEqual(winetest.awards.first().name, "Udelenie ceny c.1")
+
+    def create_test_file(self):
+        if not os.path.isfile(self.TEST_FILE):
+            with open(self.TEST_FILE, 'w') as f:
+                f.write('Hello, world!\n')
+
+    def delete_test_file(self):
+        if os.path.isfile(self.TEST_FILE):
+            os.remove(self.TEST_FILE)
