@@ -4,7 +4,7 @@ Service for inventory managment
 
 import logging
 
-from models import Product
+from inventory.models import Product
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(name)-15s %(message)s',
 					datefmt='%m/%d/%Y %I:%M:%S %p',

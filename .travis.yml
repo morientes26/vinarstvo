@@ -10,6 +10,8 @@ python:
   - "nightly" # currently points to 3.6-dev
 # command to install dependencies
 install: "pip install -r requirements.txt"
+addons:
+  artifacts: true
 # command to run tests
 script: python manage.py test
 

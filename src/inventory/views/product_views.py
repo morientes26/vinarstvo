@@ -5,7 +5,7 @@ from django.utils import translation
 from inventory.forms import ProductForm, WineForm
 from inventory.models import Product, Wine
 from sync.service import sync_products_from_file
-from vanilla import DeleteView, ListView, TemplateView, View, DetailView
+from vanilla import DeleteView, ListView, TemplateView, View
 from winelist.settings import BASE_DIR
 
 
@@ -34,7 +34,8 @@ class ImportView(TemplateView):
 # change language en/sk
 
 class LangChangeView(TemplateView):
-	def get(self, request):
+
+	def get(self, request, *args, **kwargs):
 		lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
 		translation.activate(lang)
 		request.session[translation.LANGUAGE_SESSION_KEY] = lang
@@ -70,13 +71,13 @@ class CreateProduct(View):
 
 	template_name = 'inventory/product_create.html'
 
-	def get(self, request, *args, **kwargs):
+	def get(self, request):
 		print("get")
 		product_form = ProductForm()
 		wine_form = WineForm()
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
-	def post(self, request, *args, **kwargs):
+	def post(self, request):
 		print("post")
 		product_form = ProductForm(request.POST)
 		wine_form = WineForm(request.POST)
@@ -94,7 +95,7 @@ class EditProduct(View):
 
 	template_name = 'inventory/product_create.html'
 
-	def get(self, request, *args, **kwargs):
+	def get(self, request, **kwargs):
 		print("get")
 		wine_form = WineForm()
 		product = get_object_or_404(Product, pk=kwargs['pk'])
@@ -106,7 +107,7 @@ class EditProduct(View):
 				wine_form = WineForm(instance=wine)
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
-	def post(self, request, *args, **kwargs):
+	def post(self, request, **kwargs):
 		product = get_object_or_404(Product, pk=kwargs['pk'])
 		product_form = ProductForm(data=request.POST, instance=product)
 		wine_form = WineForm(data=request.POST)

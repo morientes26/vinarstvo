@@ -1,7 +1,7 @@
 from rest_framework import status, generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from sync.serializers import ProductSerializer, ProductDeserializer
+from sync.serializers import ProductSerializer
 from inventory.models import Product
 
 
@@ -27,7 +27,7 @@ class SyncView(generics.ListAPIView):
 
 
 @api_view(['GET', 'POST'])
-def product_sync(request, format=None):
+def product_sync(request):
 	"""
 	Getting all product from server.
 	"""
