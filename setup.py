@@ -25,9 +25,6 @@ _classifiers = (
     'Operating System :: Unix',
     'Topic :: Software Development :: Quality Assurance',
     'Programming Language :: Python :: 2.6',
-    'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3.3',
-    'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
 )
 
@@ -65,7 +62,7 @@ setup(
     version=_version,
     #packages=_packages,
     #package_data=_package_data,
-    #install_requires=_install_requires,
+    install_requires=_install_requires,
     license='GPLv2',
     classifiers=_classifiers,
     keywords='winelist'
