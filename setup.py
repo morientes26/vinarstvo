@@ -36,6 +36,13 @@ _classifiers = (
 #    'pylint-plugin-utils>=0.2.1'
 #]
 
+_install_requires = [
+    'Django>=1.9.2',
+    'django-bower>=5.1.0',
+    'django-nose>=1.4.3',
+    'django-polymorphic>=0.9.1',
+    'django-vanilla-views>=1.0.4',
+]
 
 # if sys.version_info < (2, 7):
 #     # pylint 1.4 dropped support for Python 2.6
