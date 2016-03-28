@@ -39,6 +39,13 @@ _install_requires = [
     'django-nose>=1.4.3',
     'django-polymorphic>=0.9.1',
     'django-vanilla-views>=1.0.4',
+    'django-vanilla-views>=1.0.4',
+    'djangorestframework>=3.3.3',
+    'djangorestframework-xml>=1.3.0',
+    'django-vanilla-views>=1.0.4',
+    'requests>=2.9.1',
+    'six>=1.10.0',
+    'defusedxml>=0.4.1',
 ]
 
 # if sys.version_info < (2, 7):
