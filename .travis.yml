@@ -5,10 +5,10 @@ python:
 # command to install dependencies
 install: 
   - "pip install -r requirements.txt"
+# if you want to upload artefact to S3 (amazon develop cloud)
 addons:
-  artifacts: true
+  artifacts: false
 # command to run tests
 script: 
-  - "python ./src/manage.py test inventory.tests"
-  - "fab test"
+  - "./src/fab test"
 #/home/travis/build/morientes26/winecart
