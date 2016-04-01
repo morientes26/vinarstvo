@@ -9,5 +9,7 @@ addons:
   artifacts: true
 # command to run tests
 script: 
-  - "python ./winecart/src/manage.py test inventory.tests"
+  - "pwd"
+  - "ls"
+#  - "python ./winecart/src/manage.py test inventory.tests"
 
