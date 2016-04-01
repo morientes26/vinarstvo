@@ -1,7 +1,7 @@
 language: python
 python:
   - "2.7"
-  - "3.5"
+#  - "3.5"
 # command to install dependencies
 install: 
   - "pip install -r requirements.txt"
@@ -9,7 +9,6 @@ addons:
   artifacts: true
 # command to run tests
 script: 
-  - "pwd"
-  - "ls"
-#  - "python ./winecart/src/manage.py test inventory.tests"
-
+  - "python ./src/manage.py test inventory.tests"
+  - "fab test"
+#/home/travis/build/morientes26/winecart
