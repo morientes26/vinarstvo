@@ -10,5 +10,7 @@ addons:
   artifacts: false
 # command to run tests
 script: 
-  - "./src/fab test"
+#  - "python ./src/manage.py test inventory.tests"
+  - "cd ./src"
+  - "fab test"
 #/home/travis/build/morientes26/winecart
