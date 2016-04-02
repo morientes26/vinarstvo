@@ -7,8 +7,16 @@ def test(module="inventory"):
 
 def bootsrap():
 	""" setup application, download frontend dependences """
-	print("not implemented yet")
+	""" it is importent to have installed 'npm' """
+	local("sudo npm install -g bower")
+	local("./manage.py bower_install")
 
+def localization():
+	""" build localization en, sk """
+	local("./manage.py makemessages -l sk")
+	local("./manage.py makemessages -l en")
+	local("./manage.py compilemessages -l sk")
+	local("./manage.py compilemessages -l en")
 
 def run():
 	""" run develop server """

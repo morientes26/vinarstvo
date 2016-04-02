@@ -11,17 +11,28 @@ from inventory.views.product_views import DetailProduct
 class InventoryViewTestCase(TestCase):
 
     ID = "1"
-    rq = None
+    factory = None
 
     def setUp(self):
         self.product = Product.objects.create(code="0123", origin_name="Karpatska perla", price=5.30, is_wine=True)
         self.ID = str(self.product.id)
-        self.rq = RequestFactory()
+        self.factory = RequestFactory()
+
 
     def test_index(self):
         """ index page """
         response = self.client.get("/inventory/")
         self.assertTemplateUsed(response, "index.html")
+
+    def  test_change_language(self):
+        """ test change language sk, en """
+        response = self.client.get("/inventory/change-language/")
+        self.assertEquals(response.status_code, 302)
+
+    def test_import(self):
+        """ test import product """
+        response = self.client.get("/inventory/product/import/")
+        self.assertTemplateUsed(response, "inventory/product_import.html")
 
     def test_setting_localization(self):
         """ set localization """

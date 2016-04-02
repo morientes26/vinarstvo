@@ -36,9 +36,13 @@ class ImportView(TemplateView):
 class LangChangeView(TemplateView):
 
 	def get(self, request, *args, **kwargs):
-		lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
-		translation.activate(lang)
-		request.session[translation.LANGUAGE_SESSION_KEY] = lang
+		lang = 'en'
+		if translation.LANGUAGE_SESSION_KEY in request.session:
+			lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
+			translation.activate(lang)
+			request.session[translation.LANGUAGE_SESSION_KEY] = lang
+		else:
+			request.session[translation.LANGUAGE_SESSION_KEY] = lang
 		return redirect('index')
 
 
