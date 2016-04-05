@@ -10,15 +10,17 @@
     <thead>
         <tr>
             <th>{% trans "customer" %}</th>
-            <th>{% trans "event" %}</th>            
+            <th>{% trans "event" %}</th>      
+            <th>{% trans "order_is_done" %}</th>         
             <th></th>
         </tr>
     </thead>
     <tbody>
         {% for order in object_list %}
         <tr>
-           <td><a href="{% url 'detail_order' pk=order.event.id %}">{{ order.customer_name }}</a></td>
+           <td><a href="{% url 'detail_order' pk=order.id %}">{{ order.customer_name }}</a></td>
            <td><a href=""> {{ order.event.name }} </a></td>
+           <td> {{ order.done }} </td>
            <td><a href="edit/{{ order.id }}">{% trans "edit" %}</a> | <a href="delete/{{ order.id }}">{% trans "delete" %}</a></td>      
         </tr>
         {% endfor %}

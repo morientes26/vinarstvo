@@ -1,18 +1,25 @@
 # coding=utf-8
 from django.core.urlresolvers import reverse_lazy
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from inventory.forms import OrderForm
 from inventory.models import Order
 from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
+from inventory.service import InventoryService
 
 import logging
 logger = logging.getLogger(__name__)
+service = InventoryService()
 
 # Views for groups management
 
 class ListOrders(ListView):
 	model = Order
 	queryset = Order.objects.all()
+
+
+class ListBackOrders(ListView):
+	model = Order
+	queryset = service.get_all_back_orders()
 
 
 class CreateOrder(CreateView):
@@ -25,6 +32,13 @@ class EditOrder(UpdateView):
 	model = Order
 	form_class = OrderForm
 	success_url = reverse_lazy('list_orders')
+
+
+class DoneOrder(TemplateView):
+	def get(self, request, *args, **kwargs):
+		service.done_order(kwargs['pk'])	
+		#TODO: message - order has been done
+		return redirect('list_orders')
 
 
 class DeleteOrder(DeleteView):
