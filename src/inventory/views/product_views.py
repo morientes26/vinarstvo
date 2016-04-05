@@ -1,4 +1,5 @@
 # coding=utf-8
+
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
@@ -8,13 +9,17 @@ from sync.service import sync_products_from_file
 from vanilla import DeleteView, ListView, TemplateView, View
 from winelist.settings import BASE_DIR
 
+import logging
+logger = logging.getLogger(__name__)
 
 # Views for products management
 
 class IndexView(TemplateView):
+
 	template_name = 'index.html'
 
 	def get(self, request, *args, **kwargs):
+		logger.debug("this is a debug message!")
 		return super(IndexView, self).get(request, args, kwargs)
 
 
@@ -58,10 +63,15 @@ class DetailProduct(TemplateView):
 		context = self.get_context_data()
 		wine = None
 		try:
-			product = get_object_or_404(Product, pk=kwargs['pk'])
+			id = kwargs['pk']
+			logger.debug("id = " + str(id))
+			product = get_object_or_404(Product, pk=id)
+			logger.debug("product = " + str(product.id))
 			if product.is_wine:
-				wine = Wine.objects.get(product=product)
+				logger.debug("product is wine")
+				wine = Wine.objects.filter(product=product)
 				if wine:
+					logger.debug("wine is for product [id]" + str(product.id))
 					context['wine'] = wine
 
 		except Product.DoesNotExist:
@@ -76,13 +86,11 @@ class CreateProduct(View):
 	template_name = 'inventory/product_create.html'
 
 	def get(self, request):
-		print("get")
 		product_form = ProductForm()
 		wine_form = WineForm()
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
 	def post(self, request):
-		print("post")
 		product_form = ProductForm(request.POST)
 		wine_form = WineForm(request.POST)
 		if all([product_form.is_valid(), wine_form.is_valid()]):
@@ -100,13 +108,11 @@ class EditProduct(View):
 	template_name = 'inventory/product_create.html'
 
 	def get(self, request, **kwargs):
-		print("get")
 		wine_form = WineForm()
 		product = get_object_or_404(Product, pk=kwargs['pk'])
 		product_form = ProductForm(instance=product)
 		if product.is_wine:
 			wine = Wine.objects.get(product=product)
-			print(wine)
 			if wine:
 				wine_form = WineForm(instance=wine)
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
@@ -120,7 +126,6 @@ class EditProduct(View):
 			wine_form = WineForm(data=request.POST, instance=wine)
 
 		if product_form.is_valid():
-			print("valid")
 			pcd = product_form.cleaned_data
 			if pcd['is_wine']:
 				if wine_form.is_valid():
@@ -128,11 +133,9 @@ class EditProduct(View):
 					wine = wine_form.save(commit=False)
 					wine.product = product
 					wine.save()
-					print("save product and wine")
 
 			else:
 				product_form.save()
-				print("save product")
 
 		for p in product_form.errors:
 			print(p)
