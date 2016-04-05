@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-26 12:35+0100\n"
+"POT-Creation-Date: 2016-04-05 17:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: inventory/templates/header.html:24
+#: inventory/templates/header.html:27
 #, fuzzy
 #| msgid "inventory"
 msgid "title_inventory"
 msgstr "Inventár"
 
 #: inventory/templates/inventory/group_confirm_delete.html:6
+#: inventory/templates/inventory/order_confirm_delete.html:6
 msgid "confirm_delete_group"
 msgstr "Naozaj si prajete vymazať skupinu?"
 
@@ -34,14 +35,38 @@ msgid "group_managment"
 msgstr "Správa skupín"
 
 #: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/order_list.html:22
 #: inventory/templates/inventory/product_list.html:50
 msgid "edit"
 msgstr "editovať"
 
 #: inventory/templates/inventory/group_list.html:11
+#: inventory/templates/inventory/order_list.html:22
 #: inventory/templates/inventory/product_list.html:51
 msgid "delete"
 msgstr "vymazať"
+
+#: inventory/templates/inventory/order_detail.html:11
+#: inventory/templates/inventory/product_detail.html:54
+#: inventory/templates/inventory/product_form.html:23
+msgid "back"
+msgstr "späť"
+
+#: inventory/templates/inventory/order_list.html:7
+#, fuzzy
+#| msgid "product_managment"
+msgid "order_managment"
+msgstr "Správa produktov"
+
+#: inventory/templates/inventory/order_list.html:12
+msgid "customer"
+msgstr ""
+
+#: inventory/templates/inventory/order_list.html:13
+#, fuzzy
+#| msgid "event_list"
+msgid "event"
+msgstr "Zoznam akcií"
 
 #: inventory/templates/inventory/product_confirm_delete.html:6
 msgid "confirm_delete_product"
@@ -51,11 +76,6 @@ msgstr "Naozaj si prajete vymazať produkt?"
 #: inventory/templates/inventory/product_form.html:20
 msgid "save"
 msgstr "uložiť"
-
-#: inventory/templates/inventory/product_detail.html:54
-#: inventory/templates/inventory/product_form.html:23
-msgid "back"
-msgstr "späť"
 
 #: inventory/templates/inventory/product_import.html:7
 #: inventory/templates/menu.html:19

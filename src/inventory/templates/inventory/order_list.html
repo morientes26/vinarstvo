@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+
+<fieldset>
+    <legend>{% trans "order_managment" %} [ {{ object_list.count }} ]</legend>
+
+    <table id="orders" class="display">
+    <thead>
+        <tr>
+            <th>{% trans "customer" %}</th>
+            <th>{% trans "event" %}</th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in object_list %}
+        <tr>
+           <td><a href="{% url 'detail_order' pk=order.event.id %}">{{ order.customer_name }}</a></td>
+           <td><a href=""> {{ order.event.name }} </a></td>
+           <td><a href="edit/{{ order.id }}">{% trans "edit" %}</a> | <a href="delete/{{ order.id }}">{% trans "delete" %}</a></td>      
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</fieldset>
+
+{% endblock %}

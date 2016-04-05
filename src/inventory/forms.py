@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, BooleanField
-from inventory.models import Product, Group, Wine
+from inventory.models import Product, Group, Wine, Order
 
 
 class ProductForm(ModelForm):
@@ -31,3 +31,9 @@ class GroupForm(ModelForm):
 	class Meta:
 		model = Group
 		fields = "__all__"
+
+
+class OrderForm(ModelForm):
+	class Meta:
+		model = Order
+		fields = "__all__"	

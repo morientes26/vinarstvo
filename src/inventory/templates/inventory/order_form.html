@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<form method="post" action="">
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            {{ field.label_tag }} <br>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <input type="submit" value="ulozit">
+</form>
+
+{% endblock %}

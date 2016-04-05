@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from views.product_views import *
 from views.group_views import *
+from views.order_views import *
 
 urlpatterns = [
 	# index page
@@ -23,5 +24,12 @@ urlpatterns = [
 	url(r'^group/create/$', CreateGroup.as_view(), name='create_group'),
 	url(r'^group/edit/(?P<pk>\d+)/$', EditGroup.as_view(), name='edit_group'),
 	url(r'^group/delete/(?P<pk>\d+)/$', DeleteGroup.as_view(), name='delete_group'),
+
+	# order page for managing orders
+	url(r'^order/$', ListOrders.as_view(), name='list_orders'),
+	url(r'^order/create/$', CreateOrder.as_view(), name='create_order'),
+	url(r'^order/edit/(?P<pk>\d+)/$', EditOrder.as_view(), name='edit_order'),
+	url(r'^order/detail/(?P<pk>\d+)/$', DetailOrder.as_view(), name='detail_order'),
+	url(r'^order/delete/(?P<pk>\d+)/$', DeleteOrder.as_view(), name='delete_order'),	
 
 ]

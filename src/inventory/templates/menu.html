@@ -26,9 +26,9 @@
         <ul class="nav navbar-nav collapse navbar-collapse">
 
            <li class="dropdown">
-            <a id="g-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+            <a id="m-group" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
                href="#">{% trans "group_managment" %}<span class="caret"></span></a>
-               <ul class="dropdown-menu" aria-labelledby="g-product">
+               <ul class="dropdown-menu" aria-labelledby="m-group">
                    <li><a href="{% url 'list_groups' %}">{% trans "group_list" %}</a></li>
                    <li><a href="{% url 'create_group' %}">{% trans "create_group" %}</a>
                </ul>
@@ -39,9 +39,9 @@
        <ul class="nav navbar-nav collapse navbar-collapse">
 
            <li class="dropdown">
-            <a id="e-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+            <a id="m-event" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
                href="#">{% trans "event_managment" %}<span class="caret"></span></a>
-               <ul class="dropdown-menu" aria-labelledby="e-product">
+               <ul class="dropdown-menu" aria-labelledby="e-event">
                    <li><a href="">{% trans "event_list" %}</a></li>
                    <li><a href="">{% trans "create_event" %}</a>
                </ul>
@@ -50,7 +50,14 @@
        </ul>
 
        <ul class="nav navbar-nav">
-            <li><a class="navbar-band" href="">{% trans "order_list" %}</a></li>
+            <li class="dropdown">
+            <a id="m-order" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+               href="#">{% trans "order_managment" %}<span class="caret"></span></a>
+               <ul class="dropdown-menu" aria-labelledby="e-order">
+                   <li><a href="{% url 'list_orders' %}">{% trans "order_list" %}</a></li>
+                   <li><a href="{% url 'create_order' %}">{% trans "create_order" %}</a>
+               </ul>
+           </li>
        </ul>
 
     </div>
