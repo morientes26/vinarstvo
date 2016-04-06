@@ -3,6 +3,7 @@
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
+from django.contrib import messages
 from inventory.forms import ProductForm, WineForm
 from inventory.models import Product, Wine
 from sync.service import sync_products_from_file
@@ -84,22 +85,25 @@ class DetailProduct(TemplateView):
 class CreateProduct(View):
 
 	template_name = 'inventory/product_create.html'
+	success_message = "Product was created successfully"	
 
 	def get(self, request):
 		product_form = ProductForm()
 		wine_form = WineForm()
+
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
 	def post(self, request):
 		product_form = ProductForm(request.POST)
 		wine_form = WineForm(request.POST)
 		if all([product_form.is_valid(), wine_form.is_valid()]):
-			print("all valid")
 			product = product_form.save()
 			if product.is_wine:
 				wine = wine_form.save(commit=False)
 				wine.product = product
 				wine.save()
+			messages.add_message(request, messages.INFO, success_message)
+			
 		return redirect('list_products')
 
 
@@ -139,6 +143,7 @@ class EditProduct(View):
 
 		for p in product_form.errors:
 			print(p)
+		
 		return redirect('list_products')
 
 
