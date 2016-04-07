@@ -48,8 +48,12 @@ class InventoryService:
 		return orders
 
 	def done_order(self, id):
-		order = Order.objects.get(pk=id)
-		order.done = True
-		order.save()
-		logger.debug('done_order - fetching %s data', order)
+		try:
+			order = Order.objects.get(pk=id)
+			order.done = True
+			order.save()
+			logger.debug('done_order - fetching %s data', order)
+		except Product.DoesNotExist:
+			logger.error("Order not found")
+			raise	
 		return order

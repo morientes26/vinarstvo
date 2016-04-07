@@ -1,6 +1,8 @@
 # coding=utf-8
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib import messages
+from django.utils.translation import ugettext as _
 from inventory.forms import OrderForm
 from inventory.models import Order
 from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
@@ -35,9 +37,10 @@ class EditOrder(UpdateView):
 
 
 class DoneOrder(TemplateView):
+	
 	def get(self, request, *args, **kwargs):
 		service.done_order(kwargs['pk'])	
-		#TODO: message - order has been done
+		messages.add_message(request, messages.INFO, _("order_done"))
 		return redirect('list_orders')
 
 
@@ -51,14 +54,5 @@ class DetailOrder(TemplateView):
 
 	def get(self, request, *args, **kwargs):
 		context = self.get_context_data()
-		try:
-			id = kwargs['pk']
-			logger.debug("id = " + str(id))
-			order = get_object_or_404(Order, pk=id)
-			logger.debug("order = " + str(order.id))			
-
-		except Order.DoesNotExist:
-			print("Order not found")
-			raise
-
+		order = get_object_or_404(Order, pk=kwargs['pk'])
 		return render(request, self.template_name, context={'order': order})

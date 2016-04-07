@@ -46,9 +46,8 @@ class LangChangeView(TemplateView):
 		if translation.LANGUAGE_SESSION_KEY in request.session:
 			lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
 			translation.activate(lang)
-			request.session[translation.LANGUAGE_SESSION_KEY] = lang
-		else:
-			request.session[translation.LANGUAGE_SESSION_KEY] = lang
+			
+		request.session[translation.LANGUAGE_SESSION_KEY] = lang
 		return redirect('index')
 
 
@@ -62,22 +61,16 @@ class DetailProduct(TemplateView):
 
 	def get(self, request, *args, **kwargs):
 		context = self.get_context_data()
-		wine = None
-		try:
-			id = kwargs['pk']
-			logger.debug("id = " + str(id))
-			product = get_object_or_404(Product, pk=id)
-			logger.debug("product = " + str(product.id))
-			if product.is_wine:
-				logger.debug("product is wine")
-				wine = Wine.objects.filter(product=product)
-				if wine:
-					logger.debug("wine is for product [id]" + str(product.id))
-					context['wine'] = wine
+		wine = None		
 
-		except Product.DoesNotExist:
-			print("Product not found")
-			raise
+		product = get_object_or_404(Product, pk=kwargs['pk'])
+		logger.debug("product = " + str(product.id))
+		if product.is_wine:
+			logger.debug("product is wine")
+			wine = Wine.objects.filter(product=product)
+			if wine:
+				logger.debug("wine is for product [id]" + str(product.id))
+				context['wine'] = wine
 
 		return render(request, self.template_name, context={'wine': wine, 'product': product})
 
@@ -85,12 +78,10 @@ class DetailProduct(TemplateView):
 class CreateProduct(View):
 
 	template_name = 'inventory/product_create.html'
-	success_message = "Product was created successfully"	
 
 	def get(self, request):
 		product_form = ProductForm()
 		wine_form = WineForm()
-
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
 	def post(self, request):
@@ -102,7 +93,7 @@ class CreateProduct(View):
 				wine = wine_form.save(commit=False)
 				wine.product = product
 				wine.save()
-			messages.add_message(request, messages.INFO, success_message)
+			messages.add_message(request, messages.INFO, _("product_created"))
 			
 		return redirect('list_products')
 
