@@ -4,6 +4,14 @@
 
 <form method="post" action="">
     {% csrf_token %}
+
+
+	<div class="fieldWrapper">
+	     {{ form.name.errors }}
+	     {{ form.name.label_tag }}
+	     {{ form.name }}
+	</div>
+
     {% for field in form %}
         <div>
             {{ field.label_tag }} <br>
