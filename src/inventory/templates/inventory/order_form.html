@@ -18,6 +18,25 @@
             {{ field }}
         </div>
     {% endfor %}
+
+    {% for product in products %}
+        <ul>
+            <li>
+                <label for="{{ product.id }}">{{ product.name }}</label> 
+                {% for item in items %}  
+                    {{ item.product.id }}
+                    {% if item.product.id == product.id %}    
+                        <input type="checkbox" name="ch_products" id="{{ product.id }}" value="{{ product.id }}" checked />
+                        <input type="number" step="1" />
+                    {% else %}
+                        <input type="checkbox" name="ch_products" id="{{ product.id }}" value="{{ product.id }}" />
+                        <input type="number" step="1" />
+                    {% endif %}
+                {% endfor %}
+            </li>
+        </ul>
+    {% endfor %}
+
     <input type="submit" value="ulozit">
 </form>
 

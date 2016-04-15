@@ -35,6 +35,12 @@ class EditOrder(UpdateView):
 	form_class = OrderForm
 	success_url = reverse_lazy('list_orders')
 
+	def get_context_data(self, **kwargs):
+		context = super(EditOrder, self).get_context_data(**kwargs)
+		context['products'] = service.get_all_products_in_cart()
+		context['items'] = self.object.items
+		return context
+
 
 class DoneOrder(TemplateView):
 	
