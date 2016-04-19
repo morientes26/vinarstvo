@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 # Views for products management
 
+
 class IndexView(TemplateView):
 
 	template_name = 'index.html'

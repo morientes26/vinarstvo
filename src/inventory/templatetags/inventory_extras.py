@@ -17,3 +17,20 @@ def flag_check(value):
 		return yes
 	else:
 		return no
+
+
+@register.filter
+def is_choosen(product, items):
+
+	for it in items.all():
+		if product == it.product:
+			return "checked"
+	return ""
+
+
+@register.filter
+def get_amount(product, items):
+	for it in items.all():
+		if product == it.product:
+			return it.amount
+	return 0

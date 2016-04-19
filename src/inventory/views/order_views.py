@@ -1,10 +1,11 @@
 # coding=utf-8
 from django.core.urlresolvers import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from inventory.forms import OrderForm
-from inventory.models import Order
+from inventory.models import Order, Item, Product
 from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
 from inventory.service import InventoryService
 
@@ -40,6 +41,30 @@ class EditOrder(UpdateView):
 		context['products'] = service.get_all_products_in_cart()
 		context['items'] = self.object.items
 		return context
+
+	def post(self, request, *args, **kwargs):
+		self.object = self.get_object()
+		form = self.get_form(data=request.POST, instance=self.object)
+		items = []
+
+		#TODO: sem este validacia
+		for field in request.POST:
+			if field.startswith('p_'):
+				id = request.POST[field]
+				amount = request.POST['a_'+id]
+				item = Item.objects.create(product=Product.objects.get(pk=id), amount=int(amount))
+				items.append(item)
+
+		if form.is_valid():
+			self.object = form.save()
+			for it in self.object.items.all():
+				it.delete()
+
+			self.object.items.add(*items)
+			self.object.save()
+			return HttpResponseRedirect(self.get_success_url())
+
+		return self.form_invalid(form)
 
 
 class DoneOrder(TemplateView):

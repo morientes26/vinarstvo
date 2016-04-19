@@ -36,4 +36,5 @@ class GroupForm(ModelForm):
 class OrderForm(ModelForm):
 	class Meta:
 		model = Order
-		fields = "__all__"	
+		fields = "__all__"
+		exclude = ('items', 'done')

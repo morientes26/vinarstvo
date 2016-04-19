@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 17:25+0200\n"
+"POT-Creation-Date: 2016-04-19 08:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: inventory/templates/header.html:27
-#, fuzzy
-#| msgid "inventory"
 msgid "title_inventory"
 msgstr "Inventár"
 
@@ -35,38 +33,68 @@ msgid "group_managment"
 msgstr "Správa skupín"
 
 #: inventory/templates/inventory/group_list.html:11
-#: inventory/templates/inventory/order_list.html:22
+#: inventory/templates/inventory/order_list.html:24
 #: inventory/templates/inventory/product_list.html:50
 msgid "edit"
 msgstr "editovať"
 
 #: inventory/templates/inventory/group_list.html:11
-#: inventory/templates/inventory/order_list.html:22
+#: inventory/templates/inventory/order_list.html:24
 #: inventory/templates/inventory/product_list.html:51
 msgid "delete"
 msgstr "vymazať"
 
-#: inventory/templates/inventory/order_detail.html:11
-#: inventory/templates/inventory/product_detail.html:54
+#: inventory/templates/inventory/order_detail.html:8
+msgid "done_order"
+msgstr ""
+
+#: inventory/templates/inventory/order_detail.html:12
+#: inventory/templates/inventory/product_detail.html:73
 #: inventory/templates/inventory/product_form.html:23
 msgid "back"
 msgstr "späť"
 
-#: inventory/templates/inventory/order_list.html:7
+#: inventory/templates/inventory/order_form.html:27
+msgid "in_cart"
+msgstr ""
+
+#: inventory/templates/inventory/order_form.html:30
 #, fuzzy
 #| msgid "product_managment"
-msgid "order_managment"
+msgid "product_name"
 msgstr "Správa produktov"
+
+#: inventory/templates/inventory/order_form.html:33
+#: inventory/templates/inventory/product_detail.html:9
+#, fuzzy
+#| msgid "product_list"
+msgid "product_price"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/order_form.html:36
+#, fuzzy
+#| msgid "product_managment"
+msgid "product_amount"
+msgstr "Správa produktov"
+
+#: inventory/templates/inventory/order_list.html:7
+#: inventory/templates/menu.html:55
+msgid "order_managment"
+msgstr "Správa objednávok"
 
 #: inventory/templates/inventory/order_list.html:12
 msgid "customer"
-msgstr ""
+msgstr "zákazník"
 
 #: inventory/templates/inventory/order_list.html:13
-#, fuzzy
-#| msgid "event_list"
 msgid "event"
 msgstr "Zoznam akcií"
+
+#: inventory/templates/inventory/order_list.html:14
+#, fuzzy
+#| msgid "order_list"
+msgid "order_is_done"
+msgstr "Správa objednávok"
 
 #: inventory/templates/inventory/product_confirm_delete.html:6
 msgid "confirm_delete_product"
@@ -76,6 +104,48 @@ msgstr "Naozaj si prajete vymazať produkt?"
 #: inventory/templates/inventory/product_form.html:20
 msgid "save"
 msgstr "uložiť"
+
+#: inventory/templates/inventory/product_detail.html:7
+#, fuzzy
+#| msgid "product_list"
+msgid "product_code"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/product_detail.html:8
+#, fuzzy
+#| msgid "product_managment"
+msgid "product_origin_name"
+msgstr "Správa produktov"
+
+#: inventory/templates/inventory/product_detail.html:10
+#, fuzzy
+#| msgid "product_list"
+msgid "product_size"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/product_detail.html:11
+#, fuzzy
+#| msgid "product_list"
+msgid "product_import_date"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/product_detail.html:23
+#, fuzzy
+#| msgid "product_list"
+msgid "product_active"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/product_detail.html:24
+#, fuzzy
+#| msgid "product_list"
+msgid "product_group"
+msgstr "Zoznam produktov"
+
+#: inventory/templates/inventory/product_detail.html:25
+#, fuzzy
+#| msgid "product_list"
+msgid "product_description"
+msgstr "Zoznam produktov"
 
 #: inventory/templates/inventory/product_import.html:7
 #: inventory/templates/menu.html:19
@@ -155,10 +225,28 @@ msgstr "Zoznam akcií"
 msgid "create_event"
 msgstr "Vytvoriť novú akciu"
 
-#: inventory/templates/menu.html:53
+#: inventory/templates/menu.html:57
 msgid "order_list"
 msgstr "Správa objednávok"
 
-#: inventory/templates/menu.html:59
+#: inventory/templates/menu.html:58
+#, fuzzy
+#| msgid "create_product"
+msgid "create_order"
+msgstr "Vytvoriť nový produkt"
+
+#: inventory/templates/menu.html:66
 msgid "language"
 msgstr "en"
+
+#: inventory/views/order_views.py:74
+#, fuzzy
+#| msgid "order_managment"
+msgid "order_done"
+msgstr "Správa objednávok"
+
+#: inventory/views/product_views.py:97
+#, fuzzy
+#| msgid "product_list"
+msgid "product_created"
+msgstr "Zoznam produktov"

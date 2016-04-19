@@ -1,8 +1,10 @@
 {% extends "index.html" %}
 
 {% block content %}
+{% load i18n %}
+{% load inventory_extras %}
 
-<form method="post" action="">
+<form method="post" action="" xmlns:product>
     {% csrf_token %}
 
 
@@ -19,22 +21,37 @@
         </div>
     {% endfor %}
 
+
+    <div class="row">
+        <div class="col-md-1">
+            {% trans "in_cart" %}
+        </div>
+        <div class="col-md-6">
+           {% trans "product_name" %}
+        </div>
+        <div class="col-md-1">
+            {% trans "product_price" %}
+        </div>
+        <div class="col-md-2">
+             {% trans "product_amount" %}
+        </div>
+    </div>
+
     {% for product in products %}
-        <ul>
-            <li>
-                <label for="{{ product.id }}">{{ product.name }}</label> 
-                {% for item in items %}  
-                    {{ item.product.id }}
-                    {% if item.product.id == product.id %}    
-                        <input type="checkbox" name="ch_products" id="{{ product.id }}" value="{{ product.id }}" checked />
-                        <input type="number" step="1" />
-                    {% else %}
-                        <input type="checkbox" name="ch_products" id="{{ product.id }}" value="{{ product.id }}" />
-                        <input type="number" step="1" />
-                    {% endif %}
-                {% endfor %}
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-md-1">
+                <input type="checkbox" name="p_{{ product.id }}" id="p_{{ product.id }}" value="{{ product.id }}" {{  product|is_choosen:items }} />
+            </div>
+            <div class="col-md-6">
+                <label for="p_{{ product.id }}">{{ product.name }}</label>
+            </div>
+            <div class="col-md-1">
+                {{ product.price }} €
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="a_{{ product.id }}" step="1" id="a_{{ product.id }}" value="{{ product|get_amount:items }}" />
+            </div>
+        </div>
     {% endfor %}
 
     <input type="submit" value="ulozit">

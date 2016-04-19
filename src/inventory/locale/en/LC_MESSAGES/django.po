@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-05 17:25+0200\n"
+"POT-Creation-Date: 2016-04-19 08:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: inventory/templates/header.html:27
-#, fuzzy
-#| msgid "inventory"
 msgid "title_inventory"
 msgstr "Inventory"
 
@@ -34,38 +32,68 @@ msgid "group_managment"
 msgstr "Group management"
 
 #: inventory/templates/inventory/group_list.html:11
-#: inventory/templates/inventory/order_list.html:22
+#: inventory/templates/inventory/order_list.html:24
 #: inventory/templates/inventory/product_list.html:50
 msgid "edit"
 msgstr "edit"
 
 #: inventory/templates/inventory/group_list.html:11
-#: inventory/templates/inventory/order_list.html:22
+#: inventory/templates/inventory/order_list.html:24
 #: inventory/templates/inventory/product_list.html:51
 msgid "delete"
 msgstr "delete"
 
-#: inventory/templates/inventory/order_detail.html:11
-#: inventory/templates/inventory/product_detail.html:54
+#: inventory/templates/inventory/order_detail.html:8
+msgid "done_order"
+msgstr ""
+
+#: inventory/templates/inventory/order_detail.html:12
+#: inventory/templates/inventory/product_detail.html:73
 #: inventory/templates/inventory/product_form.html:23
 msgid "back"
 msgstr "back"
 
-#: inventory/templates/inventory/order_list.html:7
+#: inventory/templates/inventory/order_form.html:27
+msgid "in_cart"
+msgstr ""
+
+#: inventory/templates/inventory/order_form.html:30
 #, fuzzy
 #| msgid "product_managment"
-msgid "order_managment"
+msgid "product_name"
 msgstr "Product management"
+
+#: inventory/templates/inventory/order_form.html:33
+#: inventory/templates/inventory/product_detail.html:9
+#, fuzzy
+#| msgid "product_list"
+msgid "product_price"
+msgstr "Products list"
+
+#: inventory/templates/inventory/order_form.html:36
+#, fuzzy
+#| msgid "product_managment"
+msgid "product_amount"
+msgstr "Product management"
+
+#: inventory/templates/inventory/order_list.html:7
+#: inventory/templates/menu.html:55
+msgid "order_managment"
+msgstr "Order management"
 
 #: inventory/templates/inventory/order_list.html:12
 msgid "customer"
-msgstr ""
+msgstr "customer"
 
 #: inventory/templates/inventory/order_list.html:13
-#, fuzzy
-#| msgid "event_list"
 msgid "event"
-msgstr "Orders management"
+msgstr "Event management"
+
+#: inventory/templates/inventory/order_list.html:14
+#, fuzzy
+#| msgid "order_list"
+msgid "order_is_done"
+msgstr "Orders list"
 
 #: inventory/templates/inventory/product_confirm_delete.html:6
 msgid "confirm_delete_product"
@@ -75,6 +103,48 @@ msgstr "Are you sure to delete product?"
 #: inventory/templates/inventory/product_form.html:20
 msgid "save"
 msgstr "save"
+
+#: inventory/templates/inventory/product_detail.html:7
+#, fuzzy
+#| msgid "product_list"
+msgid "product_code"
+msgstr "Products list"
+
+#: inventory/templates/inventory/product_detail.html:8
+#, fuzzy
+#| msgid "product_managment"
+msgid "product_origin_name"
+msgstr "Product management"
+
+#: inventory/templates/inventory/product_detail.html:10
+#, fuzzy
+#| msgid "product_list"
+msgid "product_size"
+msgstr "Products list"
+
+#: inventory/templates/inventory/product_detail.html:11
+#, fuzzy
+#| msgid "product_list"
+msgid "product_import_date"
+msgstr "Products list"
+
+#: inventory/templates/inventory/product_detail.html:23
+#, fuzzy
+#| msgid "product_list"
+msgid "product_active"
+msgstr "Products list"
+
+#: inventory/templates/inventory/product_detail.html:24
+#, fuzzy
+#| msgid "product_list"
+msgid "product_group"
+msgstr "Products list"
+
+#: inventory/templates/inventory/product_detail.html:25
+#, fuzzy
+#| msgid "product_list"
+msgid "product_description"
+msgstr "Products list"
 
 #: inventory/templates/inventory/product_import.html:7
 #: inventory/templates/menu.html:19
@@ -154,10 +224,28 @@ msgstr "Events list"
 msgid "create_event"
 msgstr "Create new event"
 
-#: inventory/templates/menu.html:53
+#: inventory/templates/menu.html:57
 msgid "order_list"
 msgstr "Orders list"
 
-#: inventory/templates/menu.html:59
+#: inventory/templates/menu.html:58
+#, fuzzy
+#| msgid "create_product"
+msgid "create_order"
+msgstr "Create new product"
+
+#: inventory/templates/menu.html:66
 msgid "language"
 msgstr "sk"
+
+#: inventory/views/order_views.py:74
+#, fuzzy
+#| msgid "order_managment"
+msgid "order_done"
+msgstr "Order management"
+
+#: inventory/views/product_views.py:97
+#, fuzzy
+#| msgid "product_list"
+msgid "product_created"
+msgstr "Products list"
