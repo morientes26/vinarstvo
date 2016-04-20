@@ -89,7 +89,7 @@ class Wine(models.Model):
     WINE_COLOR = (('RED', 'červené'), ('WHITE', 'biele'), ('ROSE', 'ružové'))
     color = models.CharField(max_length=5, choices=WINE_COLOR, blank=True, help_text="farba vína")
 
-    year = models.IntegerField(null=True, help_text="ročník", blank=True)
+    year = models.IntegerField(null=True, help_text="ročník", blank=True, default="")
 
     WINE_ATTRIBUTE = [('SV', 'Stolové víno'), ('AV', 'Akostné víno'), ('KV', 'Kabinetné víno'),
                       ('NZ', 'Neskorý zber'), ('VH', 'Výber z hrozna'), ('BV', 'Bobuľový výber'),
@@ -97,18 +97,18 @@ class Wine(models.Model):
                       ('VC', 'Výber z cibéb')]
     attribute = models.CharField(max_length=5, blank=True, choices=WINE_ATTRIBUTE, help_text="prívlastok")
 
-    locality = models.CharField(max_length=60, blank=True, help_text="lokalita")
-    sugar_content = models.CharField(max_length=20, blank=True, help_text="cukornatost")
-    alcohol = models.CharField(max_length=20, blank=True, help_text="alkohol")
+    locality = models.CharField(max_length=60, blank=True, help_text="lokalita", default="")
+    sugar_content = models.CharField(max_length=20, blank=True, help_text="cukornatost", default="")
+    alcohol = models.CharField(max_length=20, blank=True, help_text="alkohol", default="")
 
     WINE_RESIDUAL = (('DY', 'suché'), ('HD', 'polosuché'), ('HS', 'polosladké'), ('SW', 'sladké'))
     sugar_residual = models.CharField(max_length=2, blank=True, choices=WINE_RESIDUAL, help_text="zbytkový cukor")
 
-    acidity = models.CharField(max_length=20, blank=True, help_text="celkové kyseliny")
+    acidity = models.CharField(max_length=20, blank=True, help_text="celkové kyseliny", default="")
     awards = models.ManyToManyField(Award, blank=True, help_text="medaily/ocenenia")
 
     def __unicode__(self):
-        return "product_id: " + str(self.product.id) + " " + self.color + " " + str(self.year) + " " + self.locality
+        return "pk: " + str(self.pk) + " " + "product_id: " + str(self.product.id) + " " + str(self.year) + " " + self.locality
 
 
 class Event(models.Model):

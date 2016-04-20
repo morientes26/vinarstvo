@@ -3,69 +3,107 @@
 {% block content %}
 {% load i18n %}
 
-<div class="row">
-   <div class="col-md-2">{% trans "product_code" %}</div>
-   <div class="col-md-4"> {% trans "product_origin_name" %}</div>
-   <div class="col-md-2"> {% trans "product_price" %}</div>
-   <div class="col-md-2"> {% trans "product_size" %}</div>
-   <div class="col-md-2"> {% trans "product_import_date" %}</div>
-</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th class="col-md-2">{% trans "product_code" %}</th>
+        <th class="col-md-2"> {% trans "product_origin_name" %}</th>
+        <th class="col-md-2"> {% trans "product_name" %}</th>
+        <th class="col-md-2"> {% trans "product_price" %}</th>
+        <th class="col-md-2"> {% trans "product_size" %}</th>
+        <th class="col-md-2"> {% trans "product_import_date" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ product.code }}</td>
+        <td>{{ product.origin_name }}</td>
+        <td>{{ product_form.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.import_date }}</td>
+    </tr>
+    </tbody>
+</table>
 
-<div class="row">
-   <div class="col-md-2">{{ product.code }}</div>
-   <div class="col-md-4">{{ product.origin_name }}</div>
-   <div class="col-md-2">{{ product.price }}</div>
-   <div class="col-md-2">{{ product.size }}</div>
-   <div class="col-md-2">{{ product.import_date }}</div>
-</div>
-
-<div class="row">
-   <div class="col-md-1"> {% trans "product_active" %}</div>
-   <div class="col-md-2"> {% trans "product_group" %}</div>
-   <div class="col-md-6"> {% trans "product_description" %}</div>
-</div>
-
-<div class="row">
-   <div class="col-md-1">{{ product.active }}</div>
-   <div class="col-md-2">
-       {% if product.group %}
-            {{ product.group.name }}
-       {% endif %}
-   </div>
-   <div class="col-md-6">{{ product.description }}</div>
-</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th class="col-md-2"> {% trans "product_active" %}</th>
+        <th class="col-md-4"> {% trans "product_group" %}</th>
+        <th class="col-md-6"> {% trans "product_description" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ product.active }}</td>
+        <td>
+           {% if product.group %}
+                {{ product.group.name }}
+           {% endif %}
+        </td>
+        <td>{{ product.description }}</td>
+     </tr>
+    </tbody>
+</table>
 
 
-
-<div class="row">
-   <div class="col-md-12">
+<table class="table">
+    <tbody>
+    <tr>
        {% if product.photos %}
             {% for photo in product.photos.all %}
-                {{ photo.title }}
+                <td>{{ photo.title }}</td>
             {% endfor %}
        {% endif %}
-   </div>
-</div>
+    </tr>
+    </tbody>
+</table>
 
 {% if product.is_wine %}
-    <div class="row">
-       <div class="col-md-1">{{ wine.color }}</div>
-       <div class="col-md-1">{{ wine.year }}</div>
-       <div class="col-md-1">{{ wine.attribute }}</div>
-       <div class="col-md-1">{{ wine.sugar_residual }}</div>
-       <div class="col-md-1">{{ wine.acidity }}</div>
-       <div class="col-md-1">{{ wine.locality }}</div>
-       <div class="col-md-6">
-        {% if wine.awards.size > 0 %}
-            {% for award in wine.awards.all %}
-                {{ award.name }}
-                {% if award.photo %}
-                    {{ award.photo.title }}
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-       </div>
-    </div>
+    <table class="table">
+        <thead>
+        <tr>
+           <th class="col-md-2">{% trans "wine_color" %}</th>
+           <th class="col-md-2">{% trans "wine_year" %}</th>
+           <th class="col-md-2">{% trans "wine_attribute" %}</th>
+           <th class="col-md-2">{% trans "wine_sugar_residual" %}</th>
+           <th class="col-md-2">{% trans "wine_acidity" %}</th>
+           <th class="col-md-2">{% trans "wine_locality" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+           <td>{{ wine.color }}</td>
+           <td>{{ wine.year }}</td>
+           <td>{{ wine.attribute }}</td>
+           <td>{{ wine.sugar_residual }}</td>
+           <td>{{ wine.acidity }}</td>
+           <td>{{ wine.locality }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% if wine.awards.size > 0 %}
+    <table class="table">
+        <thead>
+        <tr>
+           <th class="col-md-12">{% trans "wine_awards" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        {% for award in wine.awards.all %}
+            <td>{{ award.name }}</td>
+            {% if award.photo %}
+            <td>{{ award.photo.title }}</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+    {% endif %}
+
 {% endif %}
 
 

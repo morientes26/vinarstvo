@@ -6,33 +6,122 @@
 <form method="post" action="">
     {% csrf_token %}
 
-      {% for field in product_form %}
-        <div>
-            {{ field.label_tag }} <br>
-            {{ field }}
-            {% for error in field.errors %}
-                <div class="alert alert-error">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
-        </div>
-      {% endfor %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="col-md-2">{% trans "product_code" %}</th>
+            <th class="col-md-2"> {% trans "product_origin_name" %}</th>
+            <th class="col-md-2"> {% trans "product_name" %}</th>
+            <th class="col-md-2"> {% trans "product_price" %}</th>
+            <th class="col-md-2"> {% trans "product_size" %}</th>
+            <th class="col-md-2"> {% trans "product_import_date" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ product_form.code }}</td>
+            <td>{{ product_form.origin_name }}</td>
+            <td>{{ product_form.name }}</td>
+            <td>{{ product_form.price }}</td>
+            <td>{{ product_form.size }}</td>
+            <td>{{ product_form.import_date }}</td>
+        </tr>
+        </tbody>
+    </table>
 
-      {% for field in wine_form %}
-        <div>
-            {{ field.label_tag }} <br>
-            {{ field }}
-            {% for error in field.errors %}
-                <div class="alert alert-error">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
-        </div>
-      {% endfor %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="col-md-2"> {% trans "product_active" %}</th>
+            <th class="col-md-4"> {% trans "product_group" %}</th>
+            <th class="col-md-6"> {% trans "product_description" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ product_form.active }}</td>
+            <td>{{ product_form.group }}</td>
+            <td>{{ product_form.description }}</td>
+         </tr>
+        </tbody>
+    </table>
 
+    <table class="table">
+        <tbody>
+        <tr>
+           {% if product.photos %}
+                {% for photo in product.photos.all %}
+                    <td>{{ photo.title }}</td>
+                {% endfor %}
+           {% endif %}
+        </tr>
+        </tbody>
+    </table>
+
+    {% for error in field.errors %}
+        <div class="alert alert-error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+
+    {% trans "is_wine" %} {{ product_form.is_wine }}
+
+    <table class="table">
+        <thead>
+        <tr>
+           <th class="col-md-2">{% trans "wine_color" %}</th>
+           <th class="col-md-2">{% trans "wine_year" %}</th>
+           <th class="col-md-2">{% trans "wine_attribute" %}</th>
+           <th class="col-md-2">{% trans "wine_sugar_residual" %}</th>
+           <th class="col-md-2">{% trans "wine_acidity" %}</th>
+           <th class="col-md-2">{% trans "wine_locality" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+           <td>{{ wine_form.color }}</td>
+           <td>{{ wine_form.year }}</td>
+           <td>{{ wine_form.attribute }}</td>
+           <td>{{ wine_form.sugar_residual }}</td>
+           <td>{{ wine_form.acidity }}</td>
+           <td>{{ wine_form.locality }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+        <tr>
+           <th class="col-md-12">{% trans "wine_awards" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        {% for award in wine.awards.all %}
+            <td>{{ award.name }}</td>
+            {% if award.photo %}
+            <td>{{ award.photo.title }}</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+    {% for error in field.errors %}
+        <div class="alert alert-error">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+
+
+
+    {{ product_form.is_new }}
 
     <input type="submit" value='{% trans "save" %}'>
 </form>
 
+
+
+<a href="{% url 'list_products' %}">{% trans "back" %}</a>
 
 {% endblock %}

@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from django.core.urlresolvers import reverse_lazy
+from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
 from django.contrib import messages
@@ -9,15 +10,16 @@ from inventory.models import Product, Wine
 from sync.service import sync_products_from_file
 from vanilla import DeleteView, ListView, TemplateView, View
 from winelist.settings import BASE_DIR
+from inventory.service import InventoryService
 
 import logging
+
 logger = logging.getLogger(__name__)
+
 
 # Views for products management
 
-
 class IndexView(TemplateView):
-
 	template_name = 'index.html'
 
 	def get(self, request, *args, **kwargs):
@@ -41,13 +43,12 @@ class ImportView(TemplateView):
 # change language en/sk
 
 class LangChangeView(TemplateView):
-
 	def get(self, request, *args, **kwargs):
 		lang = 'en'
 		if translation.LANGUAGE_SESSION_KEY in request.session:
 			lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
 			translation.activate(lang)
-			
+
 		request.session[translation.LANGUAGE_SESSION_KEY] = lang
 		return redirect('index')
 
@@ -59,25 +60,17 @@ class ListProducts(ListView):
 
 class DetailProduct(TemplateView):
 	template_name = 'inventory/product_detail.html'
+	service = InventoryService()
 
 	def get(self, request, *args, **kwargs):
-		context = self.get_context_data()
-		wine = None		
-
-		product = get_object_or_404(Product, pk=kwargs['pk'])
-		logger.debug("product = " + str(product.id))
-		if product.is_wine:
-			logger.debug("product is wine")
-			wine = Wine.objects.filter(product=product)
-			if wine:
-				logger.debug("wine is for product [id]" + str(product.id))
-				context['wine'] = wine
-
-		return render(request, self.template_name, context={'wine': wine, 'product': product})
+		try:
+			p_tuple = self.service.get_product_by_id(kwargs['pk'])
+			return render(request, self.template_name, context={'wine': p_tuple.wine, 'product': p_tuple.product})
+		except Exception:
+			raise Http404('product %s  has not been found.' % kwargs['pk'])
 
 
 class CreateProduct(View):
-
 	template_name = 'inventory/product_create.html'
 
 	def get(self, request):
@@ -95,12 +88,11 @@ class CreateProduct(View):
 				wine.product = product
 				wine.save()
 			messages.add_message(request, messages.INFO, _("product_created"))
-			
+
 		return redirect('list_products')
 
 
 class EditProduct(View):
-
 	template_name = 'inventory/product_create.html'
 
 	def get(self, request, **kwargs):
@@ -122,6 +114,7 @@ class EditProduct(View):
 			wine_form = WineForm(data=request.POST, instance=wine)
 
 		if product_form.is_valid():
+			print('product_form valid')
 			pcd = product_form.cleaned_data
 			if pcd['is_wine']:
 				if wine_form.is_valid():
@@ -135,12 +128,11 @@ class EditProduct(View):
 
 		for p in product_form.errors:
 			print(p)
-		
+
 		return redirect('list_products')
 
 
 class AddProduct(TemplateView):
-
 	def get(self, request, *args, **kwargs):
 		try:
 			product = get_object_or_404(Product, pk=kwargs['pk'])
@@ -165,4 +157,3 @@ class RemoveProduct(TemplateView):
 class DeleteProduct(DeleteView):
 	model = Product
 	success_url = reverse_lazy('list_products')
-
