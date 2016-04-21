@@ -13,7 +13,7 @@ class Photo(models.Model):
 	"""
 
 	title = models.CharField(max_length=120, blank=True, help_text="titulok fotky")
-	blob = models.ImageField(upload_to=MEDIA_URL, blank=True)
+	blob = models.FileField(upload_to=MEDIA_URL, blank=True)
 	uuid = models.CharField(max_length=36, blank=True, default="")
 
 	def __unicode__(self):
