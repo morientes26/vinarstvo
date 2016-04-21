@@ -3,7 +3,38 @@
 {% block content %}
 {% load i18n %}
 
-<form method="post" action="">
+
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+    $('#iframe').load(function(){
+        console.log('load the iframe')
+        var element = "<div id='"+$('#uuid').val()+"'>";
+        $('#photos').append(element);
+    });
+
+ /*
+       $("#upload2").submit(function(event){
+            //$(this).preventDefault();
+            $.ajax({
+                 url: $(this).attr('action'),
+                 type: $(this).attr('method'),
+                 data:  $(this).serialize(),
+                 enctype: 'multipart/form-data',
+                 success: function(){
+                     alert('ok');
+                     $('.messages').html("<h2>Photo Form Submitted!</h2>");
+                 }
+            });
+
+            return false;
+       });
+ */
+
+});
+</script>
+
+<form method="post" action="{% url 'create_product' %}">
     {% csrf_token %}
 
     <table class="table">
@@ -43,18 +74,6 @@
             <td>{{ product_form.group }}</td>
             <td>{{ product_form.description }}</td>
          </tr>
-        </tbody>
-    </table>
-
-    <table class="table">
-        <tbody>
-        <tr>
-           {% if product.photos %}
-                {% for photo in product.photos.all %}
-                    <td>{{ photo.title }}</td>
-                {% endfor %}
-           {% endif %}
-        </tr>
         </tbody>
     </table>
 
@@ -113,13 +132,36 @@
         </div>
     {% endfor %}
 
-
-
     {{ product_form.is_new }}
+    {{ product_form.uuid }}
 
     <input type="submit" value='{% trans "save" %}'>
 </form>
 
+ <!-- Upload form. Note enctype attribute! -->
+<div id="photos"></div>
+
+<!--img src="{{ product_form.photo.url }}" /-->
+
+<form target="iframe" action="{% url 'upload_photo' %}" method="post" enctype="multipart/form-data" id="upload">
+    {% csrf_token %}
+    <p>{{ photo_form.non_field_errors }}</p>
+    <p>{{ photo_form.title.label_tag }} {{ photo_form.title.help_text }}</p>
+    <p>
+        {{ photo_form.title.errors }}
+        {{ photo_form.title }}
+    </p>
+
+    <p>{{ photo_form.non_field_errors }}</p>
+    <p>{{ photo_form.blob.label_tag }} {{ photo_form.blob.help_text }}</p>
+    <p>
+        {{ photo_form.blob.errors }}
+        {{ photo_form.blob }}
+    </p>
+    {{ photo_form.uuid }}
+    <p><input type="submit" value="Upload" /></p>
+</form>
+<iframe name="iframe" id="iframe" style="display:none"></iframe>
 
 
 <a href="{% url 'list_products' %}">{% trans "back" %}</a>

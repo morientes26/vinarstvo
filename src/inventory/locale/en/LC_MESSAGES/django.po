@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 08:57+0200\n"
+"POT-Creation-Date: 2016-04-21 15:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,8 +48,8 @@ msgid "done_order"
 msgstr ""
 
 #: inventory/templates/inventory/order_detail.html:12
-#: inventory/templates/inventory/product_detail.html:73
-#: inventory/templates/inventory/product_form.html:23
+#: inventory/templates/inventory/product_create.html:167
+#: inventory/templates/inventory/product_detail.html:111
 msgid "back"
 msgstr "back"
 
@@ -58,13 +58,16 @@ msgid "in_cart"
 msgstr ""
 
 #: inventory/templates/inventory/order_form.html:30
+#: inventory/templates/inventory/product_create.html:45
+#: inventory/templates/inventory/product_detail.html:11
 #, fuzzy
 #| msgid "product_managment"
 msgid "product_name"
 msgstr "Product management"
 
 #: inventory/templates/inventory/order_form.html:33
-#: inventory/templates/inventory/product_detail.html:9
+#: inventory/templates/inventory/product_create.html:46
+#: inventory/templates/inventory/product_detail.html:12
 #, fuzzy
 #| msgid "product_list"
 msgid "product_price"
@@ -99,52 +102,98 @@ msgstr "Orders list"
 msgid "confirm_delete_product"
 msgstr "Are you sure to delete product?"
 
-#: inventory/templates/inventory/product_create.html:34
-#: inventory/templates/inventory/product_form.html:20
-msgid "save"
-msgstr "save"
-
-#: inventory/templates/inventory/product_detail.html:7
+#: inventory/templates/inventory/product_create.html:43
+#: inventory/templates/inventory/product_detail.html:9
 #, fuzzy
 #| msgid "product_list"
 msgid "product_code"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_detail.html:8
+#: inventory/templates/inventory/product_create.html:44
+#: inventory/templates/inventory/product_detail.html:10
 #, fuzzy
 #| msgid "product_managment"
 msgid "product_origin_name"
 msgstr "Product management"
 
-#: inventory/templates/inventory/product_detail.html:10
+#: inventory/templates/inventory/product_create.html:47
+#: inventory/templates/inventory/product_detail.html:13
 #, fuzzy
 #| msgid "product_list"
 msgid "product_size"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_detail.html:11
+#: inventory/templates/inventory/product_create.html:48
+#: inventory/templates/inventory/product_detail.html:14
 #, fuzzy
 #| msgid "product_list"
 msgid "product_import_date"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_detail.html:23
+#: inventory/templates/inventory/product_create.html:66
+#: inventory/templates/inventory/product_detail.html:32
 #, fuzzy
 #| msgid "product_list"
 msgid "product_active"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_detail.html:24
+#: inventory/templates/inventory/product_create.html:67
+#: inventory/templates/inventory/product_detail.html:33
 #, fuzzy
 #| msgid "product_list"
 msgid "product_group"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_detail.html:25
+#: inventory/templates/inventory/product_create.html:68
+#: inventory/templates/inventory/product_detail.html:34
 #, fuzzy
 #| msgid "product_list"
 msgid "product_description"
 msgstr "Products list"
+
+#: inventory/templates/inventory/product_create.html:86
+#: inventory/templates/inventory/product_list.html:19
+msgid "is_wine"
+msgstr "Wine"
+
+#: inventory/templates/inventory/product_create.html:91
+#: inventory/templates/inventory/product_detail.html:67
+msgid "wine_color"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:92
+#: inventory/templates/inventory/product_detail.html:68
+msgid "wine_year"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:93
+#: inventory/templates/inventory/product_detail.html:69
+msgid "wine_attribute"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:94
+#: inventory/templates/inventory/product_detail.html:70
+msgid "wine_sugar_residual"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:95
+#: inventory/templates/inventory/product_detail.html:71
+msgid "wine_acidity"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:96
+#: inventory/templates/inventory/product_detail.html:72
+msgid "wine_locality"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:114
+#: inventory/templates/inventory/product_detail.html:91
+msgid "wine_awards"
+msgstr ""
+
+#: inventory/templates/inventory/product_create.html:138
+msgid "save"
+msgstr "save"
 
 #: inventory/templates/inventory/product_import.html:7
 #: inventory/templates/menu.html:19
@@ -175,10 +224,6 @@ msgstr "Price"
 #: inventory/templates/inventory/product_list.html:18
 msgid "size"
 msgstr "Size/amount"
-
-#: inventory/templates/inventory/product_list.html:19
-msgid "is_wine"
-msgstr "Wine"
 
 #: inventory/templates/inventory/product_list.html:19
 msgid "is_new"

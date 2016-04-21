@@ -2,11 +2,13 @@
 
 from django.core.urlresolvers import reverse_lazy
 from django.http import Http404
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
 from django.contrib import messages
-from inventory.forms import ProductForm, WineForm
-from inventory.models import Product, Wine
+from django.views.decorators.csrf import csrf_exempt
+from inventory.forms import ProductForm, WineForm, PhotoForm
+from inventory.models import Product, Wine, Photo
 from sync.service import sync_products_from_file
 from vanilla import DeleteView, ListView, TemplateView, View
 from winelist.settings import BASE_DIR
@@ -65,7 +67,10 @@ class DetailProduct(TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
 			p_tuple = self.service.get_product_by_id(kwargs['pk'])
-			return render(request, self.template_name, context={'wine': p_tuple.wine, 'product': p_tuple.product})
+			return render(request, self.template_name, context={
+				'wine': p_tuple.wine,
+				'product': p_tuple.product
+			})
 		except Exception:
 			raise Http404('product %s  has not been found.' % kwargs['pk'])
 
@@ -74,13 +79,15 @@ class CreateProduct(View):
 	template_name = 'inventory/product_create.html'
 
 	def get(self, request):
-		product_form = ProductForm()
-		wine_form = WineForm()
-		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
+		return render(request, self.template_name, context={
+			'product_form':  ProductForm(),
+			'wine_form': WineForm(),
+			'photo_form':  PhotoForm(),
+		})
 
 	def post(self, request):
-		product_form = ProductForm(request.POST)
-		wine_form = WineForm(request.POST)
+		product_form = ProductForm(request.POST, request.FILES)
+		wine_form = WineForm(request.POST, request.FILES)
 		if all([product_form.is_valid(), wine_form.is_valid()]):
 			product = product_form.save()
 			if product.is_wine:
@@ -130,6 +137,24 @@ class EditProduct(View):
 			print(p)
 
 		return redirect('list_products')
+
+
+class UploadPhoto(View):
+
+	@csrf_exempt
+	def dispatch(self, *args, **kwargs):
+		return super(UploadPhoto, self).dispatch(*args, **kwargs)
+
+	def post(self, request):
+		logging.debug('upload file')
+		photo = Photo.objects.create(title=request.POST['title'], blob=request.FILES['blob'], uuid=request.POST['uuid'])
+		logging.debug('insert f')
+		return HttpResponse('ok')
+		#photo_form = PhotoForm(data=request.POST, files=request.FILES)
+		#if photo_form.is_valid():
+		#	photo_form.save()
+		#	return HttpResponse('ok')
+		#raise Exception('Cannot upload photo')
 
 
 class AddProduct(TemplateView):

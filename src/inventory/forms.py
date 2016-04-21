@@ -1,40 +1,42 @@
+# -*- coding: utf-8 -*-
 from django import forms
-from django.forms import ModelForm, BooleanField
-from inventory.models import Product, Group, Wine, Order
+from django.forms import ModelForm, BooleanField, CharField
+#from inventory.models import Product, Group, Wine, Order, Photo
+import uuid
 
 
 class ProductForm(ModelForm):
 	is_new = BooleanField(widget=forms.HiddenInput(), label=None, initial=True)
+	uuid = CharField(widget=forms.HiddenInput(), label=None)
 
 	class Meta:
-		model = Product
+		#model = Product
 		fields = ['code', 'origin_name', 'price', 'active', 'name', 'description', 'is_wine', 'size', 'group']
-
-	#FIXME: not working - cannot change value before save
-	#def save(self, commit=False):
-	#	instance = super(ProductForm, self).save(commit=False)
-	#	instance.is_new = False
-	#	print(instance)
-	#	if commit:
-	#		instance.save(commit=True)
-	#	return instance
 
 
 class WineForm(ModelForm):
 	class Meta:
-		model = Wine
+		#model = Wine
 		fields = "__all__"
 		exclude = ('product',)
 
 
 class GroupForm(ModelForm):
 	class Meta:
-		model = Group
+		#model = Group
 		fields = "__all__"
 
 
 class OrderForm(ModelForm):
 	class Meta:
-		model = Order
+		#model = Order
 		fields = "__all__"
 		exclude = ('items', 'done')
+
+
+class PhotoForm(ModelForm):
+	uuid = CharField(widget=forms.HiddenInput(), label=None, initial=uuid.uuid4())
+
+	class Meta:
+		#model = Photo
+		fields = "__all__"

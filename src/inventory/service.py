@@ -1,11 +1,10 @@
+# -*- coding: utf-8 -*-
 """
 Service for inventory managment
 """
 
 import datetime
 from collections import namedtuple
-
-from django.http import Http404
 from inventory.models import Product, Event, Order, Wine
 
 import logging

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import url
 
 from views.product_views import *
@@ -32,6 +33,8 @@ urlpatterns = [
 	url(r'^order/edit/(?P<pk>\d+)/$', EditOrder.as_view(), name='edit_order'),
 	url(r'^order/detail/(?P<pk>\d+)/$', DetailOrder.as_view(), name='detail_order'),
 	url(r'^order/done/(?P<pk>\d+)/$', DoneOrder.as_view(), name='done_order'),
-	url(r'^order/delete/(?P<pk>\d+)/$', DeleteOrder.as_view(), name='delete_order'),	
+	url(r'^order/delete/(?P<pk>\d+)/$', DeleteOrder.as_view(), name='delete_order'),
+
+	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
 
 ]

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for winelist project.
 
@@ -79,11 +80,22 @@ WSGI_APPLICATION = 'winelist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+#DATABASES = {
+#	'default': {
+#		'ENGINE': 'django.db.backends.sqlite3',
+#		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#	}
+#}
+
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.sqlite3',
-		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-	}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'winecart',
+        'USER': 'root',
+        'PASSWORD': 'q1w2e3',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
 }
 
 # Password validation
@@ -134,8 +146,11 @@ LOCALE_PATHS = (
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# Static files for upload images
+MEDIA_URL = STATIC_URL + 'data/'
+
 # init bower component
-STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',]
+STATICFILES_FINDERS = ['djangobower.finders.BowerFinder']
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'inventory/components')
 BOWER_INSTALLED_APPS = [
 	'jquery',

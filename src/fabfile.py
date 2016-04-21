@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from fabric.api import local
 
 
@@ -29,8 +30,13 @@ def migrate():
 
 
 def run():
-	""" run develop server """
+	""" run on local development server """
 	local("./manage.py runserver")
+
+
+def run_gn():
+	""" run on local production server """
+	local("gunicorn winelist.wsgi")
 
 
 #def create_virtualenv_remote():
