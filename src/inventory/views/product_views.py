@@ -7,6 +7,7 @@ from django.shortcuts import redirect, get_object_or_404, render
 from django.utils import translation
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.translation import ugettext as _
 from inventory.forms import ProductForm, WineForm, PhotoForm
 from inventory.models import Product, Wine, Photo
 from sync.service import sync_products_from_file
@@ -78,16 +79,17 @@ class DetailProduct(TemplateView):
 class CreateProduct(View):
 	template_name = 'inventory/product_create.html'
 
-	def get(self, request):
+	def get(self, request, *args, **kwargs):
 		return render(request, self.template_name, context={
-			'product_form':  ProductForm(),
+			'product_form': ProductForm(),
 			'wine_form': WineForm(),
-			'photo_form':  PhotoForm(),
+			'photo_form': PhotoForm(),
 		})
 
-	def post(self, request):
-		product_form = ProductForm(request.POST, request.FILES)
-		wine_form = WineForm(request.POST, request.FILES)
+	def post(self, request, *args, **kwargs):
+		product_form = ProductForm(request.POST)
+		wine_form = WineForm(request.POST)
+		print(request.POST)
 		if all([product_form.is_valid(), wine_form.is_valid()]):
 			product = product_form.save()
 			if product.is_wine:
