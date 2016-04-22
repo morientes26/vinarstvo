@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
+from django.conf.global_settings import MEDIA_ROOT
 from django.conf.urls import url
+from django.conf.urls.static import static
 
 from views.product_views import *
 from views.group_views import *
 from views.order_views import *
+
+from winelist.settings import MEDIA_URL
 
 urlpatterns = [
 	# index page
@@ -37,4 +41,4 @@ urlpatterns = [
 
 	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
 
-]
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)

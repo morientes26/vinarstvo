@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from polymorphic.models import PolymorphicModel
-from winelist.settings import MEDIA_URL
+from winelist.settings import MEDIA_URL, BASE_DIR
 
 
 class Photo(models.Model):
@@ -13,7 +13,9 @@ class Photo(models.Model):
 	"""
 
 	title = models.CharField(max_length=120, blank=True, help_text="titulok fotky")
-	blob = models.FileField(upload_to=MEDIA_URL, blank=True)
+	#blob = models.FileField(upload_to=MEDIA_URL, blank=True)
+	#FIXME: inu url na upload
+	blob = models.FileField(upload_to=BASE_DIR + "/inventory/static/data/", blank=True)
 	uuid = models.CharField(max_length=36, blank=True, default="")
 
 	def __unicode__(self):

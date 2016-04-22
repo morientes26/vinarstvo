@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import ugettext as _
 from inventory.forms import ProductForm, WineForm, PhotoForm
-from inventory.models import Product, Wine, Photo
+from inventory.models import Product, Wine, Photo, Award
 from sync.service import sync_products_from_file
 from vanilla import DeleteView, ListView, TemplateView, View
 from winelist.settings import BASE_DIR
@@ -89,7 +89,7 @@ class CreateProduct(View):
 	def post(self, request, *args, **kwargs):
 		product_form = ProductForm(request.POST)
 		wine_form = WineForm(request.POST)
-		print(request.POST)
+
 		if all([product_form.is_valid(), wine_form.is_valid()]):
 			product = product_form.save()
 			if product.is_wine:
@@ -118,6 +118,7 @@ class EditProduct(View):
 		product = get_object_or_404(Product, pk=kwargs['pk'])
 		product_form = ProductForm(data=request.POST, instance=product)
 		wine_form = WineForm(data=request.POST)
+
 		if product.is_wine:
 			wine = Wine.objects.get(product=product)
 			wine_form = WineForm(data=request.POST, instance=wine)
@@ -134,6 +135,20 @@ class EditProduct(View):
 
 			else:
 				product_form.save()
+
+			#TODO: move to service - create photo
+			if request.FILES:
+				for file in request.FILES:
+					print('file' + file)
+					if file == 'photo_upload':
+						photo = Photo.objects.create(blob=file, title='xc')
+						product.photos.add(photo)
+					if file == 'award_upload':
+						a_photo = Photo.objects.create(blob=file, title='a')
+						award = Award.objects.create(name='xxx2232', photo=a_photo)
+						wine.awards.add(award)
+						wine.save()
+			# -------------------------------------
 
 		for p in product_form.errors:
 			print(p)

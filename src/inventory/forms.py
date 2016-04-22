@@ -7,7 +7,6 @@ import uuid
 
 class ProductForm(ModelForm):
 	is_new = BooleanField(widget=forms.HiddenInput(), label=None, initial=True)
-	uuid = CharField(widget=forms.HiddenInput(), label=None)
 
 	class Meta:
 		model = Product

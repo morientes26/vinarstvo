@@ -34,7 +34,7 @@
 });
 </script>
 
-<form method="post" action="{% url 'create_product' %}">
+<form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
 
     <table class="table">
@@ -76,6 +76,8 @@
          </tr>
         </tbody>
     </table>
+
+    <input type="file" id="photo_upload" name="photo_upload">
 
     {% for error in field.errors %}
         <div class="alert alert-error">
@@ -122,6 +124,7 @@
             <td>{{ award.photo.title }}</td>
             {% endif %}
         {% endfor %}
+        <input type="file" id="award_upload" name="award_upload">
         </tr>
         </tbody>
     </table>
@@ -133,7 +136,6 @@
     {% endfor %}
 
     {{ product_form.is_new }}
-    {{ product_form.uuid }}
 
     <input type="submit" value='{% trans "save" %}'>
 </form>
