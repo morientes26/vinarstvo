@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from django.forms import ModelForm, BooleanField, CharField
-from inventory.models import Product, Group, Wine, Order, Photo
+from inventory.models import *
 import uuid
 
 
@@ -31,6 +31,13 @@ class OrderForm(ModelForm):
 		model = Order
 		fields = "__all__"
 		exclude = ('items', 'done')
+
+
+class EventForm(ModelForm):
+	class Meta:
+		model = Event
+		fields = "__all__"
+		exclude = ('products',)
 
 
 class PhotoForm(ModelForm):

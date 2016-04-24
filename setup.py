@@ -28,6 +28,7 @@ _classifiers = (
     'Programming Language :: Python :: 3.5',
 )
 
+#https://fedoraproject.org/wiki/MariaDB
 
 #_install_requires = [
 #    'pylint-plugin-utils>=0.2.1'

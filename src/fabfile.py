@@ -5,7 +5,7 @@ from fabric.api import local
 def test(module="inventory"):
 	""" run unit tests """
 	suffix = ".tests"
-	local("./manage.py test "+module+suffix)
+	local("./manage.py test "+module+suffix + " --settings=winelist.development-settings")
 
 
 def bootsrap():
@@ -31,12 +31,15 @@ def migrate():
 
 def run():
 	""" run on local development server """
-	local("./manage.py runserver")
+	local("echo '\n--- DEVELOPMENT MODE ---\n'")
+	local("./manage.py runserver --settings=winelist.development-settings")
 
 
 def run_gn():
 	""" run on local production server """
+	local("echo '\n--- PRODUCTION MODE ---\n'")
 	local("gunicorn winelist.wsgi")
+
 
 
 #def create_virtualenv_remote():

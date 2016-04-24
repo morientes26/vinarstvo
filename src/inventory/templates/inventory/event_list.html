@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+
+<fieldset>
+    <legend>{% trans "event_managment" %} [ {{ object_list.count }} ]</legend>
+
+    <table id="events" class="display">
+    <thead>
+        <tr>
+            <th>{% trans "event_name" %}</th>
+            <th>{% trans "event_date_from" %}</th>      
+            <th>{% trans "event_date_to" %}</th>         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in object_list %}
+        <tr>
+            <td><a href="">{{ event.name }}</a></td>
+            <td> {{ event.date_from }} </a></td>
+            <td> {{ event.date_to }} </td>
+            <td>
+               <a href="edit/{{ event.id }}">{% trans "edit" %}</a> |
+               <a href="delete/{{ event.id }}">{% trans "delete" %}</a>
+            </td>      
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</fieldset>
+
+{% endblock %}

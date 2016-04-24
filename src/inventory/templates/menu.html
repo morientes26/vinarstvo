@@ -42,8 +42,8 @@
             <a id="m-event" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
                href="#">{% trans "event_managment" %}<span class="caret"></span></a>
                <ul class="dropdown-menu" aria-labelledby="e-event">
-                   <li><a href="">{% trans "event_list" %}</a></li>
-                   <li><a href="">{% trans "create_event" %}</a>
+                   <li><a href="{% url 'list_events' %}">{% trans "event_list" %}</a></li>
+                   <li><a href="{% url 'create_event' %}">{% trans "create_event" %}</a>
                </ul>
            </li>
 

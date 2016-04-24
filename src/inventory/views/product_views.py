@@ -78,6 +78,7 @@ class DetailProduct(TemplateView):
 
 class CreateProduct(View):
 	template_name = 'inventory/product_create.html'
+	service = InventoryService()
 
 	def get(self, request, *args, **kwargs):
 		return render(request, self.template_name, context={
@@ -96,6 +97,9 @@ class CreateProduct(View):
 				wine = wine_form.save(commit=False)
 				wine.product = product
 				wine.save()
+
+			self.service.upload_photos(request, product)
+
 			messages.add_message(request, messages.INFO, _("product_created"))
 
 		return redirect('list_products')
@@ -103,6 +107,7 @@ class CreateProduct(View):
 
 class EditProduct(View):
 	template_name = 'inventory/product_create.html'
+	service = InventoryService()
 
 	def get(self, request, **kwargs):
 		wine_form = WineForm()
@@ -136,19 +141,9 @@ class EditProduct(View):
 			else:
 				product_form.save()
 
-			#TODO: move to service - create photo
-			if request.FILES:
-				for file in request.FILES:
-					print('file' + file)
-					if file == 'photo_upload':
-						photo = Photo.objects.create(blob=file, title='xc')
-						product.photos.add(photo)
-					if file == 'award_upload':
-						a_photo = Photo.objects.create(blob=file, title='a')
-						award = Award.objects.create(name='xxx2232', photo=a_photo)
-						wine.awards.add(award)
-						wine.save()
-			# -------------------------------------
+			self.service.upload_photos(request, product)
+
+			messages.add_message(request, messages.INFO, _("product_edited"))
 
 		for p in product_form.errors:
 			print(p)

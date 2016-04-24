@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from views.product_views import *
 from views.group_views import *
 from views.order_views import *
+from views.event_views import *
 
 from winelist.settings import MEDIA_URL
 
@@ -38,6 +39,12 @@ urlpatterns = [
 	url(r'^order/detail/(?P<pk>\d+)/$', DetailOrder.as_view(), name='detail_order'),
 	url(r'^order/done/(?P<pk>\d+)/$', DoneOrder.as_view(), name='done_order'),
 	url(r'^order/delete/(?P<pk>\d+)/$', DeleteOrder.as_view(), name='delete_order'),
+
+	# event page for managing events
+	url(r'^event/$', ListEvents.as_view(), name='list_events'),
+	url(r'^event/create/$', CreateEvent.as_view(), name='create_event'),
+	url(r'^event/edit/(?P<pk>\d+)/$', EditEvent.as_view(), name='edit_event'),
+	url(r'^event/delete/(?P<pk>\d+)/$', DeleteEvent.as_view(), name='delete_event'),
 
 	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
 

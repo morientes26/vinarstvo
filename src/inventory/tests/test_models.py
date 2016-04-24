@@ -2,7 +2,7 @@
 import os
 
 from django.test import TestCase
-from inventory.models import Product, Wine, Order, Item, Event, Award, Photo, Group
+from inventory.models import *
 import inventory.utils
 from winelist.settings import BASE_DIR
 
@@ -60,7 +60,7 @@ class ProductManageTestCase(TestCase):
         """ Add awards to product """
 
         blob = inventory.utils.file_to_blob(self.TEST_FILE)
-        photo = Photo.objects.create(title="fotka", blob=blob)
+        photo = Photo.objects.create(blob=blob)
         award = Award.objects.create(name="Udelenie ceny c.1", photo=photo)
         self.wine.awards.add(award)
         self.wine.save()

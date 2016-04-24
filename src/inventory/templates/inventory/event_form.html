@@ -4,15 +4,8 @@
 {% load i18n %}
 {% load inventory_extras %}
 
-<form method="post" action="" xmlns:product>
+<form method="post" action="">
     {% csrf_token %}
-
-
-	<div class="fieldWrapper">
-	     {{ form.name.errors }}
-	     {{ form.name.label_tag }}
-	     {{ form.name }}
-	</div>
 
     {% for field in form %}
         <div>
@@ -26,40 +19,39 @@
         </div>
     {% endfor %}
 
-
     <div class="row">
-        <div class="col-md-1">
-            {% trans "in_cart" %}
+        <div class="col-md-2">
+            {% trans "include_in_event" %}
         </div>
         <div class="col-md-6">
            {% trans "product_name" %}
         </div>
-        <div class="col-md-1">
+        <div class="col-md-4">
             {% trans "product_price" %}
-        </div>
-        <div class="col-md-2">
-             {% trans "product_amount" %}
         </div>
     </div>
 
     {% for product in products %}
         <div class="row">
-            <div class="col-md-1">
-                <input type="checkbox" name="p_{{ product.id }}" id="p_{{ product.id }}" value="{{ product.id }}" {{  product|is_choosen:items }} />
+            <div class="col-md-2">
+                <input type="checkbox" name="p_{{ product.id }}" id="p_{{ product.id }}" value="{{ product.id }}" 
+                {% if items %}
+                    {{  product|is_choosen:items }}
+                {% endif %} 
+                />
             </div>
             <div class="col-md-6">
                 <label for="p_{{ product.id }}">{{ product.name }}</label>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-4">
                 {{ product.price }} €
-            </div>
-            <div class="col-md-2">
-                <input type="number" name="a_{{ product.id }}" step="1" id="a_{{ product.id }}" value="{{ product|get_amount:items }}" />
             </div>
         </div>
     {% endfor %}
 
-    <input type="submit" value="ulozit">
+    <input type="submit" value="{% trans "save" %}">
 </form>
+
+<a href="{% url 'list_events' %}">{% trans "back" %}</a>
 
 {% endblock %}

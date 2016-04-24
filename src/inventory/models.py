@@ -6,20 +6,18 @@ from django.utils import timezone
 from polymorphic.models import PolymorphicModel
 from winelist.settings import MEDIA_URL, BASE_DIR
 
+import uuid
 
 class Photo(models.Model):
 	"""
 	Photo of product (vine, snack, drink...)
 	"""
 
-	title = models.CharField(max_length=120, blank=True, help_text="titulok fotky")
-	#blob = models.FileField(upload_to=MEDIA_URL, blank=True)
-	#FIXME: inu url na upload
 	blob = models.FileField(upload_to=BASE_DIR + "/inventory/static/data/", blank=True)
-	uuid = models.CharField(max_length=36, blank=True, default="")
+	uuid = models.CharField(max_length=36, blank=True, default=uuid.uuid4())
 
 	def __unicode__(self):
-		return self.title
+		return str(self.pk)+ " " +self.uuid
 
 
 class Product(models.Model):
@@ -45,7 +43,12 @@ class Product(models.Model):
 	group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
 	photos = models.ManyToManyField(Photo, help_text="fotky produktu")
 
-	# Functions
+	#Overriding
+	def save(self, *args, **kwargs):
+		if self.name=="":
+			self.name = self.origin_name
+			super(Product, self).save(*args, **kwargs)
+
 	def __unicode__(self):
 		return self.code + " - " + self.origin_name + " - new: " + str(self.is_new) + " " + self.name
 

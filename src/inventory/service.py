@@ -5,7 +5,7 @@ Service for inventory managment
 
 import datetime
 from collections import namedtuple
-from inventory.models import Product, Event, Order, Wine
+from inventory.models import *
 
 import logging
 logger = logging.getLogger(__name__)
@@ -36,6 +36,21 @@ class InventoryService:
 
 		result = namedtuple('product', 'product wine')
 		return result(product=product, wine=wine)
+
+
+	def upload_photos(self, request, product):
+		if request.FILES:
+			for file in request.FILES:
+				if file == 'photo_upload':
+					photo = Photo.objects.create(blob=file)
+					product.photos.add(photo)
+					logger.debug('upload file and create photo %s ', photo)
+				if file == 'award_upload':
+					a_photo = Photo.objects.create(blob=file)
+					logger.debug('upload file and create photo %s ', a_photo)
+					award = Award.objects.create(name=a_photo.uuid, photo=a_photo)
+					wine.awards.add(award)
+					wine.save() 
 
 	def get_new_products(self):
 		products = Product.objects.filter(is_new=True)

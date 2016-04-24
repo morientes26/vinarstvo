@@ -3,6 +3,7 @@ Custom template helpers
 """
 from django import template
 from django.template.defaultfilters import stringfilter
+from inventory.models import Item, Product
 
 register = template.Library()
 
@@ -21,10 +22,14 @@ def flag_check(value):
 
 @register.filter
 def is_choosen(product, items):
-
 	for it in items.all():
-		if product == it.product:
-			return "checked"
+		if isinstance(it, Item):
+			if product == it.product:
+				return "checked"
+		if isinstance(it, Product):
+			if product == it:
+				return "checked"
+
 	return ""
 
 
