@@ -8,6 +8,9 @@ from django.utils import translation
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import ugettext as _
+from django.contrib.auth import logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from inventory.forms import ProductForm, WineForm, PhotoForm
 from inventory.models import Product, Wine, Photo, Award
 from sync.service import sync_products_from_file
@@ -19,11 +22,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
 # Views for products management
 
-class IndexView(TemplateView):
+class IndexView(LoginRequiredMixin, TemplateView):
 	template_name = 'index.html'
+	raise_exception = True
 
 	def get(self, request, *args, **kwargs):
 		logger.debug("this is a debug message!")
@@ -31,11 +34,11 @@ class IndexView(TemplateView):
 
 
 # import products from xml
-
-class ImportView(TemplateView):
+class ImportView(LoginRequiredMixin, TemplateView):
 	template_name = 'inventory/product_import.html'
+	login_url = '/accounts/login/'
 
-	def get(self, request, *args, **kwargs):
+	def get(self, request):
 		# synchronization all products from xml file
 		import_count = sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
 		context = self.get_context_data()

@@ -2,15 +2,20 @@
 from django.conf.global_settings import MEDIA_ROOT
 from django.conf.urls import url
 from django.conf.urls.static import static
-
+from django.contrib.auth import views as auth_views
 from views.product_views import *
 from views.group_views import *
 from views.order_views import *
 from views.event_views import *
+from views.access_views import *
 
 from winelist.settings import MEDIA_URL
 
 urlpatterns = [
+	# authorization
+	url(r'^accounts/login/$', auth_views.login, {'template_name': 'access/login.html'}),
+	url(r'^accounts/profile/', login_view),
+
 	# index page
 	url(r'^$', IndexView.as_view(), name='index'),
 	url(r'^change-language/$', LangChangeView.as_view(), name='language'),
