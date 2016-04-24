@@ -17,10 +17,10 @@ def bootsrap():
 
 def localization():
 	""" build localization en, sk """
-	local("./manage.py makemessages -l sk")
-	local("./manage.py makemessages -l en")
-	local("./manage.py compilemessages -l sk")
-	local("./manage.py compilemessages -l en")
+	local("./manage.py makemessages -l sk --settings=winelist.development-settings")
+	local("./manage.py makemessages -l en --settings=winelist.development-settings")
+	local("./manage.py compilemessages -l sk --settings=winelist.development-settings")
+	local("./manage.py compilemessages -l en --settings=winelist.development-settings")
 
 
 def migrate():

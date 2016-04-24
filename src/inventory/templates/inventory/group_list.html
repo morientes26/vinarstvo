@@ -5,13 +5,23 @@
 
 <fieldset>
     <legend>{% trans "group_managment" %} [ {{ object_list.count }} ]</legend>
-    <div>
-       <ul>
+
+    <table id="groups" class="display">
+    <thead>
+        <tr>
+            <th class="col-md-10">{% trans "group_name" %}</th>      
+            <th class="col-md-2"></th>
+        </tr>
+    </thead>
+    <tbody>
         {% for group in object_list %}
-           <li>{{ group.name }} | <a href="edit/{{ group.id }}">{% trans "edit" %}</a> | <a href="delete/{{ group.id }}">{% trans "delete" %}</a></li>
+        <tr>
+           <td>{{ group.name }}</td>
+           <td><a href="edit/{{ group.id }}">{% trans "edit" %}</a> | <a href="delete/{{ group.id }}">{% trans "delete" %}</a></td>      
+        </tr>
         {% endfor %}
-        </ul>
-    </div>
+    </tbody>
+    </table>
 </fieldset>
 
 {% endblock %}
