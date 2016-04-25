@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.utils.translation import ugettext as _
+from django.contrib.auth.mixins import LoginRequiredMixin
 from inventory.forms import EventForm
 from inventory.models import Event, Item, Product
 from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
@@ -15,7 +16,7 @@ service = InventoryService()
 
 # Views for groups management
 
-class EventView:
+class EventView(LoginRequiredMixin):
 	def process_form(self, request, form):
 		items = []
 		for field in request.POST:
@@ -39,7 +40,7 @@ class EventView:
 		return context
 
 
-class ListEvents(ListView):
+class ListEvents(LoginRequiredMixin, ListView):
 	model = Event
 	queryset = Event.objects.all()
 
@@ -78,7 +79,7 @@ class EditEvent(EventView, UpdateView):
 		return self.form_invalid(form)
 
 
-class DeleteEvent(DeleteView):
+class DeleteEvent(LoginRequiredMixin, DeleteView):
 	model = Event
 	success_url = reverse_lazy('list_events')
 

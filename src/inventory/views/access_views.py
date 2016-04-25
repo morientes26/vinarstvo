@@ -1,4 +1,6 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect
+from winelist.settings import LOGIN_URL
  
 def login_view(request):
     username = request.POST['username']
@@ -19,3 +21,4 @@ def login_view(request):
 def logout_view(request):
     print('logout')
     logout(request)
+    return redirect(LOGIN_URL)

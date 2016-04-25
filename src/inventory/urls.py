@@ -15,6 +15,7 @@ urlpatterns = [
 	# authorization
 	url(r'^accounts/login/$', auth_views.login, {'template_name': 'access/login.html'}),
 	url(r'^accounts/profile/', login_view),
+	url(r'^accounts/logout/', logout_view, name='logout'),
 
 	# index page
 	url(r'^$', IndexView.as_view(), name='index'),

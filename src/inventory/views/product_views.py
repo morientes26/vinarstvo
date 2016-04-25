@@ -26,7 +26,6 @@ logger = logging.getLogger(__name__)
 
 class IndexView(LoginRequiredMixin, TemplateView):
 	template_name = 'index.html'
-	raise_exception = True
 
 	def get(self, request, *args, **kwargs):
 		logger.debug("this is a debug message!")
@@ -36,7 +35,6 @@ class IndexView(LoginRequiredMixin, TemplateView):
 # import products from xml
 class ImportView(LoginRequiredMixin, TemplateView):
 	template_name = 'inventory/product_import.html'
-	login_url = '/accounts/login/'
 
 	def get(self, request):
 		# synchronization all products from xml file
@@ -59,12 +57,12 @@ class LangChangeView(TemplateView):
 		return redirect('index')
 
 
-class ListProducts(ListView):
+class ListProducts(LoginRequiredMixin, ListView):
 	model = Product
 	queryset = Product.objects.all()
 
 
-class DetailProduct(TemplateView):
+class DetailProduct(LoginRequiredMixin, TemplateView):
 	template_name = 'inventory/product_detail.html'
 	service = InventoryService()
 
@@ -79,7 +77,7 @@ class DetailProduct(TemplateView):
 			raise Http404('product %s  has not been found.' % kwargs['pk'])
 
 
-class CreateProduct(View):
+class CreateProduct(LoginRequiredMixin, View):
 	template_name = 'inventory/product_create.html'
 	service = InventoryService()
 
@@ -108,7 +106,7 @@ class CreateProduct(View):
 		return redirect('list_products')
 
 
-class EditProduct(View):
+class EditProduct(LoginRequiredMixin, View):
 	template_name = 'inventory/product_create.html'
 	service = InventoryService()
 
@@ -154,7 +152,7 @@ class EditProduct(View):
 		return redirect('list_products')
 
 
-class UploadPhoto(View):
+class UploadPhoto(LoginRequiredMixin, View):
 
 	@csrf_exempt
 	def dispatch(self, *args, **kwargs):
@@ -172,7 +170,7 @@ class UploadPhoto(View):
 		#raise Exception('Cannot upload photo')
 
 
-class AddProduct(TemplateView):
+class AddProduct(LoginRequiredMixin, TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
 			product = get_object_or_404(Product, pk=kwargs['pk'])
@@ -183,7 +181,7 @@ class AddProduct(TemplateView):
 		return redirect('list_products')
 
 
-class RemoveProduct(TemplateView):
+class RemoveProduct(LoginRequiredMixin, TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
 			product = get_object_or_404(Product, pk=kwargs['pk'])
@@ -194,6 +192,6 @@ class RemoveProduct(TemplateView):
 		return redirect('list_products')
 
 
-class DeleteProduct(DeleteView):
+class DeleteProduct(LoginRequiredMixin, DeleteView):
 	model = Product
 	success_url = reverse_lazy('list_products')

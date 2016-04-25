@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.utils.translation import ugettext as _
+from django.contrib.auth.mixins import LoginRequiredMixin
 from inventory.forms import OrderForm
 from inventory.models import Order, Item, Product
 from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
@@ -15,23 +16,23 @@ service = InventoryService()
 
 # Views for groups management
 
-class ListOrders(ListView):
+class ListOrders(LoginRequiredMixin, ListView):
 	model = Order
 	queryset = Order.objects.all()
 
 
-class ListBackOrders(ListView):
+class ListBackOrders(LoginRequiredMixin, ListView):
 	model = Order
 	queryset = service.get_all_back_orders()
 
 
-class CreateOrder(CreateView):
+class CreateOrder(LoginRequiredMixin, CreateView):
 	model = Order
 	form_class = OrderForm
 	success_url = reverse_lazy('list_orders')
 
 
-class EditOrder(UpdateView):
+class EditOrder(LoginRequiredMixin, UpdateView):
 	model = Order
 	form_class = OrderForm
 	success_url = reverse_lazy('list_orders')
@@ -67,7 +68,7 @@ class EditOrder(UpdateView):
 		return self.form_invalid(form)
 
 
-class DoneOrder(TemplateView):
+class DoneOrder(LoginRequiredMixin, TemplateView):
 	
 	def get(self, request, *args, **kwargs):
 		service.done_order(kwargs['pk'])	
@@ -75,12 +76,12 @@ class DoneOrder(TemplateView):
 		return redirect('list_orders')
 
 
-class DeleteOrder(DeleteView):
+class DeleteOrder(LoginRequiredMixin, DeleteView):
 	model = Order
 	success_url = reverse_lazy('list_orders')
 
 
-class DetailOrder(TemplateView):
+class DetailOrder(LoginRequiredMixin, TemplateView):
 	template_name = 'inventory/order_detail.html'
 
 	def get(self, request, *args, **kwargs):
