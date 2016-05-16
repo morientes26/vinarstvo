@@ -13,4 +13,3 @@ script:
 #  - "python ./src/manage.py test inventory.tests"
   - "cd ./src"
   - "fab test"
-#/home/travis/build/morientes26/winecart

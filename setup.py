@@ -1,22 +1,10 @@
 # -*- coding: UTF-8 -*-
 from distutils.core import setup
-from setuptools import find_packages
-import os
-import sys
 
 
 _version = '0.0.1'
-#_packages = find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"])
 
 _short_description = "Winelist is inventory management for wines and other product in bar"
-
-
-#_transform_dir = 'pylint_django/transforms/transforms'
-#_package_data = {
-#    'pylint_django': [
-#        os.path.join('transforms/transforms', name) for name in os.listdir(_transform_dir)
-#    ]
-#}
 
 _classifiers = (
     'Development Status :: 1 - Beta',
@@ -27,12 +15,6 @@ _classifiers = (
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 3.5',
 )
-
-#https://fedoraproject.org/wiki/MariaDB
-
-#_install_requires = [
-#    'pylint-plugin-utils>=0.2.1'
-#]
 
 _install_requires = [
     'Django>=1.9.2',
@@ -68,8 +50,6 @@ setup(
     author_email='michalkalman@gmail.com',
     description=_short_description,
     version=_version,
-    #packages=_packages,
-    #package_data=_package_data,
     install_requires=_install_requires,
     license='GPLv2',
     classifiers=_classifiers,
