@@ -169,11 +169,11 @@ NOSE_ARGS = [
 
 # rest framework setting
 REST_FRAMEWORK = dict(DEFAULT_PERMISSION_CLASSES=[
-	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+	'rest_framework.permissions.IsAuthenticated',
 ], DEFAULT_PARSER_CLASSES=(
-	'rest_framework_xml.parsers.XMLParser',
+	'rest_framework.parsers.JSONParser',
 ), DEFAULT_RENDERER_CLASSES=(
-	'rest_framework_xml.renderers.XMLRenderer',
+	'rest_framework.renderers.JSONRenderer',
 ))
 
 LOGGING = {

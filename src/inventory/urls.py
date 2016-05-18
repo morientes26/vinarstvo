@@ -8,6 +8,7 @@ from views.group_views import *
 from views.order_views import *
 from views.event_views import *
 from views.access_views import *
+from views.api_views import *
 
 from winelist.settings import MEDIA_URL
 
@@ -53,5 +54,10 @@ urlpatterns = [
 	url(r'^event/delete/(?P<pk>\d+)/$', DeleteEvent.as_view(), name='delete_event'),
 
 	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
+
+	url(r'^api/info/$', ApiInfoView.as_view(), name='api_info'),
+	url(r'^api/product/list/$', get_from_primary_cart, name='api_product_list'),
+	url(r'^api/product/(?P<pk>\d+)/$', get_product_by_id, name='api_product_list'),
+	
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
