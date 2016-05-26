@@ -62,6 +62,11 @@ class InventoryService:
 		logger.debug('get_all_products_in_cart - fetching %s data', products.count())
 		return products
 
+	def get_all_products_in_event(self, event):
+		products = event.products
+		logger.debug('get_all_products_in_event from %s - fetching %s data', event, products.count())
+		return products
+
 	def get_actual_events(self):
 		now = datetime.datetime.now()
 		events = Event.objects.filter(date_from__lte=now, date_to__gte=now)
@@ -78,6 +83,15 @@ class InventoryService:
 		orders = Order.objects.filter(done=False)
 		logger.debug('get_all_back_orders - fetching %s data', orders.count())
 		return orders
+
+# ------------------------------------------------------------------------------------ order --------
+	def create_order(self, customer_name, event_id, product_list):
+		event = Event.objects.get(pk=event_id)
+		items = Product.objects.filter(pk__in=product_list)
+		if len(event)==0 or len(items)==0:
+			raise ValueError('input parameters are bad')
+		order = Order.objects.create(customer_name=customer_name, event=event, items=items)
+		return order
 
 	def done_order(self, id):
 		try:

@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
-from inventory.serializer import ProductSerializer
-from inventory.models import Product
+from inventory.serializer import ProductSerializer, EventSerializer, OrderSerializer
+from inventory.models import Product, Event, Order, Item
 from inventory.service import InventoryService
 
 
@@ -27,17 +27,41 @@ class ApiInfoView(APIView):
 		}
 		return Response(content)
 
-
 """
 Getting all products from primary winecart
 """
 @api_view(['GET'])
 @permission_classes((AllowAny,))
-def get_from_primary_cart(request):
+def get_product_from_primary_cart(request):
 	products = InventoryService().get_all_products_in_cart()
 	serializer = ProductSerializer(products, many=True)
 	json = JSONRenderer().render(serializer.data)
 	return Response(json)
+
+"""
+Getting all products from actual event
+"""
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_product_from_actual_event(request):
+	event = InventoryService().get_actual_events()
+	products = None
+	if len(event)>0:
+		products = InventoryService().get_all_products_in_event(event[0])
+	serializer = ProductSerializer(products, many=True)
+	json = JSONRenderer().render(serializer.data)
+	return Response(json)	
+
+"""
+Getting all products from actual event
+"""
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_actual_event(request):
+	event = InventoryService().get_actual_events()
+	serializer = EventSerializer(event[0], many=False)
+	json = JSONRenderer().render(serializer.data)
+	return Response(json)	
 
 """
 Getting one product by primary key
@@ -49,3 +73,28 @@ def get_product_by_id(request, *args, **kwargs):
 	serializer = ProductSerializer(product, many=True)
 	json = JSONRenderer().render(serializer.data)
 	return Response(json)
+
+"""
+Create order
+"""
+@api_view(['PUT', 'POST'])
+@permission_classes((AllowAny,))
+def create_order(request, *args, **kwargs):
+	serializer = OrderSerializer(data=request.data)
+	if serializer.is_valid():
+		order = serializer.save()
+		# TODO: toto je trocha hack, treba upravit serializer aby nebolo potrebne nastavovat items
+		set_items_and_save(request, order)
+		# ---------------------------------------------------------------------
+		return Response(serializer.data, status=status.HTTP_201_CREATED)
+	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def set_items_and_save(request, order):
+	for item in request.data['items']:
+		try:
+			product = Product.objects.get(pk=item['product'])
+			it = Item.objects.create(product=product, amount=item['amount'])
+			order.items.add(it)
+		except Product.DoesNotExist:
+			raise ValueError('product '+str(item['product'])+' not found')
+	order.save()
