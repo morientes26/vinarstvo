@@ -35,8 +35,7 @@ Getting all products from primary winecart
 def get_product_from_primary_cart(request):
 	products = InventoryService().get_all_products_in_cart()
 	serializer = ProductSerializer(products, many=True)
-	json = JSONRenderer().render(serializer.data)
-	return Response(json)
+	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """
 Getting all products from actual event
@@ -49,8 +48,7 @@ def get_product_from_actual_event(request):
 	if len(event)>0:
 		products = InventoryService().get_all_products_in_event(event[0])
 	serializer = ProductSerializer(products, many=True)
-	json = JSONRenderer().render(serializer.data)
-	return Response(json)	
+	return Response(serializer.data, status=status.HTTP_200_OK)	
 
 """
 Getting all products from actual event
@@ -60,8 +58,7 @@ Getting all products from actual event
 def get_actual_event(request):
 	event = InventoryService().get_actual_events()
 	serializer = EventSerializer(event[0], many=False)
-	json = JSONRenderer().render(serializer.data)
-	return Response(json)	
+	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """
 Getting one product by primary key
@@ -71,8 +68,7 @@ Getting one product by primary key
 def get_product_by_id(request, *args, **kwargs):
 	product = InventoryService().get_product_by_id(kwargs['pk'])
 	serializer = ProductSerializer(product, many=True)
-	json = JSONRenderer().render(serializer.data)
-	return Response(json)
+	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """
 Create order
