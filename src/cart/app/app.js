@@ -9,14 +9,22 @@ app.config(function($routeProvider) {
     
     $routeProvider
 
-        // route for the product list
+        // route for the product list in basic cart
         .when('/', {
             templateUrl : 'pages/list.html',
             controller  : 'list'
         })
 
-        // route for the detail of product
-        .when('/detail', {
+        // route for the product list in event cart
+        .when('/event', {
+            templateUrl : 'pages/event.html',
+            controller  : 'event'
+        })
+
+        // route for the detail of product 
+        // if id then url is 'detail/?id='
+        // if detailId then url is 'detail/id'
+        .when('/detail/:detailId', {
             templateUrl : 'pages/detail.html',
             controller  : 'detail'
         })
