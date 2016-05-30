@@ -176,8 +176,9 @@ class AddProduct(LoginRequiredMixin, TemplateView):
 			product = get_object_or_404(Product, pk=kwargs['pk'])
 			product.active = True
 			product.save()
+			logging.debug('add product to cart %s', product)
 		except Product.DoesNotExist:
-			print("Product not found", id)
+			logging.error("Product not found %s", kwargs['pk'])
 		return redirect('list_products')
 
 
@@ -187,8 +188,9 @@ class RemoveProduct(LoginRequiredMixin, TemplateView):
 			product = get_object_or_404(Product, pk=kwargs['pk'])
 			product.active = False
 			product.save()
+			logging.debug('remove product from cart %s', product)
 		except Product.DoesNotExist:
-			print("Product not found", id)
+			logging.error("Product not found %s", kwargs['pk'])
 		return redirect('list_products')
 
 

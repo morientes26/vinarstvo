@@ -37,9 +37,22 @@ class InventoryServiceTestCase(TestCase):
         self.assertEquals(events.count(), 1)
         self.assertEquals(events[0].products.count(), 2)
 
+    def test_get_all_products_in_event(self):
+        event = Event.objects.filter(name="test")
+        products = self.service.get_all_products_in_event(event[0])
+        self.assertTrue(products)
+        self.assertEquals(products.count(), 2)
+        self.assertEquals(event[0].products.count(), 2)
+
     def test_get_actual_orders_by_name(self):
         orders = self.service.get_actual_orders_by_name("test")
         self.assertTrue(orders)
         self.assertEquals(orders.count(), 1)
         self.assertEquals(orders[0].done, False)
         self.assertEquals(orders[0].customer_name, "test")
+
+    def test_create_order(self):
+        event = Event.objects.filter(name="test")
+        order = self.service.create_order("objednavka", event.id, event.products)
+        self.assertTrue(order)
+        self.assertEquals(orders.customer_name, "objednavka")

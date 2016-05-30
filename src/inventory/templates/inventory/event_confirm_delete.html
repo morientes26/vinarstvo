@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+
+{% trans "confirm_delete_order" %}
+<br>
+
+<form method="POST" action="">
+   {% csrf_token %}
+    <input type="submit" value="ano">
+    <input type="button" onclick="location.href='{% url 'list_groups' %}'" value="nie">
+</form>
+
+{% endblock %}

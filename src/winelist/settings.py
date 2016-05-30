@@ -43,12 +43,14 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 	'rest_framework',
 	'djangobower',
+	'corsheaders',
 	'django_nose',
 ]
 
 MIDDLEWARE_CLASSES = [
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
+	'corsheaders.middleware.CorsMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -169,12 +171,15 @@ NOSE_ARGS = [
 
 # rest framework setting
 REST_FRAMEWORK = dict(DEFAULT_PERMISSION_CLASSES=[
-	'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+	'rest_framework.permissions.IsAuthenticated',
 ], DEFAULT_PARSER_CLASSES=(
-	'rest_framework_xml.parsers.XMLParser',
+	'rest_framework.parsers.JSONParser',
 ), DEFAULT_RENDERER_CLASSES=(
-	'rest_framework_xml.renderers.XMLRenderer',
+	'rest_framework.renderers.JSONRenderer',
 ))
+
+# CORS setting (https://github.com/ottoyiu/django-cors-headers/)
+CORS_ORIGIN_ALLOW_ALL = True
 
 LOGGING = {
     'version': 1,

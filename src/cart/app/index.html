@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+
+<!-- HEADER AND NAVBAR -->
+<header>
+    <nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Cart</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Vinna karta</a></li>
+            <li><a href="#/event"><i class="fa fa-shield"></i> Ochutnavka</a></li>
+            <li><a href="#/order"><i class="fa fa-comment"></i> Order</a></li>
+        </ul>
+    </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div ng-app="app" id="main">
+
+	<div ng-view></div>	
+
+</div>
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="js/list.js"></script>
+<script src="js/event.js"></script>
+<script src="js/detail.js"></script>
+<script src="js/order.js"></script>
+
+</body>
+</html>
