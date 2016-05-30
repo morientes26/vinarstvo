@@ -10,12 +10,21 @@
 	 	<div class="col-md-2"> </div>
  	</div>
 
-	<div class="row" ng-repeat="p in products" ng-click="showDetail(p.id)">
- 		<div class="col-md-2"> {{ p.id }}  </div>
- 		<div class="col-md-4"> {{ p.name }}  </div>
- 		<div class="col-md-2"> {{ p.price }} </div>
- 		<div class="col-md-2"> {{ p.size }}  </div>
- 		<div class="col-md-2"><a href=""> pridat do kosika </a></div>
+	<div class="row" ng-repeat="p in products">
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.id }}  </div>
+ 		<div class="col-md-4" ng-click="showDetail(p.id)"> {{ p.name }}  </div>
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.price }} </div>
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.size }}  </div>
+ 		<div class="col-md-2">
+ 			<button ng-click="addToCart(p.id)"> pridat</button>
+ 			<button ng-click="removeFromCart(p.id)">vymazat</button>
+ 			<span>{{ items[p.id] | default:0 }}</span>
+ 		</div>
  	</div>
 
+ 	<div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-2"><button ng-click="cleanOrder()">vymazat kosik</button></div>
+	 	<div class="col-md-2"><button ng-click="sendOrder()">objednat</button></div>
+ 	</div>
 </div>
