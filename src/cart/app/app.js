@@ -12,15 +12,9 @@ app.config(function($routeProvider) {
     $routeProvider
 
         // route for the product list in basic cart
-        .when('/', {
+        .when('/:page', {
             templateUrl : 'pages/list.html',
             controller  : 'list'
-        })
-
-        // route for the product list in event cart
-        .when('/event', {
-            templateUrl : 'pages/event.html',
-            controller  : 'event'
         })
 
         // route for the detail of product 
