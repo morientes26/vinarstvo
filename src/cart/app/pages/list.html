@@ -10,12 +10,47 @@
 	 	<div class="col-md-2"> </div>
  	</div>
 
-	<div class="row" ng-repeat="p in products" ng-click="showDetail(p.id)">
- 		<div class="col-md-2"> {{ p.id }}  </div>
- 		<div class="col-md-4"> {{ p.name }}  </div>
- 		<div class="col-md-2"> {{ p.price }} </div>
- 		<div class="col-md-2"> {{ p.size }}  </div>
- 		<div class="col-md-2"><a href=""> pridat do kosika </a></div>
+	<div class="row" ng-repeat="p in products">
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.id }}  </div>
+ 		<div class="col-md-4" ng-click="showDetail(p.id)"> {{ p.name }}  </div>
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.price }} </div>
+ 		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.size }}  </div>
+ 		<div class="col-md-2">
+ 			<button ng-click="addToCart(p.id)"> pridat</button>
+ 			<button ng-click="removeFromCart(p.id)">vymazat</button>
+ 			<span>{{ items[p.id] | default:0 }}</span>
+ 		</div>
  	</div>
 
+ 	<div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-2"><button ng-click="cleanOrder()">vymazat kosik</button></div>
+	 	<div class="col-md-2"><button ng-click="showOrder()" ng-show="!isOrder">objednat</button></div>
+ 	</div>
+
+ 	<div class="row" ng-show="isOrder">
+ 		<form name="orderForm" ng-submit="sendOrder()">
+		<div class="col-md-offset-6 col-md-6">
+			<input type="text" name="name" ng-model="name" placeholder="meno a priezvisko*" ng-minlength="3" ng-maxlength="50" size="50" required>
+			<p ng-show="orderForm.name.$invalid && !orderForm.name.$pristine" class="help-block">You name is required.</p>
+		</div>
+		<div class="col-md-offset-6 col-md-6">
+			<input type="text" name="adress" ng-model="adress" placeholder="adresa*" ng-minlength="3" ng-maxlength="256" size="50" required>
+			<p ng-show="orderForm.adress.$invalid && !orderForm.adress.$pristine" class="help-block">You adress is required.</p>
+		</div>
+	 	<div class="col-md-offset-6 col-md-6">
+	 		<input type="text" name="mobile" ng-model="mobile" placeholder="telefonny kontakt*" ng-minlength="10" ng-maxlength="32" size="50" required>
+	 		<p ng-show="orderForm.mobile.$invalid && !orderForm.mobile.$pristine" class="help-block">You mobile is required.</p>
+	 	</div>
+	 	<div class="col-md-offset-6 col-md-6">
+	 		<input type="text" name="info" ng-model="info" placeholder="fakturacne udaje" ng-minlength="0" ng-maxlength="256" size="50">
+	 	</div>
+	 	<div class="col-md-offset-6 col-md-6">
+	 		<input type="email" name="email" ng-model="email" placeholder="emailovy kontakt" ng-minlength="0" ng-maxlength="50" size="50">
+	 	</div>
+	 	<div class="col-md-offset-10 col-md-2">
+	 		<button type="submit" ng-disabled="orderForm.$invalid">Ulozit objednavku</button>
+	 	</div>
+	 	</form>
+ 	</div>
 </div>
