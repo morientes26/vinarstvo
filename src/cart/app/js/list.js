@@ -18,8 +18,8 @@ app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParam
     $scope.showDetail = function(id){
     	location.href = "#/detail/"+id;
     }
-    $scope.addToCart = function(id){
-    	shoppingcart.add(id);
+    $scope.addToCart = function(id, name){
+    	shoppingcart.add(id,name);
     	$scope.items = shoppingcart.getCustomer().items;
     }
     $scope.removeFromCart = function(id){
@@ -32,7 +32,6 @@ app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParam
     	$scope.items = shoppingcart.getCustomer().items;
     }
     $scope.showOrder = function(){
-    	//TODO: zobrazit zoznam vybranych produktov
     	$scope.shoppinglist = shoppingcart.getJsonItems();
     	$scope.isOrder = true;
     }

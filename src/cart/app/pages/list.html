@@ -18,9 +18,9 @@
  		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.price }} </div>
  		<div class="col-md-2" ng-click="showDetail(p.id)"> {{ p.size }}  </div>
  		<div class="col-md-2">
- 			<button ng-click="addToCart(p.id)"> pridat</button>
+ 			<button ng-click="addToCart(p.id, p.name)"> pridat</button>
  			<button ng-click="removeFromCart(p.id)">vymazat</button>
- 			<span>{{ items[p.id] | default:0 }}</span>
+ 			<span>{{ items[p.id][0] | default:0 }}</span>
  		</div>
  	</div>
 
@@ -33,11 +33,11 @@
  	<div class="row" ng-show="isOrder">
 
  		<div id="list_products" ng-repeat="s in shoppinglist track by $index">
-	 		<div class="col-md-offset-6 col-md-6">
-				{{ shoppinglist[s] }}
+	 		<div class="col-md-offset-6 col-md-3">
+				{{ shoppinglist[$index].name }}
 	 		</div>
-	 		<div class="col-md-offset-6 col-md-6">
-				{{ shoppinglist[$index] }}
+	 		<div class="col-md-3">
+				{{ shoppinglist[$index].amount }}
 	 		</div>
  		</div>
 
