@@ -51,6 +51,20 @@ app.service('shoppingcart', function($cookies) {
     	return $cookies.getObject('customer');
     }
 
+    // pattern : //[ {"product": 28, "amount": 22},{"product": 26, "amount": 24} ]
+    this.getJsonItems = function () {
+    	var items = $cookies.getObject('customer').items;
+    	var result = '['; 
+    	for (i in items){
+    		if (items[i]!=null)
+    			result += '{"product": '+i+', "amount": '+items[i]+'},';
+    	}
+    	if (items.length>0)
+    		result=result.substring(0, result.length-1);
+    	result+=']';
+    	return JSON.parse(result);
+    }
+
     this.add = function(id){
     	var customer = this.getCustomer();
     	if (customer.items[id] == undefined)

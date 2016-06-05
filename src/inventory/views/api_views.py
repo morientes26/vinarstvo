@@ -77,6 +77,7 @@ Create order
 @permission_classes((AllowAny,))
 def create_order(request, *args, **kwargs):
 	serializer = OrderSerializer(data=request.data)
+	print(serializer)
 	if serializer.is_valid():
 		order = serializer.save()
 		# TODO: toto je trocha hack, treba upravit serializer aby nebolo potrebne nastavovat items
