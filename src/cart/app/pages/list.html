@@ -40,6 +40,8 @@
 				{{ shoppinglist[$index].amount }}
 	 		</div>
  		</div>
+ 		<div class="col-md-offset-6 col-md-3"><b>Celkova suma</b></div>
+ 		<div class="col-md-3"><b>{{ sum_price }}</b></div>
 
  		<form name="orderForm" ng-submit="sendOrder(orderForm)">
  		<input type="hidden" name="event" ng-model="event" value="{{ event }}"/>

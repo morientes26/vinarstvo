@@ -33,6 +33,10 @@ app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParam
     }
     $scope.showOrder = function(){
     	$scope.shoppinglist = shoppingcart.getJsonItems();
+    	$scope.sum_price = 0;
+    	for ($item in $scope.shoppinglist){
+			$scope.sum_price += $scope.shoppinglist[$item].amount;
+    	}    	
     	$scope.isOrder = true;
     }
     $scope.sendOrder = function(form) {    	
