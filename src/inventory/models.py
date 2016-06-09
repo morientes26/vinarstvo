@@ -14,7 +14,7 @@ class Photo(models.Model):
 	"""
 
 	blob = models.FileField(upload_to=BASE_DIR + "/inventory/static/data/", blank=True)
-	uuid = models.CharField(max_length=36, blank=True, default=uuid.uuid4())
+	uuid = models.CharField(max_length=36, blank=True, default='') #uuid.uuid4()
 
 	def __unicode__(self):
 		return str(self.pk)+ " " +self.uuid
@@ -155,7 +155,10 @@ class Order(models.Model):
 	"""
 	Order of event
 	"""
-	customer_name = models.CharField(max_length=60, blank=False, help_text="meno zakaznika alebo nazov stola")
+	customer_name = models.CharField(max_length=60, blank=False, default='', help_text="meno zakaznika alebo nazov stola")
+	contact_detail = models.CharField(max_length=256, blank=False, default='', help_text="kontaktne informacie - adresa")
+	phone = models.CharField(max_length=20, blank=False, default='', help_text="telefonny kontakt")
+	email =	models.CharField(max_length=40, blank=True, null=True, help_text="emailovy kontakt") 
 	event = models.ForeignKey('Event', blank=True, help_text="akcia / ochutnavka")
 	items = models.ManyToManyField(Item, blank=True, help_text="vybrane produkty na akcii / ochutnavke")
 	done = models.BooleanField(default=False, blank=False, help_text="vybavena objednavka")
