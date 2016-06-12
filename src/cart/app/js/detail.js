@@ -6,4 +6,8 @@ app.controller("detail", function($scope, $http, $rootScope, $routeParams) {
         $scope.product = response.data[0];
     });
 
+    $scope.backToList = function(){
+    	location.href = "#/"+$routeParams.back;
+    }
+
 });
