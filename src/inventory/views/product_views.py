@@ -28,7 +28,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
 	template_name = 'index.html'
 
 	def get(self, request, *args, **kwargs):
-		logger.debug("this is a debug message!")
+		logger.debug("IndexerView")
 		return super(IndexView, self).get(request, args, kwargs)
 
 
@@ -37,6 +37,7 @@ class ImportView(LoginRequiredMixin, TemplateView):
 	template_name = 'inventory/product_import.html'
 
 	def get(self, request):
+		logger.debug("importing data")
 		# synchronization all products from xml file
 		import_count = sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
 		context = self.get_context_data()
@@ -69,6 +70,7 @@ class DetailProduct(LoginRequiredMixin, TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
 			p_tuple = self.service.get_product_by_id(kwargs['pk'])
+			logger.debug("detail proudct %s" , p_tuple)
 			return render(request, self.template_name, context={
 				'wine': p_tuple.wine,
 				'product': p_tuple.product
@@ -82,6 +84,7 @@ class CreateProduct(LoginRequiredMixin, View):
 	service = InventoryService()
 
 	def get(self, request, *args, **kwargs):
+		logging.debug('create product %s', request)
 		return render(request, self.template_name, context={
 			'product_form': ProductForm(),
 			'wine_form': WineForm(),
@@ -111,6 +114,7 @@ class EditProduct(LoginRequiredMixin, View):
 	service = InventoryService()
 
 	def get(self, request, **kwargs):
+		logging.debug('GET - edit product')
 		wine_form = WineForm()
 		product = get_object_or_404(Product, pk=kwargs['pk'])
 		product_form = ProductForm(instance=product)
@@ -121,6 +125,7 @@ class EditProduct(LoginRequiredMixin, View):
 		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
 	def post(self, request, **kwargs):
+		logger.debug("POST - edit proudct %s" , request)
 		product = get_object_or_404(Product, pk=kwargs['pk'])
 		product_form = ProductForm(data=request.POST, instance=product)
 		wine_form = WineForm(data=request.POST)
@@ -173,10 +178,12 @@ class UploadPhoto(LoginRequiredMixin, View):
 class AddProduct(LoginRequiredMixin, TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
+			logging.debug('add product to cart %s', request)
 			product = get_object_or_404(Product, pk=kwargs['pk'])
 			product.active = True
 			product.save()
-			logging.debug('add product to cart %s', product)
+			logging.debug('added product to cart %s', product)
+			print(product)
 		except Product.DoesNotExist:
 			logging.error("Product not found %s", kwargs['pk'])
 		return redirect('list_products')

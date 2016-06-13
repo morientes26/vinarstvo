@@ -26,12 +26,6 @@ class ListBackOrders(LoginRequiredMixin, ListView):
 	queryset = service.get_all_back_orders()
 
 
-class CreateOrder(LoginRequiredMixin, CreateView):
-	model = Order
-	form_class = OrderForm
-	success_url = reverse_lazy('list_orders')
-
-
 class EditOrder(LoginRequiredMixin, UpdateView):
 	model = Order
 	form_class = OrderForm

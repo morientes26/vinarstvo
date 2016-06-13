@@ -16,6 +16,9 @@ class Photo(models.Model):
 	blob = models.FileField(upload_to=BASE_DIR + "/inventory/static/data/", blank=True)
 	uuid = models.CharField(max_length=36, blank=True, default='') #uuid.uuid4()
 
+	class Meta:
+		app_label = 'inventory'
+
 	def __unicode__(self):
 		return str(self.pk)+ " " +self.uuid
 
@@ -41,7 +44,7 @@ class Product(models.Model):
 
 	# Relations
 	group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
-	photos = models.ManyToManyField(Photo, help_text="fotky produktu")
+	photos = models.ManyToManyField(Photo, help_text="fotky produktu", blank=True)
 
 	#Overriding
 	def save(self, *args, **kwargs):

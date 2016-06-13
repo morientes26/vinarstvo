@@ -41,7 +41,6 @@ urlpatterns = [
 	# order page for managing orders
 	url(r'^order/$', ListOrders.as_view(), name='list_orders'),
 	url(r'^backorder/$', ListBackOrders.as_view(), name='list_back_orders'),
-	url(r'^order/create/$', CreateOrder.as_view(), name='create_order'),
 	url(r'^order/edit/(?P<pk>\d+)/$', EditOrder.as_view(), name='edit_order'),
 	url(r'^order/detail/(?P<pk>\d+)/$', DetailOrder.as_view(), name='detail_order'),
 	url(r'^order/done/(?P<pk>\d+)/$', DoneOrder.as_view(), name='done_order'),
