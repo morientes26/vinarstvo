@@ -33,8 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-	'inventory.apps.InventoryConfig',
-	'sync.apps.SyncConfig',
 	'django.contrib.admin',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
@@ -45,6 +43,8 @@ INSTALLED_APPS = [
 	'djangobower',
 	'corsheaders',
 	'django_nose',
+	'inventory',
+	'sync.apps.SyncConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -144,11 +144,17 @@ LOCALE_PATHS = (
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
 # Static files for upload images
 MEDIA_URL = STATIC_URL + 'data/'
 
 # init bower component
-STATICFILES_FINDERS = ['djangobower.finders.BowerFinder']
+STATICFILES_FINDERS = [
+	'djangobower.finders.BowerFinder',
+	'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+]
+
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'inventory/components')
 BOWER_INSTALLED_APPS = [
 	'jquery',

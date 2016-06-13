@@ -85,10 +85,11 @@ class InventoryService:
 		return orders
 
 # ------------------------------------------------------------------------------------ order --------
+	"""@deprecated"""
 	def create_order(self, customer_name, event_id, product_list):
-		event = Event.objects.get(pk=event_id)
+		event = Event.objects.get(pk=event_id)		
 		items = Product.objects.filter(pk__in=product_list)
-		if len(event)==0 or len(items)==0:
+		if event==None or items==None:
 			raise ValueError('input parameters are bad')
 		order = Order.objects.create(customer_name=customer_name, event=event, items=items)
 		return order

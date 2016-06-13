@@ -25,8 +25,8 @@ def localization():
 
 def migrate():
 	""" make migrations and run migrations """
-	local("./manage.py makemigrations")
-	local("./manage.py migrate")
+	local("./manage.py makemigrations --settings=winelist.development-settings")
+	local("./manage.py migrate --settings=winelist.development-settings")
 
 
 def run():

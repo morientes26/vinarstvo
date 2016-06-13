@@ -9,6 +9,7 @@ from inventory.models import Product, Event, Order
 class InventoryServiceTestCase(TestCase):
 
     service = InventoryService()
+    event = None
 
     def setUp(self):
         p1 = Product.objects.create(code="0123", origin_name="perla", price=5.30, is_wine=True, is_new=True, active=False)
@@ -16,10 +17,10 @@ class InventoryServiceTestCase(TestCase):
         Product.objects.create(code="2346", origin_name="perla 3", price=5.30, is_wine=True, is_new=True, active=False)
         Product.objects.create(code="1223", origin_name="perla 4", price=5.30, is_wine=True, is_new=True, active=True)
         listP = [p1, p2]
-        event = Event.objects.create(name="test", date_from=datetime.datetime(2013, 2, 1), date_to=datetime.datetime(2016, 10, 11))
-        event.products = listP
-        event.save()
-        order = Order.objects.create(customer_name="test", event=event)
+        self.event = Event.objects.create(name="test", date_from=datetime.datetime(2013, 2, 1), date_to=datetime.datetime(2016, 10, 11))
+        self.event.products = listP
+        self.event.save()
+        order = Order.objects.create(customer_name="test", event=self.event)
 
     def test_get_new_products(self):
         products = self.service.get_new_products()
@@ -50,9 +51,3 @@ class InventoryServiceTestCase(TestCase):
         self.assertEquals(orders.count(), 1)
         self.assertEquals(orders[0].done, False)
         self.assertEquals(orders[0].customer_name, "test")
-
-    def test_create_order(self):
-        event = Event.objects.filter(name="test")
-        order = self.service.create_order("objednavka", event.id, event.products)
-        self.assertTrue(order)
-        self.assertEquals(orders.customer_name, "objednavka")
