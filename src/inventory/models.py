@@ -50,7 +50,7 @@ class Product(models.Model):
 	def save(self, *args, **kwargs):
 		if self.name=="":
 			self.name = self.origin_name
-			super(Product, self).save(*args, **kwargs)
+		super(Product, self).save(*args, **kwargs)
 
 	def __unicode__(self):
 		return self.code + " - " + self.origin_name + " - new: " + str(self.is_new) + " " + self.name + " - is active: " + str(self.active) 

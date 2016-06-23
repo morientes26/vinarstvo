@@ -179,6 +179,7 @@ class AddProduct(LoginRequiredMixin, TemplateView):
 	def get(self, request, *args, **kwargs):
 		try:
 			logging.debug('add product to cart %s', request)
+			#product = Product.objects.get(pk=kwargs['pk'])
 			product = get_object_or_404(Product, pk=kwargs['pk'])
 			product.active = True
 			product.save()
