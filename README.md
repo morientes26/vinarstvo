@@ -1,4 +1,4 @@
-winecart v0.1.0
+winecart v0.2.0
 
 Test coverage :
 

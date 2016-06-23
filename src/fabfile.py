@@ -1,18 +1,25 @@
 # -*- coding: utf-8 -*-
+import os
+import subprocess
+
 from fabric.api import local
+
+
+def install():
+	""" setup application, download frontend dependences """
+	if not is_app_installed("nodejs"):
+		local("sudo apt-get install nodejs")
+	if not is_app_installed("npm"):
+		local("sudo apt-get install npm")
+	if not is_app_installed("bower"):
+		local("sudo npm install -g bower")
+	local("./manage.py bower_install")
 
 
 def test(module="inventory"):
 	""" run unit tests """
 	suffix = ".tests"
 	local("./manage.py test "+module+suffix + " --settings=winelist.development-settings")
-
-
-def bootsrap():
-	""" setup application, download frontend dependences """
-	""" it is importent to have installed 'npm' """
-	local("sudo npm install -g bower")
-	local("./manage.py bower_install")
 
 
 def localization():
@@ -40,6 +47,17 @@ def run_gn():
 	local("echo '\n--- PRODUCTION MODE ---\n'")
 	local("gunicorn winelist.wsgi")
 
+
+def is_app_installed(app):
+	try:
+		subprocess.call([app])
+		return True
+	except OSError as e:
+		if e.errno == os.errno.ENOENT:
+			print(app + " has to be installed")
+		else:
+			print("Something else went wrong while trying to run `%s`", app)
+		return False
 
 
 #def create_virtualenv_remote():
