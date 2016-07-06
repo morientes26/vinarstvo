@@ -3,13 +3,47 @@ Serializer for model Product
 """ 
 from rest_framework import serializers
 from rest_framework.parsers import JSONParser
-from inventory.models import Product, Event, Order, Item
+from inventory.models import Product, Event, Order, Item, Wine, Award, Group
+
+
+class AwardSerializer(serializers.ModelSerializer):
+    """
+    Serializing the Award
+    """
+
+    class Meta:
+        model = Award
+        fields = "__all__"
+        
+
+class WineSerializer(serializers.ModelSerializer):
+    """
+    Serializing the Wine
+    """
+    awards = AwardSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Wine
+        fields = "__all__"
+
+
+class GroupSerializer(serializers.ModelSerializer):
+    """
+    Serializing the Group
+    """
+
+    class Meta:
+        model = Group
+        fields = "__all__"
 
 
 class ProductSerializer(serializers.ModelSerializer):
     """
     Serializing the Product
     """
+    wine = WineSerializer(read_only=True, many=False)
+    group = GroupSerializer(read_only=True, many=False)
+
     class Meta:
         model = Product
         fields = "__all__"
@@ -49,4 +83,5 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = "__all__"
+
 

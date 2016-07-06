@@ -45,6 +45,7 @@ class Product(models.Model):
 	# Relations
 	group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
 	photos = models.ManyToManyField(Photo, help_text="fotky produktu", blank=True)
+	wine = models.ForeignKey('Wine', null=True, blank=True, help_text="wine")
 
 	#Overriding
 	def save(self, *args, **kwargs):
@@ -93,9 +94,6 @@ class Wine(models.Model):
 	Additional attribute for product 'wine'
 	"""
 
-	# relations
-	product = models.ForeignKey('Product', help_text="produkt")
-
 	# attributes
 	WINE_COLOR = (('RED', 'cervene'), ('WHITE', 'biele'), ('ROSE', 'ruzove'))
 	color = models.CharField(max_length=5, choices=WINE_COLOR, blank=True, help_text="farba vina")
@@ -125,9 +123,10 @@ class Wine(models.Model):
 
 	acidity = models.CharField(max_length=20, blank=True, help_text="celkove kyseliny", default="")
 	awards = models.ManyToManyField(Award, blank=True, help_text="medaily/ocenenia")
+	serving = models.CharField(max_length=255, blank=True, help_text="servirovanie", default="")
 
 	def __unicode__(self):
-		return "pk: " + str(self.pk) + " " + "product_id: " + str(self.product.id) + " " + str(self.year)
+		return "pk: " + str(self.pk) + " " + str(self.year)
 
 
 class Event(models.Model):

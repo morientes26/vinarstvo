@@ -27,15 +27,7 @@ class InventoryService:
 			logger.error("Product not found by pk =  ", id)
 			raise Exception("Product not found")
 
-		wine = None
-		if product.is_wine:
-			logger.debug("product is wine")
-			wines = Wine.objects.filter(product=product)
-			if wines:
-				wine = wines[0]
-
-		result = namedtuple('product', 'product wine')
-		return result(product=product, wine=wine)
+		return product
 
 
 	def upload_photos(self, request, product):

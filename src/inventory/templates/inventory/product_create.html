@@ -93,9 +93,10 @@
            <th class="col-md-2">{% trans "wine_color" %}</th>
            <th class="col-md-2">{% trans "wine_year" %}</th>
            <th class="col-md-2">{% trans "wine_attribute" %}</th>
-           <th class="col-md-2">{% trans "wine_sugar_residual" %}</th>
-           <th class="col-md-2">{% trans "wine_acidity" %}</th>
+           <th class="col-md-1">{% trans "wine_sugar_residual" %}</th>
+           <th class="col-md-1">{% trans "wine_acidity" %}</th>
            <th class="col-md-2">{% trans "wine_locality" %}</th>
+           <th class="col-md-2">{% trans "wine_serving" %}</th>
         </tr>
         </thead>
         <tbody>
@@ -106,6 +107,7 @@
            <td>{{ wine_form.sugar_residual }}</td>
            <td>{{ wine_form.acidity }}</td>
            <td>{{ wine_form.locality }}</td>
+           <td>{{ wine_form.serving }}</td>
         </tr>
         </tbody>
     </table>

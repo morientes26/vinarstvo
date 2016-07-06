@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Views for products management
 
 class IndexView(LoginRequiredMixin, TemplateView):
-	template_name = 'index.html'
+	template_name = 'index_ng.html'
 
 	def get(self, request, *args, **kwargs):
 		logger.debug("IndexerView")

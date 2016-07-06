@@ -5,7 +5,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from inventory.serializer import ProductSerializer, EventSerializer, OrderSerializer
-from inventory.models import Product, Event, Order, Item
+from inventory.models import Product, Event, Order, Item, Award
 from inventory.service import InventoryService
 
 
@@ -67,7 +67,9 @@ Getting one product by primary key
 @permission_classes((AllowAny,))
 def get_product_by_id(request, *args, **kwargs):
 	product = InventoryService().get_product_by_id(kwargs['pk'])
-	serializer = ProductSerializer(product, many=True)
+	print(product)
+	serializer = ProductSerializer(product, many=False)
+	print(serializer.data)
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """
