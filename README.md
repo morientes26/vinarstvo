@@ -1,4 +1,4 @@
-winecart v0.1.0
+winecart v0.2.0
 
 Test coverage :
 
@@ -8,3 +8,4 @@ Build status in production :
 
 [![Build Status](https://travis-ci.org/morientes26/winecart.svg?branch=master)](https://travis-ci.org/morientes26/winecart)
 
+You can use src/fabfile.py to managing app.
