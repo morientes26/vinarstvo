@@ -33,7 +33,8 @@ Getting all products from primary winecart
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_product_from_primary_cart(request):
-	products = InventoryService().get_all_products_in_cart()
+	print(request.GET.get('group'))
+	products = InventoryService().get_all_products_in_cart(request.GET.get('group'))
 	serializer = ProductSerializer(products, many=True)
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -43,7 +44,8 @@ Getting all products from actual event
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_product_from_actual_event(request):
-	event = InventoryService().get_actual_events()
+	print(request.GET.get('group'))
+	event = InventoryService().get_actual_events(request.GET.get('group'))
 	products = None
 	if len(event)>0:
 		products = InventoryService().get_all_products_in_event(event[0])
@@ -56,8 +58,38 @@ Getting all products from actual event
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_actual_event(request):
-	event = InventoryService().get_actual_events()
-	serializer = EventSerializer(event[0], many=False)
+	event = InventoryService().get_actual_events('%')
+	if event:
+		serializer = EventSerializer(event[0], many=False)
+		return Response(serializer.data, status=status.HTTP_200_OK)
+	return Response(None, status=status.HTTP_200_OK)
+
+"""
+Getting one product by primary key
+"""
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_products(request):
+	products = InventoryService().get_products(request.GET.get('group'))
+	print("---")
+	print(products.all()[:1].get())
+	print("---")
+	if products:
+		print('serialize products %s', products.count())
+		serializer = ProductSerializer(products.all()[:1].get(), many=False)
+		return Response(serializer.data, status=status.HTTP_200_OK)
+	return Response(None, status=status.HTTP_200_OK)
+
+"""
+Getting one product by primary key
+"""
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_product_by_id(request, *args, **kwargs):
+	product = InventoryService().get_product_by_id(kwargs['pk'])
+	print(product)
+	serializer = ProductSerializer(product, many=False)
+	print(serializer.data)
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """

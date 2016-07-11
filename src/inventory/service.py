@@ -29,6 +29,18 @@ class InventoryService:
 
 		return product
 
+	def get_products(self, group):
+		"""
+		Args: group - String of group name
+		Returns: list of products
+		"""
+		if self._is_event(): # find if exist actual event
+			logger.debug('finded actual event')
+			event = self.get_actual_events(group)
+			return self.get_all_products_in_event(event[0])
+		else:
+			logger.debug('not actual event')			
+			return self.get_all_products_in_cart(group)
 
 	def upload_photos(self, request, product):
 		if request.FILES:
@@ -49,19 +61,24 @@ class InventoryService:
 		logger.debug('get_new_products - fetching %s data', products.count())
 		return products
 
-	def get_all_products_in_cart(self):
-		products = Product.objects.filter(active=True)
+	def get_all_products_in_cart(self, group):
+		grp = Group.objects.filter(name=group)
+		products = Product.objects.filter(active=True, group=grp)
 		logger.debug('get_all_products_in_cart - fetching %s data', products.count())
 		return products
 
 	def get_all_products_in_event(self, event):
-		products = event.products
-		logger.debug('get_all_products_in_event from %s - fetching %s data', event, products.count())
-		return products
+		if event:
+			if hasattr(event, 'products'):
+				print('has products')
+				products = event.products
+				logger.debug('get_all_products_in_event from %s - fetching %s data', event, products.count())
+				return products
+		return None
 
-	def get_actual_events(self):
+	def get_actual_events(self, group):
 		now = datetime.datetime.now()
-		events = Event.objects.filter(date_from__lte=now, date_to__gte=now)
+		events = Event.objects.filter(date_from__lte=now, date_to__gte=now, products__group__name=group).order_by('id')
 		logger.debug('get_actual_events - fetching %s data', events.count())
 		return events
 
@@ -75,6 +92,16 @@ class InventoryService:
 		orders = Order.objects.filter(done=False)
 		logger.debug('get_all_back_orders - fetching %s data', orders.count())
 		return orders
+
+	def _is_event(self):
+		now = datetime.datetime.now()
+		events = Event.objects.filter(date_from__lte=now, date_to__gte=now)
+		print(events)
+		logger.debug('active event %s', events.count())
+		if events:
+			return True
+		return False
+
 
 # ------------------------------------------------------------------------------------ order --------
 	"""@deprecated"""

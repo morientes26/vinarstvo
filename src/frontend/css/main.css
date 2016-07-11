@@ -645,6 +645,25 @@ h1.title {
 
 
 /* angular needs */
+.center{
+  text-align: center;
+}
+
+.language{
+  font-family: 'ScalaSansRegular';
+  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
+  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;  
+  position:absolute;
+  right:10px;
+  top:10px;
+  color: white;
+}
+.language a:link {color: white;  text-decoration: none;}
+.language a:visited {color: white;  text-decoration: none;}
+.language a:hover {color: #b3d4fc; text-decoration: underline;}
+.language a:active {color: #b3d4fc; text-decoration: underline;}
 
 .shopping-cart{
   margin: auto;

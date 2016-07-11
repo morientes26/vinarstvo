@@ -1,22 +1,11 @@
-app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParams, shoppingcart, $translate) {
+    app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParams, shoppingcart, $translate) {
     
     $scope.title = $routeParams.type;
     $scope.isOrder = false;
     $scope.items = shoppingcart.getCustomer().items;
     $scope.image_background=getImageBackground($routeParams.type);
 
-    var url = $rootScope.API_URL + "product/list/";
-    var backUrl = "cart";
-    $scope.event = 2; // FIXME: default event for product list
-    if ($routeParams.page=="event"){
-    	url = $rootScope.API_URL +"product/event/list/";
-    	$scope.title = 'TITLE_EVENT';
-        backUrl = "event";
-    }	
-    
-    $http.get(url).then(function (response) {
-        $scope.products = response.data;
-    });
+    getProducts($rootScope.API_URL, $routeParams.type);  
 
     $scope.backToList = function(){
         location.href = "#/";
@@ -84,6 +73,16 @@ app.controller("list", function($scope, $http, $rootScope, $cookies, $routeParam
 			console.log('not valid form');
 		}
 	};
+
+    function getProducts(base_url, group){
+
+        var url = base_url + 'products/'
+        $http.get(url,{
+            params: { group: group }
+        }).then(function (response) {
+            $scope.products = response.data;
+        });
+    }
 
     function getImageBackground(type){
 

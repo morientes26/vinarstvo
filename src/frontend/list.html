@@ -10,7 +10,7 @@
 
 <section class="main-container fix">
     <div class="main wrapper clearfix">
-        <ul class="list-wine">
+        <ul class="list-wine">            
             <li ng-repeat="p in products">
                 <div class="list-wine-item">
                     <div class="list-wine-bottle" ng-click="showDetail(p.id)">
@@ -24,17 +24,22 @@
                     <div class="list-wine-price" ng-click="showDetail(p.id)">
                         <p class="list-wine-value">{{ p.price }} €</p>
                     </div>
-                    <div class="list-wine-action">
+                    <!-- zatial sa nepouziva -->
+                    <!--div class="list-wine-action">
                         <button ng-click="addToCart(p.id, p.name)"> + </button>
 						<button ng-click="removeFromCart(p.id)"> - </button>
 						<span>{{ items[p.id][0] | default:0 }}</span>
-                    </div>
+                    </div-->
                 </div>
             </li>
- 
+            <li ng-show="products.length==0">
+                <div class="list-wine-item">
+                <p class="list-wine-type center" translate="EMPTY"></p></div>
+            </li> 
         </ul>
 
-    	<ng-include src="'cart.html'"></ng-include> <!-- #shopping cart include -->
+        <!-- zatial sa nepouziva -->
+    	<!--ng-include src="'cart.html'"></ng-include--> <!-- #shopping cart include -->
 
     </div> <!-- #main -->
 </section> <!-- #main-container -->

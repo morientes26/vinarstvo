@@ -55,6 +55,7 @@ urlpatterns = [
 	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
 
 	url(r'^api/info/$', ApiInfoView.as_view(), name='api_info'),
+	url(r'^api/products/$', get_products, name='api_product'),
 	url(r'^api/product/list/$', get_product_from_primary_cart, name='api_product_list'),
 	url(r'^api/product/event/list/$', get_product_from_actual_event, name='api_product_event_list'),
 	url(r'^api/product/event/$', get_actual_event, name='api_get_actual_event'),

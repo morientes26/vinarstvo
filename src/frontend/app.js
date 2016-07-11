@@ -140,6 +140,7 @@ app.config(function ($translateProvider) {
     ATTRIBUTE: 'Attribute',
     SERVING: 'Serving',
     TERRIOR: 'Terrior',
+    EMPTY: 'List is empty',
 
   	LOGO: 'Wine cart Karpatska perla',
     WINE_CART: 'Wine cart',
