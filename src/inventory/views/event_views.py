@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from inventory.forms import EventForm
 from inventory.models import Event, Item, Product
-from vanilla import CreateView, DeleteView, ListView, UpdateView, TemplateView
+from vanilla import CreateView, DeleteView, ListView, UpdateView
 from inventory.service import InventoryService
 
 import logging

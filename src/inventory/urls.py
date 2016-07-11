@@ -3,6 +3,7 @@ from django.conf.global_settings import MEDIA_ROOT
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from views.cart_views import *
 from views.product_views import *
 from views.group_views import *
 from views.order_views import *
@@ -61,6 +62,7 @@ urlpatterns = [
 	url(r'^api/product/event/$', get_actual_event, name='api_get_actual_event'),
 	url(r'^api/product/(?P<pk>\d+)/$', get_product_by_id, name='api_product_list'),
 	url(r'^api/order/create/$', create_order, name='api_create_order'),
-	
+
+    url(r'^cart/$', CartView.as_view(), name='cart_view'),
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
