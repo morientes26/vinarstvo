@@ -189,6 +189,16 @@ nav a:hover {
     }
 }
 
+.back-button {
+    position: fixed;
+    display: block;
+    float: left;
+    top: 0;
+    left: 0;
+    padding: 5vw 5vh;
+    height: 5vh;
+}
+
 h1 {
     text-align: center;
     font-size: 4vh;
@@ -334,7 +344,6 @@ header {
 .category {
     min-height: 100%;
 	font-size: 3vh;
-    .body-font;
     color: white;
     margin-top: 45vh; 
     margin-left: 1.5rem;
@@ -385,12 +394,12 @@ h1.title {
     
 .list-wine-bottle {
     max-height: 100%;
-    width: 12vh;
+    width: 10vw;
     position:relative;
     vertical-align: bottom;
     display: inline;
     float:left;
-    margin: 2vh;
+    padding: 2vh;
     
 }
 
@@ -401,14 +410,14 @@ h1.title {
 }
 
 .list-wine-description {
-    display: inline-block;
+    display: inline;
     position: relative;
     float: left;
     max-height: inherit;
-    max-width: 60%;
+    max-width: 40vw;
     text-overflow: ellipsis;
     white-space: normal;
-    margin: 2vh;
+    padding: 2vh;
 }
 
 .list-wine-name {
@@ -416,7 +425,6 @@ h1.title {
 	font-size: 1.2rem;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    .body-font;
     text-transform: none;
     color: @brand-darker;
 }
@@ -426,44 +434,42 @@ h1.title {
 	font-size: 1rem;
     margin-top: 1vh;
     margin-bottom: 0.5vh;
-    .body-font;
     text-transform: none;
     color:  @gray-dark;
     & span {
-        font-weight: 700;
+        .heading-font();
     }
 }
 
-.list-wine-type {
+.list-wine-type {   
     position:relative;
 	font-size: 1rem;
     margin-top: 0.5vh;
     margin-bottom: 1vh;
-    .body-font;
     text-transform: none;
     color: @gray-dark;
     & span {
-        font-weight: 700;
+        .heading-font();
     }
 }
 
 .list-wine-price {
     max-height: 100%;
-    width: 12vh;
+    width: 10vw;
     position:relative;
     vertical-align: bottom;
     display: inline;
     float:right;
-    margin: 2vh;
+    padding: 2vh;
 }
 
 .list-wine-value {
+    .heading-font();
     position:relative;
-	font-size: 2.5rem;
+	font-size: 1.5rem;
     margin-top: auto;
     margin-bottom: auto;
     vertical-align: middle;
-    .body-font;
     text-transform: none;
     color: @brand-darker;
 }

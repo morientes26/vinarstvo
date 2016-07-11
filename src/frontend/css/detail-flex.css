@@ -9,15 +9,15 @@
 @pochutiny:*/
 @font-face {
   font-family: 'ScalaSansRegular';
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
+  src: url('../fonts/scalasanspro-regular-ScalaSansRegular.eot');
+  src: url('../fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('../fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'ScalaSansBold';
-  src: url('../swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot');
-  src: url('../swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
+  src: url('../fonts/scalasanspro-bold-ScalaSansRegular.eot');
+  src: url('../fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('../fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,6 +36,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
+  font-family: 'ScalaSansRegular', sans-serif;
   color: white;
   font-size: 1em;
   line-height: 1.5;
@@ -46,11 +47,6 @@ body {
   background: linear-gradient(#040404, #373737);
   padding: 0;
   margin: 0;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 .flex-container,
 .column {
@@ -105,11 +101,7 @@ section.content,
   overflow: auto;
   max-width: 60vw;
   margin-left: 0;
-  font-family: 'ScalaSansBold';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ScalaSansBold', sans-serif;
 }
 .text {
   max-width: 45vw;
@@ -122,13 +114,9 @@ section.content,
   color: #373737;
 }
 .text span {
+  font-family: 'ScalaSansBold', sans-serif;
   font-weight: 700;
   line-height: 1;
-  font-family: 'ScalaSansBold';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 .serving {
   clear: both;
@@ -245,11 +233,7 @@ li {
   margin-top: auto;
   margin-bottom: auto;
   vertical-align: middle;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ScalaSansRegular', sans-serif;
   text-transform: none;
   color: #44778e;
 }

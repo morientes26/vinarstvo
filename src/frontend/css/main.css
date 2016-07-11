@@ -10,15 +10,15 @@
 @pochutiny:*/
 @font-face {
   font-family: 'ScalaSansRegular';
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
+  src: url('../fonts/scalasanspro-regular-ScalaSansRegular.eot');
+  src: url('../fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('../fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'ScalaSansBold';
-  src: url('../swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot');
-  src: url('../swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
+  src: url('../fonts/scalasanspro-bold-ScalaSansRegular.eot');
+  src: url('../fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('../fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -84,11 +84,7 @@ textarea {
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 body {
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ScalaSansRegular', sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -184,6 +180,15 @@ nav a:hover {
   padding: 5vh 0 2vh 0;
   height: 7vh;
 }
+.back-button {
+  position: fixed;
+  display: block;
+  float: left;
+  top: 0;
+  left: 0;
+  padding: 5vw 5vh;
+  height: 5vh;
+}
 h1 {
   text-align: center;
   font-size: 4vh;
@@ -191,11 +196,7 @@ h1 {
 h1.title {
   padding: 1vh 0 2vh 0;
   margin: 0;
-  font-family: 'ScalaSansBold';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-bold-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ScalaSansBold', sans-serif;
 }
 header {
   background-color: #373737;
@@ -231,7 +232,8 @@ header.smaller {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.biele {
+.biele,
+header.image-background {
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/bielevino.jpg") no-repeat;
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
@@ -327,11 +329,6 @@ header.smaller {
 .category {
   min-height: 100%;
   font-size: 3vh;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   color: white;
   margin-top: 45vh;
   margin-left: 1.5rem;
@@ -373,12 +370,12 @@ h1.title {
 }
 .list-wine-bottle {
   max-height: 100%;
-  width: 12vh;
+  width: 10vw;
   position: relative;
   vertical-align: bottom;
   display: inline;
   float: left;
-  margin: 2vh;
+  padding: 2vh;
 }
 .wine-img {
   height: 16vh;
@@ -386,25 +383,20 @@ h1.title {
   margin: auto;
 }
 .list-wine-description {
-  display: inline-block;
+  display: inline;
   position: relative;
   float: left;
   max-height: inherit;
-  max-width: 60%;
+  max-width: 40vw;
   text-overflow: ellipsis;
   white-space: normal;
-  margin: 2vh;
+  padding: 2vh;
 }
 .list-wine-name {
   position: relative;
   font-size: 1.2rem;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   text-transform: none;
   color: #44778e;
 }
@@ -413,70 +405,41 @@ h1.title {
   font-size: 1rem;
   margin-top: 1vh;
   margin-bottom: 0.5vh;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   text-transform: none;
   color: #373737;
 }
 .list-wine-year span {
-  font-weight: 700;
+  font-family: 'ScalaSansBold', sans-serif;
 }
 .list-wine-type {
   position: relative;
   font-size: 1rem;
   margin-top: 0.5vh;
   margin-bottom: 1vh;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   text-transform: none;
   color: #373737;
 }
 .list-wine-type span {
-  font-weight: 700;
+  font-family: 'ScalaSansBold', sans-serif;
 }
 .list-wine-price {
   max-height: 100%;
-  width: 12vh;
+  width: 10vw;
   position: relative;
   vertical-align: bottom;
   display: inline;
   float: right;
-  margin: 2vh;
+  padding: 2vh;
 }
 .list-wine-value {
+  font-family: 'ScalaSansBold', sans-serif;
   position: relative;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-top: auto;
   margin-bottom: auto;
   vertical-align: middle;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   text-transform: none;
   color: #44778e;
-}
-.list-wine-action{
-  position: relative;
-  font-size: 1rem;
-  float: right;
-  margin-top: auto;
-  margin-bottom: auto;
-  vertical-align: middle;
-  font-family: 'ScalaSansRegular';
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('http://www.karpatskaperla.sk/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  text-transform: none;
-  color: #44778e; 
 }
 /* ==========================================================================
    Media Queries
@@ -641,54 +604,4 @@ h1.title {
   h3 {
     page-break-after: avoid;
   }
-}
-
-
-/* angular needs */
-.center{
-  text-align: center;
-}
-
-.language{
-  font-family: 'ScalaSansRegular';
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot');
-  src: url('../swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.eot?#iefix') format('embedded-opentype'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.woff') format('woff'), url('/swift_data/source/fonts/scalasanspro-regular-ScalaSansRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;  
-  position:absolute;
-  right:10px;
-  top:10px;
-  color: white;
-}
-.language a:link {color: white;  text-decoration: none;}
-.language a:visited {color: white;  text-decoration: none;}
-.language a:hover {color: #b3d4fc; text-decoration: underline;}
-.language a:active {color: #b3d4fc; text-decoration: underline;}
-
-.shopping-cart{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-
-.shopping-cart .button{
-  float:left;
-}
-
-.shopping-cart .product-list{
-  clear: both;
-  width: 75%;
-  margin: auto;
-}
-
-.shopping-cart .product-list .name{
-  width: 95%;
-}
-
-.shopping-cart .product-list .amount{
-  width: 5%;
-}
-
-.shopping-cart .product-list .product-form{
-  margin: auto;
 }
