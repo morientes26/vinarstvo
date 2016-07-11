@@ -57,7 +57,7 @@ Getting all products from actual event
 """
 @api_view(['GET'])
 @permission_classes((AllowAny,))
-def get_actual_event(request):
+def get_actual_event():
 	event = InventoryService().get_actual_events('%')
 	if event:
 		serializer = EventSerializer(event[0], many=False)
@@ -71,12 +71,8 @@ Getting one product by primary key
 @permission_classes((AllowAny,))
 def get_products(request):
 	products = InventoryService().get_products(request.GET.get('group'))
-	print("---")
-	print(products.all()[:1].get())
-	print("---")
 	if products:
-		print('serialize products %s', products.count())
-		serializer = ProductSerializer(products.all()[:1].get(), many=False)
+		serializer = ProductSerializer(products, many=True)
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	return Response(None, status=status.HTTP_200_OK)
 

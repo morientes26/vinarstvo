@@ -34,10 +34,10 @@ class InventoryService:
 		Args: group - String of group name
 		Returns: list of products
 		"""
-		if self._is_event(): # find if exist actual event
+		event = self.get_event()
+		if event:
 			logger.debug('finded actual event')
-			event = self.get_actual_events(group)
-			return self.get_all_products_in_event(event[0])
+			return self.get_all_products_in_event(event, group)
 		else:
 			logger.debug('not actual event')			
 			return self.get_all_products_in_cart(group)
@@ -67,14 +67,18 @@ class InventoryService:
 		logger.debug('get_all_products_in_cart - fetching %s data', products.count())
 		return products
 
-	def get_all_products_in_event(self, event):
-		if event:
-			if hasattr(event, 'products'):
-				print('has products')
-				products = event.products
-				logger.debug('get_all_products_in_event from %s - fetching %s data', event, products.count())
-				return products
-		return None
+	def get_all_products_in_event(self, event, group):
+			products = event.products
+			result = []
+			logger.debug(products.all())
+			for prod in products.all():
+				if prod.group:
+					logger.debug(prod)
+					if prod.group.name == group:
+						result.append(prod)
+
+			logger.debug('get_all_products_in_event from %s - fetching %s data', event, result.__sizeof__())
+			return result
 
 	def get_actual_events(self, group):
 		now = datetime.datetime.now()
@@ -90,17 +94,15 @@ class InventoryService:
 	def get_all_back_orders(self):
 		""" get all not competed orders """
 		orders = Order.objects.filter(done=False)
-		logger.debug('get_all_back_orders - fetching %s data', orders.count())
 		return orders
 
-	def _is_event(self):
+	def get_event(self):
 		now = datetime.datetime.now()
-		events = Event.objects.filter(date_from__lte=now, date_to__gte=now)
-		print(events)
-		logger.debug('active event %s', events.count())
+		events = Event.objects.filter(date_from__lte=now, date_to__gte=now).order_by('id')
 		if events:
-			return True
-		return False
+			return events[0]
+		else:
+			return None
 
 
 # ------------------------------------------------------------------------------------ order --------
