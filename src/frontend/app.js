@@ -109,7 +109,7 @@ app.filter('default', [function(){
 app.config(function ($translateProvider) {
   
   $translateProvider.useSanitizeValueStrategy(null);
-  $translateProvider.preferredLanguage('en');
+  $translateProvider.preferredLanguage('sk');
   $translateProvider.translations('en', {
 
     red: 'Red wine',
@@ -119,7 +119,11 @@ app.config(function ($translateProvider) {
     white_archive: 'White archive wine',
     red_archive: 'Red archive wine',
     nealko: 'Not alcoholic drink',
-    sweets: 'Sweets',
+    sweets: 'Others',
+
+    RED: 'red',
+    WHITE: 'white',
+    ROSE: 'rose',
 
     SV: 'Stolove vino',
     AV: 'Akostne vino',
@@ -168,6 +172,49 @@ app.config(function ($translateProvider) {
     BACK: 'Back',
   });
   $translateProvider.translations('sk', {
+
+    red: 'Červené víno',
+    white: 'Biele víno',
+    rose: 'Ružové víno',
+    sweet: 'Dezertné víno',
+    white_archive: 'Biele archívne víno',
+    red_archive: 'Červené archívne víno',
+    nealko: 'Nealkoholické nápoje',
+    sweets: 'Pochutiny',
+
+    RED: 'červené',
+    WHITE: 'biele',
+    ROSE: 'ružové',
+
+    SV: 'Stolové víno',
+    AV: 'Akostné víno',
+    KV: 'Kabinetné víno',
+    NZ: 'Neskorý zber',
+    VH: 'Výber z hrozna',
+    BV: 'Bobuľový výber',
+    HV: 'Hrozienkový výber',
+    SV: 'Slamové víno',
+    LV: 'Ľadové víno',
+    VC: 'Výber z cíbeb',
+
+    DY: 'suché',
+    HD: 'polosuché',
+    HS: 'polosladké',
+    SW: 'sladké',
+
+    ATTRIBUTE: 'Prívlastok',
+    SERVING: 'Servírovanie',
+    TERRIOR: 'Oblasť',
+    EMPTY: 'Karta je prázdna',
+    CLASSIFICATION: 'Klasifikácia',
+    YEAR: 'Ročník',
+    ALCOHOL: 'Alkohol',
+    VOLUME: 'Objem',
+    SUGAR_CONTENT: 'Cukornatosť',
+    SUGAR_RESIDUAL: 'Zvyškový cukor',
+    ACIDITY: 'Kyslosť',
+    PRICE: 'Cena',
+
     LOGO: 'Vinná karta Karpatská perla',
     PONUKOVA_KARTA: 'Ponuková karta',
     TITLE_EVENT: 'Vinná karta ochutnávky',

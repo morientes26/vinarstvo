@@ -6,43 +6,43 @@ import uuid
 
 
 class ProductForm(ModelForm):
-	is_new = BooleanField(widget=forms.HiddenInput(), label=None, initial=True)
+    is_new = BooleanField(widget=forms.HiddenInput(), label=None, initial=True)
 
-	class Meta:
-		model = Product
-		fields = ['code', 'origin_name', 'price', 'active', 'name', 'description', 'is_wine', 'size', 'group']
+    class Meta:
+        model = Product
+        fields = ['code', 'origin_name', 'price', 'active', 'name', 'description', 'is_wine', 'size', 'group', 'amount']
 
 
 class WineForm(ModelForm):
-	class Meta:
-		model = Wine
-		fields = "__all__"
-		exclude = ('product',)
+    class Meta:
+        model = Wine
+        fields = "__all__"
+        exclude = ('product',)
 
 
 class GroupForm(ModelForm):
-	class Meta:
-		model = Group
-		fields = "__all__"
+    class Meta:
+        model = Group
+        fields = "__all__"
 
 
 class OrderForm(ModelForm):
-	class Meta:
-		model = Order
-		fields = "__all__"
-		exclude = ('items', 'done')
+    class Meta:
+        model = Order
+        fields = "__all__"
+        exclude = ('items', 'done')
 
 
 class EventForm(ModelForm):
-	class Meta:
-		model = Event
-		fields = "__all__"
-		exclude = ('products',)
+    class Meta:
+        model = Event
+        fields = "__all__"
+        exclude = ('products',)
 
 
 class PhotoForm(ModelForm):
-	uuid = CharField(widget=forms.HiddenInput(), label=None, initial=uuid.uuid4())
+    uuid = CharField(widget=forms.HiddenInput(), label=None, initial=uuid.uuid4())
 
-	class Meta:
-		model = Photo
-		fields = "__all__"
+    class Meta:
+        model = Photo
+        fields = "__all__"

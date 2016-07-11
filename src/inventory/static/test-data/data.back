@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<list-item>
+		<code>S0001</code>
+		<origin_name>Karpatska perla 01</origin_name>
+		<price>3.00</price>
+	</list-item>
+	<list-item>
+		<code>S0002</code>
+		<origin_name>Karpatska perla 02</origin_name>
+		<price>5.00</price>
+	</list-item>
+	<list-item>
+		<code>S0003</code>
+		<origin_name>Karpatska perla 03</origin_name>
+		<price>3.40</price>
+	</list-item>
+	<list-item>
+		<code>S0004</code>
+		<origin_name>Karpatska perla 04</origin_name>
+		<price>15.00</price>
+	</list-item>	
+</root>

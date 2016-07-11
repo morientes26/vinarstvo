@@ -37,45 +37,136 @@
 <form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th class="col-md-2">{% trans "product_code" %}</th>
-            <th class="col-md-2"> {% trans "product_origin_name" %}</th>
-            <th class="col-md-2"> {% trans "product_name" %}</th>
-            <th class="col-md-2"> {% trans "product_price" %}</th>
-            <th class="col-md-2"> {% trans "product_size" %}</th>
-            <th class="col-md-2"> {% trans "product_import_date" %}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{ product_form.code }}</td>
-            <td>{{ product_form.origin_name }}</td>
-            <td>{{ product_form.name }}</td>
-            <td>{{ product_form.price }}</td>
-            <td>{{ product_form.size }}</td>
-            <td>{{ product_form.import_date }}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="form-group row">
+        <label for="{{ product_form.code.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_code" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.code.html_name }}" value="{{ product_form.code.value }}">
+        </div>
+    </div>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th class="col-md-2"> {% trans "product_active" %}</th>
-            <th class="col-md-4"> {% trans "product_group" %}</th>
-            <th class="col-md-6"> {% trans "product_description" %}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{ product_form.active }}</td>
-            <td>{{ product_form.group }}</td>
-            <td>{{ product_form.description }}</td>
-         </tr>
-        </tbody>
-    </table>
+    <div class="form-group row">
+        <label for="{{ product_form.origin_name.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_origin_name" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.origin_name.html_name }}" value="{{ product_form.origin_name.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.name.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_name" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.name.html_name }}" value="{{ product_form.name.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.price.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_price" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.price.html_name }}" value="{{ product_form.price.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.size.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_size" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.size.html_name }}" value="{{ product_form.size.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.amount.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_amount" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ product_form.amount.html_name }}" value="{{ product_form.amount.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.group.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_group" %}</label>
+        <div class="col-sm-10">
+            {{ product_form.group }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.active.id_for_label }}" class="col-sm-2">{% trans "product_active" %}</label>
+        <div class="col-sm-10">
+          <div class="checkbox">
+            <label>
+              {{ product_form.active }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.color.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_color" %}</label>
+        <div class="col-sm-10">
+            {{ wine_form.color}}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.year.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_year" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ wine_form.year.html_name }}" value="{{ wine_form.year.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.attribute.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_attribute" %}</label>
+        <div class="col-sm-10">
+            {{ wine_form.attribute }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.sugar_residual.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_sugar_residual" %}</label>
+        <div class="col-sm-10">
+            {{ wine_form.sugar_residual }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.sugar_content.id_for_label }}" class="col-sm-2 form-control-label">{% trans "sugar_content" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ wine_form.sugar_content.html_name }}" value="{{ wine_form.sugar_content.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.acidity.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_acidity" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ wine_form.acidity.html_name }}" value="{{ wine_form.acidity.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.alcohol.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_alcohol" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ wine_form.alcohol.html_name }}" value="{{ wine_form.alcohol.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.locality.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_locality" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ wine_form.locality.html_name }}" value="{{ wine_form.locality.value }}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ wine_form.serving.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_serving" %}</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" name="{{ wine_form.serving.html_name }}">{{ wine_form.serving.value }}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="{{ product_form.description.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_description" %}</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" name="{{ product_form.description.html_name }}">{{ product_form.description.value }}</textarea>
+        </div>
+    </div>
+
 
     <input type="file" id="photo_upload" name="photo_upload">
 
@@ -87,49 +178,24 @@
 
     {% trans "is_wine" %} {{ product_form.is_wine }}
 
-    <table class="table">
+    <!--table class="table">
         <thead>
         <tr>
-           <th class="col-md-2">{% trans "wine_color" %}</th>
-           <th class="col-md-2">{% trans "wine_year" %}</th>
-           <th class="col-md-2">{% trans "wine_attribute" %}</th>
-           <th class="col-md-1">{% trans "wine_sugar_residual" %}</th>
-           <th class="col-md-1">{% trans "wine_acidity" %}</th>
-           <th class="col-md-2">{% trans "wine_locality" %}</th>
-           <th class="col-md-2">{% trans "wine_serving" %}</th>
+           <th class="col-md-12">{*% trans "wine_awards" %*}</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-           <td>{{ wine_form.color }}</td>
-           <td>{{ wine_form.year }}</td>
-           <td>{{ wine_form.attribute }}</td>
-           <td>{{ wine_form.sugar_residual }}</td>
-           <td>{{ wine_form.acidity }}</td>
-           <td>{{ wine_form.locality }}</td>
-           <td>{{ wine_form.serving }}</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <table class="table">
-        <thead>
-        <tr>
-           <th class="col-md-12">{% trans "wine_awards" %}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        {% for award in wine.awards.all %}
-            <td>{{ award.name }}</td>
-            {% if award.photo %}
-            <td>{{ award.photo.title }}</td>
-            {% endif %}
-        {% endfor %}
+        {*% for award in wine.awards.all %*}
+            <td>{*{ award.name }*}</td>
+            {*% if award.photo %*}
+            <td>{*{ award.photo.title }*}</td>
+            {*% endif %*}
+        {*% endfor %*}
         <input type="file" id="award_upload" name="award_upload">
         </tr>
         </tbody>
-    </table>
+    </table-->
 
     {% if form.errors %}
         {% for field in form %}
@@ -149,35 +215,12 @@
 
     {{ product_form.is_new }}
 
-    <input type="submit" value='{% trans "save" %}'>
+    <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <a href="{% url 'list_products' %}"><button class="btn btn-secondary">{% trans "back" %}</button></a>
+          <button type="submit" class="btn btn-secondary">{% trans "save" %}</button>
+        </div>
+    </div>
 </form>
-
- <!-- Upload form. Note enctype attribute! -->
-<div id="photos"></div>
-
-<!--img src="{{ product_form.photo.url }}" /-->
-
-<form target="iframe" action="{% url 'upload_photo' %}" method="post" enctype="multipart/form-data" id="upload">
-    {% csrf_token %}
-    <p>{{ photo_form.non_field_errors }}</p>
-    <p>{{ photo_form.title.label_tag }} {{ photo_form.title.help_text }}</p>
-    <p>
-        {{ photo_form.title.errors }}
-        {{ photo_form.title }}
-    </p>
-
-    <p>{{ photo_form.non_field_errors }}</p>
-    <p>{{ photo_form.blob.label_tag }} {{ photo_form.blob.help_text }}</p>
-    <p>
-        {{ photo_form.blob.errors }}
-        {{ photo_form.blob }}
-    </p>
-    {{ photo_form.uuid }}
-    <p><input type="submit" value="Upload" /></p>
-</form>
-<iframe name="iframe" id="iframe" style="display:none"></iframe>
-
-
-<a href="{% url 'list_products' %}">{% trans "back" %}</a>
 
 {% endblock %}

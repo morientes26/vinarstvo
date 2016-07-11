@@ -18,8 +18,13 @@
                     </div>
                     <div class="list-wine-description" ng-click="showDetail(p.id)">
                         <h3 class="list-wine-name">{{ p.name }}</h3>
-                        <p class="list-wine-year"><span>Ročník: </span>2013</p>
-                        <p class="list-wine-type"><span>Klasifikácia: </span>Víno s chráneným označením pôvodu, neskorý zber, biele, suché</p>
+                        <p class="list-wine-year"><span translate="YEAR"></span>{{ p.wine.year }}</p>
+                        <p class="list-wine-type"><span translate="CLASSIFICATION"></span>
+                            {{ p.wine.locality }} &nbsp;
+                            {{ p.wine.attribute | translate | lowercase }} &nbsp;
+                            {{ p.wine.color | translate | lowercase}} &nbsp;
+                            {{ p.wine.sugar_residual | translate | lowercase}}
+                        </p>
                     </div>
                     <div class="list-wine-price" ng-click="showDetail(p.id)">
                         <p class="list-wine-value">{{ p.price }} €</p>
@@ -28,7 +33,7 @@
                     <!--div class="list-wine-action">
                         <button ng-click="addToCart(p.id, p.name)"> + </button>
 						<button ng-click="removeFromCart(p.id)"> - </button>
-						<span>{{ items[p.id][0] | default:0 }}</span>
+						<span>{*{ items[p.id][0] | default:0 }*}</span>
                     </div-->
                 </div>
             </li>

@@ -6,7 +6,6 @@ from django.utils import timezone
 from polymorphic.models import PolymorphicModel
 from winelist.settings import MEDIA_URL, BASE_DIR
 
-import uuid
 
 class Photo(models.Model):
 	"""
@@ -18,6 +17,11 @@ class Photo(models.Model):
 
 	class Meta:
 		app_label = 'inventory'
+
+	# Overriding
+	#def save(self, *args, **kwargs):
+	#	self.uuid = 'http://localhost:8000'+self.blob
+	#	super(Photo, self).save(*args, **kwargs)
 
 	def __unicode__(self):
 		return str(self.pk)+ " " +self.uuid
@@ -34,6 +38,7 @@ class Product(models.Model):
 	price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True, help_text="cena tovaru")
 	is_new = models.BooleanField(default=True, blank=True, help_text="produkt bol prave synchrnonizovany")
 	import_date = models.DateTimeField(default=timezone.now)
+	amount = models.IntegerField(null=True, help_text="mnozstvo", blank=True, default=0)
 
 	# Other attributes
 	active = models.BooleanField(default=False, blank=True, help_text="aktivne zobrazenie v tablete")

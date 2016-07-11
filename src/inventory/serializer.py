@@ -2,8 +2,17 @@
 Serializer for model Product
 """ 
 from rest_framework import serializers
-from rest_framework.parsers import JSONParser
-from inventory.models import Product, Event, Order, Item, Wine, Award, Group
+from inventory.models import Product, Event, Order, Item, Wine, Award, Group, Photo
+
+
+class PhotoSerializer(serializers.ModelSerializer):
+    """
+    Serializing the Photo
+    """
+
+    class Meta:
+        model = Photo
+        fields = "__all__"
 
 
 class AwardSerializer(serializers.ModelSerializer):
@@ -43,6 +52,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """
     wine = WineSerializer(read_only=True, many=False)
     group = GroupSerializer(read_only=True, many=False)
+    photos = PhotoSerializer(read_only=True, many=True)
 
     class Meta:
         model = Product
@@ -59,7 +69,7 @@ class EventSerializer(serializers.Serializer):
     products = ProductSerializer(read_only=True, many=True)
 
     class Meta:
-		model = Event
+        model = Event
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -70,7 +80,7 @@ class ItemSerializer(serializers.ModelSerializer):
     amount = serializers.Field()
 
     class Meta:
-		model = Item
+        model = Item
 
 
 class OrderSerializer(serializers.ModelSerializer):
