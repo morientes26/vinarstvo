@@ -1,9 +1,9 @@
 <header class="header-container wrapper clearfix image-background {{ image_background }}" >
     <div>
-        <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.svg" alt="Go back">
+        <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.png" alt="Go back">
     </div>
     <div>
-        <img class="logo big" src="/static/frontend/img/kp_logo.svg" alt="Karpatská perla">
+        <img class="logo big" src="/static/frontend/img/kp_logo.png" alt="Karpatská perla">
     </div>
     <h1 class="title">{{ title | translate }}</h1>
 </header>
@@ -11,14 +11,14 @@
 <section class="main-container fix">
     <div class="main wrapper clearfix">
         <ul class="list-wine">            
-            <li ng-repeat="p in products">
+            <li ng-repeat="p in products" ng-click="showDetail(p.id)">
                 <div class="list-wine-item">
-                    <div class="list-wine-bottle" ng-click="showDetail(p.id)">
+                    <div class="list-wine-bottle">
                         <img class="wine-img" src="/static/frontend/img/04ZB2013.png">
                     </div>
-                    <div class="list-wine-description" ng-click="showDetail(p.id)">
+                    <div class="list-wine-description">
                         <h3 class="list-wine-name">{{ p.name }}</h3>
-                        <p class="list-wine-year"><span translate="YEAR"></span>{{ p.wine.year }}</p>
+                        <p class="list-wine-year"><span translate="YEAR"></span> {{ p.wine.year }}</p>
                         <p class="list-wine-type"><span translate="CLASSIFICATION"></span>
                             {{ p.wine.locality }} &nbsp;
                             {{ p.wine.attribute | translate | lowercase }} &nbsp;
@@ -26,8 +26,8 @@
                             {{ p.wine.sugar_residual | translate | lowercase}}
                         </p>
                     </div>
-                    <div class="list-wine-price" ng-click="showDetail(p.id)">
-                        <p class="list-wine-value">{{ p.price }} €</p>
+                    <div class="list-wine-price">
+                        <p class="list-wine-value">{{ p.price }}€</p>
                     </div>
                     <!-- zatial sa nepouziva -->
                     <!--div class="list-wine-action">

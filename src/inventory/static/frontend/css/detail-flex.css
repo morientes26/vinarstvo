@@ -220,7 +220,7 @@ li {
 }
 .list-wine-price {
   max-height: 100%;
-  width: 12vh;
+  width: 10vh;
   position: relative;
   vertical-align: bottom;
   display: inline;
@@ -229,7 +229,7 @@ li {
 }
 .list-wine-value {
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: auto;
   margin-bottom: auto;
   vertical-align: middle;

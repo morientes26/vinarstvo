@@ -1,10 +1,10 @@
 <header>
         <div>
-            <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.svg" alt="Go back">
+            <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.png" alt="Go back">
         </div>
 
         <div>
-        <img class="logo top" src="/static/frontend/img/kp_logo.svg">
+        <img class="logo top" src="/static/frontend/img/kp_logo.png">
     </div>
 </header>
 <div class="flex-container">
@@ -17,7 +17,7 @@
     <section class="column" ng-show="product.is_wine">
         <div class="lrow">
             <div class="serving">
-                <p class="text white"><span>Ročník: </span>{{ product.wine.year }}</p>
+                <p class="text white"><span translate="YEAR">: </span> {{ product.wine.year }}</p>
                 <p class="text white">
                     <span translate="CLASSIFICATION"></span> :
                     {{ product.wine.locality }} &nbsp;
@@ -85,7 +85,7 @@
     <section class="content flexi-row spacing">
         <div class="serving even-box">
             <p class="text white list-wine-price"><span translate="PRICE">Cena:</span></p>
-            <p class="text white list-wine-value">{{ product.price }}  €</p>
+            <p class="text white list-wine-value">{{ product.price }} €</p>
         </div>
     </section>
 </div>

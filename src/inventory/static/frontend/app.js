@@ -1,7 +1,7 @@
 var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'])
 .run(function($rootScope, $cookies, shoppingcart, $translate) {
 
-    $rootScope.API_URL = "http://127.0.0.1:8000/api/";
+    $rootScope.API_URL = "/api/";
     shoppingcart.init('testovac_1');
 
     $rootScope.changeLanguage = function (key) {
@@ -123,28 +123,36 @@ app.config(function ($translateProvider) {
 
     RED: 'red',
     WHITE: 'white',
-    ROSE: 'rose',
+    ROSE: 'rosé',
 
-    SV: 'Stolove vino',
-    AV: 'Akostne vino',
-    KV: 'Kabinetne vino',
-    NZ: 'Neskory zber',
-    VH: 'Vyber z hrozna',
-    BV: 'Bobulovy vyber',
-    HV: 'Hrozienkovy vyber',
-    SV: 'Slamove vino',
-    LV: 'Ladove vino',
-    VC: 'Vyber z cibeb',
+    SV: 'Table wine',
+    AV: 'Quality wine',
+    KV: 'Cabinet wine',
+    NZ: 'Late harvest',
+    VH: 'Grape selection',
+    BV: 'Berry selection',
+    HV: 'Selection of raisins',
+    SV: 'Straw wine',
+    LV: 'Ice wine',
+    VC: 'Cibéb choice',
 
-    DY: 'suché',
-    HD: 'polosuché',
-    HS: 'polosladké',
-    SW: 'sladké',
+    DY: 'dry',
+    HD: 'semidry',
+    HS: 'semisweet',
+    SW: 'sweet',
 
     ATTRIBUTE: 'Attribute',
     SERVING: 'Serving',
     TERRIOR: 'Terrior',
     EMPTY: 'List is empty',
+    CLASSIFICATION: 'Classification',
+    YEAR: 'Year',
+    ALCOHOL: 'Alcohol',
+    VOLUME: 'Volume',
+    SUGAR_CONTENT: 'Content of sugar',
+    SUGAR_RESIDUAL: 'Residual sugar',
+    ACIDITY: 'Acidity',
+    PRICE: 'Price',
 
   	LOGO: 'Wine cart Karpatska perla',
     WINE_CART: 'Wine cart',
