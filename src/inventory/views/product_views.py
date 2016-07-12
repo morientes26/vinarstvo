@@ -22,186 +22,187 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 # Views for products management
 
 class IndexView(LoginRequiredMixin, TemplateView):
-	template_name = 'index_ng.html'
+    template_name = 'index_ng.html'
 
-	def get(self, request, *args, **kwargs):
-		logger.debug("IndexerView")
-		return super(IndexView, self).get(request, args, kwargs)
+    def get(self, request, *args, **kwargs):
+        logger.debug("IndexerView")
+        return super(IndexView, self).get(request, args, kwargs)
 
 
 # import products from xml
 class ImportView(LoginRequiredMixin, TemplateView):
-	template_name = 'inventory/product_import.html'
+    template_name = 'inventory/product_import.html'
 
-	def get(self, request):
-		logger.debug("importing data")
-		# synchronization all products from xml file
-		import_count = sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
-		context = self.get_context_data()
-		context['import_count'] = import_count
-		return self.render_to_response(context)
+    def get(self, request):
+        logger.debug("importing data")
+        # synchronization all products from xml file
+        import_count = sync_products_from_file(BASE_DIR + '/inventory/static/test-data/data.xml')
+        context = self.get_context_data()
+        context['import_count'] = import_count
+        return self.render_to_response(context)
 
 
 # change language en/sk
 
 class LangChangeView(TemplateView):
-	def get(self, request, *args, **kwargs):
-		lang = 'en'
-		if translation.LANGUAGE_SESSION_KEY in request.session:
-			lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
-			translation.activate(lang)
+    def get(self, request, *args, **kwargs):
+        lang = 'en'
+        if translation.LANGUAGE_SESSION_KEY in request.session:
+            lang = 'en' if request.session[translation.LANGUAGE_SESSION_KEY] == 'sk' else 'sk'
+            translation.activate(lang)
 
-		request.session[translation.LANGUAGE_SESSION_KEY] = lang
-		return redirect('index')
+        request.session[translation.LANGUAGE_SESSION_KEY] = lang
+        return redirect('index')
 
 
 class ListProducts(LoginRequiredMixin, ListView):
-	model = Product
-	queryset = Product.objects.all()
+    model = Product
+    queryset = Product.objects.all()
 
 
 class DetailProduct(LoginRequiredMixin, TemplateView):
-	template_name = 'inventory/product_detail.html'
-	service = InventoryService()
+    template_name = 'inventory/product_detail.html'
+    service = InventoryService()
 
-	def get(self, request, *args, **kwargs):
-		try:
-			p_tuple = self.service.get_product_by_id(kwargs['pk'])
-			logger.debug("detail proudct %s" , p_tuple)
-			return render(request, self.template_name, context={
-				'wine': p_tuple.wine,
-				'product': p_tuple.product
-			})
-		except Exception:
-			raise Http404('product %s  has not been found.' % kwargs['pk'])
+    def get(self, request, *args, **kwargs):
+        try:
+            p_tuple = self.service.get_product_by_id(kwargs['pk'])
+            logger.debug("detail proudct %s", p_tuple)
+            return render(request, self.template_name, context={
+                'wine': p_tuple.wine,
+                'product': p_tuple.product
+            })
+        except Exception:
+            raise Http404('product %s  has not been found.' % kwargs['pk'])
 
 
 class CreateProduct(LoginRequiredMixin, View):
-	template_name = 'inventory/product_create.html'
-	service = InventoryService()
+    template_name = 'inventory/product_create.html'
+    service = InventoryService()
 
-	def get(self, request, *args, **kwargs):
-		logging.debug('create product %s', request)
-		return render(request, self.template_name, context={
-			'product_form': ProductForm(),
-			'wine_form': WineForm(),
-			'photo_form': PhotoForm(),
-		})
+    def get(self, request, *args, **kwargs):
+        logging.debug('create product %s', request)
+        return render(request, self.template_name, context={
+            'product_form': ProductForm(),
+            'wine_form': WineForm(),
+            'photo_form': PhotoForm(),
+        })
 
-	def post(self, request, *args, **kwargs):
-		product_form = ProductForm(request.POST)
-		wine_form = WineForm(request.POST)
+    def post(self, request, *args, **kwargs):
+        product_form = ProductForm(request.POST)
+        wine_form = WineForm(request.POST)
 
-		if all([product_form.is_valid(), wine_form.is_valid()]):
-			product = product_form.save()
-			if product.is_wine:
-				wine = wine_form.save(commit=False)
-				wine.product = product
-				wine.save()
+        if all([product_form.is_valid(), wine_form.is_valid()]):
+            product = product_form.save()
+            if product.is_wine:
+                wine = wine_form.save(commit=False)
+                wine.product = product
+                wine.save()
 
-			self.service.upload_photos(request, product)
+            self.service.upload_photos(request, product)
 
-			messages.add_message(request, messages.INFO, _("product_created"))
+            messages.add_message(request, messages.INFO, _("product_created"))
 
-		return redirect('list_products')
+        return redirect('list_products')
 
 
 class EditProduct(LoginRequiredMixin, View):
-	template_name = 'inventory/product_create.html'
-	service = InventoryService()
+    template_name = 'inventory/product_create.html'
+    service = InventoryService()
 
-	def get(self, request, **kwargs):
-		logging.debug('GET - edit product')
-		wine_form = WineForm()
-		product = get_object_or_404(Product, pk=kwargs['pk'])
-		product_form = ProductForm(instance=product)
-		if product.is_wine:
-			wine = Wine.objects.get(product=product)
-			if wine:
-				wine_form = WineForm(instance=wine)
-		return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
+    def get(self, request, **kwargs):
+        logging.debug('GET - edit product')
+        wine_form = WineForm()
+        product = get_object_or_404(Product, pk=kwargs['pk'])
+        product_form = ProductForm(instance=product)
+        #if product.is_wine:
+        #    wine = Wine.objects.get(product=product)
+        #    if wine:
+        #        wine_form = WineForm(instance=wine)
+        return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
-	def post(self, request, **kwargs):
-		logger.debug("POST - edit proudct %s" , request)
-		product = get_object_or_404(Product, pk=kwargs['pk'])
-		product_form = ProductForm(data=request.POST, instance=product)
-		wine_form = WineForm(data=request.POST)
+    def post(self, request, **kwargs):
+        logger.debug("POST - edit prouduct %s", request)
+        product = get_object_or_404(Product, pk=kwargs['pk'])
+        product_form = ProductForm(data=request.POST, instance=product)
+        wine_form = WineForm(data=request.POST)
 
-		if product.is_wine:
-			wine = Wine.objects.get(product=product)
-			wine_form = WineForm(data=request.POST, instance=wine)
+        if product.is_wine:
+            #wine = Wine.objects.get(product=product)
+            wine_form = WineForm(data=request.POST, instance=product.wine)
 
-		if product_form.is_valid():
-			print('product_form valid')
-			pcd = product_form.cleaned_data
-			if pcd['is_wine']:
-				if wine_form.is_valid():
-					product = product_form.save()
-					wine = wine_form.save(commit=False)
-					wine.product = product
-					wine.save()
+        if product_form.is_valid():
+            print('product_form valid')
+            pcd = product_form.cleaned_data
+            if pcd['is_wine']:
+                if wine_form.is_valid():
+                    product = product_form.save()
+                    wine = wine_form.save(commit=False)
+                    wine.product = product
+                    wine.save()
 
-			else:
-				product_form.save()
+            else:
+                product_form.save()
 
-			self.service.upload_photos(request, product)
+            self.service.upload_photos(request, product)
 
-			messages.add_message(request, messages.INFO, _("product_edited"))
+            messages.add_message(request, messages.INFO, _("product_edited"))
 
-		for p in product_form.errors:
-			print(p)
+        for p in product_form.errors:
+            print(p)
 
-		return redirect('list_products')
+        return redirect('list_products')
 
 
 class UploadPhoto(LoginRequiredMixin, View):
+    @csrf_exempt
+    def dispatch(self, *args, **kwargs):
+        return super(UploadPhoto, self).dispatch(*args, **kwargs)
 
-	@csrf_exempt
-	def dispatch(self, *args, **kwargs):
-		return super(UploadPhoto, self).dispatch(*args, **kwargs)
+    def post(self, request):
+        logging.debug('upload file')
+        photo = Photo.objects.create(title=request.POST['title'], blob=request.FILES['blob'], uuid=request.POST['uuid'])
+        logging.debug('insert f')
+        return HttpResponse('ok')
 
-	def post(self, request):
-		logging.debug('upload file')
-		photo = Photo.objects.create(title=request.POST['title'], blob=request.FILES['blob'], uuid=request.POST['uuid'])
-		logging.debug('insert f')
-		return HttpResponse('ok')
-		#photo_form = PhotoForm(data=request.POST, files=request.FILES)
-		#if photo_form.is_valid():
-		#	photo_form.save()
-		#	return HttpResponse('ok')
-		#raise Exception('Cannot upload photo')
+    # photo_form = PhotoForm(data=request.POST, files=request.FILES)
+    # if photo_form.is_valid():
+    #	photo_form.save()
+    #	return HttpResponse('ok')
+    # raise Exception('Cannot upload photo')
 
 
 class AddProduct(LoginRequiredMixin, TemplateView):
-	def get(self, request, *args, **kwargs):
-		try:
-			logging.debug('add product to cart %s', request)
-			#product = Product.objects.get(pk=kwargs['pk'])
-			product = get_object_or_404(Product, pk=kwargs['pk'])
-			product.active = True
-			product.save()
-			logging.debug('added product to cart %s', product)
-			print(product)
-		except Product.DoesNotExist:
-			logging.error("Product not found %s", kwargs['pk'])
-		return redirect('list_products')
+    def get(self, request, *args, **kwargs):
+        try:
+            logging.debug('add product to cart %s', request)
+            # product = Product.objects.get(pk=kwargs['pk'])
+            product = get_object_or_404(Product, pk=kwargs['pk'])
+            product.active = True
+            product.save()
+            logging.debug('added product to cart %s', product)
+            print(product)
+        except Product.DoesNotExist:
+            logging.error("Product not found %s", kwargs['pk'])
+        return redirect('list_products')
 
 
 class RemoveProduct(LoginRequiredMixin, TemplateView):
-	def get(self, request, *args, **kwargs):
-		try:
-			product = get_object_or_404(Product, pk=kwargs['pk'])
-			product.active = False
-			product.save()
-			logging.debug('remove product from cart %s', product)
-		except Product.DoesNotExist:
-			logging.error("Product not found %s", kwargs['pk'])
-		return redirect('list_products')
+    def get(self, request, *args, **kwargs):
+        try:
+            product = get_object_or_404(Product, pk=kwargs['pk'])
+            product.active = False
+            product.save()
+            logging.debug('remove product from cart %s', product)
+        except Product.DoesNotExist:
+            logging.error("Product not found %s", kwargs['pk'])
+        return redirect('list_products')
 
 
 class DeleteProduct(LoginRequiredMixin, DeleteView):
-	model = Product
-	success_url = reverse_lazy('list_products')
+    model = Product
+    success_url = reverse_lazy('list_products')

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 20:45+0200\n"
+"POT-Creation-Date: 2016-07-12 22:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,12 @@ msgstr ""
 msgid "title_inventory"
 msgstr "Inventory"
 
+#: inventory/templates/inventory/event_confirm_delete.html:6
+#, fuzzy
+#| msgid "confirm_delete_product"
+msgid "confirm_delete_order"
+msgstr "Are you sure to delete product?"
+
 #: inventory/templates/inventory/event_form.html:24
 #, fuzzy
 #| msgid "title_inventory"
@@ -29,7 +35,7 @@ msgstr "Inventory"
 
 #: inventory/templates/inventory/event_form.html:27
 #: inventory/templates/inventory/order_form.html:35
-#: inventory/templates/inventory/product_create.html:45
+#: inventory/templates/inventory/product_create.html:55
 #: inventory/templates/inventory/product_detail.html:11
 #, fuzzy
 #| msgid "product_managment"
@@ -38,7 +44,7 @@ msgstr "Product management"
 
 #: inventory/templates/inventory/event_form.html:30
 #: inventory/templates/inventory/order_form.html:38
-#: inventory/templates/inventory/product_create.html:46
+#: inventory/templates/inventory/product_create.html:62
 #: inventory/templates/inventory/product_detail.html:12
 #, fuzzy
 #| msgid "product_list"
@@ -46,14 +52,14 @@ msgid "product_price"
 msgstr "Products list"
 
 #: inventory/templates/inventory/event_form.html:52
-#: inventory/templates/inventory/product_create.html:150
+#: inventory/templates/inventory/product_create.html:226
 msgid "save"
 msgstr "save"
 
 #: inventory/templates/inventory/event_form.html:55
-#: inventory/templates/inventory/order_detail.html:12
-#: inventory/templates/inventory/product_create.html:179
-#: inventory/templates/inventory/product_detail.html:111
+#: inventory/templates/inventory/order_detail.html:31
+#: inventory/templates/inventory/product_create.html:225
+#: inventory/templates/inventory/product_detail.html:113
 msgid "back"
 msgstr "back"
 
@@ -70,24 +76,24 @@ msgstr "Event management"
 
 #: inventory/templates/inventory/event_list.html:13
 msgid "event_date_from"
-msgstr ""
+msgstr "From"
 
 #: inventory/templates/inventory/event_list.html:14
 #, fuzzy
 #| msgid "event_managment"
 msgid "event_date_to"
-msgstr "Event management"
+msgstr "To"
 
 #: inventory/templates/inventory/event_list.html:25
 #: inventory/templates/inventory/group_list.html:20
-#: inventory/templates/inventory/order_list.html:24
+#: inventory/templates/inventory/order_list.html:28
 #: inventory/templates/inventory/product_list.html:50
 msgid "edit"
 msgstr "edit"
 
 #: inventory/templates/inventory/event_list.html:26
 #: inventory/templates/inventory/group_list.html:20
-#: inventory/templates/inventory/order_list.html:24
+#: inventory/templates/inventory/order_list.html:28
 #: inventory/templates/inventory/product_list.html:51
 msgid "delete"
 msgstr "delete"
@@ -108,15 +114,34 @@ msgstr "Group management"
 msgid "group_name"
 msgstr "Group management"
 
-#: inventory/templates/inventory/order_detail.html:8
+#: inventory/templates/inventory/order_detail.html:11
 msgid "done_order"
 msgstr ""
+
+#: inventory/templates/inventory/order_detail.html:14
+#, fuzzy
+#| msgid "order_list"
+msgid "order_completed"
+msgstr "Orders list"
+
+#: inventory/templates/inventory/order_detail.html:20
+#, fuzzy
+#| msgid "product_managment"
+msgid "product.name"
+msgstr "Product management"
+
+#: inventory/templates/inventory/order_detail.html:21
+#, fuzzy
+#| msgid "product_managment"
+msgid "product.amount"
+msgstr "Product management"
 
 #: inventory/templates/inventory/order_form.html:32
 msgid "in_cart"
 msgstr ""
 
 #: inventory/templates/inventory/order_form.html:41
+#: inventory/templates/inventory/product_create.html:76
 #, fuzzy
 #| msgid "product_managment"
 msgid "product_amount"
@@ -138,101 +163,120 @@ msgstr "Event management"
 #: inventory/templates/inventory/order_list.html:14
 #, fuzzy
 #| msgid "order_list"
-msgid "order_is_done"
+msgid "order_status"
 msgstr "Orders list"
+
+#: inventory/templates/inventory/order_list.html:24
+msgid "completed"
+msgstr ""
+
+#: inventory/templates/inventory/order_list.html:26
+msgid "not_completed"
+msgstr ""
 
 #: inventory/templates/inventory/product_confirm_delete.html:6
 msgid "confirm_delete_product"
 msgstr "Are you sure to delete product?"
 
-#: inventory/templates/inventory/product_create.html:43
+#: inventory/templates/inventory/product_create.html:41
 #: inventory/templates/inventory/product_detail.html:9
 #, fuzzy
 #| msgid "product_list"
 msgid "product_code"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_create.html:44
+#: inventory/templates/inventory/product_create.html:48
 #: inventory/templates/inventory/product_detail.html:10
 #, fuzzy
 #| msgid "product_managment"
 msgid "product_origin_name"
 msgstr "Product management"
 
-#: inventory/templates/inventory/product_create.html:47
+#: inventory/templates/inventory/product_create.html:69
 #: inventory/templates/inventory/product_detail.html:13
 #, fuzzy
 #| msgid "product_list"
 msgid "product_size"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_create.html:48
-#: inventory/templates/inventory/product_detail.html:14
-#, fuzzy
-#| msgid "product_list"
-msgid "product_import_date"
-msgstr "Products list"
-
-#: inventory/templates/inventory/product_create.html:66
-#: inventory/templates/inventory/product_detail.html:32
-#, fuzzy
-#| msgid "product_list"
-msgid "product_active"
-msgstr "Products list"
-
-#: inventory/templates/inventory/product_create.html:67
+#: inventory/templates/inventory/product_create.html:83
 #: inventory/templates/inventory/product_detail.html:33
 #, fuzzy
 #| msgid "product_list"
 msgid "product_group"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_create.html:68
-#: inventory/templates/inventory/product_detail.html:34
+#: inventory/templates/inventory/product_create.html:95
+#: inventory/templates/inventory/product_detail.html:32
 #, fuzzy
 #| msgid "product_list"
-msgid "product_description"
+msgid "product_active"
 msgstr "Products list"
 
-#: inventory/templates/inventory/product_create.html:88
-#: inventory/templates/inventory/product_list.html:19
-msgid "is_wine"
-msgstr "Wine"
-
-#: inventory/templates/inventory/product_create.html:93
+#: inventory/templates/inventory/product_create.html:106
 #: inventory/templates/inventory/product_detail.html:67
 msgid "wine_color"
-msgstr ""
+msgstr "Color"
 
-#: inventory/templates/inventory/product_create.html:94
+#: inventory/templates/inventory/product_create.html:113
 #: inventory/templates/inventory/product_detail.html:68
 msgid "wine_year"
-msgstr ""
+msgstr "Year"
 
-#: inventory/templates/inventory/product_create.html:95
+#: inventory/templates/inventory/product_create.html:120
 #: inventory/templates/inventory/product_detail.html:69
 msgid "wine_attribute"
-msgstr ""
+msgstr "Grade"
 
-#: inventory/templates/inventory/product_create.html:96
+#: inventory/templates/inventory/product_create.html:127
 #: inventory/templates/inventory/product_detail.html:70
 msgid "wine_sugar_residual"
-msgstr ""
+msgstr "Residual sugar"
 
-#: inventory/templates/inventory/product_create.html:97
+#: inventory/templates/inventory/product_create.html:134
+msgid "sugar_content"
+msgstr "Content of sugar"
+
+#: inventory/templates/inventory/product_create.html:141
 #: inventory/templates/inventory/product_detail.html:71
 msgid "wine_acidity"
 msgstr ""
 
-#: inventory/templates/inventory/product_create.html:98
+#: inventory/templates/inventory/product_create.html:148
+msgid "wine_alcohol"
+msgstr "Alcohol"
+
+#: inventory/templates/inventory/product_create.html:155
 #: inventory/templates/inventory/product_detail.html:72
 msgid "wine_locality"
-msgstr ""
+msgstr "Locality"
 
-#: inventory/templates/inventory/product_create.html:116
-#: inventory/templates/inventory/product_detail.html:91
+#: inventory/templates/inventory/product_create.html:162
+#: inventory/templates/inventory/product_detail.html:73
+msgid "wine_serving"
+msgstr "Serving"
+
+#: inventory/templates/inventory/product_create.html:169
+#: inventory/templates/inventory/product_detail.html:34
+#, fuzzy
+#| msgid "product_list"
+msgid "product_description"
+msgstr "Description"
+
+#: inventory/templates/inventory/product_create.html:184
+#: inventory/templates/inventory/product_list.html:19
+msgid "is_wine"
+msgstr "Wine"
+
+#: inventory/templates/inventory/product_detail.html:14
+#, fuzzy
+#| msgid "product_list"
+msgid "product_import_date"
+msgstr "Imported date"
+
+#: inventory/templates/inventory/product_detail.html:93
 msgid "wine_awards"
-msgstr ""
+msgstr "Awards"
 
 #: inventory/templates/inventory/product_import.html:7
 #: inventory/templates/menu.html:19
@@ -308,30 +352,62 @@ msgstr "Create new event"
 msgid "order_list"
 msgstr "Orders list"
 
-#: inventory/templates/menu.html:58
-#, fuzzy
-#| msgid "create_product"
-msgid "create_order"
-msgstr "Create new product"
-
-#: inventory/templates/menu.html:66
+#: inventory/templates/menu.html:65
 msgid "language"
 msgstr "sk"
 
-#: inventory/views/order_views.py:74
+#: inventory/templates/menu.html:66
+msgid "logout"
+msgstr "logout"
+
+#: inventory/views/order_views.py:69
 #, fuzzy
 #| msgid "order_managment"
 msgid "order_done"
 msgstr "Order management"
 
-#: inventory/views/product_views.py:103
+#: inventory/views/product_views.py:107
 #, fuzzy
 #| msgid "product_list"
 msgid "product_created"
 msgstr "Products list"
 
-#: inventory/views/product_views.py:146
+#: inventory/views/product_views.py:152
 #, fuzzy
 #| msgid "product_list"
 msgid "product_edited"
 msgstr "Products list"
+
+#, fuzzy
+#~| msgid "order_list"
+#~ msgid "order_is_done"
+#~ msgstr "Orders list"
+
+#, fuzzy
+#~| msgid "create_product"
+#~ msgid "create_order"
+#~ msgstr "Create new product"
+
+msgid "red"
+msgstr "Red wine"
+
+msgid "white"
+msgstr "White wine"
+
+msgid "rose"
+msgstr "Rose wine"
+
+msgid "sweet"
+msgstr "Sweet wine"
+
+msgid "white_archive"
+msgstr "White archive wine"
+
+msgid "red_archive"
+msgstr "Red archive wine"
+
+msgid "nealko"
+msgstr "Not alcoholic drink"
+
+msgid "sweets"
+msgstr "Others"
