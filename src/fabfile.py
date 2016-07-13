@@ -44,7 +44,7 @@ def migrate():
 def run():
 	""" run on local development server """
 	local("echo '\n--- DEVELOPMENT MODE ---\n'")
-	local("./manage.py runserver --settings=winelist.development-settings")
+	local("./manage.py runserver 0.0.0.0:8888 --settings=winelist.development-settings")
 
 
 def run_gn():

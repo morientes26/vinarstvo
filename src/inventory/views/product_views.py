@@ -84,7 +84,7 @@ class CreateProduct(LoginRequiredMixin, View):
     template_name = 'inventory/product_create.html'
     service = InventoryService()
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         logging.debug('create product %s', request)
         return render(request, self.template_name, context={
             'product_form': ProductForm(),
@@ -92,20 +92,24 @@ class CreateProduct(LoginRequiredMixin, View):
             'photo_form': PhotoForm(),
         })
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
+        logging.debug('POST - create product')
         product_form = ProductForm(request.POST)
         wine_form = WineForm(request.POST)
 
         if all([product_form.is_valid(), wine_form.is_valid()]):
-            product = product_form.save()
+            product = product_form.save(commit=False)
             if product.is_wine:
-                wine = wine_form.save(commit=False)
-                wine.product = product
-                wine.save()
+                wine = wine_form.save()
+                product.wine = wine
 
+            logging.debug('saving wine %s', product)
+            product.save()
             self.service.upload_photos(request, product)
 
             messages.add_message(request, messages.INFO, _("product_created"))
+        else:
+            print("valid error")
 
         return redirect('list_products')
 
@@ -119,32 +123,33 @@ class EditProduct(LoginRequiredMixin, View):
         wine_form = WineForm()
         product = get_object_or_404(Product, pk=kwargs['pk'])
         product_form = ProductForm(instance=product)
-        #if product.is_wine:
-        #    wine = Wine.objects.get(product=product)
-        #    if wine:
-        #        wine_form = WineForm(instance=wine)
+        if product.is_wine:
+            wine_form = WineForm(instance=product.wine)
         return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form})
 
     def post(self, request, **kwargs):
-        logger.debug("POST - edit prouduct %s", request)
+        logger.debug("POST - edit product %s", request)
         product = get_object_or_404(Product, pk=kwargs['pk'])
         product_form = ProductForm(data=request.POST, instance=product)
+        logger.debug("product %s", product_form)
         wine_form = WineForm(data=request.POST)
 
         if product.is_wine:
-            #wine = Wine.objects.get(product=product)
             wine_form = WineForm(data=request.POST, instance=product.wine)
+            logger.debug("wine %s", wine_form)
 
         if product_form.is_valid():
             print('product_form valid')
             pcd = product_form.cleaned_data
             if pcd['is_wine']:
                 if wine_form.is_valid():
-                    product = product_form.save()
-                    wine = wine_form.save(commit=False)
-                    wine.product = product
-                    wine.save()
-
+                    print('wine_form valid')
+                    wine = wine_form.save()
+                    product = product_form.save(commit=False)
+                    product.wine = wine
+                    product.save()
+                else:
+                    print('wine_form not valid %s', wine_form.errors)
             else:
                 product_form.save()
 
@@ -153,7 +158,9 @@ class EditProduct(LoginRequiredMixin, View):
             messages.add_message(request, messages.INFO, _("product_edited"))
 
         for p in product_form.errors:
-            print(p)
+            print("error: "+p)
+        for w in wine_form.errors:
+            print("error: "+w)
 
         return redirect('list_products')
 
