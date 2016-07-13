@@ -84,15 +84,26 @@ WSGI_APPLICATION = 'winelist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'winecart',
+#        'USER': 'root',
+#        'PASSWORD': 'q1w2e3',
+#        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#        'PORT': '3306',
+#    }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'winecart',
-        'USER': 'root',
-        'PASSWORD': 'q1w2e3',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		'NAME': 'winary',
+		'USER': 'winary',
+		'PASSWORD': 'V1nk0',
+		'HOST': 'localhost',
+		'PORT': '',
+	}
 }
 
 LOGIN_URL = '/accounts/login/'
@@ -142,7 +153,7 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Static files for upload images
@@ -152,12 +163,12 @@ MEDIA_URL = STATIC_URL + 'data/'
 STATICFILES_FINDERS = [
 	'djangobower.finders.BowerFinder',
 	'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+	'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    "/static/frontend/menu.html",
+	os.path.join(BASE_DIR, "static"),
+	"/static/frontend/menu.html",
 ]
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'inventory/components')
@@ -166,6 +177,7 @@ BOWER_INSTALLED_APPS = [
 	'bootstrap',
 	'datatables.net',
 	'datatables.net-dt',
+	'bootstrap-datepicker',
 ]
 
 # Use nose to run all tests
@@ -193,34 +205,34 @@ REST_FRAMEWORK = dict(DEFAULT_PERMISSION_CLASSES=[
 CORS_ORIGIN_ALLOW_ALL = True
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-            'datefmt' : "%d/%b/%Y %H:%M:%S"
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'winelist.log',
-            'formatter': 'verbose'
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers':['file'],
-            'propagate': True,
-            'level':'INFO',
-        },
-        'inventory': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-        },
-    }
+	'version': 1,
+	'disable_existing_loggers': False,
+	'formatters': {
+		'verbose': {
+			'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+			'datefmt': "%d/%b/%Y %H:%M:%S"
+		},
+		'simple': {
+			'format': '%(levelname)s %(message)s'
+		},
+	},
+	'handlers': {
+		'file': {
+			'level': 'DEBUG',
+			'class': 'logging.FileHandler',
+			'filename': 'winelist.log',
+			'formatter': 'verbose'
+		},
+	},
+	'loggers': {
+		'django': {
+			'handlers': ['file'],
+			'propagate': True,
+			'level': 'INFO',
+		},
+		'inventory': {
+			'handlers': ['file'],
+			'level': 'DEBUG',
+		},
+	}
 }

@@ -61,7 +61,7 @@ class LangChangeView(TemplateView):
 
 class ListProducts(LoginRequiredMixin, ListView):
     model = Product
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().order_by('id')
 
 
 class DetailProduct(LoginRequiredMixin, TemplateView):

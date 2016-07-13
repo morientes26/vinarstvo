@@ -7,51 +7,89 @@
 <form method="post" action="">
     {% csrf_token %}
 
-    {% for field in form %}
-        <div>
-            {{ field.label_tag }} <br>
-            {{ field }}
-            {% for error in field.errors %}
-                <div class="alert alert-error">
-                    {{ error|escape }}
-                </div>
-            {% endfor %}
+    <div class="form-group row">
+        <label for="{{ form.name.id_for_label }}" class="col-sm-2 form-control-label">{% trans "event_name" %}</label>
+        <div class="col-sm-10">
+            <input class="form-control" name="{{ form.name.html_name }}" value="{{ form.name.value }}">
         </div>
-    {% endfor %}
-
-    <div class="row">
-        <div class="col-md-2">
-            {% trans "include_in_event" %}
+    </div>
+    <div class="form-group row">
+        <label for="{{ form.date_from.id_for_label }}" class="col-sm-2 form-control-label">{% trans "event_date_from" %}</label>
+        <div class="col-sm-10">
+            <input  data-provide="datepicker" class="form-control" name="{{ form.date_from.html_name }}" value="{{ form.date_from.value }}" placeholder="xxx">
         </div>
-        <div class="col-md-6">
-           {% trans "product_name" %}
-        </div>
-        <div class="col-md-4">
-            {% trans "product_price" %}
+    </div>
+    <div class="form-group row">
+        <label for="{{ form.date_to.id_for_label }}" class="col-sm-2 form-control-label">{% trans "event_date_to" %}</label>
+        <div class="col-sm-10">
+            <input  data-provide="datepicker" class="form-control" name="{{ form.date_to.html_name }}" value="{{ form.date_to.value }}">
         </div>
     </div>
 
+    <br/>
+
+    <fieldset>
+        <legend> {% trans "event_products" %}</legend>
+        <table id="events">
+        <thead>
+            <tr>
+                <th class="col-md-1">
+                    {% trans "include_in_event" %}
+                </th>
+                <th class="col-md-1">
+                   {% trans "product_code" %}
+                </th>
+                <th class="col-md-8">
+                   {% trans "product_name" %}
+                </th>
+                <th class="col-md-1">
+                    {% trans "product_amount" %}
+                </th>
+                <th class="col-md-1">
+                    {% trans "product_price" %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
     {% for product in products %}
-        <div class="row">
-            <div class="col-md-2">
+        <tr>
+            <td>
                 <input type="checkbox" name="p_{{ product.id }}" id="p_{{ product.id }}" value="{{ product.id }}" 
                 {% if items %}
                     {{  product|is_choosen:items }}
                 {% endif %} 
                 />
-            </div>
-            <div class="col-md-6">
-                <label for="p_{{ product.id }}">{{ product.name }}</label>
-            </div>
-            <div class="col-md-4">
+            </td>
+            <td>
+                {{ product.code }}
+            </td>
+            <td>
+                {{ product.name }}
+            </td>
+            <td>
+                {{ product.amount }}
+            </td>
+            <td>
                 {{ product.price }} €
-            </div>
-        </div>
+            </td>
+        </tr>
     {% endfor %}
+        </tbody>
+        </table>
+    </fieldset>
 
-    <input type="submit" value="{% trans "save" %}">
+    <br/>
+    <div class="form-group row">
+        <div class="col-sm-offset-10 col-sm-2">
+          <a href="{% url 'list_events' %}"><button class="btn btn-danger" type="button">{% trans "back" %}</button></a>
+          <button type="submit" class="btn btn-primary">{% trans "save" %}</button>
+        </div>
+    </div>
+
+
+
 </form>
 
-<a href="{% url 'list_events' %}">{% trans "back" %}</a>
+
 
 {% endblock %}

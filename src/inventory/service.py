@@ -63,7 +63,10 @@ class InventoryService:
 
 	def get_all_products_in_cart(self, group='*'):
 		grp = Group.objects.filter(name=group)
-		products = Product.objects.filter(active=True, group=grp)
+		if grp:
+			products = Product.objects.filter(active=True, group=grp)
+		else:
+			products = Product.objects.filter(active=True)
 		logger.debug('get_all_products_in_cart - fetching %s data', products.count())
 		return products
 

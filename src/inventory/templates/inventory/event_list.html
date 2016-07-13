@@ -18,8 +18,8 @@
     <tbody>
         {% for event in object_list %}
         <tr>
-            <td><a href="">{{ event.name }}</a></td>
-            <td> {{ event.date_from }} </a></td>
+            <td> {{ event.name }} </td>
+            <td> {{ event.date_from }} </td>
             <td> {{ event.date_to }} </td>
             <td>
                <a href="edit/{{ event.id }}">{% trans "edit" %}</a> |

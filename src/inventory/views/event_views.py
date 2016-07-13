@@ -16,6 +16,7 @@ service = InventoryService()
 
 # Views for groups management
 
+
 class EventView(LoginRequiredMixin):
 	def process_form(self, request, form):
 		items = []

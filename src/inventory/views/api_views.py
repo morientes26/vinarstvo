@@ -5,11 +5,11 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from inventory.serializer import ProductSerializer, EventSerializer, OrderSerializer
-from inventory.models import Product, Event, Order, Item, Award
+from inventory.models import Product, Item
 from inventory.service import InventoryService
 
-
 """ API of inventory modul. It is used by external web application """
+
 
 class ApiInfoView(APIView):
 	"""
@@ -17,19 +17,22 @@ class ApiInfoView(APIView):
 	"""
 
 	version = "0.0.1"
-	author = "tp-soft s.r.o."	
-	renderer_classes = (JSONRenderer, )
+	author = "tp-soft s.r.o."
+	renderer_classes = (JSONRenderer,)
 
-	def get(self, request, format=None):
+	def get(self):
 		content = {
 			'version': self.version,
 			'author': self.author
 		}
 		return Response(content)
 
+
 """
 Getting all products from primary winecart
 """
+
+
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_product_from_primary_cart(request):
@@ -38,23 +41,29 @@ def get_product_from_primary_cart(request):
 	serializer = ProductSerializer(products, many=True)
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 """
 Getting all products from actual event
 """
+
+
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_product_from_actual_event(request):
 	print(request.GET.get('group'))
 	event = InventoryService().get_actual_events(request.GET.get('group'))
 	products = None
-	if len(event)>0:
+	if len(event) > 0:
 		products = InventoryService().get_all_products_in_event(event[0])
 	serializer = ProductSerializer(products, many=True)
-	return Response(serializer.data, status=status.HTTP_200_OK)	
+	return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 """
 Getting all products from actual event
 """
+
+
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_actual_event():
@@ -64,9 +73,12 @@ def get_actual_event():
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	return Response(None, status=status.HTTP_200_OK)
 
+
 """
 Getting one product by primary key
 """
+
+
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_products(request):
@@ -76,9 +88,12 @@ def get_products(request):
 		return Response(serializer.data, status=status.HTTP_200_OK)
 	return Response(None, status=status.HTTP_200_OK)
 
+
 """
 Getting one product by primary key
 """
+
+
 @api_view(['GET'])
 @permission_classes((AllowAny,))
 def get_product_by_id(request, *args, **kwargs):
@@ -88,24 +103,15 @@ def get_product_by_id(request, *args, **kwargs):
 	print(serializer.data)
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
-"""
-Getting one product by primary key
-"""
-@api_view(['GET'])
-@permission_classes((AllowAny,))
-def get_product_by_id(request, *args, **kwargs):
-	product = InventoryService().get_product_by_id(kwargs['pk'])
-	print(product)
-	serializer = ProductSerializer(product, many=False)
-	print(serializer.data)
-	return Response(serializer.data, status=status.HTTP_200_OK)
 
 """
 Create order
 """
+
+
 @api_view(['PUT', 'POST'])
 @permission_classes((AllowAny,))
-def create_order(request, *args, **kwargs):
+def create_order(request):
 	serializer = OrderSerializer(data=request.data)
 	print(serializer)
 	if serializer.is_valid():
@@ -116,6 +122,7 @@ def create_order(request, *args, **kwargs):
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 def set_items_and_save(request, order):
 	for item in request.data['items']:
 		try:
@@ -123,5 +130,5 @@ def set_items_and_save(request, order):
 			it = Item.objects.create(product=product, amount=item['amount'])
 			order.items.add(it)
 		except Product.DoesNotExist:
-			raise ValueError('product '+str(item['product'])+' not found')
+			raise ValueError('product ' + str(item['product']) + ' not found')
 	order.save()

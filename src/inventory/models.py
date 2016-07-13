@@ -45,7 +45,7 @@ class Product(models.Model):
     name = models.CharField(max_length=120, blank=True, help_text="nazov pre zobrazenie v tablete")
     description = models.TextField(blank=True, help_text="popis produktu")
     size = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True, help_text="objem/jednotka")
-    is_wine = models.BooleanField(default=False, blank=True, help_text="je produkt vino")
+    is_wine = models.BooleanField(default=True, blank=True, help_text="je produkt vino")
 
     # Relations
     group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
