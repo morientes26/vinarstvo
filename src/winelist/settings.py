@@ -153,7 +153,7 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Static files for upload images
@@ -168,7 +168,7 @@ STATICFILES_FINDERS = [
 
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, "static"),
-	"/static/frontend/menu.html",
+#	"/static/frontend/menu.html",
 ]
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'inventory/components')

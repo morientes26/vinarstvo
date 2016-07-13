@@ -1,0 +1,681 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+@import "variables.less";
+@import "mixins.less";
+
+html {
+    color: white;
+    font-size: 1em;
+    line-height: 1.4;
+    background-color: @gray-dark;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-webkit-scrollbar {
+    //width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: @brand-color;
+    border-radius: 2vmax;
+    width: 1vmax;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+   .body-font();
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+/*.header-container {
+    border-bottom: 20px solid @brand-color;
+}
+
+.footer-container,
+.main aside {
+    border-top: 1rem solid @brand-color;
+}
+*/
+.header-container,
+.footer-container,
+.main-container,
+.main aside {
+    background: @gray-dark;
+}
+
+.title {
+    color: white;
+    text-transform: uppercase;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #e44d26;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.logo {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    &.small,&.smaller {
+        padding: 2vh 0 2vh 0;
+        height: 5vmax;
+    }
+    &.big {
+        padding: 5vh 0 2vh 0;
+        height: 7vh;
+    }
+}
+
+.back-button {
+    position: fixed;
+    display: block;
+    float: left;
+    top: 0;
+    left: 0;
+    padding: 5vw 5vh;
+    height: 5vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4vh;
+    &.title {
+        padding: 1vh 0 2vh 0;
+        margin: 0;
+        .heading-font();
+    }
+}
+
+header {
+    background-color: @gray-dark;
+    &.image-background {
+        .full-background();
+        &:extend(.biele);
+        position:fixed;
+        margin-top: 0;
+        height: 23vh;
+        z-index: 999;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        transition: height 0.3s;
+        box-shadow: 0 0 1vh @gray-dark;
+    }
+    &.smaller {
+        height: 20vh;
+    }
+}
+
+.main {
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0 0 0;
+    margin: 0;
+    &.hor {
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    &.ver {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+.biele {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/bielevino.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/bielevino.jpg") no-repeat;
+    .full-background();
+}
+
+.cervene {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/cervene.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene.jpg") no-repeat;
+    .full-background();
+}
+
+.rose {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/rose.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/rose.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/rose.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/rose.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/rose.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/rose.jpg") no-repeat;
+    .full-background();
+}
+
+.sladke {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/sladke.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/sladke.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/sladke.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/sladke.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/sladke.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/sladke.jpg") no-repeat;
+    .full-background();
+}
+
+.biele-arch {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/biele-arch.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/biele-arch.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/biele-arch.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/biele-arch.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/biele-arch.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/biele-arch.jpg") no-repeat;
+    .full-background();
+}
+
+.cervene-arch {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene-arch.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/cervene-arch.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene-arch.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene-arch.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene-arch.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/cervene-arch.jpg") no-repeat;
+    .full-background();
+}
+
+.nealko {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/nealko.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/nealko.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/nealko.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/nealko.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/nealko.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/nealko.jpg") no-repeat;
+    .full-background();
+}
+
+.pochutiny {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/pochutiny.jpg") no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("../img/pochutiny.jpg") no-repeat;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/pochutiny.jpg") no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/pochutiny.jpg") no-repeat;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/pochutiny.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("../img/pochutiny.jpg") no-repeat;
+    .full-background();
+}
+
+.horizontal {
+    display: inline-block;
+    position: relative;
+    height: 60vh;
+    width: 30vw;
+    //box-shadow: 0 1vw 1vw #333;
+}
+
+.card-inner {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+.category {
+    min-height: 100%;
+	font-size: 3vh;
+    color: white;
+    margin-top: 45vh; 
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    white-space: normal;
+}
+
+
+
+/* ----- Wine Submenu ----- */
+/*#wine-list {
+    position: relative;
+    margin-top: 40vh;
+}*/
+
+.fix {
+    padding-top: 23vh;
+}
+
+h1.title {
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+
+}
+
+.list-wine {
+    list-style-type: none;
+    white-space: normal;
+    > li {
+        overflow: auto;
+    }
+}
+
+.list-wine-item {
+    display:list-item;
+    max-height: 20vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    padding: 0;
+    overflow: auto;
+    background-color: @gray-light;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+    
+.list-wine-bottle {
+    max-height: 100%;
+    width: 10vw;
+    position:relative;
+    vertical-align: bottom;
+    display: inline;
+    float:left;
+    padding: 2vh;
+    
+}
+
+.wine-img {     
+    height: 16vh;
+    display: block;
+    margin: auto;
+}
+
+.list-wine-description {
+    display: inline;
+    position: relative;
+    float: left;
+    max-height: inherit;
+    max-width: 40vw;
+    text-overflow: ellipsis;
+    white-space: normal;
+    padding: 2vh;
+}
+
+.list-wine-name {
+    position:relative;
+	font-size: 1.2rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    text-transform: none;
+    color: @brand-darker;
+}
+
+.list-wine-year {
+    position:relative;
+	font-size: 1rem;
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+    text-transform: none;
+    color:  @gray-dark;
+    & span {
+        .heading-font();
+    }
+}
+
+.list-wine-type {   
+    position:relative;
+	font-size: 1rem;
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+    text-transform: none;
+    color: @gray-dark;
+    & span {
+        .heading-font();
+    }
+}
+
+.list-wine-price {
+    max-height: 100%;
+    width: 10vw;
+    position:relative;
+    vertical-align: bottom;
+    display: inline;
+    float:right;
+    padding: 2vh;
+}
+
+.list-wine-value {
+    .heading-font();
+    position:relative;
+	font-size: 1.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+    text-transform: none;
+    color: @brand-darker;
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        float: left;
+        width: 27%;
+        margin: 0 1.7%;
+        padding: 25px 2%;
+        margin-bottom: 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: center;
+    }
+
+    nav {
+        float: right;
+        width: 38%;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 100%; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

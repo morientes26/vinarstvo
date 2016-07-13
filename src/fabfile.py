@@ -30,6 +30,11 @@ def localization():
 	local("./manage.py compilemessages -l en --settings=winelist.development-settings")
 
 
+def static():
+	""" build localization en, sk """
+	local("./manage.py collectstatic")
+
+
 def migrate():
 	""" make migrations and run migrations """
 	local("./manage.py makemigrations --settings=winelist.development-settings")
