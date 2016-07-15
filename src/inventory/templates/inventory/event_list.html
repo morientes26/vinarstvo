@@ -4,7 +4,23 @@
 {% load i18n %}
 
 <fieldset>
-    <legend>{% trans "event_managment" %} [ {{ object_list.count }} ]</legend>
+    <legend>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-10">
+                    {% trans "event_managment" %} [ {{ object_list.count }} ]
+                </div>
+                <div class="col-md-2">
+                    <a href="{% url 'create_event' %}">
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                        {% trans "create_event" %}
+                        </button>
+                 </a>
+                </div>
+            </div>
+        </div>
+    </legend>
 
     <table id="events" class="display">
     <thead>

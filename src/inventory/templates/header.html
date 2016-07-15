@@ -20,6 +20,19 @@
 
     <!-- initial javascript components -->
     <script type="text/javascript" charset="utf-8">
+         /* Custom filtering function */
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                //var min = parseInt( $('#min').val(), 10 );
+                var amount = parseFloat( data[5] ); // use data for the age column
+
+                if ( amount > 0 )
+                    return true;
+
+                return false;
+            }
+        );
+
         $(document).ready(function() {
             $('#products').DataTable();
             $('#events').DataTable();
@@ -27,6 +40,7 @@
             $('#orders').DataTable();
             $('.dropdown-toggle').dropdown();
         } );
+
     </script>
     <title>{% trans "title_inventory" %}</title>
 </head>

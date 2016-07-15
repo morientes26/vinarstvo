@@ -6,17 +6,34 @@
 
 
 <fieldset>
-    <legend>{% trans "product_managment" %} <small>[ {{ object_list.count }} ]</small></legend>
+    <legend>
+        <div class="row">
+            <div class="col-md-10">
+                {% trans "product_managment" %} <small>[ {{ object_list.count }} ]</small>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'create_product' %}">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    {% trans "create_product" %}
+                    </button>
+                </a>
+            </div>
+        </div>
+    </legend>
+
+    <input id="amount_filter" type="checkbox" value="0"> <label for="amount_filter">{% trans "amount_filter" %}</label>
 
     <table id="products" class="display">
     <thead>
         <tr>
-            <th>{% trans "active" %}</th>
-            <th>{% trans "code" %}</th>
-            <th>{% trans "name" %}</th>
-            <th>{% trans "price" %}</th>
-            <th>{% trans "size" %}</th>
-            <th>{% trans "is_wine" %} {% trans "is_new" %}</th>
+            <th class="col-md-2">{% trans "active" %}</th>
+            <th class="col-md-2">{% trans "code" %}</th>
+            <th class="col-md-4">{% trans "name" %}</th>
+            <th class="col-md-2">{% trans "price" %}</th>
+            <th class="col-md-1">{% trans "size" %}</th>
+            <th class="col-md-1">{% trans "amount" %}</th>
+            <th class="col-md-2">{% trans "is_wine" %} </th>  <!-- {% trans "is_new" %} -->
             <th></th>
         </tr>
     </thead>
@@ -36,13 +53,14 @@
        <td>{{ product.name }}</td>
        <td>{{ product.price }}</td>
        <td>{{ product.size }}</td>
+       <td>{{ product.amount }}</td>
        <td>
            {% if product.is_wine %}
                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
            {% endif %}
 
            {% if product.is_new %}
-                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                <!--span class="glyphicon glyphicon-bell" aria-hidden="true"></span-->
            {% endif %}
        </td>
 

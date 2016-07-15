@@ -10,60 +10,85 @@
         <ul class="nav navbar-nav collapse navbar-collapse">
 
            <li class="dropdown">
-            <a id="m-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
+
+             <a href="{% url 'list_products' %}">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                {% trans "product_managment" %}
+                </button>
+            </a>
+               <!--a id="m-product" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
                href="#">{% trans "product_managment" %}<span class="caret"></span></a>
                <ul class="dropdown-menu" aria-labelledby="m-product">
-                   <li><a href="{% url 'list_products' %}">{% trans "product_list" %}</a></li>
-                   <li><a href="{% url 'create_product' %}">{% trans "create_product" %}</a>
+
                    <li role="separator" class="divider"></li>
                    <li><a href="{% url 'import_products' %}">{% trans "import_product" %}</a>
-               </ul>
+               </ul-->
            </li>
 
        </ul>
 
 
-        <!--ul class="nav navbar-nav collapse navbar-collapse">
+        <ul class="nav navbar-nav collapse navbar-collapse">
 
            <li class="dropdown">
-            <a id="m-group" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
-               href="#">{% trans "group_managment" %}<span class="caret"></span></a>
-               <ul class="dropdown-menu" aria-labelledby="m-group">
-                   <li><a href="{% url 'list_groups' %}">{% trans "group_list" %}</a></li>
-                   <li><a href="{% url 'create_group' %}">{% trans "create_group" %}</a>
-               </ul>
+
+                <a href="{% url 'list_groups' %}">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                    {% trans "group_managment" %}
+                    </button>
+                </a>
+
            </li>
 
-       </ul-->
+       </ul>
 
        <ul class="nav navbar-nav collapse navbar-collapse">
 
            <li class="dropdown">
-            <a id="m-event" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
-               href="#">{% trans "event_managment" %}<span class="caret"></span></a>
-               <ul class="dropdown-menu" aria-labelledby="e-event">
-                   <li><a href="{% url 'list_events' %}">{% trans "event_list" %}</a></li>
-                   <li><a href="{% url 'create_event' %}">{% trans "create_event" %}</a>
-               </ul>
+
+             <a href="{% url 'list_events' %}">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                {% trans "event_list" %}
+                </button>
+             </a>
+
            </li>
 
        </ul>
 
-       <!--ul class="nav navbar-nav">
+       <ul class="nav navbar-nav">
             <li class="dropdown">
-            <a id="m-order" class="dropdown-toggle" aria-expanded="false" role="button" aria-haspopup="true" aria-expanded="false"
-               href="#">{% trans "order_managment" %}<span class="caret"></span></a>
-               <ul class="dropdown-menu" aria-labelledby="e-order">
-                   <li><a href="{% url 'list_orders' %}">{% trans "order_list" %}</a></li>
-               </ul>
-           </li>
-       </ul-->
+                <a href="{% url 'list_orders' %}">
+                    <button disabled type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                    {% trans "order_list" %}
+                    </button>
+                </a>
+            </li>
+       </ul>
+
 
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-       <li><a class="navbar-band navbar-right" href="{% url 'language' %}">{% trans "language" %}</a></li>
-       <li><a class="navbar-band navbar-right" href="{% url 'logout' %}">{% trans "logout" %}</a></li>       
+        <li class="dropdown">
+            <a href="{% url 'language' %}">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                    {% trans "language" %}
+                </button>
+            </a>
+        </li>
+        <li class="dropdown">
+            <a href="{% url 'logout' %}">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                {% trans "logout" %}
+                </button>
+            </a>
+        </li>
     </ul>
   </div>
 </nav>

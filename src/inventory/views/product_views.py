@@ -109,7 +109,7 @@ class CreateProduct(LoginRequiredMixin, View):
 
             messages.add_message(request, messages.INFO, _("product_created"))
         else:
-            print("valid error")
+            print("valid error %s", product_form.errors)
 
         return redirect('list_products')
 
