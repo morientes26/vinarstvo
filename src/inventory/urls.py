@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from django.conf.global_settings import MEDIA_ROOT
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from winelist.settings import MEDIA_ROOT, MEDIA_URL
 from views.cart_views import *
 from views.product_views import *
 from views.group_views import *
@@ -10,8 +10,6 @@ from views.order_views import *
 from views.event_views import *
 from views.access_views import *
 from views.api_views import *
-
-from winelist.settings import MEDIA_URL
 
 urlpatterns = [
 	# authorization

@@ -8,8 +8,8 @@
 
 <form method="POST" action="">
    {% csrf_token %}
-    <input type="submit" value="ano">
-    <input type="button" onclick="location.href='{% url 'list_products' %}'" value="nie">
+    <input type="submit" value="{% trans "yes" %}">
+    <input type="button" onclick="location.href='{% url 'list_products' %}'" value="{% trans "no" %}">
 </form>
 
 {% endblock %}
