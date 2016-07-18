@@ -1,73 +1,95 @@
-<div class="header-container">
-    <header class="wrapper clearfix">
-        <div>
-            <img class="logo big" src="/static/frontend/img/kp_logo.png" alt="Karpatská perla">
-        </div>
-        <h1 class="title" translate="WINE_CART"></h1>
-        <div class="language">
-            <a ng-click="changeLanguage('en')">en</a>
-            <a ng-click="changeLanguage('sk')">sk</a></div>
-    </header>
-</div>
+<header class="page-header">
+    <div>
+        <img class="logo big" src="/static/frontend/img/kp_logo.png" alt="Karpatská perla">
+    </div>
+    <h1 class="title" translate="WINE_CART"></h1>
+    <div class="language">
+        <a ng-click="changeLanguage('en')">en</a>
+        <a ng-click="changeLanguage('sk')">sk</a>
+    </div>
+</header>
 
-<div class="main-container">
-    <div class="main hor wrapper clearfix">
-        <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="main main-body">
+    <ul>
+        <li class="horizontal biele">
             <a href="#/cart/white">
-            <li class="horizontal">
-                <div class="card-inner biele">
+                <div class="card-inner">
                     <h2 class="category" translate="white"></h2>
                 </div>
-            </li>
             </a>
+        </li>
+        
+        <li class="horizontal cervene">
             <a href="#/cart/red">
-            <li class="horizontal">
-                <div class="card-inner cervene">
+                <div class="card-inner">
                     <h2 class="category" translate="red"></h2>
                 </div>
-            </li>
             </a>
+        </li>
+
+        <li class="horizontal rose">
             <a href="#/cart/rose">
-            <li class="horizontal">
-                <div class="card-inner rose">
+                <div class="card-inner">
                     <h2 class="category" translate="rose"></h2>
                 </div>
-            </li>
+            </a>
+        </li>
+
+        <li class="horizontal sladke">
             <a href="#/cart/sweet">
-            <li class="horizontal">
-                <div class="card-inner sladke">
+                <div class="card-inner">
                     <h2 class="category" translate="sweet"></h2>
                 </div>
-            </li>
             </a>
+        </li>
+        
+        <li class="horizontal biele-arch">
             <a href="#/cart/white_archive">
-            <li class="horizontal">
-                <div class="card-inner biele-arch">
+                <div class="card-inner">
                     <h2 class="category" translate="white_archive"></h2>
                 </div>
-            </li>
             </a>
+        </li>
+        
+        <li class="horizontal cervene-arch">
             <a href="#/cart/red_archive">
-            <li class="horizontal">
-                <div class="card-inner cervene-arch">
+                <div class="card-inner">
                     <h2 class="category" translate="red_archive"> </h2>
                 </div>
-            </li>            
             </a>
+        </li>            
+        
+        <li class="horizontal nealko">
             <a href="#/cart/nealko">
-            <li class="horizontal">
-                <div class="card-inner nealko">
+                <div class="card-inner">
                     <h2 class="category" translate="nealko"></h2>
                 </div>
-            </li>
             </a>
+        </li>
+        
+        <li class="horizontal pochutiny">
             <a href="#/cart/sweets">
-            <li class="horizontal fixed">
-                <div class="card-inner pochutiny">
+                <div class="card-inner">
                     <h2 class="category" translate="sweets"></h2>
                 </div>
-            </li>
             </a>
-        </ul>
-    </div> <!-- #main -->
-</div> <!-- #main-container -->
+        </li>
+    </ul>
+</div>

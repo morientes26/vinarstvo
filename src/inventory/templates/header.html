@@ -30,18 +30,6 @@
     </script>
 
     <script type="text/javascript" charset="utf-8">
-         /* Custom filtering function */
-        $.fn.dataTable.ext.search.push(
-            function( settings, data, dataIndex ) {
-                var min = parseInt( $('#amount_filter').val(), 10 );
-                var amount = parseFloat( data[5] ); // use data for the age column
-
-                if ( amount > min )
-                    return true;
-
-                return false;
-            }
-        );
 
         $(document).ready(function() {
             var x = "{{ LANGUAGE_CODE }}";
@@ -57,6 +45,23 @@
             } );
 
         } );
+
+          /* Custom filtering function */
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                if ( settings.nTable.id == 'products') {
+                    var min = parseInt($('#amount_filter').val(), 10);
+                    var amount = parseFloat(data[5]); // use data for the age column
+
+                    if (amount > min)
+                        return true;
+
+                    return false;
+                }
+                return true;
+            }
+        );
+
 
     </script>
     

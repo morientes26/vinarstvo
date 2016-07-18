@@ -1,4 +1,4 @@
-<header class="header-container wrapper clearfix image-background {{ image_background }}" >
+<header class="image-background {{ image_background }}" >
     <div>
         <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.png" alt="Go back">
     </div>
@@ -8,35 +8,39 @@
     <h1 class="title">{{ title | translate }}</h1>
 </header>
 
+
 <section class="main-container fix">
-    <div class="main wrapper clearfix">
-        <ul class="list-wine">            
-            <li ng-repeat="p in products" ng-click="showDetail(p.id)">
-                <div class="list-wine-item">
-                    <div class="list-wine-bottle">
-                        <img class="wine-img" src="{{ p.photos.blob }}">
+    
+        <ul class="list-wine-new">            
+            
+            <li ng-repeat="p in products" ng-click="showDetail(p.id)" class="list-wine-item-new">
+                <div class="bottle-card">
+                    <div class="bottle-pic">
+                        <img src="{{ p.photos.blob }}"> <!-- Obrazok vina -->
                     </div>
-                    <div class="list-wine-description">
-                        <h3 class="list-wine-name">{{ p.name }}</h3>
-                        <p class="list-wine-year"><span translate="YEAR"></span> {{ p.wine.year }}</p>
-                        <p class="list-wine-type"><span translate="CLASSIFICATION"></span>
+                    <div class="bottle-info">
+                        <span class="bottle-info-name">{{ p.name }}</span>
+                        <span class="bottle-info-year"><span translate="YEAR" class="bottle-info-title"></span>: {{ p.wine.year }}</span>
+  
+                        <span class="bottle-info-info">
+                            <span translate="CLASSIFICATION" class="bottle-info-title-2"></span>: 
                             {{ p.wine.locality }} &nbsp;
                             {{ p.wine.attribute | translate | lowercase }} &nbsp;
                             {{ p.wine.color | translate | lowercase}} &nbsp;
                             {{ p.wine.sugar_residual | translate | lowercase}}
-                        </p>
+                        </span>
                     </div>
-                    <div class="list-wine-price">
-                        <p class="list-wine-value">{{ p.price }}€</p>
+                    <div class="price-tag">
+                        <span class="bottle-info-price">{{ p.price }} €</span>
                     </div>
-                    <!-- zatial sa nepouziva -->
-                    <!--div class="list-wine-action">
-                        <button ng-click="addToCart(p.id, p.name)"> + </button>
-						<button ng-click="removeFromCart(p.id)"> - </button>
-						<span>{*{ items[p.id][0] | default:0 }*}</span>
-                    </div-->
                 </div>
             </li>
+
+
+
+
+
+
             <li ng-show="products.length==0">
                 <div class="list-wine-item">
                 <p class="list-wine-type center" translate="EMPTY"></p></div>
@@ -46,7 +50,7 @@
         <!-- zatial sa nepouziva -->
     	<!--ng-include src="'cart.html'"></ng-include--> <!-- #shopping cart include -->
 
-    </div> <!-- #main -->
+
 </section> <!-- #main-container -->
 
 	

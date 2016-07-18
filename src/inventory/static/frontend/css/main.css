@@ -66,6 +66,101 @@ svg,
 video {
   vertical-align: middle;
 }
+
+
+
+.list-wine-new {
+  list-style: none;
+  margin: 0px;
+  padding: 20px 30px;
+}
+
+.list-wine-item-new {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.bottle-pic, .bottle-info, .price-tag {
+//  float: left;
+//  clear: right;
+display: table-cell;
+}
+
+.bottle-card {
+  display: flex;
+}
+
+.bottle-pic {
+  min-width: 70px;
+  max-width: 70px;
+  width: 70px;
+  text-align: left;
+}
+
+.bottle-pic > img {
+  height: 135px;
+}
+
+.bottle-info {
+  min-width: calc(80% - 70px);
+  max-width: calc(80% - 70px);
+  width: calc(80% - 70px);
+  vertical-align: top;
+  color: black;
+}
+
+.price-tag {
+  min-width: 20%;
+  max-width: 20%;
+  width: 20%;
+  text-align: right;
+  color: #79a9bf;
+  font-weight: bold;
+}
+
+
+
+
+.bottle-info-name {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 10px;
+  color: #79a9bf;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.bottle-info-year {
+  color: black;
+}
+
+.bottle-info-price {
+  font-size: 24px;
+}
+
+.bottle-info-year {
+  display: block;
+}
+
+.bottle-info-title {
+  font-weight: bold;
+  color: black;
+}
+
+.bottle-info-title-2{
+  //display: block;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
 fieldset {
   border: 0;
   margin: 0;
@@ -143,6 +238,97 @@ nav a:hover {
 /* ==============
     MOBILE: Main
    ============== */
+.main-body {
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+
+.main-body > ul {
+
+}
+
+
+
+
+
+
+
+
+
+.section-info-row {
+  display: inline-flex;
+}
+
+.section-info-sum {
+  background-color: red;
+}
+
+.section-info-price {
+  background-color: green;
+}
+
+.info-sum-box {
+  width: calc(100% / 5);
+  text-align: center;
+}
+
+.info-sum-box:nth-child(odd){
+ // background-color: blue;
+}
+.info-sum-box:nth-child(even){
+ // background-color: green;
+}
+
+.info-price-box {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  padding: 10px 30px;
+  font-size: 24px;
+  line-height: 10px;
+}
+
+
+
+.section-info-box-title {
+  margin-right: 10px;
+}
+
+.section-info-box-content {
+
+}
+
+.section-info-title {
+  background-color: green;
+  padding: 0px 30px;
+}
+
+
+.section-info-awards {
+  background-color: green;
+}
+
+.section-info-bottle-img {
+  position: relative;
+  /* display: inline; */
+  /* overflow: hidden; */
+  /* width: 15vw; */
+  margin: -15vh auto 0 auto;
+  padding-left: 17.5vw;
+  z-index: 999;
+  height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
 .main {
   padding: 30px 0;
 }
@@ -186,8 +372,8 @@ nav a:hover {
   float: left;
   top: 0;
   left: 0;
-  padding: 5vw 5vh;
-  height: 5vh;
+  padding: 35px;
+  height: 30px;
 }
 h1 {
   text-align: center;
@@ -200,6 +386,9 @@ h1.title {
 }
 header {
   background-color: #373737;
+  max-height: none !important;
+  padding-bottom: 0 !important;
+  width: 100%;
 }
 header.image-background {
   background-position: center;
@@ -317,7 +506,7 @@ header.image-background {
   display: inline-block;
   position: relative;
   height: 60vh;
-  width: 30vw;
+  width: 37%;
 }
 .card-inner {
   position: absolute;
@@ -327,13 +516,10 @@ header.image-background {
   padding: 0;
 }
 .category {
-  min-height: 100%;
-  font-size: 3vh;
   color: white;
-  margin-top: 45vh;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
   white-space: normal;
+  padding: 350px 20px 0 20px;
+  line-height: 25px;
 }
 /* ----- Wine Submenu ----- */
 /*#wine-list {
@@ -352,21 +538,22 @@ h1.title {
   list-style-type: none;
   white-space: normal;
 }
+
 .list-wine > li {
   overflow: auto;
 }
 .list-wine-item {
-  display: list-item;
-  max-height: 20vh;
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  text-decoration: none;
-  padding: 0;
-  overflow: auto;
-  background-color: #ffffff;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+ // display: list-item;
+  //max-height: 20vh;
+ // width: 90vw;
+ // margin-left: auto;
+//  margin-right: auto;
+ // text-decoration: none;
+//  padding: 0;
+//  overflow: hidden;
+//  background-color: #ffffff;
+ // margin-top: 1rem;
+//  margin-bottom: 1rem;
 }
 .list-wine-bottle {
   max-height: 100%;
@@ -604,4 +791,11 @@ h1.title {
   h3 {
     page-break-after: avoid;
   }
+}
+
+
+
+// OVERRIDES
+header {
+  padding: 0 0 20px 0 !important;
 }
