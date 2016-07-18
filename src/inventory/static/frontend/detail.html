@@ -32,8 +32,8 @@
 
                 <div class="bottle flex-item-row">
                     <!--img ng-repeat="photo in product.photos"
-                         class="bottle-img flex-item-row" src="{*{ photo.blob.url }*}"-->
-                    <img class="bottle-img flex-item-row" src="/static/frontend/img/04ZB2013.png">
+                         class="bottle-img flex-item-row" src="/static/frontend/img/04ZB2013.png"-->
+                    <img class="bottle-img flex-item-row" src="{{ product.photos.blob }}">
                 </div>
             </div>
         
