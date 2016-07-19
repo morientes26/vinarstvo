@@ -132,10 +132,13 @@ LANGUAGE_CODE = 'sk_SK.utf-8'
 
 TIME_ZONE = 'Europe/Bratislava'
 
+# translation enable
 USE_I18N = True
 
-USE_L10N = True
+# if True convert float to actual locale
+USE_L10N = False
 
+# timezone enabled
 USE_TZ = True
 
 # Available languages
