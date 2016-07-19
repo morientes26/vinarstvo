@@ -4,6 +4,7 @@
 {% load i18n %}
 {% load inventory_extras %}
 
+<br/>
 
 <fieldset>
     <legend>
@@ -21,8 +22,6 @@
             </div>
         </div>
     </legend>
-
-    <input id="amount_filter" type="checkbox" value="0"> <label for="amount_filter">{% trans "amount_filter" %}</label>
 
     <table id="products" class="display">
     <thead>
@@ -72,6 +71,13 @@
     {% endfor %}
     </tbody>
     </table>
+
+    <div class="row">
+        <div class="col-md-offset-8 col-md-4">
+            <label for="amount_filter">{% trans "amount_filter" %}
+            <input id="amount_filter" size="2" type="text" value="-1"> </label>
+        </div>
+    </div>
 </fieldset>
 
 <script type="text/javascript">

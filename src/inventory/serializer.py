@@ -52,7 +52,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """
     wine = WineSerializer(read_only=True, many=False)
     group = GroupSerializer(read_only=True, many=False)
-    photos = PhotoSerializer(read_only=True, many=True)
+    photos = PhotoSerializer(read_only=True, many=False)
 
     class Meta:
         model = Product

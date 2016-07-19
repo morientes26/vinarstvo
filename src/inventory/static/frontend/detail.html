@@ -1,23 +1,54 @@
 <header>
-        <div>
-            <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.png" alt="Go back">
-        </div>
+    <div>
+        <img ng-click="backToList()" class="back-button" src="/static/frontend/img/back-button.png" alt="Go back">
+    </div>
 
-        <div>
+    <div>
         <img class="logo top" src="/static/frontend/img/kp_logo.png">
     </div>
 </header>
 <div class="flex-container">
-    <section class="column">
-        <div class="serving">
-                <h1 class="wine-name">{{ product.name }} </h1>
-        </div>
+
+    <section class="section-info-row section-info-title">
+        <h1 class="wine-name">{{ product.name }}</h1>
     </section>
 
-    <section class="column" ng-show="product.is_wine">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section-info-row" ng-show="product.is_wine">
         <div class="lrow">
             <div class="serving">
-                <p class="text white"><span translate="YEAR">: </span> {{ product.wine.year }}</p>
+                <p class="text white"><span>Ročník: </span>{{ product.wine.year }}</p>
                 <p class="text white">
                     <span translate="CLASSIFICATION"></span> :
                     {{ product.wine.locality }} &nbsp;
@@ -33,7 +64,7 @@
                 <div class="bottle flex-item-row">
                     <!--img ng-repeat="photo in product.photos"
                          class="bottle-img flex-item-row" src="{*{ photo.blob.url }*}"-->
-                    <img class="bottle-img flex-item-row" src="/static/frontend/img/04ZB2013.png">
+                    <img class="bottle-img flex-item-row section-info-bottle-img" src="{{ product.photos.blob }}">
                 </div>
             </div>
         
@@ -49,7 +80,25 @@
         </div>
     </section>
 
-    <section class="content" ng-show="product.is_wine">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section-info-row section-info-awards" ng-show="product.is_wine">
         <div class="awards">
             <ul>
                 <li class="award flex-item-row" ng-repeat="award in product.wine.awards">
@@ -59,33 +108,62 @@
         </div>
     </section>
 
-    <section class="content flexi-row spacing" ng-show="product.is_wine">
 
-        <div class="serving flex-item-row even-box">
-            <p class="text white"><span translate="ALCOHOL">Alkohol:</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section-info-sum section-info-row" ng-show="product.is_wine">
+        <div class="info-sum-box">
+            <p class="text white"><span translate="ALCOHOL"></span></p>
             <p class="text white">{{ product.wine.alcohol }} %</p>
         </div>
-        <div class="serving flex-item-row even-box">
-            <p class="text white"><span translate="VOLUME">Objem:</span></p>
+        <div class="info-sum-box">
+            <p class="text white"><span translate="VOLUME"></span></p>
             <p class="text white">{{ product.amount }}  l</p>
         </div>
-        <div class="serving flex-item-row even-box">
-            <p class="text white"><span translate="SUGAR_CONTENT">Cukornatost:</span></p>
+        <div class="info-sum-box">
+            <p class="text white"><span translate="SUGAR_CONTENT"></span></p>
             <p class="text white">{{ product.wine.sugar_content }}</p>
         </div>
-        <div class="serving flex-item-row even-box">
-            <p class="text white"><span translate="SUGAR_RESIDUAL">Zvyskovy cukor:</span></p>
+        <div class="info-sum-box">
+            <p class="text white"><span translate="SUGAR_RESIDUAL"></span></p>
             <p class="text white">{{ product.wine.sugar_residual | translate }}</p>
         </div>
-        <div class="serving flex-item-row even-box">
-            <p class="text white"><span translate="ACIDITY">Kyslost:</span></p>
+        <div class="info-sum-box">
+            <p class="text white"><span translate="ACIDITY"></span></p>
             <p class="text white">{{ product.wine.acidity }}</p>
         </div>
     </section>
-    <section class="content flexi-row spacing">
-        <div class="serving even-box">
-            <p class="text white list-wine-price"><span translate="PRICE">Cena:</span></p>
-            <p class="text white list-wine-value">{{ product.price }} €</p>
+
+    <section class="section-info-row section-info-price">
+        <div class="info-price-box">
+            <p class="section-info-box-title"><span translate="PRICE"></span></p>
+            <p class="section-info-box-content">{{ product.price }} €</p>
         </div>
     </section>
 </div>

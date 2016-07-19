@@ -160,7 +160,8 @@ STATIC_URL = '/static/'
 
 
 # Static files for upload images
-MEDIA_URL = STATIC_URL + 'data/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/data') #BASE_DIR + '/static/data/'  #STATIC_URL
+MEDIA_URL = '/static/data/'
 
 # init bower component
 STATICFILES_FINDERS = [

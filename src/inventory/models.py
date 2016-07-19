@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from polymorphic.models import PolymorphicModel
-from winelist.settings import MEDIA_URL, BASE_DIR
+from winelist.settings import MEDIA_ROOT
 
 
 class Photo(models.Model):
@@ -12,16 +12,20 @@ class Photo(models.Model):
 	Photo of product (vine, snack, drink...)
 	"""
 
-    blob = models.FileField(upload_to=BASE_DIR + "/inventory/static/data/", blank=True)
-    uuid = models.CharField(max_length=36, blank=True, default='')  # uuid.uuid4()
+    blob = models.FileField(upload_to='image/%Y/%m/%d', blank=True)
+    uuid = models.CharField(max_length=36, blank=True, default='')
 
     class Meta:
         app_label = 'inventory'
 
-    # Overriding
-    # def save(self, *args, **kwargs):
-    #	self.uuid = 'http://localhost:8000'+self.blob
-    #	super(Photo, self).save(*args, **kwargs)
+    def adjust_url(self):
+        print(self.blob.url)
+        try:
+            idx = self.blob.url.index('/static/')
+            final_url = self.blob.url[idx:len(self.blob.url)]
+        except ValueError as err:
+            return None
+        return final_url
 
     def __unicode__(self):
         return str(self.pk) + " " + self.uuid
@@ -49,7 +53,7 @@ class Product(models.Model):
 
     # Relations
     group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
-    photos = models.ManyToManyField(Photo, help_text="fotky produktu", blank=True)
+    photos = models.ForeignKey('Photo', null=True, blank=True, help_text="fotky produktu")
     wine = models.ForeignKey('Wine', null=True, blank=True, help_text="wine")
 
     # Overriding

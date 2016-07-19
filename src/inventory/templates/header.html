@@ -19,29 +19,52 @@
     <script type="text/javascript" charset="utf8" src="{% static 'datatables.net/js/jquery.dataTables.js' %}"></script>
 
     <!-- initial javascript components -->
+    {% get_current_language as LANGUAGE_CODE %}
     <script type="text/javascript" charset="utf-8">
-         /* Custom filtering function */
+        function setLanguageCorpus(lg){
+            var url = "//cdn.datatables.net/plug-ins/1.10.12/i18n/English.json";
+            if (lg =='sk')
+                url = "//cdn.datatables.net/plug-ins/1.10.12/i18n/Slovak.json";
+            return { "language": { "url": url } }
+        }
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+            var x = "{{ LANGUAGE_CODE }}";
+            var productTable = $('#products').DataTable(setLanguageCorpus(x));
+            $('#events').DataTable(setLanguageCorpus(x));
+            $('#groups').DataTable(setLanguageCorpus(x));
+            $('#orders').DataTable(setLanguageCorpus(x));
+            $('.dropdown-toggle').dropdown();
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#amount_filter').keyup( function() {
+                productTable.draw();
+            } );
+
+        } );
+
+          /* Custom filtering function */
         $.fn.dataTable.ext.search.push(
             function( settings, data, dataIndex ) {
-                //var min = parseInt( $('#min').val(), 10 );
-                var amount = parseFloat( data[5] ); // use data for the age column
+                if ( settings.nTable.id == 'products') {
+                    var min = parseInt($('#amount_filter').val(), 10);
+                    var amount = parseFloat(data[5]); // use data for the age column
 
-                if ( amount > 0 )
-                    return true;
+                    if (amount > min)
+                        return true;
 
-                return false;
+                    return false;
+                }
+                return true;
             }
         );
 
-        $(document).ready(function() {
-            $('#products').DataTable();
-            $('#events').DataTable();
-            $('#groups').DataTable();
-            $('#orders').DataTable();
-            $('.dropdown-toggle').dropdown();
-        } );
 
     </script>
+    
     <title>{% trans "title_inventory" %}</title>
 </head>
 

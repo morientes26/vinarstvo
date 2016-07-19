@@ -13,34 +13,23 @@
         $('#photos').append(element);
     });
 
- /*
-       $("#upload2").submit(function(event){
-            //$(this).preventDefault();
-            $.ajax({
-                 url: $(this).attr('action'),
-                 type: $(this).attr('method'),
-                 data:  $(this).serialize(),
-                 enctype: 'multipart/form-data',
-                 success: function(){
-                     alert('ok');
-                     $('.messages').html("<h2>Photo Form Submitted!</h2>");
-                 }
-            });
-
-            return false;
-       });
- */
-
 });
 </script>
 
+    <!-- FIXME: dat prec inline css -->
+<style>
+.alert-error {color: red;}
+</style>
+
 <br/>
+
 <form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="form-group row">
         <label for="{{ product_form.code.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_code" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error"> {{ product_form.code.errors }} </span>
             <input class="form-control" name="{{ product_form.code.html_name }}" value="{{ product_form.code.value }}">
         </div>
     </div>
@@ -48,6 +37,7 @@
     <div class="form-group row">
         <label for="{{ product_form.origin_name.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_origin_name" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error"> {{ product_form.origin_name.errors }} </span>
             <input class="form-control" name="{{ product_form.origin_name.html_name }}" value="{{ product_form.origin_name.value }}">
         </div>
     </div>
@@ -55,6 +45,7 @@
     <div class="form-group row">
         <label for="{{ product_form.name.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_name" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error">  {{ product_form.name.errors }} </span>
             <input class="form-control" name="{{ product_form.name.html_name }}" value="{{ product_form.name.value }}">
         </div>
     </div>
@@ -62,6 +53,7 @@
     <div class="form-group row">
         <label for="{{ product_form.price.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_price" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error"> {{ product_form.price.errors }} </span>
             <input class="form-control" name="{{ product_form.price.html_name }}" value="{{ product_form.price.value }}">
         </div>
     </div>
@@ -69,6 +61,7 @@
     <div class="form-group row">
         <label for="{{ product_form.size.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_size" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error">  {{ product_form.size.errors }} </span>
             <input class="form-control" name="{{ product_form.size.html_name }}" value="{{ product_form.size.value }}">
         </div>
     </div>
@@ -76,6 +69,7 @@
     <div class="form-group row">
         <label for="{{ product_form.amount.id_for_label }}" class="col-sm-2 form-control-label">{% trans "product_amount" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error">  {{ product_form.amount.errors }} </span>
             <input class="form-control" name="{{ product_form.amount.html_name }}" value="{{ product_form.amount.value }}">
         </div>
     </div>
@@ -108,6 +102,7 @@
     <div class="form-group row">
         <label for="{{ wine_form.year.id_for_label }}" class="col-sm-2 form-control-label">{% trans "wine_year" %}</label>
         <div class="col-sm-10">
+            <span class="alert-error">  {{ wine_form.year.errors }} </span>
             <input class="form-control" name="{{ wine_form.year.html_name }}" value="{{ wine_form.year.value }}">
         </div>
     </div>
@@ -181,49 +176,11 @@
              <input type="file" id="photo_upload" name="photo_upload">
         </div>
     </div>
-
-    {% for error in field.errors %}
-        <div class="alert alert-error">
-            <strong>{{ error|escape }}</strong>
+    <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <img src="{{ load_photo.adjust_url }}" class="img-responsive" style="height:400px">
         </div>
-    {% endfor %}
-
-
-
-    <!--table class="table">
-        <thead>
-        <tr>
-           <th class="col-md-12">{*% trans "wine_awards" %*}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        {*% for award in wine.awards.all %*}
-            <td>{*{ award.name }*}</td>
-            {*% if award.photo %*}
-            <td>{*{ award.photo.title }*}</td>
-            {*% endif %*}
-        {*% endfor %*}
-        <input type="file" id="award_upload" name="award_upload">
-        </tr>
-        </tbody>
-    </table-->
-
-    {% if form.errors %}
-        {% for field in form %}
-            {% for error in field.errors %}
-                <div class="alert alert-error">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
-        {% endfor %}
-        {% for error in form.non_field_errors %}
-            <div class="alert alert-error">
-                <strong>{{ error|escape }}</strong>
-            </div>
-        {% endfor %}
-    {% endif %}
-
+    </div>
 
     {{ product_form.is_new }}
 
