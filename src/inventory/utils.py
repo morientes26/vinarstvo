@@ -1,7 +1,7 @@
 """
-Data utils
+Data and render utils
 """
-
+import inventory
 
 def file_to_blob(input):
     """
@@ -14,3 +14,14 @@ def file_to_blob(input):
     """
     return open(input, "rb").read()
 
+
+def default_controller_values(request):
+    """
+    Context processor for default values of controller.
+    Args:
+        request:
+
+    Returns:
+
+    """
+    return {'app_version': inventory.__version__}

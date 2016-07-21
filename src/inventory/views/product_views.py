@@ -19,6 +19,7 @@ from winelist.settings import BASE_DIR
 from inventory.service import InventoryService
 
 import logging
+import inventory
 
 logger = logging.getLogger(__name__)
 
@@ -26,10 +27,12 @@ logger = logging.getLogger(__name__)
 # Views for products management
 
 class IndexView(LoginRequiredMixin, TemplateView):
-    template_name = 'index_ng.html'
+    template_name = 'index.html'
 
     def get(self, request, *args, **kwargs):
         logger.debug("IndexerView")
+        context = self.get_context_data()
+        context['app_version'] = inventory.__version__
         return super(IndexView, self).get(request, args, kwargs)
 
 
