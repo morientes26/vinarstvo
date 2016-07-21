@@ -1,8 +1,21 @@
 # -*- coding: utf-8 -*-
 import os
 import subprocess
+from fabric.api import local, run, env, put
 
-from fabric.api import local
+# host setting
+env.hosts = ['winary.tpsoft.sk']
+env.user = "root"
+#env.password =
+
+# application setting
+app_port = 8000
+
+
+def health():
+	""" Ping production server """
+	print('pinging server: ' + env.hosts[0])
+	run("ps -ef|grep " + str(app_port))
 
 
 def install():
@@ -41,13 +54,13 @@ def migrate():
 	local("./manage.py migrate --settings=winelist.development-settings")
 
 
-def run():
+def run_server():
 	""" run on local development server """
 	local("echo '\n--- DEVELOPMENT MODE ---\n'")
 	local("./manage.py runserver 0.0.0.0:8888 --settings=winelist.development-settings")
 
 
-def run_gn():
+def run_gn_server():
 	""" run on local production server """
 	local("echo '\n--- PRODUCTION MODE ---\n'")
 	local("gunicorn winelist.wsgi")

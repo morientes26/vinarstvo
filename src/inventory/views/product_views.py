@@ -107,6 +107,7 @@ class CreateProduct(LoginRequiredMixin, View):
                 product.wine = wine
 
             logging.debug('saving wine %s', product)
+            product.save()
             self.service.upload_photos(request, product)
 
             messages.add_message(request, messages.INFO, _("product_created"))
@@ -122,16 +123,20 @@ class EditProduct(LoginRequiredMixin, View):
     service = InventoryService()
 
     def get(self, request, **kwargs):
-        logging.debug('GET - edit product')
+        logging.info('GET - edit product' + kwargs['pk'])
         wine_form = WineForm()
         product = get_object_or_404(Product, pk=kwargs['pk'])
         product_form = ProductForm(instance=product)
         load_photo = None
+        load_photo_award = None
+
         if product.photos:
             load_photo = product.photos
+        if product.awards.exists():
+            load_photo_award = product.awards.first().photo
         if product.is_wine:
             wine_form = WineForm(instance=product.wine)
-        return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form, 'load_photo':load_photo})
+        return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form, 'load_photo':load_photo, 'load_photo_award':load_photo_award})
 
     def post(self, request, **kwargs):
         logger.debug("POST - edit product %s", request)

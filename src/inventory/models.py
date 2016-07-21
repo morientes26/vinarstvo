@@ -31,6 +31,17 @@ class Photo(models.Model):
         return str(self.pk) + " " + self.uuid
 
 
+class Award(models.Model):
+    """
+	Award of product
+	"""
+    name = models.CharField(max_length=20, blank=True, null=True, help_text="nazov")
+    photo = models.ForeignKey('Photo', blank=True, help_text="mala fotka medaily/ocenenia")
+
+    def __unicode__(self):
+        return self.name
+
+
 class Product(models.Model):
     """
 	Basic product of inventory
@@ -54,6 +65,7 @@ class Product(models.Model):
     # Relations
     group = models.ForeignKey('Group', null=True, blank=True, help_text="skupina")
     photos = models.ForeignKey('Photo', null=True, blank=True, help_text="fotky produktu")
+    awards = models.ManyToManyField(Award, blank=True, help_text="medaily/ocenenia")
     wine = models.ForeignKey('Wine', null=True, blank=True, help_text="wine")
 
     # Overriding
@@ -72,17 +84,7 @@ class Group(models.Model):
 	Group of product (vine, snack, drink...)
 	"""
     name = models.CharField(max_length=120, blank=False, help_text="nazov skupiny")
-
-    def __unicode__(self):
-        return self.name
-
-
-class Award(models.Model):
-    """
-	Award of product
-	"""
-    name = models.CharField(max_length=20, unique=True, help_text="nazov")
-    photo = models.ForeignKey('Photo', blank=True, help_text="mala fotka medaily/ocenenia")
+    image = models.ForeignKey('Photo', null=True, blank=True, help_text="obrazok skupiny")
 
     def __unicode__(self):
         return self.name
@@ -132,7 +134,6 @@ class Wine(models.Model):
     sugar_residual = models.CharField(max_length=2, blank=True, choices=WINE_RESIDUAL, help_text="zbytkovy cukor")
 
     acidity = models.CharField(max_length=20, blank=True, help_text="celkove kyseliny", default="")
-    awards = models.ManyToManyField(Award, blank=True, help_text="medaily/ocenenia")
     serving = models.CharField(max_length=255, blank=True, help_text="servirovanie", default="")
 
     def __unicode__(self):

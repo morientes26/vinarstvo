@@ -47,10 +47,17 @@ class InventoryService:
 		if request.FILES:
 			logger.debug(request.FILES)
 
-			photo = Photo.objects.create(blob=request.FILES['photo_upload'])
-			product.photos = photo
-			product.save()
+			if 'photo_upload' in request.FILES:
+				photo = Photo.objects.create(blob=request.FILES['photo_upload'])
+				product.photos = photo
 
+			if 'award_upload' in request.FILES:
+				photo = Photo.objects.create(blob=request.FILES['award_upload'])
+				photo.save()
+				award = Award.objects.create(name=request.POST['award_name'], photo=photo)
+				award.save()
+				product.awards.add(award)
+			product.save()
 			#for file in request.FILES:
 			#    logger.debug(file)
 			#    if file == 'photo_upload':
@@ -97,13 +104,6 @@ class InventoryService:
 		logger.debug('get_all_products_in_event from %s - fetching %s data', event, result.__sizeof__())
 		return result
 
-	#@deprecated
-	def get_actual_events(self, group):
-		now = datetime.datetime.now()
-		events = Event.objects.filter(date_from__lte=now, date_to__gte=now, products__group__name=group).order_by('id')
-		logger.debug('get_actual_events - fetching %s data', events.count())
-		logger.debug(events)
-		return events
 
 	def get_actual_orders_by_name(self, customer_name):
 		orders = Order.objects.filter(done=False, customer_name=customer_name)
@@ -122,6 +122,9 @@ class InventoryService:
 			return events[0]
 		else:
 			return None
+
+	def get_groups(self):
+		return None
 
 
 		# ------------------------------------------------------------------------------------ order --------
@@ -146,3 +149,12 @@ class InventoryService:
 			logger.error("Order not found")
 			raise
 		return order
+
+
+	"""@deprecated"""
+	def get_actual_events(self, group):
+		now = datetime.datetime.now()
+		events = Event.objects.filter(date_from__lte=now, date_to__gte=now, products__group__name=group).order_by('id')
+		logger.debug('get_actual_events - fetching %s data', events.count())
+		logger.debug(events)
+		return events

@@ -64,10 +64,10 @@ class ProductManageTestCase(TestCase):
         blob = inventory.utils.file_to_blob(self.TEST_FILE)
         photo = Photo.objects.create(blob=blob)
         award = Award.objects.create(name="Udelenie ceny c.1", photo=photo)
-        self.wine.awards.add(award)
-        self.wine.save()
-        winetest = Wine.objects.get(pk=self.wine.id)
-        self.assertEqual(winetest.awards.first().name, "Udelenie ceny c.1")
+        self.product.awards.add(award)
+        self.product.save()
+        producttest = Product.objects.get(pk=self.product.id)
+        self.assertEqual(producttest.awards.first().name, "Udelenie ceny c.1")
 
     def create_test_file(self):
         if not os.path.isfile(self.TEST_FILE):

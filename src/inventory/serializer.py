@@ -40,6 +40,7 @@ class GroupSerializer(serializers.ModelSerializer):
     """
     Serializing the Group
     """
+    image = PhotoSerializer(read_only=True, many=False)
 
     class Meta:
         model = Group
