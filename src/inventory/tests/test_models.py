@@ -17,15 +17,17 @@ class ProductManageTestCase(TestCase):
 
     def setUp(self):
         group = Group.objects.create(name="Skupina tekutiny")
-        self.product = Product.objects.create(code="0123", origin_name="Karpatska perla", price=5.30,
-                                              is_wine=True, group=group)
-        self.wine = Wine.objects.create(product=self.product, year=2012, attribute="SW",
+        self.wine = Wine.objects.create(year=2012, attribute="SW",
                                         acidity="12.23 ph", locality="Tibava")
+        self.product = Product.objects.create(wine=self.wine, code="0123", origin_name="Karpatska perla", price=5.30,
+                                              is_wine=True, group=group)
 
-        self.product2 = Product.objects.create(code="4567", origin_name="Karpatska perla 2",
-                                               price=2.34, is_wine=True)
-        self.wine2 = Wine.objects.create(product=self.product2, year=2015, attribute="DY",
+        self.wine2 = Wine.objects.create(year=2015, attribute="DY",
                                          acidity="3.23 ph", locality="Velky Krtis")
+
+        self.product2 = Product.objects.create(wine=self.wine2, code="4567", origin_name="Karpatska perla 2",
+                                               price=2.34, is_wine=True)
+
         self.create_test_file()
 
     def tearDown(self):
@@ -34,12 +36,12 @@ class ProductManageTestCase(TestCase):
     def test_product_has_specification_wine(self):
         """ Find product and specification data """
 
-        wine = Wine.objects.get(product=self.product)
-        self.assertEqual(self.product.origin_name, "Karpatska perla")
-        self.assertEqual(self.product.group.name, "Skupina tekutiny")
-        self.assertEqual(wine.year, 2012)
-        self.assertEqual(wine.attribute, "SW")
-        self.assertEqual(wine.locality, "Tibava")
+        product = Product.objects.get(wine=self.wine)
+        self.assertEqual(product.origin_name, "Karpatska perla")
+        self.assertEqual(product.group.name, "Skupina tekutiny")
+        self.assertEqual(product.wine.year, 2012)
+        self.assertEqual(product.wine.attribute, "SW")
+        self.assertEqual(product.wine.locality, "Tibava")
 
     def test_order_products(self):
         """ Ordering products """

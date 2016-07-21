@@ -1,0 +1,3909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<list-item>
+		<code>8</code>
+		<origin_name>**Šenkv.červ.v.obl.polosu</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>12</code>
+		<origin_name>Burčiak</origin_name>
+		<price>1.6700</price>
+		<amount>-0.5000</amount>
+	</list-item>
+	<list-item>
+		<code>13</code>
+		<origin_name>Samples, not for resale</origin_name>
+		<price>0.8330</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>14</code>
+		<origin_name>červené víno 0,75 l</origin_name>
+		<price>5.8333</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>15</code>
+		<origin_name>**BOBULO hroznová šťava 2011</origin_name>
+		<price>2.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>16</code>
+		<origin_name>biele vino 0,75 l</origin_name>
+		<price>8.3333</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>18</code>
+		<origin_name>Veltlínske zelené Surlie</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1A</code>
+		<origin_name>Biele suché, r.15 L9715, 12% alkohol</origin_name>
+		<price>0.8910</price>
+		<amount>3450</amount>
+	</list-item>
+	<list-item>
+		<code>1B</code>
+		<origin_name>Veltl.zelené r.15, L9815, 12% alkohol</origin_name>
+		<price>1.1000</price>
+		<amount>2450</amount>
+	</list-item>
+	<list-item>
+		<code>1C</code>
+		<origin_name>Biele polosl.,r.15, L9615, 12% alkohol</origin_name>
+		<price>0.8910</price>
+		<amount>5100</amount>
+	</list-item>
+	<list-item>
+		<code>1D</code>
+		<origin_name>Rizling vlašský r.15, L9515, 12% alkohol</origin_name>
+		<price>1.4000</price>
+		<amount>1750</amount>
+	</list-item>
+	<list-item>
+		<code>1E</code>
+		<origin_name>**Moravský muškát r.08,suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1F</code>
+		<origin_name>Irsai Oliver r.15, L9915,alk.12%obj</origin_name>
+		<price>1.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2A</code>
+		<origin_name>Frank.modrá r.11, L2712, 12,5% alkohol</origin_name>
+		<price>1.2520</price>
+		<amount>1500</amount>
+	</list-item>
+	<list-item>
+		<code>2B</code>
+		<origin_name>Červ.polosuché r.11, L9714,12,5% alkohol</origin_name>
+		<price>1.0840</price>
+		<amount>2050</amount>
+	</list-item>
+	<list-item>
+		<code>2C</code>
+		<origin_name>**Svätovavrinecké r.07,suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2D</code>
+		<origin_name>červené víno 200 ml</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2E</code>
+		<origin_name>**Svätovavrinecké ružové, 2010</origin_name>
+		<price>1.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2F</code>
+		<origin_name>Frank. modrá rosé r.14, L9114, 11,5% alk</origin_name>
+		<price>1.2520</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2G</code>
+		<origin_name>Cab.Sauv.rosé polosuch14,L9414,alk.11,5%</origin_name>
+		<price>1.6000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>32</code>
+		<origin_name>**Šenkvické červ.v.obl.polosuché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>33</code>
+		<origin_name>značkové v.čer. Šebo</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>34</code>
+		<origin_name>Sýtené víno biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>36</code>
+		<origin_name>Víno biele 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>37</code>
+		<origin_name>Víno ružové 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>55</code>
+		<origin_name>VARIETO Rizling vlašský,05,kab.suché</origin_name>
+		<price>4.6000</price>
+		<amount>138.0000</amount>
+	</list-item>
+	<list-item>
+		<code>80</code>
+		<origin_name>biele víno 0,75l (fľ.číra)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>81</code>
+		<origin_name>biele víno 0,75l (fľ.číra, šroub)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>82</code>
+		<origin_name>biele víno 0,75l (fľ.zelená, šroub)</origin_name>
+		<price>4.1700</price>
+		<amount>80</amount>
+	</list-item>
+	<list-item>
+		<code>85</code>
+		<origin_name>biele víno 0,75l (OBM, korok)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>86</code>
+		<origin_name>biele víno 0,5l</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>87</code>
+		<origin_name>biele víno 0,375l</origin_name>
+		<price>4.1700</price>
+		<amount>6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>90</code>
+		<origin_name>červené víno 0,75l (fľ.číra)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>91</code>
+		<origin_name>červené víno 0,75l (fľ. číra, šroub)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>92</code>
+		<origin_name>červené víno 0,75l (fľ. zelená, šroub)</origin_name>
+		<price>4.1700</price>
+		<amount>18.0000</amount>
+	</list-item>
+	<list-item>
+		<code>95</code>
+		<origin_name>červené víno 0,75l (OBM, korok)</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>97</code>
+		<origin_name>červené víno 0,375l</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>98</code>
+		<origin_name>Archívne víno biele</origin_name>
+		<price>12.5000</price>
+		<amount>14.0000</amount>
+	</list-item>
+	<list-item>
+		<code>99</code>
+		<origin_name>Archívne víno červené</origin_name>
+		<price>17.5000</price>
+		<amount>28.0000</amount>
+	</list-item>
+	<list-item>
+		<code>115</code>
+		<origin_name>Pohár EXPERIENCE b.v. 350 ml</origin_name>
+		<price>5.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>116</code>
+		<origin_name>Pohár EXPERIENCE č.v. 450 ml</origin_name>
+		<price>5.3330</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>120</code>
+		<origin_name>prepravka</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>121</code>
+		<origin_name>paleta</origin_name>
+		<price>6.9170</price>
+		<amount>5.0000</amount>
+	</list-item>
+	<list-item>
+		<code>122</code>
+		<origin_name>preložka akyluxová</origin_name>
+		<price>2.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>123</code>
+		<origin_name>**zálohovaná fľaša litrová 1 l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>124</code>
+		<origin_name>***fľaša vínová litrová</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>199</code>
+		<origin_name>vinna nalievka 10 ks</origin_name>
+		<price>2.1916</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>200</code>
+		<origin_name>vinná nálievka</origin_name>
+		<price>0.8333</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>201</code>
+		<origin_name>mapa obce Šenkvice</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>202</code>
+		<origin_name>***doplnkový tovar</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>204</code>
+		<origin_name>vínna karta</origin_name>
+		<price>0.00</price>
+		<amount>850</amount>
+	</list-item>
+	<list-item>
+		<code>205</code>
+		<origin_name>cukor kr. 50 kg balenie</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>207</code>
+		<origin_name>uzatvárak na víno s logom</origin_name>
+		<price>0.00</price>
+		<amount>116.0000</amount>
+	</list-item>
+	<list-item>
+		<code>208</code>
+		<origin_name>pero s logom</origin_name>
+		<price>0.00</price>
+		<amount>71.0000</amount>
+	</list-item>
+	<list-item>
+		<code>209</code>
+		<origin_name>otvárak v obale</origin_name>
+		<price>3.0833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>210</code>
+		<origin_name>otvárak na víno wine master</origin_name>
+		<price>64.1600</price>
+		<amount>6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>212</code>
+		<origin_name>leták</origin_name>
+		<price>0.00</price>
+		<amount>4900</amount>
+	</list-item>
+	<list-item>
+		<code>215</code>
+		<origin_name>Demižón 5 l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>216</code>
+		<origin_name>ceruzky malé s potlačou</origin_name>
+		<price>0.00</price>
+		<amount>300</amount>
+	</list-item>
+	<list-item>
+		<code>221</code>
+		<origin_name>kniha</origin_name>
+		<price>4.0900</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>223</code>
+		<origin_name>pohár REVOLUTION 365 ml  logo</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>224</code>
+		<origin_name>karafa 750 ml</origin_name>
+		<price>30.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>226</code>
+		<origin_name>Kniha vinársky lexikón</origin_name>
+		<price>10.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>228</code>
+		<origin_name>Kalendár</origin_name>
+		<price>4.1670</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>229</code>
+		<origin_name>Plastelina stredná</origin_name>
+		<price>3.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>230</code>
+		<origin_name>Plastelína veľká</origin_name>
+		<price>4.1670</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>231</code>
+		<origin_name>Kniha Sprievodca vínami</origin_name>
+		<price>11.5830</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>232</code>
+		<origin_name>pohár REVOLUTION 545 ml  logo</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>301</code>
+		<origin_name>**Omšové víno biele-RR 09,polosladké</origin_name>
+		<price>4.4170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>305</code>
+		<origin_name>**Omšové víno červené</origin_name>
+		<price>4.4170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>307</code>
+		<origin_name>**Omšové víno biele-VZ</origin_name>
+		<price>3.6670</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>308</code>
+		<origin_name>**JAGNET Moravský muškát,11,suché</origin_name>
+		<price>3.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>309</code>
+		<origin_name>**JAGNET Frankovka modrá,11,suché</origin_name>
+		<price>3.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>310</code>
+		<origin_name>**JAGNET Rizling vlašský,11,suché</origin_name>
+		<price>3.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>311</code>
+		<origin_name>**JAGNET Veltlínske zelené,11,suché</origin_name>
+		<price>3.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>312</code>
+		<origin_name>**JAGNET Muller-Thurgau,11,suché</origin_name>
+		<price>3.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>313</code>
+		<origin_name>**JAGNET Svätovavrinecké,09,suché</origin_name>
+		<price>3.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>314</code>
+		<origin_name>**Muškát moravský 2010, NSV</origin_name>
+		<price>4.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>315</code>
+		<origin_name>**MINI JAGNET Veltlínske zelené 11</origin_name>
+		<price>1.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>316</code>
+		<origin_name>**MINI JAGNET Frankovka modrá 11</origin_name>
+		<price>1.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>320</code>
+		<origin_name>**VARIETO Svätovavrinecké 2010, ružové</origin_name>
+		<price>4.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>321</code>
+		<origin_name>**VARIETO Cabernet sauvignon,10,nz,ružov</origin_name>
+		<price>5.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>322</code>
+		<origin_name>**VARIETO Sauvignon 10,nz,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>323</code>
+		<origin_name>**VARIETO Chardonnay 10,nz,suché</origin_name>
+		<price>7.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>324</code>
+		<origin_name>**VARIETO Veltlínske zelené 10,nz,suché</origin_name>
+		<price>6.4000</price>
+		<amount>1.0000</amount>
+	</list-item>
+	<list-item>
+		<code>325</code>
+		<origin_name>**VARIETO Aurelius 10,vzh,polosladké</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>327</code>
+		<origin_name>**VARIETO Pinot Gris 10,nz,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>330</code>
+		<origin_name>**VARIETO Devín 10,nz,suché</origin_name>
+		<price>6.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>331</code>
+		<origin_name>VARIETO Rizling rýnsky 10,nz,suché</origin_name>
+		<price>6.7000</price>
+		<amount>690</amount>
+	</list-item>
+	<list-item>
+		<code>360</code>
+		<origin_name>**VARIETO Veltlínske zelené,07,vzh,sur l</origin_name>
+		<price>6.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>363</code>
+		<origin_name>**VARIETO Rulandské modré 07,nz,suché</origin_name>
+		<price>6.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>366</code>
+		<origin_name>**4ŽIVLY 2007, nz, červené, suché</origin_name>
+		<price>11.9000</price>
+		<amount>480</amount>
+	</list-item>
+	<list-item>
+		<code>367</code>
+		<origin_name>**VARIETO Alibernet 08,nz,červené suché</origin_name>
+		<price>9.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>368</code>
+		<origin_name>**VARIETO Rulandské modré 08,nz,červ.suc</origin_name>
+		<price>6.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>372</code>
+		<origin_name>**VARIETO Sauvignon,08,nz,suché</origin_name>
+		<price>6.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>382</code>
+		<origin_name>**VARIETO Cab.sauvignon 08,nz,červ.suché</origin_name>
+		<price>7.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>385</code>
+		<origin_name>**VARIETO Aurelius 09,vzh,b.polosladké</origin_name>
+		<price>6.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>386</code>
+		<origin_name>**VARIETO Chardonnay 09, vzh, b. suché</origin_name>
+		<price>0.00</price>
+		<amount>343.0000</amount>
+	</list-item>
+	<list-item>
+		<code>393</code>
+		<origin_name>**VARIETO CHardonnay,09,nz,suché</origin_name>
+		<price>6.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>395</code>
+		<origin_name>**VARIETO André 09, nz, červené suché</origin_name>
+		<price>4.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>396</code>
+		<origin_name>**VARIETO Frankovka modra 09, nz,čv.</origin_name>
+		<price>7.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>397</code>
+		<origin_name>**VARIETO Alibernet,09, nz,čv</origin_name>
+		<price>9.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>400</code>
+		<origin_name>**4Živly biele 09,nz, suché</origin_name>
+		<price>9.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>498</code>
+		<origin_name>Víno biele</origin_name>
+		<price>0.00</price>
+		<amount>-50</amount>
+	</list-item>
+	<list-item>
+		<code>499</code>
+		<origin_name>Víno červené</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>502</code>
+		<origin_name>Zátka - 44/24   natural</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>508</code>
+		<origin_name>**fľaša 0,75 biela skrutkový uzáver</origin_name>
+		<price>0.00</price>
+		<amount>-57.0000</amount>
+	</list-item>
+	<list-item>
+		<code>511</code>
+		<origin_name>Fľaša 0,75  L, bordo europea OBM</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>518</code>
+		<origin_name>Fľaša 0,75  L,  JAGNET</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>524</code>
+		<origin_name>Termozáklopka sat in black 0,75 l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>526</code>
+		<origin_name>Termozáklopka priesvitná</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>529</code>
+		<origin_name>Skrutkový uzáver čierny omšové</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>530</code>
+		<origin_name>skrutkový uzáver na ružové</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>532</code>
+		<origin_name>Termozáklopka šedé pásiky 0,75 l s ŠKČ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>554</code>
+		<origin_name>P-VARIETO RR 10 nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>555</code>
+		<origin_name>Z-VARIETO RR 10 nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>566</code>
+		<origin_name>Termozáklopka šedé pásiky 0,75 l bez ŠKČ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>900</code>
+		<origin_name>**DÍLEMÚRE Rizling rýnsky,06,bv,sladké</origin_name>
+		<price>9.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>903</code>
+		<origin_name>**DÍLEMÚRE Tramín červený,07,hv,sladké</origin_name>
+		<price>10.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>904</code>
+		<origin_name>**DÍLEMÚRE Devín,07,hv,sladké</origin_name>
+		<price>10.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>905</code>
+		<origin_name>Rizling rýnsky 08 ľadové víno</origin_name>
+		<price>23.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>906</code>
+		<origin_name>**DÍLEMÚRE Pálava,08,s.v.</origin_name>
+		<price>14.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>907</code>
+		<origin_name>**DÍLEMÚRE Pálava 09,sl.v.,b.sladké</origin_name>
+		<price>13.4500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>996</code>
+		<origin_name>WHITE WINE</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>998</code>
+		<origin_name>RED WINE</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>EV1</code>
+		<origin_name>výsek biely</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>EV2</code>
+		<origin_name>výsek žltý</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>EV3</code>
+		<origin_name>výsek oranžový</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K49</code>
+		<origin_name>kartón na 6 fľiaš čierny</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K50</code>
+		<origin_name>karton na 6 fliaš zelený</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K51</code>
+		<origin_name>karton na 6 fliaš DILEMURE</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K52</code>
+		<origin_name>preložka zelená 6-ka</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K54</code>
+		<origin_name>preložka čierna 6-ka</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K55</code>
+		<origin_name>drevená krabica na 1,5 l flasu</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K56</code>
+		<origin_name>kartón na ľadové víno</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K57</code>
+		<origin_name>kartón na 0,25 l mini jagnety</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K58</code>
+		<origin_name>karton (316/230/156)</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K60</code>
+		<origin_name>vložka (310x225)</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K61</code>
+		<origin_name>skladaná mriežka 360x238x110 - mini jag.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K64</code>
+		<origin_name>vložka na ľadové víno - 186x328</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1000</code>
+		<origin_name>Cuveé A+A 2008, červené suché</origin_name>
+		<price>13.5000</price>
+		<amount>3.0000</amount>
+	</list-item>
+	<list-item>
+		<code>1001</code>
+		<origin_name>Svätovavrinecké,04,Šebová Šebo</origin_name>
+		<price>32.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1002</code>
+		<origin_name>sudové víno biele</origin_name>
+		<price>0.5500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1003</code>
+		<origin_name>sudové víno červené</origin_name>
+		<price>0.5800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1005</code>
+		<origin_name>4 ŽIVLY 07,neskorý zber,č.víno 1,5 l</origin_name>
+		<price>29.0000</price>
+		<amount>72.0000</amount>
+	</list-item>
+	<list-item>
+		<code>1006</code>
+		<origin_name>Cuveé A+A 08, červené víno, 1,5 l</origin_name>
+		<price>29.0000</price>
+		<amount>107.0000</amount>
+	</list-item>
+	<list-item>
+		<code>1010</code>
+		<origin_name>**Cuvée Kempinski 2009</origin_name>
+		<price>4.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1011</code>
+		<origin_name>4 Živly 2008, neskorý zber červené 1,5 l</origin_name>
+		<price>29.0000</price>
+		<amount>19.0000</amount>
+	</list-item>
+	<list-item>
+		<code>1997</code>
+		<origin_name>someliérska prednáška</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1998</code>
+		<origin_name>bravčová panenka s prílohou</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>1999</code>
+		<origin_name>Obed zamestnanci</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2000</code>
+		<origin_name>Degustácia</origin_name>
+		<price>4.1700</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2001</code>
+		<origin_name>Občerstvenie</origin_name>
+		<price>5.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2002</code>
+		<origin_name>Prenájom nebyt.priestorov</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2003</code>
+		<origin_name>Iné prevádzkové náklady</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2004</code>
+		<origin_name>Záloha na degustáciu</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2005</code>
+		<origin_name>Služba - fľašovanie, etiket.</origin_name>
+		<price>0.00</price>
+		<amount>5.0000</amount>
+	</list-item>
+	<list-item>
+		<code>2006</code>
+		<origin_name>Náklady na dopravu</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2010</code>
+		<origin_name>Služba</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2011</code>
+		<origin_name>Služba - dotlač etikiet</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2012</code>
+		<origin_name>Vstupenka</origin_name>
+		<price>10.0800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2016</code>
+		<origin_name>Degustácia OHEŇ</origin_name>
+		<price>5.8330</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2017</code>
+		<origin_name>Záloha na pohár</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2047</code>
+		<origin_name>čaj</origin_name>
+		<price>1.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2050</code>
+		<origin_name>káva lavazza</origin_name>
+		<price>1.0833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2055</code>
+		<origin_name>darčekový set</origin_name>
+		<price>24.1666</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2056</code>
+		<origin_name>Pralinka 1 ks</origin_name>
+		<price>0.4167</price>
+		<amount>260</amount>
+	</list-item>
+	<list-item>
+		<code>2062</code>
+		<origin_name>obal biely na 2 ks</origin_name>
+		<price>0.2083</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2063</code>
+		<origin_name>obal  priesvitný  na  6 ks</origin_name>
+		<price>0.8330</price>
+		<amount>20</amount>
+	</list-item>
+	<list-item>
+		<code>2065</code>
+		<origin_name>obal biely  na 12 ks</origin_name>
+		<price>0.4170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2068</code>
+		<origin_name>obal zlatý na 2ks</origin_name>
+		<price>0.4170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2069</code>
+		<origin_name>Košík na pralinky</origin_name>
+		<price>0.5800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2072</code>
+		<origin_name>obal farebný na 16 ks</origin_name>
+		<price>1.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2076</code>
+		<origin_name>Čokoláda</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2077</code>
+		<origin_name>Doplnkový tovar N</origin_name>
+		<price>5.1667</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2078</code>
+		<origin_name>Doplnkový tovar A</origin_name>
+		<price>4.5833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2081</code>
+		<origin_name>Želé</origin_name>
+		<price>3.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2082</code>
+		<origin_name>Včelí med</origin_name>
+		<price>3.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>2083</code>
+		<origin_name>Včelí med malý</origin_name>
+		<price>3.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4000</code>
+		<origin_name>Odpad - Sklené črepy</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4001</code>
+		<origin_name>Odpad - obaly z plastov 150102</origin_name>
+		<price>0.00</price>
+		<amount>-0.5520</amount>
+	</list-item>
+	<list-item>
+		<code>4002</code>
+		<origin_name>vínny kameň</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4004</code>
+		<origin_name>Odpad-Obaly z papiera a lepenky 150101</origin_name>
+		<price>0.00</price>
+		<amount>-1.5690</amount>
+	</list-item>
+	<list-item>
+		<code>4005</code>
+		<origin_name>Odpad-Obaly zo skla 150107</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4007</code>
+		<origin_name>pracovný stôl</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4009</code>
+		<origin_name>Traktor JOHN DEERE, JD5500N</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4010</code>
+		<origin_name>výčapné zariadenie</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4011</code>
+		<origin_name>barikový sud objem 225 l</origin_name>
+		<price>100.00</price>
+		<amount>3.0000</amount>
+	</list-item>
+	<list-item>
+		<code>4013</code>
+		<origin_name>Filtračné zariadenie na víno</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4015</code>
+		<origin_name>Nerezová vinohr. vlečka na hrozno</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4016</code>
+		<origin_name>Prívesný vozík  - EČ PK593YE</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4017</code>
+		<origin_name>Poštovné a balné</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4018</code>
+		<origin_name>Traktor JOHN DEERE,  5615F</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4019</code>
+		<origin_name>Kovový odpad</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4020</code>
+		<origin_name>Daňový doklad k zálohovej faktúre</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>4021</code>
+		<origin_name>TOYOTA RAV 4</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>5003</code>
+		<origin_name>bonus</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>5004</code>
+		<origin_name>bonus KARPATSKÁ PETRLA kruh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>5005</code>
+		<origin_name>Poukážka Diners Club CS 50,-Eur</origin_name>
+		<price>0.00</price>
+		<amount>-7.0000</amount>
+	</list-item>
+	<list-item>
+		<code>6002</code>
+		<origin_name>Selektované očká viniča</origin_name>
+		<price>17.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K001</code>
+		<origin_name>obal na víno</origin_name>
+		<price>1.0000</price>
+		<amount>434.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K007</code>
+		<origin_name>obal na víno</origin_name>
+		<price>0.8330</price>
+		<amount>455.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K009</code>
+		<origin_name>***karton na DÍLEMÚRE</origin_name>
+		<price>1.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K010</code>
+		<origin_name>obal na víno</origin_name>
+		<price>0.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K014</code>
+		<origin_name>obal na víno</origin_name>
+		<price>1.0000</price>
+		<amount>575.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K015</code>
+		<origin_name>obal na víno</origin_name>
+		<price>4.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K016</code>
+		<origin_name>obal na víno</origin_name>
+		<price>5.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K018</code>
+		<origin_name>obal na víno</origin_name>
+		<price>1.3750</price>
+		<amount>772.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K019</code>
+		<origin_name>obal na víno</origin_name>
+		<price>2.0800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K020</code>
+		<origin_name>obal na víno</origin_name>
+		<price>0.5000</price>
+		<amount>1500</amount>
+	</list-item>
+	<list-item>
+		<code>K021</code>
+		<origin_name>obal na víno</origin_name>
+		<price>2.0000</price>
+		<amount>241.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K023</code>
+		<origin_name>drevená krabica na 12 fliaš s logom</origin_name>
+		<price>13.0830</price>
+		<amount>37.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K024</code>
+		<origin_name>obal na vino</origin_name>
+		<price>4.3750</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K025</code>
+		<origin_name>obal na vino</origin_name>
+		<price>10.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K029</code>
+		<origin_name>obal na vino</origin_name>
+		<price>2.4160</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K030</code>
+		<origin_name>obal na vino</origin_name>
+		<price>0.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K031</code>
+		<origin_name>obal na vino  DÍLEMÚRE</origin_name>
+		<price>1.2500</price>
+		<amount>3075.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K032</code>
+		<origin_name>obal na Ľadové vino</origin_name>
+		<price>1.7000</price>
+		<amount>1809.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K033</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>11.2500</price>
+		<amount>41.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K034</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>8.5830</price>
+		<amount>9.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K035</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>7.0000</price>
+		<amount>263.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K036</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>3.8333</price>
+		<amount>-2.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K037</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K038</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>5.0000</price>
+		<amount>9.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K039</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>7.0833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K041</code>
+		<origin_name>Obal na vino</origin_name>
+		<price>1.0833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K042</code>
+		<origin_name>Obal na vino</origin_name>
+		<price>1.3750</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>K043</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.7500</price>
+		<amount>864.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K044</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.2500</price>
+		<amount>1647.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K045</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.3750</price>
+		<amount>6303.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K046</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.7500</price>
+		<amount>98.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K047</code>
+		<origin_name>Obal na víno - sáček</origin_name>
+		<price>0.00</price>
+		<amount>18080</amount>
+	</list-item>
+	<list-item>
+		<code>K048</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>1.0000</price>
+		<amount>460</amount>
+	</list-item>
+	<list-item>
+		<code>K049</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>1.1670</price>
+		<amount>1781.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K050</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>3.8330</price>
+		<amount>27.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K051</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>5.0000</price>
+		<amount>39.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K052</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.7500</price>
+		<amount>1772.0000</amount>
+	</list-item>
+	<list-item>
+		<code>K053</code>
+		<origin_name>Obal na víno</origin_name>
+		<price>0.7500</price>
+		<amount>2671.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11121</code>
+		<origin_name>**VARIETO Frankovka modrá 11,ružové</origin_name>
+		<price>4.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11122</code>
+		<origin_name>**VARIETO Cab.Sauvignon 11,nz,ružové</origin_name>
+		<price>5.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11123</code>
+		<origin_name>**VARIETO Sauvignon 11,nz,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11124</code>
+		<origin_name>**VARIETO Pinot Blanc 11,nz,suché</origin_name>
+		<price>4.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11125</code>
+		<origin_name>**Cuvée Monvin biele r.11</origin_name>
+		<price>3.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11126</code>
+		<origin_name>**VARIETO Chardonnay 11,nz,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11127</code>
+		<origin_name>**VARIETO Devin 11,vzh,suché</origin_name>
+		<price>6.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11128</code>
+		<origin_name>**VARIETO Pinot Gris 11 vzh,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11129</code>
+		<origin_name>**VARIETO Rizling vlašský 11,vzh,polosl.</origin_name>
+		<price>5.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11130</code>
+		<origin_name>**VARIETO Aurelius 11,vzh,polosl.</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11131</code>
+		<origin_name>**VARIETO Rizling rýnsky 11,nz,suché</origin_name>
+		<price>6.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11132</code>
+		<origin_name>**VARIETO Veltlínske zelené 11,nz,suché</origin_name>
+		<price>6.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11134</code>
+		<origin_name>**DÍLEMÚRE Tramín červený, 11, hv, sladk</origin_name>
+		<price>8.3500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11136</code>
+		<origin_name>**Cuvée Trinity biele r.11</origin_name>
+		<price>2.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11138</code>
+		<origin_name>Veltlínske zelené, r.11, ľadové víno</origin_name>
+		<price>22.5000</price>
+		<amount>724.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11141</code>
+		<origin_name>**4 ŽIVLY 2011, nz, biele,suché</origin_name>
+		<price>9.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11143</code>
+		<origin_name>**Omšové víno biele - VZ r.11</origin_name>
+		<price>4.4170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11144</code>
+		<origin_name>DÍLEMÚRE Pálava 11, sv, biele, sladké</origin_name>
+		<price>14.0000</price>
+		<amount>1066.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11201</code>
+		<origin_name>**BOBULO hroznová šťava 2012</origin_name>
+		<price>2.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11202</code>
+		<origin_name>**MLADÉ VÍNO Irsai Oliver 2012</origin_name>
+		<price>3.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11203</code>
+		<origin_name>**MLADÉ VÍNO Muller-Thur./Silván.zel. 20</origin_name>
+		<price>3.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11204</code>
+		<origin_name>**JAGNET Muškát moravský,12,suché</origin_name>
+		<price>3.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11205</code>
+		<origin_name>**JAGNET Muller-Thurgau, 12, suché</origin_name>
+		<price>3.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11206</code>
+		<origin_name>**JAGNET Veltlínske zelené 12, suché</origin_name>
+		<price>3.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11207</code>
+		<origin_name>**JAGNET Rizling vlašský 12, suché</origin_name>
+		<price>3.6000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11209</code>
+		<origin_name>**VARIETO Devín 12, vzh, polosuch.</origin_name>
+		<price>6.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11210</code>
+		<origin_name>**VARIETO Veltlínske zelené 12,vzh,suché</origin_name>
+		<price>6.7000</price>
+		<amount>2.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11211</code>
+		<origin_name>**VARIETO Sauvignon 12,nz,suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11212</code>
+		<origin_name>**VARIETO Aurelius, 12, bv, polosladké</origin_name>
+		<price>6.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11213</code>
+		<origin_name>Kúpele Piešťany biele, suché</origin_name>
+		<price>3.9000</price>
+		<amount>423.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11214</code>
+		<origin_name>**VARIETO Pinot Blanc 12, nz, suché</origin_name>
+		<price>5.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11215</code>
+		<origin_name>**DÍLEMÚRE Devín 12, HV, sladké</origin_name>
+		<price>9.5500</price>
+		<amount>24.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11216</code>
+		<origin_name>**Moods Veltlínske zelené 0,75 l</origin_name>
+		<price>3.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11217</code>
+		<origin_name>**Kursalon Veltlínske zelené, suché</origin_name>
+		<price>2.8470</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11219</code>
+		<origin_name>**VARIETO Chardonnay 12, nz, suché</origin_name>
+		<price>5.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11220</code>
+		<origin_name>**VARIETO Rizling rýnsky 12, nz, suché</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11221</code>
+		<origin_name>**VARIETO Pinot Gris 12, vzh, suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11222</code>
+		<origin_name>**MINI JAGNET Veltlínske zelené 12</origin_name>
+		<price>1.2000</price>
+		<amount>12.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11223</code>
+		<origin_name>**VARIETO Rizling rýnsky 12, bv, polosl.</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11224</code>
+		<origin_name>**Moods Mini Veltlínske zelené r.12, 0,2</origin_name>
+		<price>1.0300</price>
+		<amount>24.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11225</code>
+		<origin_name>**Cuvée Monvin biele r.12</origin_name>
+		<price>3.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11226</code>
+		<origin_name>**Cuvée Trinity biele r.12</origin_name>
+		<price>2.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11301</code>
+		<origin_name>**BOBULO hroznová šťava 2013</origin_name>
+		<price>2.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11302</code>
+		<origin_name>**BOBULO rosé hroznová šťava 2013</origin_name>
+		<price>2.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11303</code>
+		<origin_name>**MLADÉ VÍNO Irsai Oliver 2013</origin_name>
+		<price>3.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11304</code>
+		<origin_name>**MLADÉ VÍNO Silvánske zelené 2013</origin_name>
+		<price>4.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11305</code>
+		<origin_name>**JAGNET Muller-Thurgau, 13, suché</origin_name>
+		<price>3.7000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11306</code>
+		<origin_name>**JAGNET Muškát Moravský, 13, suché</origin_name>
+		<price>4.2000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11307</code>
+		<origin_name>**JAGNET Rizling vlašský, 13, suché</origin_name>
+		<price>4.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11308</code>
+		<origin_name>**JAGNET Veltlínske zelené, 13, suché</origin_name>
+		<price>3.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11309</code>
+		<origin_name>**MINI JAGNET Veltlínske zelené 13, such</origin_name>
+		<price>1.3500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11310</code>
+		<origin_name>**Irsai Oliver 2013</origin_name>
+		<price>4.0833</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11311</code>
+		<origin_name>**VARIETO Veltlínske zelené 13,vzh,suché</origin_name>
+		<price>6.9000</price>
+		<amount>5.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11312</code>
+		<origin_name>**VARIETO Pinot Gris 13, nz, suché</origin_name>
+		<price>7.3000</price>
+		<amount>11.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11313</code>
+		<origin_name>**VARIETO Sauvignon 13,nz, suché</origin_name>
+		<price>7.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11314</code>
+		<origin_name>**VARIETO Devín 13, vzh, suché</origin_name>
+		<price>6.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11315</code>
+		<origin_name>**VARIETO Chardonnay 13, nz, suché biele</origin_name>
+		<price>6.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11316</code>
+		<origin_name>**VARIETO Rizling rýnsky 13, vzh, suché</origin_name>
+		<price>7.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11317</code>
+		<origin_name>**VARIETO Pinot Blanc 13, nz, suché</origin_name>
+		<price>5.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11318</code>
+		<origin_name>4 ŽIVLY 2013, nz, biele, suché</origin_name>
+		<price>9.7000</price>
+		<amount>1867.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11319</code>
+		<origin_name>DÍLEMÚRE Aurélius 13, hv, biele, sladké</origin_name>
+		<price>8.9000</price>
+		<amount>2417.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11320</code>
+		<origin_name>**Omšové víno biele - RV, r.13</origin_name>
+		<price>4.7500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11321</code>
+		<origin_name>4 Živly 2013, nz, biele, suché 1,5l</origin_name>
+		<price>0.00</price>
+		<amount>154.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11322</code>
+		<origin_name>VARIETO Rizling rýnsky 13, bv,polosl</origin_name>
+		<price>7.5000</price>
+		<amount>1607.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11330</code>
+		<origin_name>**JAGNET Muller-Thurgau 2013, white</origin_name>
+		<price>2.7800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11331</code>
+		<origin_name>**VARIETO Rhein Riesling 2013, white</origin_name>
+		<price>5.3300</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11332</code>
+		<origin_name>**VARIETO Gruner Veltliner 2013, white</origin_name>
+		<price>5.1800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11333</code>
+		<origin_name>**VARIETO Pinot Gris 2013, white</origin_name>
+		<price>5.4800</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11338</code>
+		<origin_name>**Cuvée Trinity biele r.13</origin_name>
+		<price>3.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11339</code>
+		<origin_name>**Cuvée Monvin biele r.13</origin_name>
+		<price>3.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11340</code>
+		<origin_name>**Kursalon Veltlínske zelené 13, suché</origin_name>
+		<price>2.8470</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11401</code>
+		<origin_name>BOBULO hroznová šťava 2014</origin_name>
+		<price>2.7500</price>
+		<amount>-298.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11403</code>
+		<origin_name>**Irsai Oliver 2014</origin_name>
+		<price>4.0830</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11405</code>
+		<origin_name>**JAGNET Muller-Thurgau, 14, suché</origin_name>
+		<price>4.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11406</code>
+		<origin_name>**JAGNET Muškát moravský, 14, suché</origin_name>
+		<price>4.5000</price>
+		<amount>-14.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11407</code>
+		<origin_name>JAGNET Rizling vlašský, 14, suché</origin_name>
+		<price>4.5000</price>
+		<amount>5892.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11408</code>
+		<origin_name>JAGNET Veltlínske zelené, 14, suché</origin_name>
+		<price>3.5000</price>
+		<amount>147.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11409</code>
+		<origin_name>MINI JAGNET Veltlínske zelené,14, suché</origin_name>
+		<price>1.3500</price>
+		<amount>-1108.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11413</code>
+		<origin_name>**VARIETO Sauvignon 14,nz, suché</origin_name>
+		<price>7.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11414</code>
+		<origin_name>KP Pinot Bl./Pinot Noir/Chard. 14, biele</origin_name>
+		<price>7.9000</price>
+		<amount>-324.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11415</code>
+		<origin_name>KP Rizling vlašský 14, kab. biele suché</origin_name>
+		<price>7.3000</price>
+		<amount>443.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11416</code>
+		<origin_name>VARIETO Devin/Pálava 14,nz,biele polosu</origin_name>
+		<price>6.8000</price>
+		<amount>2489.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11417</code>
+		<origin_name>**VARIETO Rizling rýnsky 14,nz, suché</origin_name>
+		<price>7.1000</price>
+		<amount>18.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11418</code>
+		<origin_name>VARIETO Veltlínske zelené 14,nz,suché</origin_name>
+		<price>7.1000</price>
+		<amount>674.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11419</code>
+		<origin_name>VARIETO Pinot Gris 14 vzh, suché</origin_name>
+		<price>7.3000</price>
+		<amount>-10</amount>
+	</list-item>
+	<list-item>
+		<code>11420</code>
+		<origin_name>Omšové biele víno -PG, r.14 polosuché</origin_name>
+		<price>6.0833</price>
+		<amount>1220</amount>
+	</list-item>
+	<list-item>
+		<code>11421</code>
+		<origin_name>Omšové biele víno - VZ, r.14, suché</origin_name>
+		<price>4.7500</price>
+		<amount>2029.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11430</code>
+		<origin_name>**Cuvée biele De/VZ</origin_name>
+		<price>9.5830</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11438</code>
+		<origin_name>Cuvée Trinity biele r.14</origin_name>
+		<price>3.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>11439</code>
+		<origin_name>Cuvée Monvin biele r.14</origin_name>
+		<price>3.5000</price>
+		<amount>1460</amount>
+	</list-item>
+	<list-item>
+		<code>11501</code>
+		<origin_name>BOBULO hroznová šťava 2015</origin_name>
+		<price>2.7500</price>
+		<amount>8587.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11503</code>
+		<origin_name>Irsai Oliver 2015</origin_name>
+		<price>4.2500</price>
+		<amount>1446.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11505</code>
+		<origin_name>JAGNET Muller Thurgau, 15, biele suché</origin_name>
+		<price>4.3000</price>
+		<amount>966.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11506</code>
+		<origin_name>JAGNET Muškát moravský, 15, biele suché</origin_name>
+		<price>4.5000</price>
+		<amount>94.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11508</code>
+		<origin_name>JAGNET Veltlínske zelené, 15,biele suché</origin_name>
+		<price>3.7000</price>
+		<amount>-2183.0000</amount>
+	</list-item>
+	<list-item>
+		<code>11509</code>
+		<origin_name>MIMI JAGNET Veltl. zelené 15,suché biele</origin_name>
+		<price>1.3500</price>
+		<amount>13120</amount>
+	</list-item>
+	<list-item>
+		<code>11513</code>
+		<origin_name>VARIETO Sauvignon 15, nz, biele suché</origin_name>
+		<price>7.5000</price>
+		<amount>4591.0000</amount>
+	</list-item>
+	<list-item>
+		<code>20821</code>
+		<origin_name>**4 ŽIVLY 2008, nz,červ.suché</origin_name>
+		<price>11.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20921</code>
+		<origin_name>**Cuvée Monvin červené r.09</origin_name>
+		<price>3.3000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20922</code>
+		<origin_name>**VARIETO Cab.sauv. 09,vzh,suché</origin_name>
+		<price>7.1000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20923</code>
+		<origin_name>**VARIETO Pinot Noir 09 vzh,červ.suché</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20924</code>
+		<origin_name>**VARIETO Alibernet 09,vzh,červ.suché</origin_name>
+		<price>9.4000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20925</code>
+		<origin_name>**Cuvée Trinity červené r.09</origin_name>
+		<price>2.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>20926</code>
+		<origin_name>4 ŽIVLY 2009, nz, červené suché</origin_name>
+		<price>11.9000</price>
+		<amount>-375.0000</amount>
+	</list-item>
+	<list-item>
+		<code>20927</code>
+		<origin_name>**Omšové víno červené - FM</origin_name>
+		<price>5.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21101</code>
+		<origin_name>**JAGNET Svätovavrinecké 11,suché</origin_name>
+		<price>4.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21120</code>
+		<origin_name>Omšové červené víno -FM, r.11 suché</origin_name>
+		<price>7.0833</price>
+		<amount>3821.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21121</code>
+		<origin_name>**VARIETO Frankovka modrá 11,vzh,červ.</origin_name>
+		<price>7.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21122</code>
+		<origin_name>**VARIETO André 2011,vzh,červ.suché</origin_name>
+		<price>4.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21125</code>
+		<origin_name>4 Živly 11, vzh, červené  suché</origin_name>
+		<price>0.00</price>
+		<amount>10</amount>
+	</list-item>
+	<list-item>
+		<code>21133</code>
+		<origin_name>**VARIETO Pinot Noir, 11, vzh, suché</origin_name>
+		<price>6.9000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21135</code>
+		<origin_name>**Kúpele Piešťany červené, r. 11</origin_name>
+		<price>4.0000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21137</code>
+		<origin_name>Cuvée Trinity červené r.11</origin_name>
+		<price>3.1500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21139</code>
+		<origin_name>Cuvée Monvin červené r.11</origin_name>
+		<price>3.5500</price>
+		<amount>483.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21140</code>
+		<origin_name>**Moods Frankovka modrá 0,75 l</origin_name>
+		<price>3.6500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21141</code>
+		<origin_name>**Kursalon Frankovka modrá, suché</origin_name>
+		<price>3.0900</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21142</code>
+		<origin_name>**Moods Mini Frankovka modrá r.11, 0,25</origin_name>
+		<price>1.0300</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21144</code>
+		<origin_name>VARIETO Cabernet Sauvign. 11,červ.suché</origin_name>
+		<price>7.3500</price>
+		<amount>332.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21145</code>
+		<origin_name>VARIETO Alibernet 11, vzh, červ.</origin_name>
+		<price>9.4000</price>
+		<amount>1482.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21201</code>
+		<origin_name>**VARIETO Frankovka modrá 12,ružové</origin_name>
+		<price>4.9500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21202</code>
+		<origin_name>**VARIETO Cabernet Sauvignon 12,ružové</origin_name>
+		<price>5.5000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21203</code>
+		<origin_name>**Frankovka modrá 2012</origin_name>
+		<price>4.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21204</code>
+		<origin_name>**JAGNET Frankovka modrá, 12, suché</origin_name>
+		<price>3.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21205</code>
+		<origin_name>**MINI JAGNET Frankovka modrá 12</origin_name>
+		<price>1.3500</price>
+		<amount>12.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21206</code>
+		<origin_name>JAGNET Svätovavrinecké r.12</origin_name>
+		<price>4.3000</price>
+		<amount>2406.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21227</code>
+		<origin_name>VARIETO André 12, vzh, suché</origin_name>
+		<price>5.1000</price>
+		<amount>1855.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21228</code>
+		<origin_name>Kúpele Piešťany červené, suché</origin_name>
+		<price>4.2000</price>
+		<amount>420</amount>
+	</list-item>
+	<list-item>
+		<code>21229</code>
+		<origin_name>VARIETO Frankovka modrá 12,vzh,červ.</origin_name>
+		<price>7.3000</price>
+		<amount>-2366.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21230</code>
+		<origin_name>Cuvée Nitria</origin_name>
+		<price>10.4200</price>
+		<amount>136.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21231</code>
+		<origin_name>KP Pinot Noir 12, vzh, červené suche</origin_name>
+		<price>9.7000</price>
+		<amount>5885.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21232</code>
+		<origin_name>Zweigeltrebe 12, ľad.víno, sladké</origin_name>
+		<price>24.0000</price>
+		<amount>1105.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21301</code>
+		<origin_name>**VARIETO Frankovka modrá 13, rosé suché</origin_name>
+		<price>5.1500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21302</code>
+		<origin_name>**VARIETO Cabernet Sauvign. 13, rosé suc</origin_name>
+		<price>5.8000</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21303</code>
+		<origin_name>**VARIETO Cabernet Sauvign.13,rosé polos</origin_name>
+		<price>6.2500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>21304</code>
+		<origin_name>**JAGNET Frankovka modrá, 13, suché</origin_name>
+		<price>4.1000</price>
+		<amount>12.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21305</code>
+		<origin_name>**MINI JAGNET Frankovka modrá,13, suché</origin_name>
+		<price>1.3500</price>
+		<amount>-564.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21306</code>
+		<origin_name>Frankovka modrá 2013</origin_name>
+		<price>4.2500</price>
+		<amount>1492.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21323</code>
+		<origin_name>VARIETO Frankovka modrá 13, vzh, suché</origin_name>
+		<price>0.00</price>
+		<amount>15.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21324</code>
+		<origin_name>VARIETO Dunaj 13, vzh, červené suché</origin_name>
+		<price>0.00</price>
+		<amount>14.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21338</code>
+		<origin_name>Cuvée Trinity červené r.13</origin_name>
+		<price>0.00</price>
+		<amount>3023.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21339</code>
+		<origin_name>Cuvée Monvin červené r.13</origin_name>
+		<price>0.00</price>
+		<amount>2409.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21402</code>
+		<origin_name>BOBULO rosé hroznová šťava 2014</origin_name>
+		<price>3.0000</price>
+		<amount>481.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21403</code>
+		<origin_name>VARIETO Frankovka modrá 14, rosé suché</origin_name>
+		<price>5.5000</price>
+		<amount>-1290</amount>
+	</list-item>
+	<list-item>
+		<code>21404</code>
+		<origin_name>**VARIETO Cabernet Sauvignon 14,rosé suc</origin_name>
+		<price>6.0000</price>
+		<amount>-64.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21405</code>
+		<origin_name>JAGNET Frankovka modrá, 14, suché</origin_name>
+		<price>4.3000</price>
+		<amount>3961.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21410</code>
+		<origin_name>MINI JAGNET Frankovka modrá, 14, suché</origin_name>
+		<price>1.3500</price>
+		<amount>4105.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21502</code>
+		<origin_name>BOBULO hroznová šťava rosé 2015</origin_name>
+		<price>0.00</price>
+		<amount>5922.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21503</code>
+		<origin_name>VARIETO Frankovka modrá 15, rosé suché</origin_name>
+		<price>5.5000</price>
+		<amount>4106.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21504</code>
+		<origin_name>VARIETO Cabernet Sauvignon 15,suché rosé</origin_name>
+		<price>6.0000</price>
+		<amount>3819.0000</amount>
+	</list-item>
+	<list-item>
+		<code>21530</code>
+		<origin_name>Editio Vinifera Rosé</origin_name>
+		<price>0.00</price>
+		<amount>2.0000</amount>
+	</list-item>
+	<list-item>
+		<code>31001</code>
+		<origin_name>Sekt Brut - Chardonnay r.10</origin_name>
+		<price>7.9170</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>31002</code>
+		<origin_name>Sekt Brut - Rizling rýnsky r.10</origin_name>
+		<price>7.9170</price>
+		<amount>137.0000</amount>
+	</list-item>
+	<list-item>
+		<code>31003</code>
+		<origin_name>Sekt Polosuché - Chardonnay r.10</origin_name>
+		<price>7.9170</price>
+		<amount>3.0000</amount>
+	</list-item>
+	<list-item>
+		<code>32001</code>
+		<origin_name>Alibernet -fortifikované</origin_name>
+		<price>0.00</price>
+		<amount>383.0000</amount>
+	</list-item>
+	<list-item>
+		<code>99999</code>
+		<origin_name>Zlava - bonus</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E001P</code>
+		<origin_name>EP-JAGNET Muller Thurgau    2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E001Z</code>
+		<origin_name>EZ-JAGNET Muller Thurgau    2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E002P</code>
+		<origin_name>EP-MINIJAGNET Veltlínske zelené  2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E003P</code>
+		<origin_name>EP-MINIJAGNET Frankovka modrá  2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E004P</code>
+		<origin_name>EP-JAGNET Muškát Moravský   2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E004Z</code>
+		<origin_name>EZ-JAGNET Muškát Moravský   2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E008P</code>
+		<origin_name>EP-JAGNET Veltlínske zelené 2015</origin_name>
+		<price>0.00</price>
+		<amount>6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>E008Z</code>
+		<origin_name>EZ-JAGNET Veltlínske zelené 2015</origin_name>
+		<price>0.00</price>
+		<amount>6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>E009P</code>
+		<origin_name>EP-VARIETO Frankovka modrá ROSE 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E010P</code>
+		<origin_name>EP-VARIETO Sauvignon        2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E010Z</code>
+		<origin_name>EZ-VARIETO Sauvignon        2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E011P</code>
+		<origin_name>EP-VARIETO Cab. Sauvignon ROSE 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>E012P</code>
+		<origin_name>EP-VARIETO krúžok s logom ROSE</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT301</code>
+		<origin_name>***PT-OBV RR 09 polosladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT307</code>
+		<origin_name>***PT-OBV VZ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT309</code>
+		<origin_name>***PT-JAGNET FM 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT310</code>
+		<origin_name>***PT-RV ak</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT311</code>
+		<origin_name>***PT-VZ ak</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT312</code>
+		<origin_name>***PT-MT ak</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT315</code>
+		<origin_name>***PT- MINI JAGNET  VZ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT316</code>
+		<origin_name>***PT-MINI JAGNET FM</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT323</code>
+		<origin_name>***PT-VARIETO Cha 10 nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT331</code>
+		<origin_name>***PT-VARIETO RR 10 nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT400</code>
+		<origin_name>***PT-4Živly 09 biele suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT907</code>
+		<origin_name>PT-DÍLEMURE Pálava 09,sl.v.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>50HALV</code>
+		<origin_name>***Zaokrúlenie na 50 halierov</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP008</code>
+		<origin_name>***ETP-VARIETO Pinot Gris 2011</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP010</code>
+		<origin_name>***ETP-VARIETO Rizling rýnsky 2011</origin_name>
+		<price>0.00</price>
+		<amount>48.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETP027</code>
+		<origin_name>***ETP-Kúpele Piešťany biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP029</code>
+		<origin_name>ETP-Cuvée Monvin červené r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP033</code>
+		<origin_name>***ETP-Veltlínske zelené r.11, ľadové ví</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP050</code>
+		<origin_name>ETP-4 Ž  09 nz, čv</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP061</code>
+		<origin_name>ETP-Omšové víno červené FM, r.2011</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP067</code>
+		<origin_name>ETP-VARIETO Caber.Sauvig.  11,červ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP068</code>
+		<origin_name>ETP-VARIETO Alibernet 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP069</code>
+		<origin_name>ETP-Frankovka modrá 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP077</code>
+		<origin_name>ETP-VARIETO Cabernet Sauvig. rosé 13,su</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP078</code>
+		<origin_name>ETP-VARIETO Sauvignon ,nz,13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP082</code>
+		<origin_name>ETP-VARIETO André, 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP086</code>
+		<origin_name>ETP-VARIETO Veltl.zelene 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP088</code>
+		<origin_name>ETP-JAGNET Svätovavr.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP093</code>
+		<origin_name>ETP-DÍLEMÚRE Pa 11, sv, sladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP094</code>
+		<origin_name>ETP-DÍLEMÚRE Au 13, hv, sladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP095</code>
+		<origin_name>ETP-4 Ž 2013 biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP096</code>
+		<origin_name>ETP-Kúpele Piešťany - červené</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP098</code>
+		<origin_name>ETP-VARIETO Frank.modrá 12</origin_name>
+		<price>0.00</price>
+		<amount>360</amount>
+	</list-item>
+	<list-item>
+		<code>ETP101</code>
+		<origin_name>ETP-Mini JAGNET Frank.modra 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP102</code>
+		<origin_name>ETP-Bobulo 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP103</code>
+		<origin_name>ETP-Bobulo rose 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP105</code>
+		<origin_name>ETP-JAGNET Muškát Moravský,   2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP107</code>
+		<origin_name>ETP-ĽADOVÉ VÍNO - Zweigeltrebe 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP112</code>
+		<origin_name>ETP-VARIETO Frankovka modrá rose  r.14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP115</code>
+		<origin_name>ETP-JAGNET Rizling Vlašský,  2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP116</code>
+		<origin_name>ETP-Mini JAGNET Veltlínske zelené 14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP117</code>
+		<origin_name>ETP-JAGNET Veltlínske zelené 14</origin_name>
+		<price>0.00</price>
+		<amount>-6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETP118</code>
+		<origin_name>ETP-VARIETO Devín/Pálava,polosuché  2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP119</code>
+		<origin_name>ETP-VARIETO Rizling rýnsky 2014, suché</origin_name>
+		<price>0.00</price>
+		<amount>12.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETP120</code>
+		<origin_name>ETP-Cuvee Monvin biele    2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP121</code>
+		<origin_name>ETP-Cuvee Trinity biele   2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP122</code>
+		<origin_name>ETP-VARIETO Rizling rýnsky polosl. 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP123</code>
+		<origin_name>ETP-KP  Pinot Noir, suché,  2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP124</code>
+		<origin_name>ETP-KP  Rizling vlašský, suché,  2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP125</code>
+		<origin_name>ETP-KP  PN/PB/CH, suché,  2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP126</code>
+		<origin_name>ETP-VARIETO Pinot Gris, suché     r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP127</code>
+		<origin_name>ETP-VARIETO Veltl.zelené, suché  r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP128</code>
+		<origin_name>ETP-Omšové víno VZ suché,  r. 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP129</code>
+		<origin_name>ETP-Omšové víno PG, polosuché, r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP131</code>
+		<origin_name>ETP-Bobulo 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP132</code>
+		<origin_name>ETP-Irsay Oliver 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETP133</code>
+		<origin_name>ETP-JAGNET Frankovka modrá  r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ008</code>
+		<origin_name>***ETZ-VARIETO Pinot Gris 11,vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ010</code>
+		<origin_name>***ETZ-VARIETO Rizling rynsky 2011,nz</origin_name>
+		<price>0.00</price>
+		<amount>48.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ027</code>
+		<origin_name>ETZ-Kúpele Piešťany biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ029</code>
+		<origin_name>ETZ-Cuvée Monvin červené r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ050</code>
+		<origin_name>ETZ-4 Ž 09, nz, čv</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ061</code>
+		<origin_name>ETZ-Omšové víno červené FM, r.2011</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ067</code>
+		<origin_name>ETZ-VARIETO Cabern.Sauvig. 11, červ.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ068</code>
+		<origin_name>ETZ-VARIETO Alibernet 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ069</code>
+		<origin_name>ETZ-Frankovka modrá 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ076</code>
+		<origin_name>ETZ-VARIETO  krúžok s logom rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ078</code>
+		<origin_name>ETZ-VARIETO Sauvignon ,nz,13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ082</code>
+		<origin_name>ETZ-VARIETO André, 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ086</code>
+		<origin_name>ETZ-VARIETO Veltl.zelene 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ088</code>
+		<origin_name>ETZ-JAGNET Svätovavr.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ093</code>
+		<origin_name>ETZ-DÍLEMÚRE Pa 11, sv, sladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ094</code>
+		<origin_name>ETZ-DÍLEMÚRE Au 13, hv, sladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ095</code>
+		<origin_name>ETZ-4 Ž 2013 biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ096</code>
+		<origin_name>ETZ-Kupele Piest St.Laur.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ098</code>
+		<origin_name>ETZ-VARIETO Frank.modrá 12</origin_name>
+		<price>0.00</price>
+		<amount>360</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ102</code>
+		<origin_name>ETZ-Bobulo 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ103</code>
+		<origin_name>ETZ-Bobulo rese 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ105</code>
+		<origin_name>ETZ-JAGNET Muškát Moravský, 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ107</code>
+		<origin_name>ETZ-VARIETO Rizling Rynsky USA</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ115</code>
+		<origin_name>ETZ-JAGNET Rizling Vlašský, 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ117</code>
+		<origin_name>ETZ-JAGNET Veltlínske zelené 14</origin_name>
+		<price>0.00</price>
+		<amount>-6.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ118</code>
+		<origin_name>ETZ-VARIETO Devín/Pálava, polosuché 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ119</code>
+		<origin_name>ETZ-VARIETO Rizling rýnsky 2014, suché</origin_name>
+		<price>0.00</price>
+		<amount>12.0000</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ120</code>
+		<origin_name>ETZ-Cuvee Monvin biele     2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ121</code>
+		<origin_name>ETZ-Cuvee Trinity biele    2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ122</code>
+		<origin_name>ETZ-VARIETO Rizling rýnsky polosl. 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ123</code>
+		<origin_name>ETZ-KP  Pinot Noir, r. 2012, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ124</code>
+		<origin_name>ETZ-KP  Rizling vlašský, r. 2014, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ125</code>
+		<origin_name>ETZ-KP  PN/PB/CH, suché      r. 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ126</code>
+		<origin_name>ETZ-VARIETO Pinot Gris, suché     r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ127</code>
+		<origin_name>ETZ-VARIETO Veltl.zelene, suché  r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ129</code>
+		<origin_name>ETZ-Omšové víno PG, polosuché, r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ131</code>
+		<origin_name>ETZ-Bobulo 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>ETZ133</code>
+		<origin_name>ETZ-JAGNET Frankovka modrá  r.2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PIV036</code>
+		<origin_name>TM Bipur</origin_name>
+		<price>3.3500</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT1005</code>
+		<origin_name>PT-4ŽIVLY 07 nz 1,5 l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT1006</code>
+		<origin_name>PT-Cuvve A+A 08 1,5 l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT1010</code>
+		<origin_name>***PT-Cuvée červené Kempinski</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT1011</code>
+		<origin_name>PT-4živly 08 nz červené  1,5</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>S12142</code>
+		<origin_name>Set archívnych vín 12142</origin_name>
+		<price>70.8330</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>SKC331</code>
+		<origin_name>SKC - V RR 10 nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>UHRFA_</code>
+		<origin_name>Úhrada FA v hotovosti</origin_name>
+		<price>0.00</price>
+		<amount>-31.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11124</code>
+		<origin_name>***PT-VARIETO PB 11 nz suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11126</code>
+		<origin_name>***PT-VARIETO Cha 11,nz,suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11130</code>
+		<origin_name>***PT-VARIETO Au 11,vzh,polosladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11134</code>
+		<origin_name>PT-DÍLEMÚRE Tc 11, hv, sladke</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11138</code>
+		<origin_name>PT-Veltlínske zelené, r.11, ľadové víno</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11141</code>
+		<origin_name>**PT-4 Živly 11, nz, biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11143</code>
+		<origin_name>PT-Omšové víno biele VZ r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11144</code>
+		<origin_name>PT-DILEMURE Pálava 11, sl.v</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11201</code>
+		<origin_name>***PT-BOBULO 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11204</code>
+		<origin_name>***PT-JAGNET MM 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11205</code>
+		<origin_name>***PT-JAGNET MT 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11206</code>
+		<origin_name>***PT-JAGNET VZ 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11207</code>
+		<origin_name>***PT-JAGNET RV 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11209</code>
+		<origin_name>**PT-VARIETO De 12 polosuche</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11210</code>
+		<origin_name>**PT-VARIETO VZ 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11211</code>
+		<origin_name>**PT-VARIETO SA 12,nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11212</code>
+		<origin_name>**PT-VARIETO Au 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11213</code>
+		<origin_name>PT-Kúpele Piešťany biele r.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11214</code>
+		<origin_name>**PT-VARIETO PB 12, nz, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11215</code>
+		<origin_name>**PT-DÍLEMÚRE DE 12 HV, sladké</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11216</code>
+		<origin_name>PT-Moods VZ 12, 0,75</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11217</code>
+		<origin_name>PT-Kursalon VZ 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11219</code>
+		<origin_name>**PT-VARIETO Cha 12, nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11220</code>
+		<origin_name>**PT-VARIETO RR 12, nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11221</code>
+		<origin_name>**PT-VARIETO PG 12, vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11222</code>
+		<origin_name>**PT-MINI JAGNET VZ 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11223</code>
+		<origin_name>**PT-VARIETO RR 12, bv, polosl.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11224</code>
+		<origin_name>PT-Moods Mini VZ  r.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11225</code>
+		<origin_name>PT-Cuvée Monvin biele r.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11226</code>
+		<origin_name>PT-Cuvée Trinity biele r.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11300</code>
+		<origin_name>***PT-Bobulo 13 nepaster.</origin_name>
+		<price>0.00</price>
+		<amount>249.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11301</code>
+		<origin_name>***PT-BOBULO hroznová šťava 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11302</code>
+		<origin_name>***PT-BOBULO rosé hroznová šťava 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11303</code>
+		<origin_name>**PT-MLADÉ VÍNO Irsai Oliver 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11304</code>
+		<origin_name>**PT-MLADÉ VÍNO Silv.zelené 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11305</code>
+		<origin_name>***PT-JAGNET Muller Thurgau 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11306</code>
+		<origin_name>***PT-JAGNET Muškát moravský 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11307</code>
+		<origin_name>***PT-JAGNET Rizling vlašský 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11308</code>
+		<origin_name>***PT-JAGNET VZ 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11309</code>
+		<origin_name>PT-M JAGNET VZ 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11310</code>
+		<origin_name>PT-Irsai Oliver 2013</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11311</code>
+		<origin_name>PT-VARIETO Veltl.zel. 13,vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11312</code>
+		<origin_name>PT-VARIETO Pinot Gris  13, nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11313</code>
+		<origin_name>***PT-VARIETO Sauvignon 13, nz, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11314</code>
+		<origin_name>***PT-VARIETO Devin 13, vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11315</code>
+		<origin_name>***PT-VARIETO Chardonnay 13, nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11316</code>
+		<origin_name>***PT-VARIETO Rizl.rýnsky 13, vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11317</code>
+		<origin_name>PT-VARIETO Pinot Bl. 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11318</code>
+		<origin_name>PT-4 ŽIVLY 2013, nz, biele</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11319</code>
+		<origin_name>PT-Dílemúre Aurélius 13, hv</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11320</code>
+		<origin_name>PT-Omšové víno biele - RV, r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11321</code>
+		<origin_name>PT-4 Živly 2013, nz, biele 1,5</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11322</code>
+		<origin_name>PT-VARIETO Rizling rýnsky 13, polosl.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11338</code>
+		<origin_name>PT-Cuvée Trinity biele r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11339</code>
+		<origin_name>PT-Cuvée Monvin biele r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11340</code>
+		<origin_name>PT-Kursalon VZ   r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11401</code>
+		<origin_name>PT-BOBULO hroznová šťava 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11403</code>
+		<origin_name>***PT-MV Irsai Oliver  r.14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11405</code>
+		<origin_name>***PT-JAGNET Muller-Thurgau, 14, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11406</code>
+		<origin_name>PT-JAGNET Muškát moravský, 14, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11407</code>
+		<origin_name>PT-JAGNET Rizling vlašský, 14, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11408</code>
+		<origin_name>PT-JAGNET Veltlínske zelené, 14, suché</origin_name>
+		<price>0.00</price>
+		<amount>-141.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11409</code>
+		<origin_name>PT-MINI JAGNET Veltl. zel., 14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11413</code>
+		<origin_name>PT-VARIETO Sauvig. 14,nz,</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11414</code>
+		<origin_name>PT-PB/PN/CHA, 14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11415</code>
+		<origin_name>PT-Rizling vlašský 14, kab.</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11416</code>
+		<origin_name>PT-VARIETO Devin/Pálava 14, polosuch.</origin_name>
+		<price>0.00</price>
+		<amount>210</amount>
+	</list-item>
+	<list-item>
+		<code>PT11417</code>
+		<origin_name>PT-VARIETO Rizl. rýnsky, 14, nz suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11418</code>
+		<origin_name>PT-Varieto Veltl. zel. 14, nz</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11419</code>
+		<origin_name>PT-VARIETO Pinot Gris 14, vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11420</code>
+		<origin_name>PT-Omšové biele víno -PG, r.14 polosuché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11421</code>
+		<origin_name>PT-Omš.biele VZ14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11430</code>
+		<origin_name>PT-Cuvée biele De/VZ</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11438</code>
+		<origin_name>PT-Cuvée Trinity biele r.14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11439</code>
+		<origin_name>PT-Cuvée Monvin biele r.14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11501</code>
+		<origin_name>PT-BOBULO hroznová šťava 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11503</code>
+		<origin_name>PT-Irsai Oliver 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11505</code>
+		<origin_name>PT-JAGNET Muller-Thurgau, 15</origin_name>
+		<price>0.00</price>
+		<amount>780</amount>
+	</list-item>
+	<list-item>
+		<code>PT11506</code>
+		<origin_name>PT-JAGNET Muškát moravský, 15</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11508</code>
+		<origin_name>PT-JAGNET Veltlínske zelené 15</origin_name>
+		<price>0.00</price>
+		<amount>847.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11509</code>
+		<origin_name>PT-MINI JAGNET Veltl. zel. 15</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT11513</code>
+		<origin_name>PT-VARIETO Sauvignon  nz, 15</origin_name>
+		<price>0.00</price>
+		<amount>105.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11514</code>
+		<origin_name>PT-VARIETO Rizling rýnsky 15,nz, suché</origin_name>
+		<price>0.00</price>
+		<amount>4633.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11515</code>
+		<origin_name>PT-KP Rizling vlašský 15,nz, suché</origin_name>
+		<price>0.00</price>
+		<amount>5342.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT11516</code>
+		<origin_name>PT-KP Pálava 15, polosl.</origin_name>
+		<price>0.00</price>
+		<amount>5701.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT20821</code>
+		<origin_name>***PT-4 Živly 08,nz,červené</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20921</code>
+		<origin_name>PT-CUVEE MONVIN CERVENE 09</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20922</code>
+		<origin_name>***PT-VARIETO CS 09,vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20924</code>
+		<origin_name>***PT-VARIETO Al 09 vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20926</code>
+		<origin_name>PT-4 ŽIVLY 2009, vzh, červené suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20927</code>
+		<origin_name>PT-Omšové víno červené - FM</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT20928</code>
+		<origin_name>PT-4 Živly červené r.09, 3l</origin_name>
+		<price>0.00</price>
+		<amount>81.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT20929</code>
+		<origin_name>PT-4 Živly červené r.09, 9l</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21101</code>
+		<origin_name>**PT-JAGNET Sv 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21120</code>
+		<origin_name>PT-Omšové červené víno-FM r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21121</code>
+		<origin_name>**PT-VARIETO FM 11 vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21122</code>
+		<origin_name>**PT-VARIETO An 11 vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21125</code>
+		<origin_name>PT-4 živly 11 červené, vzh</origin_name>
+		<price>0.00</price>
+		<amount>5023.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21133</code>
+		<origin_name>**PT-VARIETO PN 11, vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21135</code>
+		<origin_name>PT-Kupele Piešťany červené r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21137</code>
+		<origin_name>PT-Cuvée Trinite červené 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21139</code>
+		<origin_name>PT-Cuvée Monvin červené r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21140</code>
+		<origin_name>PT-Moods FM  11, 0,75</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21141</code>
+		<origin_name>PT-Kursalon FM 11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21142</code>
+		<origin_name>PT-Moods Mini FM r.11</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21144</code>
+		<origin_name>PT-VARIETO Cab.Sauv. 11,červ.,</origin_name>
+		<price>0.00</price>
+		<amount>1260</amount>
+	</list-item>
+	<list-item>
+		<code>PT21145</code>
+		<origin_name>PT-VARIETO Alibernet r.11</origin_name>
+		<price>0.00</price>
+		<amount>2601.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21201</code>
+		<origin_name>**PT-VARIETO FM 12 rose</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21202</code>
+		<origin_name>**PT-VARIETO CS 12,ružové</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21203</code>
+		<origin_name>PT-Frankovka modrá 2012</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21204</code>
+		<origin_name>***PT-JAGNET Frank.modrá 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21205</code>
+		<origin_name>**PT-MINI JAGNET Frank.modra 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21206</code>
+		<origin_name>PT-JAGNET Svätov. 12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21227</code>
+		<origin_name>PT-VARIETO André, 12</origin_name>
+		<price>0.00</price>
+		<amount>5403.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21228</code>
+		<origin_name>PT-Kupele Piešťany červené r.12</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21229</code>
+		<origin_name>PT-VARIETO Frankovka modrá 12,vzh,č</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21230</code>
+		<origin_name>PT-Cuvée Nitria</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21231</code>
+		<origin_name>PT-Pinot Noir 12, suche</origin_name>
+		<price>0.00</price>
+		<amount>301.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21232</code>
+		<origin_name>PT-Zweigeltrebe, r.12, ľadové víno</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21301</code>
+		<origin_name>***PT-VARIETO Frankovka modrá 13, rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21302</code>
+		<origin_name>***PT-VARIETO Cabernet Sauv.13, rosé suc</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21303</code>
+		<origin_name>***PT-VARIETO Cabernet Sauv.13,rosé  pol</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21304</code>
+		<origin_name>PT-JAGNET Frankovka modrá, 13, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21305</code>
+		<origin_name>PT-MINI JAGNET Frankovka modrá,13, suché</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21306</code>
+		<origin_name>PT-Frankovka modrá 13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21323</code>
+		<origin_name>PT-VARIETO Frankovka modrá 13, vzh</origin_name>
+		<price>0.00</price>
+		<amount>5901.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21324</code>
+		<origin_name>PT-VARIETO Dunaj 13,vzh</origin_name>
+		<price>0.00</price>
+		<amount>2582.0000</amount>
+	</list-item>
+	<list-item>
+		<code>PT21338</code>
+		<origin_name>PT-Cuvée Trinity červené r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21339</code>
+		<origin_name>PT-Cuvée Monvin červené r.13</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21402</code>
+		<origin_name>PT-BOBULO rosé hroznová šťava 2014</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21403</code>
+		<origin_name>PT-VARIETO Frankovka modrá 14, rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21404</code>
+		<origin_name>PT-VARIETO Cab.Sauvig.14, rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21405</code>
+		<origin_name>PT-JAGNET Frankovka modrá, 14</origin_name>
+		<price>0.00</price>
+		<amount>390</amount>
+	</list-item>
+	<list-item>
+		<code>PT21410</code>
+		<origin_name>PT-MINI JAGNEt Frank.modrá 14</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21502</code>
+		<origin_name>PT-BOBULO hroznová šťava rosé 2015</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21503</code>
+		<origin_name>PT-VARIETO Frankovka modrá 15, rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21504</code>
+		<origin_name>PT-VARIETO Cabern.Sauv. 15, rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT21530</code>
+		<origin_name>PT-Editio Vinifera Rosé</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>PT31401</code>
+		<origin_name>PT-Šumivé - PB r.14</origin_name>
+		<price>0.00</price>
+		<amount>787.0000</amount>
+	</list-item>
+	<list-item>
+		<code>SKC11128</code>
+		<origin_name>***SKC - V PG 11 vzh</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+	<list-item>
+		<code>SKC11131</code>
+		<origin_name>***SKC - V RR 11 nz</origin_name>
+		<price>0.00</price>
+		<amount>48.0000</amount>
+	</list-item>
+	<list-item>
+		<code>SKC11138</code>
+		<origin_name>***SKC - VZ 11 lv</origin_name>
+		<price>0.00</price>
+		<amount>0</amount>
+	</list-item>
+</root>
