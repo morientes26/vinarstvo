@@ -3,7 +3,8 @@
     $scope.title = $routeParams.type;
     $scope.isOrder = false;
     $scope.items = shoppingcart.getCustomer().items;
-    $scope.image_background=getImageBackground($routeParams.type);
+
+    $scope.background = getImageBackground($rootScope.API_URL, $routeParams.type);
 
     getProducts($rootScope.API_URL, $routeParams.type);  
 
@@ -84,7 +85,15 @@
         });
     }
 
-    function getImageBackground(type){
+    function getImageBackground(base_url, name){
+
+        var url = base_url + 'group/' + name
+        $http.get(url).then(function (response) {
+            $scope.background = {"background": "-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("+response.data.image.blob+") no-repeat", "background": "-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.65))), url("+response.data.image.blob+") no-repeat", "background": "-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%, url("+response.data.image.blob+") no-repeat", "background": "-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("+response.data.image.blob+") no-repeat", "background": "-ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("+response.data.image.blob+") no-repeat", "background": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 90%), url("+response.data.image.blob+") no-repeat", "background-position": "center", "background-size": "cover"};
+        });
+    }
+
+    /*function getImageBackground(type){
 
         switch(type){
             case 'white':
@@ -115,6 +124,6 @@
                 return 'biele';
         }
 
-    }
+    }*/
 
 });

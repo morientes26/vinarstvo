@@ -1,4 +1,4 @@
-<header class="page-header">
+<header class="page-header" xmlns:background-url="http://www.w3.org/1999/xhtml">
     <div>
         <img class="logo big" src="/static/frontend/img/kp_logo.png" alt="Karpatská perla">
     </div>
@@ -9,26 +9,16 @@
     </div>
 </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="main main-body">
     <ul>
-        <li class="horizontal biele">
+         <li ng-repeat="g in groups" class="horizontal biele" id="{{ g.name }}" ng-style="background('{{g.image.blob}}')">
+            <a href="#/cart/{{ g.name }}">
+                <div class="card-inner">
+                    <h2 class="category" translate="{{ g.name }}"></h2>
+                </div>
+            </a>
+        </li>
+        <!--li class="horizontal biele">
             <a href="#/cart/white">
                 <div class="card-inner">
                     <h2 class="category" translate="white"></h2>
@@ -90,6 +80,6 @@
                     <h2 class="category" translate="sweets"></h2>
                 </div>
             </a>
-        </li>
+        </li-->
     </ul>
 </div>

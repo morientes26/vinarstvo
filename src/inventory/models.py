@@ -85,6 +85,7 @@ class Group(models.Model):
 	"""
     name = models.CharField(max_length=120, blank=False, help_text="nazov skupiny")
     image = models.ForeignKey('Photo', null=True, blank=True, help_text="obrazok skupiny")
+    place = models.IntegerField(null=True, help_text="poradie na stranke", blank=True, default=0)
 
     def __unicode__(self):
         return self.name
@@ -110,7 +111,7 @@ class Wine(models.Model):
     WINE_COLOR = (('RED', 'cervene'), ('WHITE', 'biele'), ('ROSE', 'ruzove'))
     color = models.CharField(max_length=5, choices=WINE_COLOR, blank=True, help_text="farba vina")
 
-    year = models.IntegerField(null=True, help_text="rocnik", blank=True, default="")
+    year = models.IntegerField(null=True, help_text="rocnik", blank=True)
 
     WINE_ATTRIBUTE = [
         ('SV', 'Stolove vino'),

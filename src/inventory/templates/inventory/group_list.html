@@ -24,7 +24,8 @@
     <table id="groups" class="display">
     <thead>
         <tr>
-            <th class="col-md-10">{% trans "group_name" %}</th>      
+            <th class="col-md-8">{% trans "group_name" %}</th>
+            <th class="col-md-2">{% trans "group_place" %}</th>
             <th class="col-md-2"></th>
         </tr>
     </thead>
@@ -32,6 +33,7 @@
         {% for group in object_list %}
         <tr>
            <td>{{ group.name }}</td>
+           <td>{{ group.place }}</td>
            <td><a href="edit/{{ group.id }}">{% trans "edit" %}</a> | <a href="delete/{{ group.id }}">{% trans "delete" %}</a></td>      
         </tr>
         {% endfor %}

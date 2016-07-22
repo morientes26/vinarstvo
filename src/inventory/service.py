@@ -104,7 +104,6 @@ class InventoryService:
 		logger.debug('get_all_products_in_event from %s - fetching %s data', event, result.__sizeof__())
 		return result
 
-
 	def get_actual_orders_by_name(self, customer_name):
 		orders = Order.objects.filter(done=False, customer_name=customer_name)
 		logger.debug('get_actual_orders_by_name - fetching %s data', orders.count())
@@ -123,11 +122,8 @@ class InventoryService:
 		else:
 			return None
 
-	def get_groups(self):
-		return None
 
-
-		# ------------------------------------------------------------------------------------ order --------
+# ----------------------------------------------------------------------------------
 
 	"""@deprecated"""
 
@@ -150,8 +146,8 @@ class InventoryService:
 			raise
 		return order
 
-
 	"""@deprecated"""
+
 	def get_actual_events(self, group):
 		now = datetime.datetime.now()
 		events = Event.objects.filter(date_from__lte=now, date_to__gte=now, products__group__name=group).order_by('id')

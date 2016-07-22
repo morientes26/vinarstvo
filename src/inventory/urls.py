@@ -58,8 +58,10 @@ urlpatterns = [
 	url(r'^api/product/list/$', get_product_from_primary_cart, name='api_product_list'),
 	url(r'^api/product/event/list/$', get_product_from_actual_event, name='api_product_event_list'),
 	url(r'^api/product/event/$', get_actual_event, name='api_get_actual_event'),
-	url(r'^api/product/(?P<pk>\d+)/$', get_product_by_id, name='api_product_list'),
+	url(r'^api/product/(?P<pk>\d+)/$', get_product_by_id, name='api_product'),
 	url(r'^api/order/create/$', create_order, name='api_create_order'),
+	url(r'^api/groups/$', get_groups, name='api_group_list'),
+	url(r'^api/group/(?P<name>\w+)/$', get_group_by_name, name='api_group'),
 
     url(r'^cart/$', CartView.as_view(), name='cart_view'),
 

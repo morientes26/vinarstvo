@@ -1,11 +1,11 @@
-from rest_framework import status, generics
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
-from inventory.serializer import ProductSerializer, EventSerializer, OrderSerializer
-from inventory.models import Product, Item
+from inventory.serializer import ProductSerializer, EventSerializer, OrderSerializer, GroupSerializer
+from inventory.models import Product, Item, Group
 from inventory.service import InventoryService
 
 """ API of inventory modul. It is used by external web application """
@@ -98,7 +98,6 @@ Getting one product by primary key
 @permission_classes((AllowAny,))
 def get_product_by_id(request, *args, **kwargs):
 	product = InventoryService().get_product_by_id(kwargs['pk'])
-	print(product)
 	serializer = ProductSerializer(product, many=False)
 	print(serializer.data)
 	return Response(serializer.data, status=status.HTTP_200_OK)
@@ -132,3 +131,35 @@ def set_items_and_save(request, order):
 		except Product.DoesNotExist:
 			raise ValueError('product ' + str(item['product']) + ' not found')
 	order.save()
+
+
+"""
+Get groups
+"""
+
+
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_groups(request):
+	groups = Group.objects.all().order_by('place')
+	if groups:
+		serializer = GroupSerializer(groups, many=True)
+		return Response(serializer.data, status=status.HTTP_200_OK)
+	return Response(None, status=status.HTTP_200_OK)
+
+
+"""
+Get group
+"""
+
+
+@api_view(['GET'])
+@permission_classes((AllowAny,))
+def get_group_by_name(request, *args, **kwargs):
+	try:
+		group = Group.objects.get(name=kwargs['name'])
+		serializer = GroupSerializer(group, many=False)
+		return Response(serializer.data, status=status.HTTP_200_OK)
+	except Group.DoesNotExist:
+		raise ValueError('group ' + kwargs['pk'] + ' not found')
+		return Response(None, status=status.HTTP_200_OK)

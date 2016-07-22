@@ -9,25 +9,15 @@
     </div>
 </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="main main-body">
     <ul>
+         <li ng-repeat="g in groups" class="horizontal">
+            <a href="#/cart/{{ g.name }}">
+                <div class="card-inner">
+                    <h2 class="category" translate="{{ g.name }}"></h2>
+                </div>
+            </a>
+        </li>
         <li class="horizontal biele">
             <a href="#/cart/white">
                 <div class="card-inner">
