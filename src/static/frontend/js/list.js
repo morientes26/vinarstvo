@@ -93,37 +93,5 @@
         });
     }
 
-    /*function getImageBackground(type){
-
-        switch(type){
-            case 'white':
-                return 'biele';
-                break;
-            case 'red':
-                return 'cervene';
-                break;
-            case 'rose':
-                return 'rose';
-                break;
-            case 'sweet':
-                return 'sladke';
-                break;
-            case 'white_archive':
-                return 'biele-arch';
-                break;
-            case 'red_archive':
-                return 'cervene-arch';
-                break; 
-            case 'nealko':
-                return 'nealko';
-                break; 
-            case 'sweets':
-                return 'pochutiny';
-                break;                      
-            default:
-                return 'biele';
-        }
-
-    }*/
 
 });

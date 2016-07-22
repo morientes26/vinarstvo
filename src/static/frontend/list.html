@@ -33,6 +33,12 @@
                     <div class="price-tag">
                         <span class="bottle-info-price">{{ p.price }} €</span>
                     </div>
+                      <!-- zatial sa nepouziva -->
+                    <div class="list-wine-action">
+                        <button ng-click="addToCart(p.id, p.name)"> + </button>
+						<button ng-click="removeFromCart(p.id)"> - </button>
+						<span>{*{ items[p.id][0] | default:0 }*}</span>
+                    </div>
                 </div>
             </li>
 
