@@ -14,7 +14,7 @@ from views.api_views import *
 urlpatterns = [
 	# authorization
 	url(r'^accounts/login/$', auth_views.login, {'template_name': 'access/login.html'}),
-	url(r'^accounts/profile/', login_view),
+	url(r'^accounts/profile/', login_view,name='login'),
 	url(r'^accounts/logout/', logout_view, name='logout'),
 
 	# index page
@@ -63,6 +63,7 @@ urlpatterns = [
 	url(r'^api/groups/$', get_groups, name='api_group_list'),
 	url(r'^api/group/(?P<name>\w+)/$', get_group_by_name, name='api_group'),
 
-    url(r'^cart/$', CartView.as_view(), name='cart_view'),
+	url(r'^cart/$', CartView.as_view(), name='cart_view'),
+    url(r'^cart/(?P<token>\w+)/$', CartView.as_view(), name='cart_view'),
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

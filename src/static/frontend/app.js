@@ -2,12 +2,17 @@ var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'
 .run(function($rootScope, $cookies, shoppingcart, $translate) {
 
     $rootScope.API_URL = "/api/";
-    shoppingcart.init('testovac_1');
+    var token = document.getElementById('token').value;
+    shoppingcart.init(token);
+
 
     $rootScope.changeLanguage = function (key) {
     	$translate.use(key);
   	};
 	
+    $rootScope.logout = function (key) {
+        location.href='/accounts/logout/';
+    }
 })
 
 // configure our routes
@@ -30,15 +35,10 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'detail'
         })
 
-        .when('/:page/:type', {
+        .when('/:type', {
             templateUrl : '/static/frontend/list.html',
             controller  : 'list'
         });
-
-/*    $locationProvider.html5Mode({
-                 enabled: true,
-                 requireBase: false
-          });*/
 
 });
 
@@ -80,6 +80,7 @@ app.service('shoppingcart', function($cookies) {
     		customer.items[id] = [0,''];
     	customer.items[id][0] += 1;
     	customer.items[id][1] = name;
+        console.log(customer);
     	$cookies.putObject('customer', customer);
     }
     this.remove = function(id){

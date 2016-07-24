@@ -47,3 +47,26 @@
 .shopping-cart .product-list .product-form{
   margin: auto;
 }
+
+.logout{
+  width:16px;
+}
+
+.loginScreen{
+  width:300px; margin: auto;
+}
+
+.list-wine-action{
+  float: right;
+  top:-50px;
+  position: relative;
+}
+
+.button-action{
+  width:20px;
+  color:black;
+}
+
+.amount-info{
+  color:black;
+}

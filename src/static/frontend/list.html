@@ -13,8 +13,8 @@
     
         <ul class="list-wine-new">            
             
-            <li ng-repeat="p in products" ng-click="showDetail(p.id)" class="list-wine-item-new">
-                <div class="bottle-card">
+            <li ng-repeat="p in products" class="list-wine-item-new">
+                <div class="bottle-card" ng-click="showDetail(p.id)">
                     <div class="bottle-pic">
                         <img src="{{ p.photos.blob }}"> <!-- Obrazok vina -->
                     </div>
@@ -33,19 +33,13 @@
                     <div class="price-tag">
                         <span class="bottle-info-price">{{ p.price }} €</span>
                     </div>
-                      <!-- zatial sa nepouziva -->
-                    <div class="list-wine-action">
-                        <button ng-click="addToCart(p.id, p.name)"> + </button>
-						<button ng-click="removeFromCart(p.id)"> - </button>
-						<span>{*{ items[p.id][0] | default:0 }*}</span>
-                    </div>
+                </div>
+                <div class="list-wine-action">
+                    <button class="button-action" ng-click="addToCart(p.id, p.name)">+</button>
+                    <button class="button-action" ng-click="removeFromCart(p.id)">-</button>
+                    <span class="amount-info">{{ items[p.id][0] | default:0 }}</span>
                 </div>
             </li>
-
-
-
-
-
 
             <li ng-show="products.length==0">
                 <div class="list-wine-item">
@@ -53,8 +47,8 @@
             </li> 
         </ul>
 
-        <!-- zatial sa nepouziva -->
-    	<!--ng-include src="'cart.html'"></ng-include--> <!-- #shopping cart include -->
+
+    	<ng-include src="'cart.html'"></ng-include> <!-- #shopping cart include -->
 
 
 </section> <!-- #main-container -->

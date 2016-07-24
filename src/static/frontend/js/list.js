@@ -13,7 +13,7 @@
     }
 
     $scope.showDetail = function(id){
-    	location.href = "#/detail/"+id+'?back='+$routeParams.page+"/"+$routeParams.type;
+    	location.href = "#/detail/"+id+'?back='+$routeParams.type;
     }
     $scope.addToCart = function(id, name){
     	shoppingcart.add(id,name);

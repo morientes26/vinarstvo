@@ -2,6 +2,8 @@ var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'
 .run(function($rootScope, $cookies, shoppingcart, $translate) {
 
     $rootScope.API_URL = "/api/";
+    var token = document.getElementById('token').value;
+    console.log(token+ 'y');
     shoppingcart.init('testovac_1');
 
     $rootScope.changeLanguage = function (key) {

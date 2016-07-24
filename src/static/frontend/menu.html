@@ -6,80 +6,18 @@
     <div class="language">
         <a ng-click="changeLanguage('en')">en</a>
         <a ng-click="changeLanguage('sk')">sk</a>
+        <a ng-click="logout()" alt="{% trans 'logout' %}"><img class="logout" src="/static/frontend/img/logout.png"></a>
     </div>
 </header>
 
 <div class="main main-body">
     <ul>
          <li ng-repeat="g in groups" class="horizontal biele" id="{{ g.name }}" ng-style="background('{{g.image.blob}}')">
-            <a href="#/cart/{{ g.name }}">
+            <a href="#/{{ g.name }}">
                 <div class="card-inner">
                     <h2 class="category" translate="{{ g.name }}"></h2>
                 </div>
             </a>
         </li>
-        <!--li class="horizontal biele">
-            <a href="#/cart/white">
-                <div class="card-inner">
-                    <h2 class="category" translate="white"></h2>
-                </div>
-            </a>
-        </li>
-        
-        <li class="horizontal cervene">
-            <a href="#/cart/red">
-                <div class="card-inner">
-                    <h2 class="category" translate="red"></h2>
-                </div>
-            </a>
-        </li>
-
-        <li class="horizontal rose">
-            <a href="#/cart/rose">
-                <div class="card-inner">
-                    <h2 class="category" translate="rose"></h2>
-                </div>
-            </a>
-        </li>
-
-        <li class="horizontal sladke">
-            <a href="#/cart/sweet">
-                <div class="card-inner">
-                    <h2 class="category" translate="sweet"></h2>
-                </div>
-            </a>
-        </li>
-        
-        <li class="horizontal biele-arch">
-            <a href="#/cart/white_archive">
-                <div class="card-inner">
-                    <h2 class="category" translate="white_archive"></h2>
-                </div>
-            </a>
-        </li>
-        
-        <li class="horizontal cervene-arch">
-            <a href="#/cart/red_archive">
-                <div class="card-inner">
-                    <h2 class="category" translate="red_archive"> </h2>
-                </div>
-            </a>
-        </li>            
-        
-        <li class="horizontal nealko">
-            <a href="#/cart/nealko">
-                <div class="card-inner">
-                    <h2 class="category" translate="nealko"></h2>
-                </div>
-            </a>
-        </li>
-        
-        <li class="horizontal pochutiny">
-            <a href="#/cart/sweets">
-                <div class="card-inner">
-                    <h2 class="category" translate="sweets"></h2>
-                </div>
-            </a>
-        </li-->
     </ul>
 </div>

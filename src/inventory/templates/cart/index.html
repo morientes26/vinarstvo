@@ -16,7 +16,6 @@
         <link rel="stylesheet" type="text/css" href="{% static 'frontend/css/detail-flex.css' %}">
 
         <script type="text/javascript" charset="utf8" src="{% static 'frontend/js/vendor/modernizr-2.8.3.min.js' %}"></script>
-
     </head>
     <body ng-app="app">
 
@@ -33,7 +32,7 @@
                 </div>
             </footer>
         </div>
-
+        <input type="hidden" name="token" id="token" value="{{ token }}" />
         <script type="text/javascript" charset="utf8" src="{% static 'frontend/bower_components/angular/angular.min.js' %}"></script>
         <script type="text/javascript" charset="utf8" src="{% static 'frontend/bower_components/angular-route/angular-route.js' %}"></script>
         <script type="text/javascript" charset="utf8" src="{% static 'frontend/bower_components/angular-cookies/angular-cookies.js' %}"></script>
