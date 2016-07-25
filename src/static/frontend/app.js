@@ -11,6 +11,8 @@ var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'
   	};
 	
     $rootScope.logout = function (key) {
+        shoppingcart.clear();
+        $cookies.putObject('customer', null);
         location.href='/accounts/logout/';
     }
 
@@ -19,7 +21,7 @@ var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'
 })
 
 // configure our routes
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider, $httpProvider) {
     
     $routeProvider
 
@@ -43,12 +45,16 @@ app.config(function($routeProvider, $locationProvider) {
             controller  : 'list'
         });
 
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+
 });
 
 // get customer shopping cart
 app.service('shoppingcart', function($cookies) {
 
 	this.init = function (customerName) {
+        console.log(customerName);
 		// Setting a cookie
 		if ($cookies.getObject('customer')==null){		
 			var customer = {

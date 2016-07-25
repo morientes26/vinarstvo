@@ -27,9 +27,10 @@ def login_view(request):
     return redirect(LOGIN_URL)
 
 def logout_view(request):
-    print('logout')
     logout(request)
-    return redirect(LOGIN_URL)
+    response = redirect(LOGIN_URL)
+    response.delete_cookie('user_location')
+    return response
 
 def redirect_by_role(user):
     if user.groups.count()>0:
@@ -39,4 +40,4 @@ def redirect_by_role(user):
 
 def get_token(username):
     #TODO: token service
-    return "5df34dg"+username+"1f2s4d23"
+    return username

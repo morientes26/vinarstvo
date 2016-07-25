@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 09:06+0200\n"
+"POT-Creation-Date: 2016-07-25 20:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -314,10 +314,8 @@ msgstr "Photo"
 
 #: inventory/templates/inventory/product_create.html:188
 #: inventory/templates/inventory/product_create.html:199
-#, fuzzy
-#| msgid "product_code"
 msgid "product_award"
-msgstr "Code"
+msgstr "Award"
 
 #: inventory/templates/inventory/product_detail.html:14
 msgid "product_import_date"

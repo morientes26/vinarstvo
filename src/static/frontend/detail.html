@@ -45,38 +45,29 @@
 
 
 
-    <section class="section-info-row" ng-show="product.is_wine">
-        <div class="lrow">
-            <div class="serving">
+    <section class="" ng-show="product.is_wine">
+        <div class="main-info-box">
+            <div class="main-info-box-content">
                 <p class="text white"><span>Ročník: </span>{{ product.wine.year }}</p>
                 <p class="text white">
                     <span translate="CLASSIFICATION"></span> :
                     {{ product.wine.locality }} &nbsp;
                     {{ product.wine.attribute | translate | lowercase }} &nbsp;
-                    {{ product.wine.color | translate | lowercase}}
+                    {{ product.wine.color | translate | lowercase}} &nbsp;
+                    {{ product.description }}
                 </p>
             </div>
-            <div class="flexi-row">
-                <div class="description flex-item-row">
-                    <p class="text gray">{{ product.description }} </p>
-                </div>
-
-                <div class="bottle flex-item-row">
-                    <!--img ng-repeat="photo in product.photos"
-                         class="bottle-img flex-item-row" src="{*{ photo.blob.url }*}"-->
-                    <img class="bottle-img flex-item-row section-info-bottle-img" src="{{ product.photos.blob }}">
-                </div>
+            <div class="main-info-box-image-box">
+                <img class="main-info-box-image" src="{{ product.photos.blob }}">
             </div>
-        
-        <div class="serving">
-            <p class="text white"><span translate="SERVING"></span> : </p>
-            <p class="text white">{{ product.wine.serving }}</p>
+            
         </div>
-        </div>
-        <div class="rrow bottle-bg">
-           <!-- <div class="bottle">
-                <img class="bottle-img" src="img/04ZB2013.png">
-            </div>-->
+
+
+
+        <div class="serving-info">
+            <p class="serving-info-content white"><span translate="SERVING"></span> : </p>
+            <p class="serving-info-content white">{{ product.wine.serving }}</p>
         </div>
     </section>
 

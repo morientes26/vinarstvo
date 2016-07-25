@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 class ListGroups(LoginRequiredMixin, ListView):
     model = Group
-    queryset = Group.objects.all().order_by('id')
+    queryset = Group.objects.all().order_by('place')
 
 
 class DeleteGroup(LoginRequiredMixin, DeleteView):

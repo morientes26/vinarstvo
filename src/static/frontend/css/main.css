@@ -67,7 +67,14 @@ video {
   vertical-align: middle;
 }
 
+.serving-info-content {
+  width: calc(100% - 60px);
+  padding: 0px 30px;
+}
 
+.serving-info {
+  width: 100%;
+}
 
 .list-wine-new {
   list-style: none;
@@ -249,6 +256,33 @@ nav a:hover {
 
 
 
+.main-info-box {
+  padding: 0px 30px 0px 0px;
+  width: calc(100% - 30px);
+  display: flex;
+
+  background-color: #464646;
+}
+
+.main-info-box-content {
+  min-width: 75%;
+  max-width: 75%;
+  width: 75%;
+  float: left;
+  //margin-right: 35px;
+  padding-left: 30px;
+
+  //background-color: red;
+}
+
+
+.main-info-box-image-box {
+  min-width: 25%;
+  max-width: 25%;
+  width: 25%;
+  text-align: center;
+  padding: 15px 0;
+}
 
 
 
@@ -260,11 +294,11 @@ nav a:hover {
 }
 
 .section-info-sum {
-  background-color: red;
+//  background-color: red;
 }
 
 .section-info-price {
-  background-color: green;
+  //background-color: green;
 }
 
 .info-sum-box {
@@ -299,13 +333,13 @@ nav a:hover {
 }
 
 .section-info-title {
-  background-color: green;
+  //background-color: green;
   padding: 0px 30px;
 }
 
 
 .section-info-awards {
-  background-color: green;
+  //background-color: green;
 }
 
 .section-info-bottle-img {
