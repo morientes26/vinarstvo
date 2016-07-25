@@ -88,7 +88,7 @@ class OrderSerializer(serializers.ModelSerializer):
     """
     Serializing the Order
     """
-    event = serializers.PrimaryKeyRelatedField(queryset=Event.objects.all())
+    #event = serializers.PrimaryKeyRelatedField(queryset=Event.objects.all())
     items = serializers.PrimaryKeyRelatedField(many=True, read_only=True) #serializers.SerializerMethodField(read_only=False)
 
     class Meta:

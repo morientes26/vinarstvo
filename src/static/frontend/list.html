@@ -35,20 +35,21 @@
                     </div>
                 </div>
                 <div class="list-wine-action">
-                    <button class="button-action" ng-click="addToCart(p.id, p.name)">+</button>
-                    <button class="button-action" ng-click="removeFromCart(p.id)">-</button>
-                    <span class="amount-info">{{ items[p.id][0] | default:0 }}</span>
+                    <button class="button-action" title="{{ 'ADD_PRODUCT'| translate }}" ng-click="addToCart(p.id, p.name)">+</button>
+                    <button class="button-action" title="{{ 'REMOVE_PRODUCT'| translate }}" ng-click="removeFromCart(p.id)">-</button>
+                    <span class="amount-info">{{ items[p.id] | default:0 }} {{ 'KS' | translate }}</span>
                 </div>
             </li>
 
             <li ng-show="products.length==0">
                 <div class="list-wine-item">
-                <p class="list-wine-type center" translate="EMPTY"></p></div>
+                <p class="list-wine-type center white" translate="EMPTY"></p></div>
             </li> 
         </ul>
 
+        <div ng-show="message" class="message">{{ message | translate }}</div>
 
-    	<ng-include src="'cart.html'"></ng-include> <!-- #shopping cart include -->
+    	<ng-include ng-show="products.length>0" src="'/static/frontend/cart.html'"></ng-include> <!-- #shopping cart include -->
 
 
 </section> <!-- #main-container -->

@@ -1,29 +1,36 @@
 <div class="shopping-cart">
-	<div class="button">
-		<button ng-click="cleanOrder()" translate="CLEAN_BASKET"></button>
-	</div>
-	<div class="button">
-		<button ng-click="showOrder()" ng-show="!isOrder" translate="ORDER_FORM"></button>
-	</div>
-
-	<div ng-show="isOrder">
 
 		<table class="product-list">
+			<tr>
+		 	<td colspan="2">
+		 		<button class="button" ng-click="cleanOrder()" ng-show="!isOrder" translate="CLEAN_BASKET"></button>
+		 		<button class="button" ng-click="showOrder()" ng-show="!isOrder" translate="SHOPPING_LIST"></button>
+		 	</td>
+		 	</tr>
+		 </table>
+
+		<div ng-show="isOrder">
+
+		<table class="product-list">
+			<tr>
+				<td><b translate="TABLE_NAME"></b></td>
+				<td><b translate="TABLE_AMOUNT"></b></td>
+			</tr>
 	 		<tr id="list_products" ng-repeat="s in shoppinglist track by $index">
 
 		 		<td class="name"> {{ shoppinglist[$index].name }} </td>
 		 		<td class="amount"> {{ shoppinglist[$index].amount }} </td>
 		 		
 	 		</tr>
-	 		<tr>
+	 		<!--tr>
 	 		 	<td><b translate="SUM_PRICE"></b></td>
 	 			<td><b>{{ sum_price }}</b></td>
-	 		</tr>	
+	 		</tr-->	
  		
 
  			<form class="product-form" name="orderForm" ng-submit="sendOrder(orderForm)">
-	 		<input type="hidden" name="event" ng-model="event" value="{{ event }}"/>
-			<tr>
+	 		<!--input type="hidden" name="event" ng-model="event" value="{{ event }}"/-->
+			<!--tr>
 			<td colspan="2">
 				<input type="text" name="name" ng-model="name" placeholder="{{ 'ORDER_FORM_FIRST_LAST_NAME_PLACEHOLDER'| translate}}" ng-minlength="3" ng-maxlength="50" size="50" required>
 				<p ng-show="orderForm.name.$invalid && !orderForm.name.$pristine" class="help-block" translate="REQUIRED_ITEM"></p>
@@ -45,14 +52,18 @@
 		 	<td colspan="2">
 		 		<input type="email" name="email" ng-model="email" placeholder="{{ 'ORDER_FORM_EMAIL_PLACEHOLDER'| translate}}" ng-minlength="0" ng-maxlength="50" size="50">
 		 	</td>
-		 	</tr>
+		 	</tr-->
 		 	<tr>
 		 	<td colspan="2">
-		 		<button type="submit" ng-disabled="orderForm.$invalid" translate="SEND_ORDER"></button>
+		 		<button class="button" ng-click="cleanOrder()" translate="CLEAN_BASKET"></button>
+		 		<button class="button" type="submit" ng-click="sendOrder(orderForm)" translate="SEND_ORDER"></button>
 		 	</td>
 		 	</tr>
 	 		</form>
 
 	 	</table>
  	</div>
+
+
+	
  </div>

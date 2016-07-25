@@ -1,5 +1,5 @@
 var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'])
-.run(function($rootScope, $cookies, shoppingcart, $translate) {
+.run(function($rootScope, $cookies, shoppingcart, $translate, $http) {
 
     $rootScope.API_URL = "/api/";
     var token = document.getElementById('token').value;
@@ -13,6 +13,9 @@ var app = angular.module("app", ['ngRoute', 'ngCookies','pascalprecht.translate'
     $rootScope.logout = function (key) {
         location.href='/accounts/logout/';
     }
+
+     // For CSRF token compatibility with Django
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
 })
 
 // configure our routes
@@ -50,7 +53,8 @@ app.service('shoppingcart', function($cookies) {
 		if ($cookies.getObject('customer')==null){		
 			var customer = {
 								name: customerName,
-								items: []
+								items: {},
+                                items_name: {}
 							}
 			$cookies.putObject('customer', customer);
 			console.log('init cookies');
@@ -63,10 +67,11 @@ app.service('shoppingcart', function($cookies) {
     // pattern : //[ {"product": 28, "amount": 22},{"product": 26, "amount": 24} ]
     this.getJsonItems = function () {
     	var items = $cookies.getObject('customer').items;
+        var items_name = $cookies.getObject('customer').items_name;
     	var result = '['; 
     	for (i in items){
-    		if (items[i]!=null && items[i][0]!=null && items[i][0]>0)
-    			result += '{"product": '+i+', "amount": '+items[i][0]+', "name":"'+items[i][1]+'"},';
+    		if (items[i]!=null && items[i]>0)
+    			result += '{"product": '+i+', "amount": '+items[i]+', "name":"'+items_name[i]+'"},';
     	}
     	if (result.length>2)
     		result=result.substring(0, result.length-1);
@@ -76,26 +81,31 @@ app.service('shoppingcart', function($cookies) {
 
     this.add = function(id, name){
     	var customer = this.getCustomer();
-    	if (customer.items[id] == undefined)
-    		customer.items[id] = [0,''];
-    	customer.items[id][0] += 1;
-    	customer.items[id][1] = name;
-        console.log(customer);
+    	if (id in customer.items)
+            customer.items[id] += 1;
+        else
+        	customer.items[id] = 1;
+    	
+        customer.items_name[id] = name;
     	$cookies.putObject('customer', customer);
     }
     this.remove = function(id){
     	var customer = this.getCustomer();
-    	if (customer.items[id] == undefined)
-    		customer.items[id][0] = 1;
-    	if (customer.items[id][0]>0)
-    		customer.items[id][0] = customer.items[id][0] - 1;
+        if (!id in customer.items)         
+    		customer.items[id] = 1;
+
+    	if (customer.items[id]>0)
+    		customer.items[id]= customer.items[id] - 1;
+
     	$cookies.putObject('customer', customer);
     }
     this.clear = function(){
     	var customer = this.getCustomer();
-    	for (i in customer.items)
-    		customer.items[i]=[0,''];
-    	$cookies.putObject('customer', customer);
+    	for (i in customer.items){
+            delete customer.items[i];
+            delete customer.items_name[i];
+        }
+        $cookies.putObject('customer', customer);
     }
 });
 
@@ -178,6 +188,8 @@ app.config(function ($translateProvider) {
     SEND_ORDER:'Send order',
     REQUIRED_ITEM: 'Required item',
     DETAIL_PRODUCT: 'Detail of product',
+    SHOPPING_LIST: 'Shopping list',
+    KS: 'items',
     BACK: 'Back',
   });
   $translateProvider.translations('sk', {
@@ -247,6 +259,8 @@ app.config(function ($translateProvider) {
     SEND_ORDER:'Poslať objednávku',
     REQUIRED_ITEM: 'Povinná položka',
     DETAIL_PRODUCT: 'Detail produktu',
+    SHOPPING_LIST: 'Nákupný košík',
+    KS: 'ks',
     BACK: 'Naspäť',
   });
 });

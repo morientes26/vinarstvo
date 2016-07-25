@@ -29,21 +29,23 @@
     	shoppingcart.clear();
     	$scope.isOrder = false;
     	$scope.items = shoppingcart.getCustomer().items;
+        $scope.message = '';
     }
     $scope.showOrder = function(){
-    	if (renderOrder())
+    	if (renderOrder()){
     	   $scope.isOrder = true;
+        }
     }
     function renderOrder(){
         $scope.shoppinglist = shoppingcart.getJsonItems();
         $scope.sum_price = 0;
-
+        console.log($scope.shoppinglist);
         if (Object.keys($scope.shoppinglist).length==0)
             return false;
 
         for ($item in $scope.shoppinglist){
             $scope.sum_price += $scope.shoppinglist[$item].amount;
-        }  
+        }
         return true;     
     }
     $scope.sendOrder = function(form) {    	
@@ -54,17 +56,17 @@
 
 			var dataObj = {
 				customer_name : shoppingcart.getCustomer().name,  //form.customer_name.$viewValue
-				contact_detail: form.contact_detail.$viewValue,
-				email: form.email.$viewValue,
-				phone: form.phone.$viewValue,
-				event : form.event.$viewValue,
+		//		contact_detail: form.contact_detail.$viewValue,
+		//		email: form.email.$viewValue,
+		//		phone: form.phone.$viewValue,
+		//		event : form.event.$viewValue,
 				items : shoppingcart.getJsonItems()
 			};	
 			console.log(dataObj);
 			var res = $http.post(url, dataObj);
-			res.success(function(data, status, headers, config) {
-				$scope.message = 'MESSAGE_ORDER_SEND_SUCCESS';
+			res.success(function(data, status, headers, config) {				
 				$scope.cleanOrder();
+                $scope.message = 'MESSAGE_ORDER_SEND_SUCCESS';
 			});
 			res.error(function(data, status, headers, config) {
 				console.log( "failure message: " + JSON.stringify({data: data}));
@@ -81,7 +83,7 @@
         $http.get(url,{
             params: { group: group }
         }).then(function (response) {
-            $scope.products = response.data;
+            $scope.products = response.data;            
         });
     }
 
