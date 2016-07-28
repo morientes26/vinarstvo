@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 	'django_nose',
 	'inventory',
 	'sync.apps.SyncConfig',
+	'django_jenkins',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -241,3 +242,9 @@ LOGGING = {
 		},
 	}
 }
+
+JENKINS_TASKS = (
+	'django_jenkins.tasks.run_pylint',
+	'django_jenkins.tasks.with_coverage',
+	'django_jenkins.tasks.run_pep8',
+)
