@@ -13,12 +13,13 @@ env.password = "Tekvica82"
 # application setting
 app_port = 8000
 app_name = "winary"
-#app_path = "/data/winary/"
-app_path = "/data/backups/test"
+app_path = "/data/winary/"
 app_backup = "/data/backups/"
+tmp = "/tmp/"
 
 #app_local_path = "/home/morientes/Work/tp-soft/winecart/"   
 app_local_path = "/home/morientes/Work/tp-soft/winecart"  
+release_local_tmp = "/home/morientes/Work/tp-soft/release_tmp" 
 
 
 def health():
@@ -76,25 +77,54 @@ def run_gn_server():
 	local("gunicorn winelist.wsgi")
 
 
+def logging(message, filename):
+	run("echo $(date) " + message + " >> " + filename)
+
 def deploy_to_test():
-	# Stop test server
-	#stop_test_server()
+	datestring = strftime("%Y%m%d%H%M%S", gmtime())
+	path = app_backup + datestring
+	sudo("mkdir " + path)
+	log = path+"/deploy.log"
+
+	logging('Start deploying process', log)
 
 	# Create backup
-	#datestring = strftime("%Y%m%d%H%M%S", gmtime())
-	#path = app_backup + datestring
-	#sudo("mkdir " + path)
-	#with cd(path):
-	#	run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
-	#	run("tar zcvf "+ app_name + ".tar.gz " + app_path)
+	with cd(path):
+		run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
+		run("tar zcvf "+ app_name + ".tar.gz " + app_path)
+	logging('Created backup', log)
+
+	# Prepare release
+	with cd(app_local_path):
+		local("git archive --format=tar --prefix="+app_name+"/ HEAD | (cd "+release_local_tmp+" && tar xf -)")
+	logging('Release prepared', log)
 
 	# Deploy to server
-	#run("rsync -a " + app_local_path +" " + env.user + "@" + env.hosts[0] + ":" + app_path + "/")
-	put(app_local_path, app_path, mode=774)
-	run("chown -R django:django "+app_path)	
+	put(release_local_tmp + "/" + app_name, tmp)
+	run("chmod -R 774 "+tmp)
+	run("chown -R django:django "+tmp)	
+
+	# Stop test server
+	#stop_test_server()
+	#logging('Stop application server', log)
+
+	#run("yes | cp -rf "+tmp + app_name+ "/winelist/ "+app_path)
+	run("yes | cp -rf "+tmp + app_name+ "/winelist/ /data/backups/test/winary/")
+
+	logging('Release deployed', log)
+
+	#with cd(app_path):
+	with cd("/data/backups/test/winary/"):
+		run("virtualenv env")
+		run("source env/bin/activate")
+		run("pip install -r requirements.txt")
+	logging('Application environments initialized', log)
 
 	# Start test server
 	#start_test_server()
+	#logging('Server is running', log)
+	
+	logging('End deploying process', log)
 
 
 def start_test_server():
