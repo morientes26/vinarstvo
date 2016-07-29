@@ -100,16 +100,20 @@ def deploy_to_test():
 	logging('Release prepared', log)
 
 	# Deploy to server
-	put(release_local_tmp + "/" + app_name, tmp)
-	run("chmod -R 774 "+tmp)
-	run("chown -R django:django "+tmp)	
+	put(release_local_tmp + "/" + app_name, tmp)	
 
 	# Stop test server
 	#stop_test_server()
 	#logging('Stop application server', log)
 
-	#run("yes | cp -rf "+tmp + app_name+ "/winelist/ "+app_path)
-	run("yes | cp -rf "+tmp + app_name+ "/winelist/ /data/backups/test/winary/")
+	#run("yes | cp -rf "+tmp + app_name+ "/winelist/* "+app_path)
+	run("yes | cp -rf "+tmp + app_name+ "/* /data/backups/test/winary/")
+	
+	run("chmod -R 774 /data/backups/test/winary/")
+	run("chown -R django:django /data/backups/test/winary/")
+
+	#run("chmod -R 774 "+tmp)
+	#run("chown -R django:django "+tmp)
 
 	logging('Release deployed', log)
 
