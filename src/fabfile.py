@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import subprocess
-from fabric.api import local, run, env, put, sudo, cd
+from fabric.api import local, run, env, put, sudo, cd, get
 from time import gmtime, strftime
 import winelist
 
@@ -103,30 +103,25 @@ def deploy_to_test():
 	put(release_local_tmp + "/" + app_name, tmp)	
 
 	# Stop test server
-	#stop_test_server()
-	#logging('Stop application server', log)
+	stop_test_server()
+	logging('Stop application server', log)
 
-	#run("yes | cp -rf "+tmp + app_name+ "/winelist/* "+app_path)
-	run("yes | cp -rf "+tmp + app_name+ "/* /data/backups/test/winary/")
+	run("yes | cp -rf "+tmp + app_name+ "/* " + app_path)
 	
-	run("chmod -R 774 /data/backups/test/winary/")
-	run("chown -R django:django /data/backups/test/winary/")
-
-	#run("chmod -R 774 "+tmp)
-	#run("chown -R django:django "+tmp)
+	run("chmod -R 774 " + app_path)
+	run("chown -R django:django " + app_path)
 
 	logging('Release deployed', log)
 
-	#with cd(app_path):
-	with cd("/data/backups/test/winary/"):
+	with cd(app_path):
 		run("virtualenv env")
 		run("source env/bin/activate")
 		run("pip install -r requirements.txt")
 	logging('Application environments initialized', log)
 
 	# Start test server
-	#start_test_server()
-	#logging('Server is running', log)
+	start_test_server()
+	logging('Server is running', log)
 	
 	logging('End deploying process', log)
 
@@ -136,3 +131,6 @@ def start_test_server():
 
 def stop_test_server():
 	run("systemctl stop dev-appserver.service")
+
+def download_test_db():
+	get(app_path + "db.sqlite3", "../backup/db.sqlite3")
