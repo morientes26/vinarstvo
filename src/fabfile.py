@@ -1,21 +1,31 @@
 # -*- coding: utf-8 -*-
 import os
 import subprocess
-from fabric.api import local, run, env, put
+from fabric.api import local, run, env, put, sudo, cd
+from time import gmtime, strftime
+import winelist
 
 # host setting
 env.hosts = ['winary.tpsoft.sk']
 env.user = "root"
-#env.password =
+env.password = "Tekvica82"
 
 # application setting
 app_port = 8000
+app_name = "winary"
+#app_path = "/data/winary/"
+app_path = "/data/backups/test"
+app_backup = "/data/backups/"
+
+#app_local_path = "/home/morientes/Work/tp-soft/winecart/"   
+app_local_path = "/home/morientes/Work/tp-soft/winecart"  
 
 
 def health():
 	""" Ping production server """
 	print('pinging server: ' + env.hosts[0])
 	run("ps -ef|grep " + str(app_port))
+	run("systemctl status dev-appserver.service")
 
 
 def install():
@@ -66,20 +76,29 @@ def run_gn_server():
 	local("gunicorn winelist.wsgi")
 
 
-def is_app_installed(app):
-	try:
-		subprocess.call([app])
-		return True
-	except OSError as e:
-		if e.errno == os.errno.ENOENT:
-			print(app + " has to be installed")
-		else:
-			print("Something else went wrong while trying to run `%s`", app)
-		return False
+def deploy_to_test():
+	# Stop test server
+	#stop_test_server()
+
+	# Create backup
+	#datestring = strftime("%Y%m%d%H%M%S", gmtime())
+	#path = app_backup + datestring
+	#sudo("mkdir " + path)
+	#with cd(path):
+	#	run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
+	#	run("tar zcvf "+ app_name + ".tar.gz " + app_path)
+
+	# Deploy to server
+	#run("rsync -a " + app_local_path +" " + env.user + "@" + env.hosts[0] + ":" + app_path + "/")
+	put(app_local_path, app_path, mode=774)
+	run("chown -R django:django "+app_path)	
+
+	# Start test server
+	#start_test_server()
 
 
-#def create_virtualenv_remote():
-#    """ setup virtualenv on remote host """
-#    require('virtualenv_root', provided_by=('staging', 'production'))
-#    args = '--clear --distribute'
-#    run('virtualenv %s %s' % (args, env.virtualenv_root))
+def start_test_server():
+	run("systemctl start dev-appserver.service")
+
+def stop_test_server():
+	run("systemctl stop dev-appserver.service")
