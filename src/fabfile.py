@@ -16,10 +16,9 @@ app_name = "winary"
 app_path = "/data/winary/"
 app_backup = "/data/backups/"
 tmp = "/tmp/"
-
-#app_local_path = "/home/morientes/Work/tp-soft/winecart/"   
-app_local_path = "/home/morientes/Work/tp-soft/winecart"  
-release_local_tmp = "/home/morientes/Work/tp-soft/release_tmp" 
+   
+app_local_path = "./" #"/home/morientes/Work/tp-soft/winecart"  
+local_tmp = "/tmp/" 
 
 
 def health():
@@ -86,44 +85,44 @@ def deploy_to_test():
 	sudo("mkdir " + path)
 	log = path+"/deploy.log"
 
-	logging('Start deploying process', log)
+#	logging('Start deploying process', log)
 
 	# Create backup
-	with cd(path):
-		run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
-		run("tar zcvf "+ app_name + ".tar.gz " + app_path)
-	logging('Created backup', log)
+#	with cd(path):
+#		run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
+#		run("tar zcvf "+ app_name + ".tar.gz " + app_path)
+#	logging('Created backup', log)
 
 	# Prepare release
 	with cd(app_local_path):
-		local("git archive --format=tar --prefix="+app_name+"/ HEAD | (cd "+release_local_tmp+" && tar xf -)")
+		local("git archive --format=tar --prefix="+app_name+"/ HEAD | (cd "+local_tmp+" && tar xf -)")
 	logging('Release prepared', log)
 
 	# Deploy to server
-	put(release_local_tmp + "/" + app_name, tmp)	
+#	put(local_tmp + app_name, tmp)	
 
 	# Stop test server
-	stop_test_server()
-	logging('Stop application server', log)
+#	stop_test_server()
+#	logging('Stop application server', log)
 
-	run("yes | cp -rf "+tmp + app_name+ "/* " + app_path)
+#	run("yes | cp -rf "+tmp + app_name+ "/* " + app_path)
 	
-	run("chmod -R 774 " + app_path)
-	run("chown -R django:django " + app_path)
+#	run("chmod -R 774 " + app_path)
+#	run("chown -R django:django " + app_path)
 
-	logging('Release deployed', log)
+#	logging('Release deployed', log)
 
-	with cd(app_path):
-		run("virtualenv env")
-		run("source env/bin/activate")
-		run("pip install -r requirements.txt")
-	logging('Application environments initialized', log)
+#	with cd(app_path):
+#		run("virtualenv env")
+#		run("source env/bin/activate")
+#		run("pip install -r requirements.txt")
+#	logging('Application environments initialized', log)
 
 	# Start test server
-	start_test_server()
-	logging('Server is running', log)
+#	start_test_server()
+#	logging('Server is running', log)
 	
-	logging('End deploying process', log)
+#	logging('End deploying process', log)
 
 
 def start_test_server():
