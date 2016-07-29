@@ -3,7 +3,7 @@ import os
 import subprocess
 from fabric.api import local, run, env, put, sudo, cd, get
 from time import gmtime, strftime
-import winelist
+import winelist, os
 
 # host setting
 env.hosts = ['winary.tpsoft.sk']
@@ -16,8 +16,10 @@ app_name = "winary"
 app_path = "/data/winary/"
 app_backup = "/data/backups/"
 tmp = "/tmp/"
-   
-app_local_path = "./" #"/home/morientes/Work/tp-soft/winecart"  
+
+base_path = os.path.dirname(os.path.realpath(__file__))
+
+app_local_path = "./"
 local_tmp = "/tmp/" 
 
 
@@ -36,38 +38,38 @@ def install():
 		local("sudo apt-get install npm")
 	if not is_app_installed("bower"):
 		local("sudo npm install -g bower")
-	local("./manage.py bower_install")
+	local(base_path+"/manage.py bower_install")
 
 
 def test(module="inventory"):
 	""" run unit tests """
 	suffix = ".tests"
-	local("./manage.py test "+module+suffix + " --settings=winelist.development-settings")
+	local(base_path +"/manage.py test "+module+suffix + " --settings=winelist.development-settings")
 
 
 def localization():
 	""" build localization en, sk """
-	local("./manage.py makemessages -l sk --settings=winelist.development-settings")
-	local("./manage.py makemessages -l en --settings=winelist.development-settings")
-	local("./manage.py compilemessages -l sk --settings=winelist.development-settings")
-	local("./manage.py compilemessages -l en --settings=winelist.development-settings")
+	local(base_path + "/manage.py makemessages -l sk --settings=winelist.development-settings")
+	local(base_path + "/manage.py makemessages -l en --settings=winelist.development-settings")
+	local(base_path + "/manage.py compilemessages -l sk --settings=winelist.development-settings")
+	local(base_path + "/manage.py compilemessages -l en --settings=winelist.development-settings")
 
 
 def static():
 	""" build localization en, sk """
-	local("./manage.py collectstatic")
+	local(base_path + "/manage.py collectstatic")
 
 
 def migrate():
 	""" make migrations and run migrations """
-	local("./manage.py makemigrations --settings=winelist.development-settings")
-	local("./manage.py migrate --settings=winelist.development-settings")
+	local(base_path + "/manage.py makemigrations --settings=winelist.development-settings")
+	local(base_path + "/manage.py migrate --settings=winelist.development-settings")
 
 
 def run_server():
 	""" run on local development server """
 	local("echo '\n--- DEVELOPMENT MODE ---\n'")
-	local("./manage.py runserver 0.0.0.0:8888 --settings=winelist.development-settings")
+	local(base_path + "/manage.py runserver 0.0.0.0:8888 --settings=winelist.development-settings")
 
 
 def run_gn_server():
@@ -85,13 +87,13 @@ def deploy_to_test():
 	sudo("mkdir " + path)
 	log = path+"/deploy.log"
 
-#	logging('Start deploying process', log)
+	logging('Start deploying process', log)
 
 	# Create backup
-#	with cd(path):
-#		run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
-#		run("tar zcvf "+ app_name + ".tar.gz " + app_path)
-#	logging('Created backup', log)
+	with cd(path):
+		run("echo 'backup version: " + winelist.__version__ + "' > backup.info")
+		run("tar zcvf "+ app_name + ".tar.gz " + app_path)
+	logging('Created backup', log)
 
 	# Prepare release
 	with cd(app_local_path):
@@ -99,30 +101,30 @@ def deploy_to_test():
 	logging('Release prepared', log)
 
 	# Deploy to server
-#	put(local_tmp + app_name, tmp)	
+	put(local_tmp + app_name, tmp)	
 
 	# Stop test server
-#	stop_test_server()
-#	logging('Stop application server', log)
+	stop_test_server()
+	logging('Stop application server', log)
 
-#	run("yes | cp -rf "+tmp + app_name+ "/* " + app_path)
+	run("yes | cp -rf "+tmp + app_name+ "/* " + app_path)
 	
-#	run("chmod -R 774 " + app_path)
-#	run("chown -R django:django " + app_path)
+	run("chmod -R 774 " + app_path)
+	run("chown -R django:django " + app_path)
 
-#	logging('Release deployed', log)
+	logging('Release deployed', log)
 
-#	with cd(app_path):
-#		run("virtualenv env")
-#		run("source env/bin/activate")
-#		run("pip install -r requirements.txt")
-#	logging('Application environments initialized', log)
+	with cd(app_path):
+		run("virtualenv env")
+		run("source env/bin/activate")
+		run("pip install -r requirements.txt")
+	logging('Application environments initialized', log)
 
 	# Start test server
-#	start_test_server()
-#	logging('Server is running', log)
+	start_test_server()
+	logging('Server is running', log)
 	
-#	logging('End deploying process', log)
+	logging('End deploying process', log)
 
 
 def start_test_server():
