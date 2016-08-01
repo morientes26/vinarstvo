@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 20:04+0200\n"
+"POT-Creation-Date: 2016-08-01 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: inventory/static/frontend/menu.html:9 inventory/templates/menu.html:103
+#: inventory/static/frontend/menu.html:9 inventory/templates/menu.html:114
 msgid "logout"
 msgstr "logout"
 
@@ -51,6 +51,7 @@ msgstr "Are you sure to delete product?"
 #: inventory/templates/inventory/group_confirm_delete.html:11
 #: inventory/templates/inventory/order_confirm_delete.html:11
 #: inventory/templates/inventory/product_confirm_delete.html:11
+#: inventory/templates/inventory/userpreference_confirm_delete.html:11
 msgid "yes"
 msgstr "Yes"
 
@@ -58,6 +59,7 @@ msgstr "Yes"
 #: inventory/templates/inventory/group_confirm_delete.html:12
 #: inventory/templates/inventory/order_confirm_delete.html:12
 #: inventory/templates/inventory/product_confirm_delete.html:12
+#: inventory/templates/inventory/userpreference_confirm_delete.html:12
 msgid "no"
 msgstr "No"
 
@@ -115,6 +117,7 @@ msgstr "Price"
 #: inventory/templates/inventory/order_detail.html:31
 #: inventory/templates/inventory/product_create.html:208
 #: inventory/templates/inventory/product_detail.html:113
+#: inventory/templates/inventory/userpreference_form.html:21
 msgid "back"
 msgstr "back"
 
@@ -122,6 +125,7 @@ msgstr "back"
 #: inventory/templates/inventory/group_form.html:43
 #: inventory/templates/inventory/order_form.html:58
 #: inventory/templates/inventory/product_create.html:209
+#: inventory/templates/inventory/userpreference_form.html:22
 msgid "save"
 msgstr "save"
 
@@ -137,6 +141,7 @@ msgstr "Create new event"
 #: inventory/templates/inventory/group_list.html:37
 #: inventory/templates/inventory/order_list.html:29
 #: inventory/templates/inventory/product_list.html:67
+#: inventory/templates/inventory/userpreference_list.html:29
 msgid "edit"
 msgstr "edit"
 
@@ -158,8 +163,6 @@ msgstr "Group management"
 
 #: inventory/templates/inventory/group_form.html:19
 #: inventory/templates/inventory/group_form.html:27
-#, fuzzy
-#| msgid "group_managment"
 msgid "group_image"
 msgstr "Group image"
 
@@ -186,14 +189,10 @@ msgid "order_completed"
 msgstr "Order completed"
 
 #: inventory/templates/inventory/order_detail.html:20
-#, fuzzy
-#| msgid "product_name"
 msgid "product.name"
 msgstr "Name"
 
 #: inventory/templates/inventory/order_detail.html:21
-#, fuzzy
-#| msgid "product_amount"
 msgid "product.amount"
 msgstr "Amount"
 
@@ -380,6 +379,27 @@ msgstr "add"
 msgid "amount_filter"
 msgstr "Show products with amount more then"
 
+#: inventory/templates/inventory/userpreference_confirm_delete.html:6
+msgid "confirm_delete_setting"
+msgstr "Are you sure to delete setting?"
+
+#: inventory/templates/inventory/userpreference_form.html:12
+#: inventory/templates/inventory/userpreference_list.html:27
+msgid "setting_unit_amount"
+msgstr "Unit amount"
+
+#: inventory/templates/inventory/userpreference_list.html:11
+msgid "setting_managment"
+msgstr "Setting management"
+
+#: inventory/templates/inventory/userpreference_list.html:19
+msgid "setting_type"
+msgstr "Type"
+
+#: inventory/templates/inventory/userpreference_list.html:20
+msgid "setting_value"
+msgstr "Value"
+
 #: inventory/templates/menu.html:62
 msgid "event_list"
 msgstr "Events list"
@@ -388,21 +408,21 @@ msgstr "Events list"
 msgid "order_list"
 msgstr "Orders list"
 
-#: inventory/templates/menu.html:88
+#: inventory/templates/menu.html:86
+msgid "userpreference"
+msgstr "Settings"
+
+#: inventory/templates/menu.html:99
 msgid "language"
 msgstr "sk"
 
 #: inventory/views/group_views.py:49
-#, fuzzy
-#| msgid "product_created"
 msgid "group_created"
-msgstr "Products created"
+msgstr "Group created"
 
 #: inventory/views/group_views.py:93
-#, fuzzy
-#| msgid "product_edited"
 msgid "group_edited"
-msgstr "Edited product"
+msgstr "Group edited"
 
 #: inventory/views/order_views.py:69
 msgid "order_done"
@@ -415,41 +435,3 @@ msgstr "Products created"
 #: inventory/views/product_views.py:167
 msgid "product_edited"
 msgstr "Edited product"
-
-#~ msgid "inventory"
-#~ msgstr "Inventory"
-
-#~ msgid "product_list"
-#~ msgstr "Products list"
-
-#~ msgid "group_list"
-#~ msgstr "Groups list"
-
-#, fuzzy
-#~| msgid "create_product"
-#~ msgid "create_order"
-#~ msgstr "Create new product"
-
-#~ msgid "red"
-#~ msgstr "Red wine"
-
-#~ msgid "white"
-#~ msgstr "White wine"
-
-#~ msgid "rose"
-#~ msgstr "Rose wine"
-
-#~ msgid "sweet"
-#~ msgstr "Sweet wine"
-
-#~ msgid "white_archive"
-#~ msgstr "White archive wine"
-
-#~ msgid "red_archive"
-#~ msgstr "Red archive wine"
-
-#~ msgid "nealko"
-#~ msgstr "Not alcoholic drink"
-
-#~ msgid "sweets"
-#~ msgstr "Others"

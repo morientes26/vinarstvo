@@ -3,7 +3,7 @@
 from django.test import TestCase
 import datetime
 from inventory.service import InventoryService
-from inventory.models import Product, Event, Order, Group
+from inventory.models import *
 
 
 class InventoryServiceTestCase(TestCase):
@@ -52,3 +52,28 @@ class InventoryServiceTestCase(TestCase):
         self.assertEquals(orders.count(), 1)
         self.assertEquals(orders[0].done, False)
         self.assertEquals(orders[0].customer_name, "test")
+
+
+    def test_unit_price(self):
+        product_1 = Product.objects.get(code="0123")
+        product_1.price = 20
+        product_1.size = 0
+        # size is 0, get real price
+        self.assertEqual(self.service.get_unit_price(product_1), 20)
+
+        product_1.price = 20
+        product_1.size = None
+        # size is None, get real price
+        self.assertEqual(self.service.get_unit_price(product_1), 20)
+
+        product_1.price = 0
+        product_1.size = 10
+        self.assertEqual(self.service.get_unit_price(product_1), 0)
+
+        product_1.price = 10
+        product_1.size = 0.75
+        self.assertEqual(self.service.get_unit_price(product_1), 13.33)
+
+        product_1.price = 12
+        product_1.size = 3
+        self.assertEqual(self.service.get_unit_price(product_1), 4)

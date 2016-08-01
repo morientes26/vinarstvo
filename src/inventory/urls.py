@@ -9,6 +9,7 @@ from views.group_views import *
 from views.order_views import *
 from views.event_views import *
 from views.access_views import *
+from views.setting_views import *
 from views.api_views import *
 
 urlpatterns = [
@@ -50,6 +51,11 @@ urlpatterns = [
 	url(r'^event/create/$', CreateEvent.as_view(), name='create_event'),
 	url(r'^event/edit/(?P<pk>\d+)/$', EditEvent.as_view(), name='edit_event'),
 	url(r'^event/delete/(?P<pk>\d+)/$', DeleteEvent.as_view(), name='delete_event'),
+
+	# setting page for managing setting
+	url(r'^setting/$', ListUserPreferences.as_view(), name='list_userpreferences'),
+	url(r'^setting/edit/(?P<pk>\d+)/$', EditUserPreference.as_view(), name='edit_userpreference'),
+	url(r'^setting/delete/(?P<pk>\d+)/$', DeleteUserPreference.as_view(), name='delete_userpreference'),
 
 	url(r'^product/upload/$', UploadPhoto.as_view(), name='upload_photo'),
 

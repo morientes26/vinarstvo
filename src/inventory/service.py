@@ -122,6 +122,14 @@ class InventoryService:
 		else:
 			return None
 
+	def get_unit_price(self, product):
+		if product.size is not None:
+			if product.size > 0:
+				up = Decimal(product.price / product.size)
+				setting = UserPreference.objects.filter(pk=1) 
+				print(setting)    
+				return round(up, 2) * float(setting[0].unit_amount)  # (jednotkova cena je jedno deci nie liter)
+		return product.price
 
 # ----------------------------------------------------------------------------------
 

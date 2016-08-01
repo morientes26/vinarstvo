@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-25 20:04+0200\n"
+"POT-Creation-Date: 2016-08-01 19:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: inventory/static/frontend/menu.html:9 inventory/templates/menu.html:103
+#: inventory/static/frontend/menu.html:9 inventory/templates/menu.html:114
 msgid "logout"
 msgstr "odhlásiť"
 
@@ -52,6 +52,7 @@ msgstr "Naozaj si prajete vymazať objednavku?"
 #: inventory/templates/inventory/group_confirm_delete.html:11
 #: inventory/templates/inventory/order_confirm_delete.html:11
 #: inventory/templates/inventory/product_confirm_delete.html:11
+#: inventory/templates/inventory/userpreference_confirm_delete.html:11
 msgid "yes"
 msgstr "Áno"
 
@@ -59,6 +60,7 @@ msgstr "Áno"
 #: inventory/templates/inventory/group_confirm_delete.html:12
 #: inventory/templates/inventory/order_confirm_delete.html:12
 #: inventory/templates/inventory/product_confirm_delete.html:12
+#: inventory/templates/inventory/userpreference_confirm_delete.html:12
 msgid "no"
 msgstr "Nie"
 
@@ -116,6 +118,7 @@ msgstr "Cena"
 #: inventory/templates/inventory/order_detail.html:31
 #: inventory/templates/inventory/product_create.html:208
 #: inventory/templates/inventory/product_detail.html:113
+#: inventory/templates/inventory/userpreference_form.html:21
 msgid "back"
 msgstr "späť"
 
@@ -123,6 +126,7 @@ msgstr "späť"
 #: inventory/templates/inventory/group_form.html:43
 #: inventory/templates/inventory/order_form.html:58
 #: inventory/templates/inventory/product_create.html:209
+#: inventory/templates/inventory/userpreference_form.html:22
 msgid "save"
 msgstr "uložiť"
 
@@ -138,6 +142,7 @@ msgstr "Vytvoriť novú akciu"
 #: inventory/templates/inventory/group_list.html:37
 #: inventory/templates/inventory/order_list.html:29
 #: inventory/templates/inventory/product_list.html:67
+#: inventory/templates/inventory/userpreference_list.html:29
 msgid "edit"
 msgstr "editovať"
 
@@ -377,6 +382,29 @@ msgstr "pridať"
 msgid "amount_filter"
 msgstr "Zobraziť produkty s množstvom väčším ako"
 
+#: inventory/templates/inventory/userpreference_confirm_delete.html:6
+#, fuzzy
+#| msgid "confirm_delete_order"
+msgid "confirm_delete_setting"
+msgstr "Naozaj si prajete vymazať objednavku?"
+
+#: inventory/templates/inventory/userpreference_form.html:12
+#: inventory/templates/inventory/userpreference_list.html:27
+msgid "setting_unit_amount"
+msgstr "Jednotkové množstvo"
+
+#: inventory/templates/inventory/userpreference_list.html:11
+msgid "setting_managment"
+msgstr "Správa nastavení"
+
+#: inventory/templates/inventory/userpreference_list.html:19
+msgid "setting_type"
+msgstr "Typ"
+
+#: inventory/templates/inventory/userpreference_list.html:20
+msgid "setting_value"
+msgstr "hodnota"
+
 #: inventory/templates/menu.html:62
 msgid "event_list"
 msgstr "Zoznam akcií"
@@ -385,21 +413,21 @@ msgstr "Zoznam akcií"
 msgid "order_list"
 msgstr "Správa objednávok"
 
-#: inventory/templates/menu.html:88
+#: inventory/templates/menu.html:86
+msgid "userpreference"
+msgstr "Nastavenia"
+
+#: inventory/templates/menu.html:99
 msgid "language"
 msgstr "en"
 
 #: inventory/views/group_views.py:49
-#, fuzzy
-#| msgid "product_created"
 msgid "group_created"
-msgstr "Produkt vytvorený"
+msgstr "Skupina vytvorená"
 
 #: inventory/views/group_views.py:93
-#, fuzzy
-#| msgid "product_edited"
 msgid "group_edited"
-msgstr "Produkt upravený"
+msgstr "Skupina upravená"
 
 #: inventory/views/order_views.py:69
 msgid "order_done"
@@ -413,35 +441,14 @@ msgstr "Produkt vytvorený"
 msgid "product_edited"
 msgstr "Produkt upravený"
 
-#~ msgid "inventory"
-#~ msgstr "Inventár"
+#~ msgid "create_setting"
+#~ msgstr "Vytvoriť nové nastavenie"
 
-#~ msgid "product_list"
-#~ msgstr "Zoznam produktov"
+#~ msgid "setting_name"
+#~ msgstr "Názov"
 
-#~ msgid "group_list"
-#~ msgstr "Zoznam skupín"
+#~ msgid "setting_created"
+#~ msgstr "Nastavenie vytvorené"
 
-#~ msgid "red"
-#~ msgstr "Červené víno"
-
-#~ msgid "white"
-#~ msgstr "Biele víno"
-
-#~ msgid "rose"
-#~ msgstr "Ružové víno"
-
-#~ msgid "sweet"
-#~ msgstr "Dezertné víno"
-
-#~ msgid "white_archive"
-#~ msgstr "Biele archívne víno"
-
-#~ msgid "red_archive"
-#~ msgstr "Červené archívne víno"
-
-#~ msgid "nealko"
-#~ msgstr "Nealkoholické nápoje"
-
-#~ msgid "sweets"
-#~ msgstr "Pochutiny"
+#~ msgid "SETTING_1"
+#~ msgstr "jednotkové množstvo"

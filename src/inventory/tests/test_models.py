@@ -58,6 +58,31 @@ class ProductManageTestCase(TestCase):
         self.assertEqual(order.event.name, "Ochutnavka c.1")
         self.assertEquals(order.items.count(), 2)
 
+#    def test_unit_price(self):
+#        product_1 = Product.objects.get(code="0123")
+#        product_1.price = 20
+#        product_1.size = 0
+        # size is 0, get real price
+#        self.assertEqual(product_1.unit_price(), 20)
+
+#        product_1.price = 20
+#        product_1.size = None
+        # size is None, get real price
+#        self.assertEqual(product_1.unit_price(), 20)
+
+#        product_1.price = 0
+#        product_1.size = 10
+#        self.assertEqual(product_1.unit_price(), 0)
+
+#        product_1.price = 10
+#        product_1.size = 0.75
+#        self.assertEqual(product_1.unit_price(), 13.33)
+
+#        product_1.price = 12
+#        product_1.size = 3
+#        self.assertEqual(product_1.unit_price(), 4)
+
+
     def test_add_awards(self):
         """ Add awards to product """
 

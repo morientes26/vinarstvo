@@ -39,3 +39,5 @@ def get_amount(product, items):
 		if product == it.product:
 			return it.amount
 	return 0
+
+
