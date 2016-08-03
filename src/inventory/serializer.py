@@ -20,6 +20,7 @@ class AwardSerializer(serializers.ModelSerializer):
     """
     Serializing the Award
     """
+    photo = PhotoSerializer(read_only=True, many=False)
 
     class Meta:
         model = Award
@@ -30,7 +31,6 @@ class WineSerializer(serializers.ModelSerializer):
     """
     Serializing the Wine
     """
-    awards = AwardSerializer(read_only=True, many=True)
 
     class Meta:
         model = Wine
@@ -55,6 +55,7 @@ class ProductSerializer(serializers.ModelSerializer):
     wine = WineSerializer(read_only=True, many=False)
     group = GroupSerializer(read_only=True, many=False)
     photos = PhotoSerializer(read_only=True, many=False)
+    awards = AwardSerializer(read_only=True, many=True)
 
     # custom field
     unit_price = serializers.SerializerMethodField()

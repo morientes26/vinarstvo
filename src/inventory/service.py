@@ -51,31 +51,23 @@ class InventoryService:
 				photo = Photo.objects.create(blob=request.FILES['photo_upload'])
 				product.photos = photo
 
-			if 'award_upload' in request.FILES:
-				photo = Photo.objects.create(blob=request.FILES['award_upload'])
-				photo.save()
-				award = Award.objects.create(name=request.POST['award_name'], photo=photo)
-				award.save()
-				product.awards.add(award)
+			for i in range(1, 5):
+				if 'award_upload_' + str(i) in request.FILES:
+					photo = Photo.objects.create(blob=request.FILES['award_upload_' + str(i)])
+					photo.save()
+					award = Award.objects.create(name=request.POST['award_name_' + str(i)], photo=photo)
+					award.save()
+					product.awards.add(award)
 			product.save()
-			#for file in request.FILES:
-			#    logger.debug(file)
-			#    if file == 'photo_upload':
-			#        logger.debug('file: %s', file)
-			#        photo = Photo.objects.create(blob=file)
-			#        product.photos = photo
-			#        product.photos.save()
-
-			#        logger.debug('url: %s', photo.blob.url)
-			#        logger.debug('blob: %s', product.photos.blob)
-			#        logger.debug('upload file and create photo %s ', photo)
-			#    if file == 'award_upload':
-			#        a_photo = Photo.objects.create(blob=file)
-			#        logger.debug('upload file and create photo %s ', a_photo)
-			#        award = Award.objects.create(name=a_photo.uuid, photo=a_photo)
-			#        wine.awards.add(award)
-			#        wine.save()
-
+			
+		if 'award_remove' in request.POST:
+			for ax in request.POST.getlist('award_remove'):
+				aw = Award.objects.get(pk=int(ax))
+				logger.debug('delete award %s', aw)
+				product.awards.remove(aw)
+				aw.delete()
+		
+			product.save()
 
 	def get_new_products(self):
 		products = Product.objects.filter(is_new=True)

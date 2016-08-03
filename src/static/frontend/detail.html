@@ -89,11 +89,12 @@
 
 
 
-    <section class="section-info-row section-info-awards" ng-show="product.is_wine">
+    <section class="section-info-row section-info-awards" ng-show="product.awards">
         <div class="awards">
             <ul>
-                <li class="award flex-item-row" ng-repeat="award in product.wine.awards">
+                <li class="award flex-item-row" ng-repeat="award in product.awards">
                     <p class="text gray"> {{ award.name }}</p>
+                    <img style="height:50px" src="{{ award.photo.blob }}">
                 </li>
             </ul>
         </div>
@@ -154,7 +155,7 @@
     <section class="section-info-row section-info-price">
         <div class="info-price-box">
             <p class="section-info-box-title"><span translate="PRICE"></span></p>
-            <p class="section-info-box-content">{{ product.price }} €</p>
+            <p class="section-info-box-content">{{ product.price }} € <small>   ({{ product.unit_price }} €)</small></p>
         </div>
     </section>
 </div>
