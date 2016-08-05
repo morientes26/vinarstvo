@@ -2,7 +2,8 @@
 Serializer for model Product
 """ 
 from rest_framework import serializers
-from inventory.models import Product, Event, Order, Item, Wine, Award, Group, Photo
+from inventory.models import *
+from inventory.service import InventoryService
 
 
 class PhotoSerializer(serializers.ModelSerializer):
@@ -19,6 +20,7 @@ class AwardSerializer(serializers.ModelSerializer):
     """
     Serializing the Award
     """
+    photo = PhotoSerializer(read_only=True, many=False)
 
     class Meta:
         model = Award
@@ -29,7 +31,6 @@ class WineSerializer(serializers.ModelSerializer):
     """
     Serializing the Wine
     """
-    awards = AwardSerializer(read_only=True, many=True)
 
     class Meta:
         model = Wine
@@ -54,10 +55,18 @@ class ProductSerializer(serializers.ModelSerializer):
     wine = WineSerializer(read_only=True, many=False)
     group = GroupSerializer(read_only=True, many=False)
     photos = PhotoSerializer(read_only=True, many=False)
+    awards = AwardSerializer(read_only=True, many=True)
+
+    # custom field
+    unit_price = serializers.SerializerMethodField()
 
     class Meta:
         model = Product
         fields = "__all__"
+
+    def get_unit_price(self, obj):
+        service = InventoryService()
+        return service.get_unit_price(obj)
 
 
 class EventSerializer(serializers.Serializer):

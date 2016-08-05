@@ -4,7 +4,19 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 from polymorphic.models import PolymorphicModel
+from decimal import Decimal
 from winelist.settings import MEDIA_ROOT
+
+
+
+class UserPreference(models.Model):
+    """
+    Admin settings
+    """
+    unit_amount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True, help_text="jednotkove mnozstvo")
+
+    def __unicode__(self):
+        return  str(self.pk)
 
 
 class Photo(models.Model):
@@ -19,7 +31,6 @@ class Photo(models.Model):
         app_label = 'inventory'
 
     def adjust_url(self):
-        print(self.blob.url)
         try:
             idx = self.blob.url.index('/static/')
             final_url = self.blob.url[idx:len(self.blob.url)]
@@ -179,3 +190,5 @@ class Order(models.Model):
 
     def __unicode__(self):
         return self.customer_name + " " + self.event.name + " " + str(self.items.__sizeof__())
+
+

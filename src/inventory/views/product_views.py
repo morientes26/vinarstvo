@@ -113,7 +113,7 @@ class CreateProduct(LoginRequiredMixin, View):
             messages.add_message(request, messages.INFO, _("product_created"))
         else:
             print("valid error %s", product_form.errors)
-            return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form, 'load_photo':None})
+            return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form, 'load_photo':range(5)})
 
         return redirect('list_products')
 
@@ -128,15 +128,18 @@ class EditProduct(LoginRequiredMixin, View):
         product = get_object_or_404(Product, pk=kwargs['pk'])
         product_form = ProductForm(instance=product)
         load_photo = None
-        load_photo_award = None
-
+        load_photo_award = range(5)
         if product.photos:
             load_photo = product.photos
         if product.awards.exists():
-            load_photo_award = product.awards.first().photo
+            load_photo_award = product.awards.all()
+            print(load_photo_award)
         if product.is_wine:
             wine_form = WineForm(instance=product.wine)
-        return render(request, self.template_name, context={'product_form': product_form, 'wine_form': wine_form, 'load_photo':load_photo, 'load_photo_award':load_photo_award})
+        return render(request, self.template_name, context={'product_form': product_form,
+                                                            'wine_form': wine_form,
+                                                            'load_photo': load_photo,
+                                                            'load_photo_award': load_photo_award})
 
     def post(self, request, **kwargs):
         logger.debug("POST - edit product %s", request)
@@ -161,14 +164,16 @@ class EditProduct(LoginRequiredMixin, View):
                     logger.warning('wine_form not valid %s', wine_form.errors)
             else:
                 product_form.save()
-
+            
             self.service.upload_photos(request, product)
 
             messages.add_message(request, messages.INFO, _("product_edited"))
 
         else:
             return render(request, self.template_name,
-                          context={'product_form': product_form, 'wine_form': wine_form, 'load_photo': None})
+                          context={'product_form': product_form,
+                                   'wine_form': wine_form,
+                                   'load_photo': None})
 
         return redirect('list_products')
 

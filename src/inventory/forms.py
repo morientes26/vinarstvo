@@ -38,6 +38,12 @@ class EventForm(ModelForm):
         model = Event
         fields = "__all__"
         exclude = ('products',)
+        
+
+class UserPreferenceForm(ModelForm):
+    class Meta:
+        model = UserPreference
+        fields = "__all__"
 
 
 class PhotoForm(ModelForm):

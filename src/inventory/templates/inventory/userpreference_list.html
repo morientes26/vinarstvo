@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+<br/>
+
+<fieldset>
+    <legend>
+        <div class="row">
+            <div class="col-md-10">
+                {% trans "setting_managment" %} [ {{ object_list.count }} ]
+            </div>            
+        </div>
+    </legend>
+
+    <table id="groups" class="display">
+    <thead>
+        <tr>
+            <th class="col-md-8">{% trans "setting_type" %}</th>
+            <th class="col-md-2">{% trans "setting_value" %}</th>
+            <th class="col-md-2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for setting in object_list %}
+        <tr>
+           <td>{% trans "setting_unit_amount" %}</td>
+           <td>{{ setting.unit_amount }}</td>
+           <td><a href="edit/{{ setting.id }}">{% trans "edit" %}</a></td>      
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</fieldset>
+
+{% endblock %}

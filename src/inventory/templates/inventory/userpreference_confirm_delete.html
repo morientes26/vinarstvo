@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load i18n %}
+
+{% trans "confirm_delete_setting" %}
+<br>
+
+<form method="POST" action="">
+   {% csrf_token %}
+    <input type="submit" value="{% trans "yes" %}">
+    <input type="button" onclick="location.href='{% url 'list_settings' %}'" value="{% trans "no" %}">
+</form>
+
+{% endblock %}

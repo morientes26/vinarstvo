@@ -39,3 +39,13 @@ def get_amount(product, items):
 		if product == it.product:
 			return it.amount
 	return 0
+
+
+@register.filter
+def index(sequence, position):
+	print(sequence)
+	print(position)
+	if position in sequence:
+		print(sequence[position])
+		return sequence[position]
+
